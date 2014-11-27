@@ -1,3 +1,5 @@
+.idea/
+/*.ipr
 /.classpath
 /.project
 /target/
@@ -5,4 +7,5 @@
 logs
 .settings/
 /*.iml
+/*.iws
 deploy_common_java_game.sh
