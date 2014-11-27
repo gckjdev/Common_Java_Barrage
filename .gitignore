@@ -1,0 +1,8 @@
+/.classpath
+/.project
+/target/
+/bin/
+logs
+.settings/
+/*.iml
+deploy_common_java_game.sh
