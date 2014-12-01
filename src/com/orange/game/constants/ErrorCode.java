@@ -371,7 +371,6 @@ public class ErrorCode extends CommonErrorCode {
     public static final int ERROR_UNKNOWN_USER_TUTORIAL_ACTION      = 210003;
 
 
-
     static public String getJSONByErrorCode(int errorCode){
 		return String.format("{\"%s\":%d}", ServiceConstant.RET_CODE, errorCode);		
 	}

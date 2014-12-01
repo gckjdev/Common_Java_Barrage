@@ -156,6 +156,7 @@ public class ServiceConstant  {
 
    // for bulletin
 	public static final String METHOD_GET_BULLETINS = "gblt";
+    public static final String METHOD_COMMON_DATA_REQUEST = "req";
 	
     
 	public static final String PARA_USERID = "uid";
