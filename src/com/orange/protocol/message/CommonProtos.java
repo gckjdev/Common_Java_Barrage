@@ -96,6 +96,20 @@ public final class CommonProtos {
      */
     com.google.protobuf.ByteString
         getDeviceTokenBytes();
+
+    /**
+     * <code>optional string isJailBroken = 6;</code>
+     */
+    boolean hasIsJailBroken();
+    /**
+     * <code>optional string isJailBroken = 6;</code>
+     */
+    java.lang.String getIsJailBroken();
+    /**
+     * <code>optional string isJailBroken = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getIsJailBrokenBytes();
   }
   /**
    * Protobuf type {@code barrage.PBDevice}
@@ -176,6 +190,12 @@ public final class CommonProtos {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
               deviceToken_ = bs;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              isJailBroken_ = bs;
               break;
             }
           }
@@ -421,12 +441,55 @@ public final class CommonProtos {
       }
     }
 
+    public static final int ISJAILBROKEN_FIELD_NUMBER = 6;
+    private java.lang.Object isJailBroken_;
+    /**
+     * <code>optional string isJailBroken = 6;</code>
+     */
+    public boolean hasIsJailBroken() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional string isJailBroken = 6;</code>
+     */
+    public java.lang.String getIsJailBroken() {
+      java.lang.Object ref = isJailBroken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          isJailBroken_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string isJailBroken = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIsJailBrokenBytes() {
+      java.lang.Object ref = isJailBroken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        isJailBroken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       type_ = 0;
       model_ = "";
       os_ = "";
       deviceId_ = "";
       deviceToken_ = "";
+      isJailBroken_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -460,6 +523,9 @@ public final class CommonProtos {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(5, getDeviceTokenBytes());
       }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getIsJailBrokenBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -488,6 +554,10 @@ public final class CommonProtos {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, getDeviceTokenBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getIsJailBrokenBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -616,6 +686,8 @@ public final class CommonProtos {
         bitField0_ = (bitField0_ & ~0x00000008);
         deviceToken_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
+        isJailBroken_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -664,6 +736,10 @@ public final class CommonProtos {
           to_bitField0_ |= 0x00000010;
         }
         result.deviceToken_ = deviceToken_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.isJailBroken_ = isJailBroken_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -701,6 +777,11 @@ public final class CommonProtos {
         if (other.hasDeviceToken()) {
           bitField0_ |= 0x00000010;
           deviceToken_ = other.deviceToken_;
+          onChanged();
+        }
+        if (other.hasIsJailBroken()) {
+          bitField0_ |= 0x00000020;
+          isJailBroken_ = other.isJailBroken_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1110,6 +1191,82 @@ public final class CommonProtos {
         return this;
       }
 
+      private java.lang.Object isJailBroken_ = "";
+      /**
+       * <code>optional string isJailBroken = 6;</code>
+       */
+      public boolean hasIsJailBroken() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string isJailBroken = 6;</code>
+       */
+      public java.lang.String getIsJailBroken() {
+        java.lang.Object ref = isJailBroken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            isJailBroken_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string isJailBroken = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIsJailBrokenBytes() {
+        java.lang.Object ref = isJailBroken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          isJailBroken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string isJailBroken = 6;</code>
+       */
+      public Builder setIsJailBroken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        isJailBroken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string isJailBroken = 6;</code>
+       */
+      public Builder clearIsJailBroken() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        isJailBroken_ = getDefaultInstance().getIsJailBroken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string isJailBroken = 6;</code>
+       */
+      public Builder setIsJailBrokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        isJailBroken_ = value;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:barrage.PBDevice)
     }
 
@@ -1136,10 +1293,10 @@ public final class CommonProtos {
   static {
     java.lang.String[] descriptorData = {
       "\n\014Common.proto\022\007barrage\032\017Constants.proto" +
-      "\"Z\n\010PBDevice\022\014\n\004type\030\001 \002(\005\022\r\n\005model\030\002 \001(" +
+      "\"p\n\010PBDevice\022\014\n\004type\030\001 \002(\005\022\r\n\005model\030\002 \001(" +
       "\t\022\n\n\002os\030\003 \001(\t\022\020\n\010deviceId\030\004 \001(\t\022\023\n\013devic" +
-      "eToken\030\005 \001(\tB+\n\033com.orange.protocol.mess" +
-      "ageB\014CommonProtos"
+      "eToken\030\005 \001(\t\022\024\n\014isJailBroken\030\006 \001(\tB+\n\033co" +
+      "m.orange.protocol.messageB\014CommonProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1159,7 +1316,7 @@ public final class CommonProtos {
     internal_static_barrage_PBDevice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBDevice_descriptor,
-        new java.lang.String[] { "Type", "Model", "Os", "DeviceId", "DeviceToken", });
+        new java.lang.String[] { "Type", "Model", "Os", "DeviceId", "DeviceToken", "IsJailBroken", });
     com.orange.protocol.message.ConstantsProtos.getDescriptor();
   }
 

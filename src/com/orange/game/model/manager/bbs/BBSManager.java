@@ -44,7 +44,6 @@ public class BBSManager extends CommonManager {
 
     private static List<BBSBoard> createTestBoardList(
             MongoDBClient mongoClient, int count) {
-        Log.info("createTestBoardList");
 
         List<BBSBoard> sectionList = new ArrayList<BBSBoard>(3);
 
