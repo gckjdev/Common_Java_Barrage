@@ -2209,29 +2209,53 @@ public final class UserProtos {
     long getExperience();
 
     /**
-     * <code>optional .barrage.PBDevice device = 71;</code>
+     * <code>optional .barrage.PBDevice currentDevice = 71;</code>
      *
      * <pre>
      * device info
      * </pre>
      */
-    boolean hasDevice();
+    boolean hasCurrentDevice();
     /**
-     * <code>optional .barrage.PBDevice device = 71;</code>
+     * <code>optional .barrage.PBDevice currentDevice = 71;</code>
      *
      * <pre>
      * device info
      * </pre>
      */
-    com.orange.protocol.message.CommonProtos.PBDevice getDevice();
+    com.orange.protocol.message.CommonProtos.PBDevice getCurrentDevice();
     /**
-     * <code>optional .barrage.PBDevice device = 71;</code>
+     * <code>optional .barrage.PBDevice currentDevice = 71;</code>
      *
      * <pre>
      * device info
      * </pre>
      */
-    com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getDeviceOrBuilder();
+    com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getCurrentDeviceOrBuilder();
+
+    /**
+     * <code>repeated .barrage.PBDevice devices = 72;</code>
+     */
+    java.util.List<com.orange.protocol.message.CommonProtos.PBDevice> 
+        getDevicesList();
+    /**
+     * <code>repeated .barrage.PBDevice devices = 72;</code>
+     */
+    com.orange.protocol.message.CommonProtos.PBDevice getDevices(int index);
+    /**
+     * <code>repeated .barrage.PBDevice devices = 72;</code>
+     */
+    int getDevicesCount();
+    /**
+     * <code>repeated .barrage.PBDevice devices = 72;</code>
+     */
+    java.util.List<? extends com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder> 
+        getDevicesOrBuilderList();
+    /**
+     * <code>repeated .barrage.PBDevice devices = 72;</code>
+     */
+    com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getDevicesOrBuilder(
+        int index);
 
     /**
      * <code>optional int32 emailVerifyStatus = 81;</code>
@@ -2470,14 +2494,22 @@ public final class UserProtos {
             case 570: {
               com.orange.protocol.message.CommonProtos.PBDevice.Builder subBuilder = null;
               if (((bitField0_ & 0x00100000) == 0x00100000)) {
-                subBuilder = device_.toBuilder();
+                subBuilder = currentDevice_.toBuilder();
               }
-              device_ = input.readMessage(com.orange.protocol.message.CommonProtos.PBDevice.PARSER, extensionRegistry);
+              currentDevice_ = input.readMessage(com.orange.protocol.message.CommonProtos.PBDevice.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(device_);
-                device_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(currentDevice_);
+                currentDevice_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00100000;
+              break;
+            }
+            case 578: {
+              if (!((mutable_bitField0_ & 0x00400000) == 0x00400000)) {
+                devices_ = new java.util.ArrayList<com.orange.protocol.message.CommonProtos.PBDevice>();
+                mutable_bitField0_ |= 0x00400000;
+              }
+              devices_.add(input.readMessage(com.orange.protocol.message.CommonProtos.PBDevice.PARSER, extensionRegistry));
               break;
             }
             case 648: {
@@ -2506,6 +2538,9 @@ public final class UserProtos {
       } finally {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           snsUsers_ = java.util.Collections.unmodifiableList(snsUsers_);
+        }
+        if (((mutable_bitField0_ & 0x00400000) == 0x00400000)) {
+          devices_ = java.util.Collections.unmodifiableList(devices_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3464,37 +3499,72 @@ public final class UserProtos {
       return experience_;
     }
 
-    public static final int DEVICE_FIELD_NUMBER = 71;
-    private com.orange.protocol.message.CommonProtos.PBDevice device_;
+    public static final int CURRENTDEVICE_FIELD_NUMBER = 71;
+    private com.orange.protocol.message.CommonProtos.PBDevice currentDevice_;
     /**
-     * <code>optional .barrage.PBDevice device = 71;</code>
+     * <code>optional .barrage.PBDevice currentDevice = 71;</code>
      *
      * <pre>
      * device info
      * </pre>
      */
-    public boolean hasDevice() {
+    public boolean hasCurrentDevice() {
       return ((bitField0_ & 0x00100000) == 0x00100000);
     }
     /**
-     * <code>optional .barrage.PBDevice device = 71;</code>
+     * <code>optional .barrage.PBDevice currentDevice = 71;</code>
      *
      * <pre>
      * device info
      * </pre>
      */
-    public com.orange.protocol.message.CommonProtos.PBDevice getDevice() {
-      return device_;
+    public com.orange.protocol.message.CommonProtos.PBDevice getCurrentDevice() {
+      return currentDevice_;
     }
     /**
-     * <code>optional .barrage.PBDevice device = 71;</code>
+     * <code>optional .barrage.PBDevice currentDevice = 71;</code>
      *
      * <pre>
      * device info
      * </pre>
      */
-    public com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getDeviceOrBuilder() {
-      return device_;
+    public com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getCurrentDeviceOrBuilder() {
+      return currentDevice_;
+    }
+
+    public static final int DEVICES_FIELD_NUMBER = 72;
+    private java.util.List<com.orange.protocol.message.CommonProtos.PBDevice> devices_;
+    /**
+     * <code>repeated .barrage.PBDevice devices = 72;</code>
+     */
+    public java.util.List<com.orange.protocol.message.CommonProtos.PBDevice> getDevicesList() {
+      return devices_;
+    }
+    /**
+     * <code>repeated .barrage.PBDevice devices = 72;</code>
+     */
+    public java.util.List<? extends com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder> 
+        getDevicesOrBuilderList() {
+      return devices_;
+    }
+    /**
+     * <code>repeated .barrage.PBDevice devices = 72;</code>
+     */
+    public int getDevicesCount() {
+      return devices_.size();
+    }
+    /**
+     * <code>repeated .barrage.PBDevice devices = 72;</code>
+     */
+    public com.orange.protocol.message.CommonProtos.PBDevice getDevices(int index) {
+      return devices_.get(index);
+    }
+    /**
+     * <code>repeated .barrage.PBDevice devices = 72;</code>
+     */
+    public com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getDevicesOrBuilder(
+        int index) {
+      return devices_.get(index);
     }
 
     public static final int EMAILVERIFYSTATUS_FIELD_NUMBER = 81;
@@ -3619,7 +3689,8 @@ public final class UserProtos {
       latitude_ = 0F;
       level_ = 0;
       experience_ = 0L;
-      device_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
+      currentDevice_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
+      devices_ = java.util.Collections.emptyList();
       emailVerifyStatus_ = 0;
       emailVerifyCode_ = "";
       mobileVerifyStatus_ = 0;
@@ -3644,8 +3715,14 @@ public final class UserProtos {
           return false;
         }
       }
-      if (hasDevice()) {
-        if (!getDevice().isInitialized()) {
+      if (hasCurrentDevice()) {
+        if (!getCurrentDevice().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getDevicesCount(); i++) {
+        if (!getDevices(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -3721,7 +3798,10 @@ public final class UserProtos {
         output.writeInt64(62, experience_);
       }
       if (((bitField0_ & 0x00100000) == 0x00100000)) {
-        output.writeMessage(71, device_);
+        output.writeMessage(71, currentDevice_);
+      }
+      for (int i = 0; i < devices_.size(); i++) {
+        output.writeMessage(72, devices_.get(i));
       }
       if (((bitField0_ & 0x00200000) == 0x00200000)) {
         output.writeInt32(81, emailVerifyStatus_);
@@ -3827,7 +3907,11 @@ public final class UserProtos {
       }
       if (((bitField0_ & 0x00100000) == 0x00100000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(71, device_);
+          .computeMessageSize(71, currentDevice_);
+      }
+      for (int i = 0; i < devices_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(72, devices_.get(i));
       }
       if (((bitField0_ & 0x00200000) == 0x00200000)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3951,7 +4035,8 @@ public final class UserProtos {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getSnsUsersFieldBuilder();
-          getDeviceFieldBuilder();
+          getCurrentDeviceFieldBuilder();
+          getDevicesFieldBuilder();
         }
       }
       private static Builder create() {
@@ -4006,18 +4091,24 @@ public final class UserProtos {
         bitField0_ = (bitField0_ & ~0x00080000);
         experience_ = 0L;
         bitField0_ = (bitField0_ & ~0x00100000);
-        if (deviceBuilder_ == null) {
-          device_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
+        if (currentDeviceBuilder_ == null) {
+          currentDevice_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
         } else {
-          deviceBuilder_.clear();
+          currentDeviceBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00200000);
+        if (devicesBuilder_ == null) {
+          devices_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00400000);
+        } else {
+          devicesBuilder_.clear();
+        }
         emailVerifyStatus_ = 0;
-        bitField0_ = (bitField0_ & ~0x00400000);
-        emailVerifyCode_ = "";
         bitField0_ = (bitField0_ & ~0x00800000);
-        mobileVerifyStatus_ = 0;
+        emailVerifyCode_ = "";
         bitField0_ = (bitField0_ & ~0x01000000);
+        mobileVerifyStatus_ = 0;
+        bitField0_ = (bitField0_ & ~0x02000000);
         return this;
       }
 
@@ -4138,20 +4229,29 @@ public final class UserProtos {
         if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
           to_bitField0_ |= 0x00100000;
         }
-        if (deviceBuilder_ == null) {
-          result.device_ = device_;
+        if (currentDeviceBuilder_ == null) {
+          result.currentDevice_ = currentDevice_;
         } else {
-          result.device_ = deviceBuilder_.build();
+          result.currentDevice_ = currentDeviceBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
+        if (devicesBuilder_ == null) {
+          if (((bitField0_ & 0x00400000) == 0x00400000)) {
+            devices_ = java.util.Collections.unmodifiableList(devices_);
+            bitField0_ = (bitField0_ & ~0x00400000);
+          }
+          result.devices_ = devices_;
+        } else {
+          result.devices_ = devicesBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
           to_bitField0_ |= 0x00200000;
         }
         result.emailVerifyStatus_ = emailVerifyStatus_;
-        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
+        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
           to_bitField0_ |= 0x00400000;
         }
         result.emailVerifyCode_ = emailVerifyCode_;
-        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
+        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
           to_bitField0_ |= 0x00800000;
         }
         result.mobileVerifyStatus_ = mobileVerifyStatus_;
@@ -4285,14 +4385,40 @@ public final class UserProtos {
         if (other.hasExperience()) {
           setExperience(other.getExperience());
         }
-        if (other.hasDevice()) {
-          mergeDevice(other.getDevice());
+        if (other.hasCurrentDevice()) {
+          mergeCurrentDevice(other.getCurrentDevice());
+        }
+        if (devicesBuilder_ == null) {
+          if (!other.devices_.isEmpty()) {
+            if (devices_.isEmpty()) {
+              devices_ = other.devices_;
+              bitField0_ = (bitField0_ & ~0x00400000);
+            } else {
+              ensureDevicesIsMutable();
+              devices_.addAll(other.devices_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.devices_.isEmpty()) {
+            if (devicesBuilder_.isEmpty()) {
+              devicesBuilder_.dispose();
+              devicesBuilder_ = null;
+              devices_ = other.devices_;
+              bitField0_ = (bitField0_ & ~0x00400000);
+              devicesBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getDevicesFieldBuilder() : null;
+            } else {
+              devicesBuilder_.addAllMessages(other.devices_);
+            }
+          }
         }
         if (other.hasEmailVerifyStatus()) {
           setEmailVerifyStatus(other.getEmailVerifyStatus());
         }
         if (other.hasEmailVerifyCode()) {
-          bitField0_ |= 0x00800000;
+          bitField0_ |= 0x01000000;
           emailVerifyCode_ = other.emailVerifyCode_;
           onChanged();
         }
@@ -4318,8 +4444,14 @@ public final class UserProtos {
             return false;
           }
         }
-        if (hasDevice()) {
-          if (!getDevice().isInitialized()) {
+        if (hasCurrentDevice()) {
+          if (!getCurrentDevice().isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getDevicesCount(); i++) {
+          if (!getDevices(i).isInitialized()) {
             
             return false;
           }
@@ -6298,139 +6430,139 @@ public final class UserProtos {
         return this;
       }
 
-      private com.orange.protocol.message.CommonProtos.PBDevice device_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
+      private com.orange.protocol.message.CommonProtos.PBDevice currentDevice_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder> deviceBuilder_;
+          com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder> currentDeviceBuilder_;
       /**
-       * <code>optional .barrage.PBDevice device = 71;</code>
+       * <code>optional .barrage.PBDevice currentDevice = 71;</code>
        *
        * <pre>
        * device info
        * </pre>
        */
-      public boolean hasDevice() {
+      public boolean hasCurrentDevice() {
         return ((bitField0_ & 0x00200000) == 0x00200000);
       }
       /**
-       * <code>optional .barrage.PBDevice device = 71;</code>
+       * <code>optional .barrage.PBDevice currentDevice = 71;</code>
        *
        * <pre>
        * device info
        * </pre>
        */
-      public com.orange.protocol.message.CommonProtos.PBDevice getDevice() {
-        if (deviceBuilder_ == null) {
-          return device_;
+      public com.orange.protocol.message.CommonProtos.PBDevice getCurrentDevice() {
+        if (currentDeviceBuilder_ == null) {
+          return currentDevice_;
         } else {
-          return deviceBuilder_.getMessage();
+          return currentDeviceBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .barrage.PBDevice device = 71;</code>
+       * <code>optional .barrage.PBDevice currentDevice = 71;</code>
        *
        * <pre>
        * device info
        * </pre>
        */
-      public Builder setDevice(com.orange.protocol.message.CommonProtos.PBDevice value) {
-        if (deviceBuilder_ == null) {
+      public Builder setCurrentDevice(com.orange.protocol.message.CommonProtos.PBDevice value) {
+        if (currentDeviceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          device_ = value;
+          currentDevice_ = value;
           onChanged();
         } else {
-          deviceBuilder_.setMessage(value);
+          currentDeviceBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00200000;
         return this;
       }
       /**
-       * <code>optional .barrage.PBDevice device = 71;</code>
+       * <code>optional .barrage.PBDevice currentDevice = 71;</code>
        *
        * <pre>
        * device info
        * </pre>
        */
-      public Builder setDevice(
+      public Builder setCurrentDevice(
           com.orange.protocol.message.CommonProtos.PBDevice.Builder builderForValue) {
-        if (deviceBuilder_ == null) {
-          device_ = builderForValue.build();
+        if (currentDeviceBuilder_ == null) {
+          currentDevice_ = builderForValue.build();
           onChanged();
         } else {
-          deviceBuilder_.setMessage(builderForValue.build());
+          currentDeviceBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00200000;
         return this;
       }
       /**
-       * <code>optional .barrage.PBDevice device = 71;</code>
+       * <code>optional .barrage.PBDevice currentDevice = 71;</code>
        *
        * <pre>
        * device info
        * </pre>
        */
-      public Builder mergeDevice(com.orange.protocol.message.CommonProtos.PBDevice value) {
-        if (deviceBuilder_ == null) {
+      public Builder mergeCurrentDevice(com.orange.protocol.message.CommonProtos.PBDevice value) {
+        if (currentDeviceBuilder_ == null) {
           if (((bitField0_ & 0x00200000) == 0x00200000) &&
-              device_ != com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance()) {
-            device_ =
-              com.orange.protocol.message.CommonProtos.PBDevice.newBuilder(device_).mergeFrom(value).buildPartial();
+              currentDevice_ != com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance()) {
+            currentDevice_ =
+              com.orange.protocol.message.CommonProtos.PBDevice.newBuilder(currentDevice_).mergeFrom(value).buildPartial();
           } else {
-            device_ = value;
+            currentDevice_ = value;
           }
           onChanged();
         } else {
-          deviceBuilder_.mergeFrom(value);
+          currentDeviceBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00200000;
         return this;
       }
       /**
-       * <code>optional .barrage.PBDevice device = 71;</code>
+       * <code>optional .barrage.PBDevice currentDevice = 71;</code>
        *
        * <pre>
        * device info
        * </pre>
        */
-      public Builder clearDevice() {
-        if (deviceBuilder_ == null) {
-          device_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
+      public Builder clearCurrentDevice() {
+        if (currentDeviceBuilder_ == null) {
+          currentDevice_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
           onChanged();
         } else {
-          deviceBuilder_.clear();
+          currentDeviceBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00200000);
         return this;
       }
       /**
-       * <code>optional .barrage.PBDevice device = 71;</code>
+       * <code>optional .barrage.PBDevice currentDevice = 71;</code>
        *
        * <pre>
        * device info
        * </pre>
        */
-      public com.orange.protocol.message.CommonProtos.PBDevice.Builder getDeviceBuilder() {
+      public com.orange.protocol.message.CommonProtos.PBDevice.Builder getCurrentDeviceBuilder() {
         bitField0_ |= 0x00200000;
         onChanged();
-        return getDeviceFieldBuilder().getBuilder();
+        return getCurrentDeviceFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .barrage.PBDevice device = 71;</code>
+       * <code>optional .barrage.PBDevice currentDevice = 71;</code>
        *
        * <pre>
        * device info
        * </pre>
        */
-      public com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getDeviceOrBuilder() {
-        if (deviceBuilder_ != null) {
-          return deviceBuilder_.getMessageOrBuilder();
+      public com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getCurrentDeviceOrBuilder() {
+        if (currentDeviceBuilder_ != null) {
+          return currentDeviceBuilder_.getMessageOrBuilder();
         } else {
-          return device_;
+          return currentDevice_;
         }
       }
       /**
-       * <code>optional .barrage.PBDevice device = 71;</code>
+       * <code>optional .barrage.PBDevice currentDevice = 71;</code>
        *
        * <pre>
        * device info
@@ -6438,16 +6570,256 @@ public final class UserProtos {
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder> 
-          getDeviceFieldBuilder() {
-        if (deviceBuilder_ == null) {
-          deviceBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          getCurrentDeviceFieldBuilder() {
+        if (currentDeviceBuilder_ == null) {
+          currentDeviceBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder>(
-                  getDevice(),
+                  getCurrentDevice(),
                   getParentForChildren(),
                   isClean());
-          device_ = null;
+          currentDevice_ = null;
         }
-        return deviceBuilder_;
+        return currentDeviceBuilder_;
+      }
+
+      private java.util.List<com.orange.protocol.message.CommonProtos.PBDevice> devices_ =
+        java.util.Collections.emptyList();
+      private void ensureDevicesIsMutable() {
+        if (!((bitField0_ & 0x00400000) == 0x00400000)) {
+          devices_ = new java.util.ArrayList<com.orange.protocol.message.CommonProtos.PBDevice>(devices_);
+          bitField0_ |= 0x00400000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder> devicesBuilder_;
+
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public java.util.List<com.orange.protocol.message.CommonProtos.PBDevice> getDevicesList() {
+        if (devicesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(devices_);
+        } else {
+          return devicesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public int getDevicesCount() {
+        if (devicesBuilder_ == null) {
+          return devices_.size();
+        } else {
+          return devicesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public com.orange.protocol.message.CommonProtos.PBDevice getDevices(int index) {
+        if (devicesBuilder_ == null) {
+          return devices_.get(index);
+        } else {
+          return devicesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public Builder setDevices(
+          int index, com.orange.protocol.message.CommonProtos.PBDevice value) {
+        if (devicesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDevicesIsMutable();
+          devices_.set(index, value);
+          onChanged();
+        } else {
+          devicesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public Builder setDevices(
+          int index, com.orange.protocol.message.CommonProtos.PBDevice.Builder builderForValue) {
+        if (devicesBuilder_ == null) {
+          ensureDevicesIsMutable();
+          devices_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          devicesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public Builder addDevices(com.orange.protocol.message.CommonProtos.PBDevice value) {
+        if (devicesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDevicesIsMutable();
+          devices_.add(value);
+          onChanged();
+        } else {
+          devicesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public Builder addDevices(
+          int index, com.orange.protocol.message.CommonProtos.PBDevice value) {
+        if (devicesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDevicesIsMutable();
+          devices_.add(index, value);
+          onChanged();
+        } else {
+          devicesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public Builder addDevices(
+          com.orange.protocol.message.CommonProtos.PBDevice.Builder builderForValue) {
+        if (devicesBuilder_ == null) {
+          ensureDevicesIsMutable();
+          devices_.add(builderForValue.build());
+          onChanged();
+        } else {
+          devicesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public Builder addDevices(
+          int index, com.orange.protocol.message.CommonProtos.PBDevice.Builder builderForValue) {
+        if (devicesBuilder_ == null) {
+          ensureDevicesIsMutable();
+          devices_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          devicesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public Builder addAllDevices(
+          java.lang.Iterable<? extends com.orange.protocol.message.CommonProtos.PBDevice> values) {
+        if (devicesBuilder_ == null) {
+          ensureDevicesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, devices_);
+          onChanged();
+        } else {
+          devicesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public Builder clearDevices() {
+        if (devicesBuilder_ == null) {
+          devices_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00400000);
+          onChanged();
+        } else {
+          devicesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public Builder removeDevices(int index) {
+        if (devicesBuilder_ == null) {
+          ensureDevicesIsMutable();
+          devices_.remove(index);
+          onChanged();
+        } else {
+          devicesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public com.orange.protocol.message.CommonProtos.PBDevice.Builder getDevicesBuilder(
+          int index) {
+        return getDevicesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getDevicesOrBuilder(
+          int index) {
+        if (devicesBuilder_ == null) {
+          return devices_.get(index);  } else {
+          return devicesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public java.util.List<? extends com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder> 
+           getDevicesOrBuilderList() {
+        if (devicesBuilder_ != null) {
+          return devicesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(devices_);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public com.orange.protocol.message.CommonProtos.PBDevice.Builder addDevicesBuilder() {
+        return getDevicesFieldBuilder().addBuilder(
+            com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public com.orange.protocol.message.CommonProtos.PBDevice.Builder addDevicesBuilder(
+          int index) {
+        return getDevicesFieldBuilder().addBuilder(
+            index, com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .barrage.PBDevice devices = 72;</code>
+       */
+      public java.util.List<com.orange.protocol.message.CommonProtos.PBDevice.Builder> 
+           getDevicesBuilderList() {
+        return getDevicesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder> 
+          getDevicesFieldBuilder() {
+        if (devicesBuilder_ == null) {
+          devicesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder>(
+                  devices_,
+                  ((bitField0_ & 0x00400000) == 0x00400000),
+                  getParentForChildren(),
+                  isClean());
+          devices_ = null;
+        }
+        return devicesBuilder_;
       }
 
       private int emailVerifyStatus_ ;
@@ -6459,7 +6831,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasEmailVerifyStatus() {
-        return ((bitField0_ & 0x00400000) == 0x00400000);
+        return ((bitField0_ & 0x00800000) == 0x00800000);
       }
       /**
        * <code>optional int32 emailVerifyStatus = 81;</code>
@@ -6479,7 +6851,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setEmailVerifyStatus(int value) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         emailVerifyStatus_ = value;
         onChanged();
         return this;
@@ -6492,7 +6864,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearEmailVerifyStatus() {
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         emailVerifyStatus_ = 0;
         onChanged();
         return this;
@@ -6507,7 +6879,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasEmailVerifyCode() {
-        return ((bitField0_ & 0x00800000) == 0x00800000);
+        return ((bitField0_ & 0x01000000) == 0x01000000);
       }
       /**
        * <code>optional string emailVerifyCode = 82;</code>
@@ -6562,7 +6934,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00800000;
+  bitField0_ |= 0x01000000;
         emailVerifyCode_ = value;
         onChanged();
         return this;
@@ -6575,7 +6947,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearEmailVerifyCode() {
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         emailVerifyCode_ = getDefaultInstance().getEmailVerifyCode();
         onChanged();
         return this;
@@ -6592,7 +6964,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00800000;
+  bitField0_ |= 0x01000000;
         emailVerifyCode_ = value;
         onChanged();
         return this;
@@ -6607,7 +6979,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasMobileVerifyStatus() {
-        return ((bitField0_ & 0x01000000) == 0x01000000);
+        return ((bitField0_ & 0x02000000) == 0x02000000);
       }
       /**
        * <code>optional int32 mobileVerifyStatus = 83;</code>
@@ -6627,7 +6999,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setMobileVerifyStatus(int value) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         mobileVerifyStatus_ = value;
         onChanged();
         return this;
@@ -6640,7 +7012,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearMobileVerifyStatus() {
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         mobileVerifyStatus_ = 0;
         onChanged();
         return this;
@@ -6676,27 +7048,28 @@ public final class UserProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nUser.proto\022\007barrage\032\017Constants.proto\032\014" +
-      "Common.proto\"\273\001\n\tPBSNSUser\022\014\n\004type\030\001 \002(\005" +
-      "\022\016\n\006userId\030\002 \001(\t\022\020\n\010nickName\030\003 \001(\t\022\023\n\013ac" +
-      "cessToken\030\004 \001(\t\022\031\n\021accessTokenSecret\030\005 \001" +
-      "(\t\022\024\n\014refreshToken\030\006 \001(\t\022\022\n\nexpireTime\030\007" +
-      " \001(\005\022\020\n\010qqOpenId\030\010 \001(\t\022\022\n\ncredential\030\024 \001" +
-      "(\t\"\222\004\n\006PBUser\022\016\n\006userId\030\001 \002(\t\022\020\n\010nickNam" +
-      "e\030\002 \002(\t\022\016\n\006avatar\030\003 \001(\t\022\025\n\006gender\030\004 \001(\010:" +
-      "\005false\022$\n\010snsUsers\030\005 \003(\0132\022.barrage.PBSNS" +
-      "User\022\024\n\014xiaojiNumber\030\006 \001(\t\022\r\n\005email\030\007 \001(",
-      "\t\022\020\n\010password\030\010 \001(\t\022\016\n\006mobile\030\t \001(\t\022\020\n\010b" +
-      "irthday\030\037 \001(\t\022\016\n\006zodiac\030  \001(\005\022\022\n\nbloodGr" +
-      "oup\030! \001(\t\022\025\n\rbackgroundURL\030) \001(\t\022\021\n\tsign" +
-      "ature\030* \001(\t\022\020\n\010location\0303 \001(\t\022\023\n\013country" +
-      "Code\0304 \001(\t\022\020\n\010language\0305 \001(\t\022\021\n\tlongitud" +
-      "e\0306 \001(\002\022\020\n\010latitude\0307 \001(\002\022\r\n\005level\030= \001(\005" +
-      "\022\022\n\nexperience\030> \001(\003\022!\n\006device\030G \001(\0132\021.b" +
-      "arrage.PBDevice\022\031\n\021emailVerifyStatus\030Q \001" +
-      "(\005\022\027\n\017emailVerifyCode\030R \001(\t\022\032\n\022mobileVer" +
-      "ifyStatus\030S \001(\005B)\n\033com.orange.protocol.m",
-      "essageB\nUserProtos"
+      "\n\nUser.proto\022\007barrage\032\014Common.proto\"\273\001\n\t" +
+      "PBSNSUser\022\014\n\004type\030\001 \002(\005\022\016\n\006userId\030\002 \001(\t\022" +
+      "\020\n\010nickName\030\003 \001(\t\022\023\n\013accessToken\030\004 \001(\t\022\031" +
+      "\n\021accessTokenSecret\030\005 \001(\t\022\024\n\014refreshToke" +
+      "n\030\006 \001(\t\022\022\n\nexpireTime\030\007 \001(\005\022\020\n\010qqOpenId\030" +
+      "\010 \001(\t\022\022\n\ncredential\030\024 \001(\t\"\275\004\n\006PBUser\022\016\n\006" +
+      "userId\030\001 \002(\t\022\020\n\010nickName\030\002 \002(\t\022\016\n\006avatar" +
+      "\030\003 \001(\t\022\025\n\006gender\030\004 \001(\010:\005false\022$\n\010snsUser" +
+      "s\030\005 \003(\0132\022.barrage.PBSNSUser\022\024\n\014xiaojiNum" +
+      "ber\030\006 \001(\t\022\r\n\005email\030\007 \001(\t\022\020\n\010password\030\010 \001",
+      "(\t\022\016\n\006mobile\030\t \001(\t\022\020\n\010birthday\030\037 \001(\t\022\016\n\006" +
+      "zodiac\030  \001(\005\022\022\n\nbloodGroup\030! \001(\t\022\025\n\rback" +
+      "groundURL\030) \001(\t\022\021\n\tsignature\030* \001(\t\022\020\n\010lo" +
+      "cation\0303 \001(\t\022\023\n\013countryCode\0304 \001(\t\022\020\n\010lan" +
+      "guage\0305 \001(\t\022\021\n\tlongitude\0306 \001(\002\022\020\n\010latitu" +
+      "de\0307 \001(\002\022\r\n\005level\030= \001(\005\022\022\n\nexperience\030> " +
+      "\001(\003\022(\n\rcurrentDevice\030G \001(\0132\021.barrage.PBD" +
+      "evice\022\"\n\007devices\030H \003(\0132\021.barrage.PBDevic" +
+      "e\022\031\n\021emailVerifyStatus\030Q \001(\005\022\027\n\017emailVer" +
+      "ifyCode\030R \001(\t\022\032\n\022mobileVerifyStatus\030S \001(",
+      "\005B)\n\033com.orange.protocol.messageB\nUserPr" +
+      "otos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6709,7 +7082,6 @@ public final class UserProtos {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.orange.protocol.message.ConstantsProtos.getDescriptor(),
           com.orange.protocol.message.CommonProtos.getDescriptor(),
         }, assigner);
     internal_static_barrage_PBSNSUser_descriptor =
@@ -6723,8 +7095,7 @@ public final class UserProtos {
     internal_static_barrage_PBUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBUser_descriptor,
-        new java.lang.String[] { "UserId", "NickName", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "Birthday", "Zodiac", "BloodGroup", "BackgroundURL", "Signature", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "Device", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", });
-    com.orange.protocol.message.ConstantsProtos.getDescriptor();
+        new java.lang.String[] { "UserId", "NickName", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "Birthday", "Zodiac", "BloodGroup", "BackgroundURL", "Signature", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", });
     com.orange.protocol.message.CommonProtos.getDescriptor();
   }
 

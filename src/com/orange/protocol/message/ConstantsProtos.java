@@ -99,6 +99,87 @@ public final class ConstantsProtos {
     // @@protoc_insertion_point(enum_scope:barrage.PBDeviceType)
   }
 
+  /**
+   * Protobuf enum {@code barrage.PBFeedActionType}
+   */
+  public enum PBFeedActionType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>ACTION_BARRAGE_TEXT = 0;</code>
+     *
+     * <pre>
+     * 文字弹幕
+     * </pre>
+     */
+    ACTION_BARRAGE_TEXT(0, 0),
+    ;
+
+    /**
+     * <code>ACTION_BARRAGE_TEXT = 0;</code>
+     *
+     * <pre>
+     * 文字弹幕
+     * </pre>
+     */
+    public static final int ACTION_BARRAGE_TEXT_VALUE = 0;
+
+
+    public final int getNumber() { return value; }
+
+    public static PBFeedActionType valueOf(int value) {
+      switch (value) {
+        case 0: return ACTION_BARRAGE_TEXT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PBFeedActionType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<PBFeedActionType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PBFeedActionType>() {
+            public PBFeedActionType findValueByNumber(int number) {
+              return PBFeedActionType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.orange.protocol.message.ConstantsProtos.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final PBFeedActionType[] VALUES = values();
+
+    public static PBFeedActionType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private PBFeedActionType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:barrage.PBFeedActionType)
+  }
+
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -110,9 +191,10 @@ public final class ConstantsProtos {
     java.lang.String[] descriptorData = {
       "\n\017Constants.proto\022\007barrage*W\n\014PBDeviceTy" +
       "pe\022\026\n\022DEVICE_TYPE_IPHONE\020\001\022\027\n\023DEVICE_TYP" +
-      "E_ANDROID\020\002\022\026\n\022DEVICE_TYPE_WINDOW\020\003B.\n\033c" +
-      "om.orange.protocol.messageB\017ConstantsPro" +
-      "tos"
+      "E_ANDROID\020\002\022\026\n\022DEVICE_TYPE_WINDOW\020\003*+\n\020P" +
+      "BFeedActionType\022\027\n\023ACTION_BARRAGE_TEXT\020\000" +
+      "B.\n\033com.orange.protocol.messageB\017Constan" +
+      "tsProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -8,6 +8,1543 @@ public final class MessageProtos {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  /**
+   * Protobuf enum {@code barrage.PBLoginType}
+   */
+  public enum PBLoginType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>LOGIN_XIAOJI = 1;</code>
+     */
+    LOGIN_XIAOJI(0, 1),
+    /**
+     * <code>LOGIN_EMAIL = 2;</code>
+     */
+    LOGIN_EMAIL(1, 2),
+    /**
+     * <code>LOGIN_QQ = 3;</code>
+     */
+    LOGIN_QQ(2, 3),
+    /**
+     * <code>LOGIN_SINA = 4;</code>
+     */
+    LOGIN_SINA(3, 4),
+    /**
+     * <code>LOGIN_WEIXIN = 5;</code>
+     */
+    LOGIN_WEIXIN(4, 5),
+    ;
+
+    /**
+     * <code>LOGIN_XIAOJI = 1;</code>
+     */
+    public static final int LOGIN_XIAOJI_VALUE = 1;
+    /**
+     * <code>LOGIN_EMAIL = 2;</code>
+     */
+    public static final int LOGIN_EMAIL_VALUE = 2;
+    /**
+     * <code>LOGIN_QQ = 3;</code>
+     */
+    public static final int LOGIN_QQ_VALUE = 3;
+    /**
+     * <code>LOGIN_SINA = 4;</code>
+     */
+    public static final int LOGIN_SINA_VALUE = 4;
+    /**
+     * <code>LOGIN_WEIXIN = 5;</code>
+     */
+    public static final int LOGIN_WEIXIN_VALUE = 5;
+
+
+    public final int getNumber() { return value; }
+
+    public static PBLoginType valueOf(int value) {
+      switch (value) {
+        case 1: return LOGIN_XIAOJI;
+        case 2: return LOGIN_EMAIL;
+        case 3: return LOGIN_QQ;
+        case 4: return LOGIN_SINA;
+        case 5: return LOGIN_WEIXIN;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PBLoginType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<PBLoginType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PBLoginType>() {
+            public PBLoginType findValueByNumber(int number) {
+              return PBLoginType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.orange.protocol.message.MessageProtos.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PBLoginType[] VALUES = values();
+
+    public static PBLoginType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private PBLoginType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:barrage.PBLoginType)
+  }
+
+  public interface PBLoginUserRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:barrage.PBLoginUserRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required int32 type = 1;</code>
+     *
+     * <pre>
+     * refer to PBLoginType
+     * </pre>
+     */
+    boolean hasType();
+    /**
+     * <code>required int32 type = 1;</code>
+     *
+     * <pre>
+     * refer to PBLoginType
+     * </pre>
+     */
+    int getType();
+
+    /**
+     * <code>optional string xiaoji = 2;</code>
+     */
+    boolean hasXiaoji();
+    /**
+     * <code>optional string xiaoji = 2;</code>
+     */
+    java.lang.String getXiaoji();
+    /**
+     * <code>optional string xiaoji = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getXiaojiBytes();
+
+    /**
+     * <code>optional string email = 3;</code>
+     */
+    boolean hasEmail();
+    /**
+     * <code>optional string email = 3;</code>
+     */
+    java.lang.String getEmail();
+    /**
+     * <code>optional string email = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    /**
+     * <code>optional string password = 20;</code>
+     */
+    boolean hasPassword();
+    /**
+     * <code>optional string password = 20;</code>
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>optional string password = 20;</code>
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+  }
+  /**
+   * Protobuf type {@code barrage.PBLoginUserRequest}
+   */
+  public static final class PBLoginUserRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:barrage.PBLoginUserRequest)
+      PBLoginUserRequestOrBuilder {
+    // Use PBLoginUserRequest.newBuilder() to construct.
+    private PBLoginUserRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PBLoginUserRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PBLoginUserRequest defaultInstance;
+    public static PBLoginUserRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PBLoginUserRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PBLoginUserRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              type_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              xiaoji_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              email_ = bs;
+              break;
+            }
+            case 162: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              password_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBLoginUserRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBLoginUserRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.orange.protocol.message.MessageProtos.PBLoginUserRequest.class, com.orange.protocol.message.MessageProtos.PBLoginUserRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PBLoginUserRequest> PARSER =
+        new com.google.protobuf.AbstractParser<PBLoginUserRequest>() {
+      public PBLoginUserRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PBLoginUserRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PBLoginUserRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <code>required int32 type = 1;</code>
+     *
+     * <pre>
+     * refer to PBLoginType
+     * </pre>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 type = 1;</code>
+     *
+     * <pre>
+     * refer to PBLoginType
+     * </pre>
+     */
+    public int getType() {
+      return type_;
+    }
+
+    public static final int XIAOJI_FIELD_NUMBER = 2;
+    private java.lang.Object xiaoji_;
+    /**
+     * <code>optional string xiaoji = 2;</code>
+     */
+    public boolean hasXiaoji() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string xiaoji = 2;</code>
+     */
+    public java.lang.String getXiaoji() {
+      java.lang.Object ref = xiaoji_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          xiaoji_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string xiaoji = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getXiaojiBytes() {
+      java.lang.Object ref = xiaoji_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        xiaoji_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EMAIL_FIELD_NUMBER = 3;
+    private java.lang.Object email_;
+    /**
+     * <code>optional string email = 3;</code>
+     */
+    public boolean hasEmail() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string email = 3;</code>
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          email_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string email = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 20;
+    private java.lang.Object password_;
+    /**
+     * <code>optional string password = 20;</code>
+     */
+    public boolean hasPassword() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string password = 20;</code>
+     */
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          password_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string password = 20;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      type_ = 0;
+      xiaoji_ = "";
+      email_ = "";
+      password_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, type_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getXiaojiBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getEmailBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(20, getPasswordBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, type_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getXiaojiBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getEmailBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(20, getPasswordBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.orange.protocol.message.MessageProtos.PBLoginUserRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code barrage.PBLoginUserRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:barrage.PBLoginUserRequest)
+        com.orange.protocol.message.MessageProtos.PBLoginUserRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBLoginUserRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBLoginUserRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.orange.protocol.message.MessageProtos.PBLoginUserRequest.class, com.orange.protocol.message.MessageProtos.PBLoginUserRequest.Builder.class);
+      }
+
+      // Construct using com.orange.protocol.message.MessageProtos.PBLoginUserRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        xiaoji_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        email_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        password_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBLoginUserRequest_descriptor;
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBLoginUserRequest getDefaultInstanceForType() {
+        return com.orange.protocol.message.MessageProtos.PBLoginUserRequest.getDefaultInstance();
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBLoginUserRequest build() {
+        com.orange.protocol.message.MessageProtos.PBLoginUserRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBLoginUserRequest buildPartial() {
+        com.orange.protocol.message.MessageProtos.PBLoginUserRequest result = new com.orange.protocol.message.MessageProtos.PBLoginUserRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.xiaoji_ = xiaoji_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.email_ = email_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.password_ = password_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.orange.protocol.message.MessageProtos.PBLoginUserRequest) {
+          return mergeFrom((com.orange.protocol.message.MessageProtos.PBLoginUserRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.orange.protocol.message.MessageProtos.PBLoginUserRequest other) {
+        if (other == com.orange.protocol.message.MessageProtos.PBLoginUserRequest.getDefaultInstance()) return this;
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasXiaoji()) {
+          bitField0_ |= 0x00000002;
+          xiaoji_ = other.xiaoji_;
+          onChanged();
+        }
+        if (other.hasEmail()) {
+          bitField0_ |= 0x00000004;
+          email_ = other.email_;
+          onChanged();
+        }
+        if (other.hasPassword()) {
+          bitField0_ |= 0x00000008;
+          password_ = other.password_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasType()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.orange.protocol.message.MessageProtos.PBLoginUserRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.orange.protocol.message.MessageProtos.PBLoginUserRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int type_ ;
+      /**
+       * <code>required int32 type = 1;</code>
+       *
+       * <pre>
+       * refer to PBLoginType
+       * </pre>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 type = 1;</code>
+       *
+       * <pre>
+       * refer to PBLoginType
+       * </pre>
+       */
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>required int32 type = 1;</code>
+       *
+       * <pre>
+       * refer to PBLoginType
+       * </pre>
+       */
+      public Builder setType(int value) {
+        bitField0_ |= 0x00000001;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 type = 1;</code>
+       *
+       * <pre>
+       * refer to PBLoginType
+       * </pre>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object xiaoji_ = "";
+      /**
+       * <code>optional string xiaoji = 2;</code>
+       */
+      public boolean hasXiaoji() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string xiaoji = 2;</code>
+       */
+      public java.lang.String getXiaoji() {
+        java.lang.Object ref = xiaoji_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            xiaoji_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string xiaoji = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getXiaojiBytes() {
+        java.lang.Object ref = xiaoji_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          xiaoji_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string xiaoji = 2;</code>
+       */
+      public Builder setXiaoji(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        xiaoji_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string xiaoji = 2;</code>
+       */
+      public Builder clearXiaoji() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        xiaoji_ = getDefaultInstance().getXiaoji();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string xiaoji = 2;</code>
+       */
+      public Builder setXiaojiBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        xiaoji_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object email_ = "";
+      /**
+       * <code>optional string email = 3;</code>
+       */
+      public boolean hasEmail() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string email = 3;</code>
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            email_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string email = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string email = 3;</code>
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        email_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string email = 3;</code>
+       */
+      public Builder clearEmail() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        email_ = getDefaultInstance().getEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string email = 3;</code>
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        email_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <code>optional string password = 20;</code>
+       */
+      public boolean hasPassword() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string password = 20;</code>
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            password_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string password = 20;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string password = 20;</code>
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string password = 20;</code>
+       */
+      public Builder clearPassword() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string password = 20;</code>
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        password_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:barrage.PBLoginUserRequest)
+    }
+
+    static {
+      defaultInstance = new PBLoginUserRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:barrage.PBLoginUserRequest)
+  }
+
+  public interface PBLoginUserResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:barrage.PBLoginUserResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .barrage.PBUser user = 1;</code>
+     */
+    boolean hasUser();
+    /**
+     * <code>optional .barrage.PBUser user = 1;</code>
+     */
+    com.orange.protocol.message.UserProtos.PBUser getUser();
+    /**
+     * <code>optional .barrage.PBUser user = 1;</code>
+     */
+    com.orange.protocol.message.UserProtos.PBUserOrBuilder getUserOrBuilder();
+  }
+  /**
+   * Protobuf type {@code barrage.PBLoginUserResponse}
+   */
+  public static final class PBLoginUserResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:barrage.PBLoginUserResponse)
+      PBLoginUserResponseOrBuilder {
+    // Use PBLoginUserResponse.newBuilder() to construct.
+    private PBLoginUserResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PBLoginUserResponse(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PBLoginUserResponse defaultInstance;
+    public static PBLoginUserResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PBLoginUserResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PBLoginUserResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.orange.protocol.message.UserProtos.PBUser.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = user_.toBuilder();
+              }
+              user_ = input.readMessage(com.orange.protocol.message.UserProtos.PBUser.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(user_);
+                user_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBLoginUserResponse_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBLoginUserResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.orange.protocol.message.MessageProtos.PBLoginUserResponse.class, com.orange.protocol.message.MessageProtos.PBLoginUserResponse.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PBLoginUserResponse> PARSER =
+        new com.google.protobuf.AbstractParser<PBLoginUserResponse>() {
+      public PBLoginUserResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PBLoginUserResponse(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PBLoginUserResponse> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int USER_FIELD_NUMBER = 1;
+    private com.orange.protocol.message.UserProtos.PBUser user_;
+    /**
+     * <code>optional .barrage.PBUser user = 1;</code>
+     */
+    public boolean hasUser() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .barrage.PBUser user = 1;</code>
+     */
+    public com.orange.protocol.message.UserProtos.PBUser getUser() {
+      return user_;
+    }
+    /**
+     * <code>optional .barrage.PBUser user = 1;</code>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserOrBuilder getUserOrBuilder() {
+      return user_;
+    }
+
+    private void initFields() {
+      user_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (hasUser()) {
+        if (!getUser().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, user_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, user_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBLoginUserResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.orange.protocol.message.MessageProtos.PBLoginUserResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code barrage.PBLoginUserResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:barrage.PBLoginUserResponse)
+        com.orange.protocol.message.MessageProtos.PBLoginUserResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBLoginUserResponse_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBLoginUserResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.orange.protocol.message.MessageProtos.PBLoginUserResponse.class, com.orange.protocol.message.MessageProtos.PBLoginUserResponse.Builder.class);
+      }
+
+      // Construct using com.orange.protocol.message.MessageProtos.PBLoginUserResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getUserFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (userBuilder_ == null) {
+          user_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+        } else {
+          userBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBLoginUserResponse_descriptor;
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBLoginUserResponse getDefaultInstanceForType() {
+        return com.orange.protocol.message.MessageProtos.PBLoginUserResponse.getDefaultInstance();
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBLoginUserResponse build() {
+        com.orange.protocol.message.MessageProtos.PBLoginUserResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBLoginUserResponse buildPartial() {
+        com.orange.protocol.message.MessageProtos.PBLoginUserResponse result = new com.orange.protocol.message.MessageProtos.PBLoginUserResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (userBuilder_ == null) {
+          result.user_ = user_;
+        } else {
+          result.user_ = userBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.orange.protocol.message.MessageProtos.PBLoginUserResponse) {
+          return mergeFrom((com.orange.protocol.message.MessageProtos.PBLoginUserResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.orange.protocol.message.MessageProtos.PBLoginUserResponse other) {
+        if (other == com.orange.protocol.message.MessageProtos.PBLoginUserResponse.getDefaultInstance()) return this;
+        if (other.hasUser()) {
+          mergeUser(other.getUser());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (hasUser()) {
+          if (!getUser().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.orange.protocol.message.MessageProtos.PBLoginUserResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.orange.protocol.message.MessageProtos.PBLoginUserResponse) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.orange.protocol.message.UserProtos.PBUser user_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> userBuilder_;
+      /**
+       * <code>optional .barrage.PBUser user = 1;</code>
+       */
+      public boolean hasUser() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .barrage.PBUser user = 1;</code>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser getUser() {
+        if (userBuilder_ == null) {
+          return user_;
+        } else {
+          return userBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .barrage.PBUser user = 1;</code>
+       */
+      public Builder setUser(com.orange.protocol.message.UserProtos.PBUser value) {
+        if (userBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          user_ = value;
+          onChanged();
+        } else {
+          userBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser user = 1;</code>
+       */
+      public Builder setUser(
+          com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          user_ = builderForValue.build();
+          onChanged();
+        } else {
+          userBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser user = 1;</code>
+       */
+      public Builder mergeUser(com.orange.protocol.message.UserProtos.PBUser value) {
+        if (userBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              user_ != com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance()) {
+            user_ =
+              com.orange.protocol.message.UserProtos.PBUser.newBuilder(user_).mergeFrom(value).buildPartial();
+          } else {
+            user_ = value;
+          }
+          onChanged();
+        } else {
+          userBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser user = 1;</code>
+       */
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+          onChanged();
+        } else {
+          userBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser user = 1;</code>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser.Builder getUserBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .barrage.PBUser user = 1;</code>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserOrBuilder getUserOrBuilder() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilder();
+        } else {
+          return user_;
+        }
+      }
+      /**
+       * <code>optional .barrage.PBUser user = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder>(
+                  getUser(),
+                  getParentForChildren(),
+                  isClean());
+          user_ = null;
+        }
+        return userBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:barrage.PBLoginUserResponse)
+    }
+
+    static {
+      defaultInstance = new PBLoginUserResponse(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:barrage.PBLoginUserResponse)
+  }
+
   public interface PBDataRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:barrage.PBDataRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -79,6 +1616,28 @@ public final class MessageProtos {
      */
     com.google.protobuf.ByteString
         getLanguageCodeBytes();
+
+    /**
+     * <code>optional int32 clientDate = 33;</code>
+     */
+    boolean hasClientDate();
+    /**
+     * <code>optional int32 clientDate = 33;</code>
+     */
+    int getClientDate();
+
+    /**
+     * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+     */
+    boolean hasLoginUserRequest();
+    /**
+     * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+     */
+    com.orange.protocol.message.MessageProtos.PBLoginUserRequest getLoginUserRequest();
+    /**
+     * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+     */
+    com.orange.protocol.message.MessageProtos.PBLoginUserRequestOrBuilder getLoginUserRequestOrBuilder();
   }
   /**
    * Protobuf type {@code barrage.PBDataRequest}
@@ -170,6 +1729,24 @@ public final class MessageProtos {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
               languageCode_ = bs;
+              break;
+            }
+            case 264: {
+              bitField0_ |= 0x00000040;
+              clientDate_ = input.readInt32();
+              break;
+            }
+            case 322: {
+              com.orange.protocol.message.MessageProtos.PBLoginUserRequest.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000080) == 0x00000080)) {
+                subBuilder = loginUserRequest_.toBuilder();
+              }
+              loginUserRequest_ = input.readMessage(com.orange.protocol.message.MessageProtos.PBLoginUserRequest.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(loginUserRequest_);
+                loginUserRequest_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000080;
               break;
             }
           }
@@ -362,6 +1939,42 @@ public final class MessageProtos {
       }
     }
 
+    public static final int CLIENTDATE_FIELD_NUMBER = 33;
+    private int clientDate_;
+    /**
+     * <code>optional int32 clientDate = 33;</code>
+     */
+    public boolean hasClientDate() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional int32 clientDate = 33;</code>
+     */
+    public int getClientDate() {
+      return clientDate_;
+    }
+
+    public static final int LOGINUSERREQUEST_FIELD_NUMBER = 40;
+    private com.orange.protocol.message.MessageProtos.PBLoginUserRequest loginUserRequest_;
+    /**
+     * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+     */
+    public boolean hasLoginUserRequest() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+     */
+    public com.orange.protocol.message.MessageProtos.PBLoginUserRequest getLoginUserRequest() {
+      return loginUserRequest_;
+    }
+    /**
+     * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+     */
+    public com.orange.protocol.message.MessageProtos.PBLoginUserRequestOrBuilder getLoginUserRequestOrBuilder() {
+      return loginUserRequest_;
+    }
+
     private void initFields() {
       type_ = 0;
       requestId_ = 0;
@@ -369,6 +1982,8 @@ public final class MessageProtos {
       device_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
       countryCode_ = "";
       languageCode_ = "";
+      clientDate_ = 0;
+      loginUserRequest_ = com.orange.protocol.message.MessageProtos.PBLoginUserRequest.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -382,6 +1997,12 @@ public final class MessageProtos {
       }
       if (hasDevice()) {
         if (!getDevice().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasLoginUserRequest()) {
+        if (!getLoginUserRequest().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -410,6 +2031,12 @@ public final class MessageProtos {
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeBytes(32, getLanguageCodeBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeInt32(33, clientDate_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeMessage(40, loginUserRequest_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -443,6 +2070,14 @@ public final class MessageProtos {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(32, getLanguageCodeBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(33, clientDate_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(40, loginUserRequest_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -554,6 +2189,7 @@ public final class MessageProtos {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getDeviceFieldBuilder();
+          getLoginUserRequestFieldBuilder();
         }
       }
       private static Builder create() {
@@ -578,6 +2214,14 @@ public final class MessageProtos {
         bitField0_ = (bitField0_ & ~0x00000010);
         languageCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
+        clientDate_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        if (loginUserRequestBuilder_ == null) {
+          loginUserRequest_ = com.orange.protocol.message.MessageProtos.PBLoginUserRequest.getDefaultInstance();
+        } else {
+          loginUserRequestBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -634,6 +2278,18 @@ public final class MessageProtos {
           to_bitField0_ |= 0x00000020;
         }
         result.languageCode_ = languageCode_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.clientDate_ = clientDate_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        if (loginUserRequestBuilder_ == null) {
+          result.loginUserRequest_ = loginUserRequest_;
+        } else {
+          result.loginUserRequest_ = loginUserRequestBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -672,6 +2328,12 @@ public final class MessageProtos {
           languageCode_ = other.languageCode_;
           onChanged();
         }
+        if (other.hasClientDate()) {
+          setClientDate(other.getClientDate());
+        }
+        if (other.hasLoginUserRequest()) {
+          mergeLoginUserRequest(other.getLoginUserRequest());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -683,6 +2345,12 @@ public final class MessageProtos {
         }
         if (hasDevice()) {
           if (!getDevice().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasLoginUserRequest()) {
+          if (!getLoginUserRequest().isInitialized()) {
             
             return false;
           }
@@ -1073,6 +2741,154 @@ public final class MessageProtos {
         return this;
       }
 
+      private int clientDate_ ;
+      /**
+       * <code>optional int32 clientDate = 33;</code>
+       */
+      public boolean hasClientDate() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional int32 clientDate = 33;</code>
+       */
+      public int getClientDate() {
+        return clientDate_;
+      }
+      /**
+       * <code>optional int32 clientDate = 33;</code>
+       */
+      public Builder setClientDate(int value) {
+        bitField0_ |= 0x00000040;
+        clientDate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 clientDate = 33;</code>
+       */
+      public Builder clearClientDate() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        clientDate_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.orange.protocol.message.MessageProtos.PBLoginUserRequest loginUserRequest_ = com.orange.protocol.message.MessageProtos.PBLoginUserRequest.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.MessageProtos.PBLoginUserRequest, com.orange.protocol.message.MessageProtos.PBLoginUserRequest.Builder, com.orange.protocol.message.MessageProtos.PBLoginUserRequestOrBuilder> loginUserRequestBuilder_;
+      /**
+       * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+       */
+      public boolean hasLoginUserRequest() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+       */
+      public com.orange.protocol.message.MessageProtos.PBLoginUserRequest getLoginUserRequest() {
+        if (loginUserRequestBuilder_ == null) {
+          return loginUserRequest_;
+        } else {
+          return loginUserRequestBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+       */
+      public Builder setLoginUserRequest(com.orange.protocol.message.MessageProtos.PBLoginUserRequest value) {
+        if (loginUserRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          loginUserRequest_ = value;
+          onChanged();
+        } else {
+          loginUserRequestBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+       */
+      public Builder setLoginUserRequest(
+          com.orange.protocol.message.MessageProtos.PBLoginUserRequest.Builder builderForValue) {
+        if (loginUserRequestBuilder_ == null) {
+          loginUserRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          loginUserRequestBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+       */
+      public Builder mergeLoginUserRequest(com.orange.protocol.message.MessageProtos.PBLoginUserRequest value) {
+        if (loginUserRequestBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+              loginUserRequest_ != com.orange.protocol.message.MessageProtos.PBLoginUserRequest.getDefaultInstance()) {
+            loginUserRequest_ =
+              com.orange.protocol.message.MessageProtos.PBLoginUserRequest.newBuilder(loginUserRequest_).mergeFrom(value).buildPartial();
+          } else {
+            loginUserRequest_ = value;
+          }
+          onChanged();
+        } else {
+          loginUserRequestBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+       */
+      public Builder clearLoginUserRequest() {
+        if (loginUserRequestBuilder_ == null) {
+          loginUserRequest_ = com.orange.protocol.message.MessageProtos.PBLoginUserRequest.getDefaultInstance();
+          onChanged();
+        } else {
+          loginUserRequestBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+       */
+      public com.orange.protocol.message.MessageProtos.PBLoginUserRequest.Builder getLoginUserRequestBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getLoginUserRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+       */
+      public com.orange.protocol.message.MessageProtos.PBLoginUserRequestOrBuilder getLoginUserRequestOrBuilder() {
+        if (loginUserRequestBuilder_ != null) {
+          return loginUserRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return loginUserRequest_;
+        }
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserRequest loginUserRequest = 40;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.MessageProtos.PBLoginUserRequest, com.orange.protocol.message.MessageProtos.PBLoginUserRequest.Builder, com.orange.protocol.message.MessageProtos.PBLoginUserRequestOrBuilder> 
+          getLoginUserRequestFieldBuilder() {
+        if (loginUserRequestBuilder_ == null) {
+          loginUserRequestBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.orange.protocol.message.MessageProtos.PBLoginUserRequest, com.orange.protocol.message.MessageProtos.PBLoginUserRequest.Builder, com.orange.protocol.message.MessageProtos.PBLoginUserRequestOrBuilder>(
+                  getLoginUserRequest(),
+                  getParentForChildren(),
+                  isClean());
+          loginUserRequest_ = null;
+        }
+        return loginUserRequestBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:barrage.PBDataRequest)
     }
 
@@ -1131,6 +2947,19 @@ public final class MessageProtos {
      * </pre>
      */
     int getTotalCount();
+
+    /**
+     * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+     */
+    boolean hasLoginUserResponse();
+    /**
+     * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+     */
+    com.orange.protocol.message.MessageProtos.PBLoginUserResponse getLoginUserResponse();
+    /**
+     * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+     */
+    com.orange.protocol.message.MessageProtos.PBLoginUserResponseOrBuilder getLoginUserResponseOrBuilder();
   }
   /**
    * Protobuf type {@code barrage.PBDataResponse}
@@ -1202,6 +3031,19 @@ public final class MessageProtos {
             case 32: {
               bitField0_ |= 0x00000008;
               totalCount_ = input.readInt32();
+              break;
+            }
+            case 322: {
+              com.orange.protocol.message.MessageProtos.PBLoginUserResponse.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = loginUserResponse_.toBuilder();
+              }
+              loginUserResponse_ = input.readMessage(com.orange.protocol.message.MessageProtos.PBLoginUserResponse.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(loginUserResponse_);
+                loginUserResponse_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
               break;
             }
           }
@@ -1312,11 +3154,33 @@ public final class MessageProtos {
       return totalCount_;
     }
 
+    public static final int LOGINUSERRESPONSE_FIELD_NUMBER = 40;
+    private com.orange.protocol.message.MessageProtos.PBLoginUserResponse loginUserResponse_;
+    /**
+     * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+     */
+    public boolean hasLoginUserResponse() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+     */
+    public com.orange.protocol.message.MessageProtos.PBLoginUserResponse getLoginUserResponse() {
+      return loginUserResponse_;
+    }
+    /**
+     * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+     */
+    public com.orange.protocol.message.MessageProtos.PBLoginUserResponseOrBuilder getLoginUserResponseOrBuilder() {
+      return loginUserResponse_;
+    }
+
     private void initFields() {
       resultCode_ = 0;
       requestId_ = 0;
       version_ = 0;
       totalCount_ = 0;
+      loginUserResponse_ = com.orange.protocol.message.MessageProtos.PBLoginUserResponse.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1327,6 +3191,12 @@ public final class MessageProtos {
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
+      }
+      if (hasLoginUserResponse()) {
+        if (!getLoginUserResponse().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
       }
       memoizedIsInitialized = 1;
       return true;
@@ -1346,6 +3216,9 @@ public final class MessageProtos {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeInt32(4, totalCount_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(40, loginUserResponse_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1371,6 +3244,10 @@ public final class MessageProtos {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, totalCount_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(40, loginUserResponse_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1481,6 +3358,7 @@ public final class MessageProtos {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getLoginUserResponseFieldBuilder();
         }
       }
       private static Builder create() {
@@ -1497,6 +3375,12 @@ public final class MessageProtos {
         bitField0_ = (bitField0_ & ~0x00000004);
         totalCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
+        if (loginUserResponseBuilder_ == null) {
+          loginUserResponse_ = com.orange.protocol.message.MessageProtos.PBLoginUserResponse.getDefaultInstance();
+        } else {
+          loginUserResponseBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1541,6 +3425,14 @@ public final class MessageProtos {
           to_bitField0_ |= 0x00000008;
         }
         result.totalCount_ = totalCount_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (loginUserResponseBuilder_ == null) {
+          result.loginUserResponse_ = loginUserResponse_;
+        } else {
+          result.loginUserResponse_ = loginUserResponseBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1569,6 +3461,9 @@ public final class MessageProtos {
         if (other.hasTotalCount()) {
           setTotalCount(other.getTotalCount());
         }
+        if (other.hasLoginUserResponse()) {
+          mergeLoginUserResponse(other.getLoginUserResponse());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -1577,6 +3472,12 @@ public final class MessageProtos {
         if (!hasResultCode()) {
           
           return false;
+        }
+        if (hasLoginUserResponse()) {
+          if (!getLoginUserResponse().isInitialized()) {
+            
+            return false;
+          }
         }
         return true;
       }
@@ -1744,6 +3645,122 @@ public final class MessageProtos {
         return this;
       }
 
+      private com.orange.protocol.message.MessageProtos.PBLoginUserResponse loginUserResponse_ = com.orange.protocol.message.MessageProtos.PBLoginUserResponse.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.MessageProtos.PBLoginUserResponse, com.orange.protocol.message.MessageProtos.PBLoginUserResponse.Builder, com.orange.protocol.message.MessageProtos.PBLoginUserResponseOrBuilder> loginUserResponseBuilder_;
+      /**
+       * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+       */
+      public boolean hasLoginUserResponse() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+       */
+      public com.orange.protocol.message.MessageProtos.PBLoginUserResponse getLoginUserResponse() {
+        if (loginUserResponseBuilder_ == null) {
+          return loginUserResponse_;
+        } else {
+          return loginUserResponseBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+       */
+      public Builder setLoginUserResponse(com.orange.protocol.message.MessageProtos.PBLoginUserResponse value) {
+        if (loginUserResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          loginUserResponse_ = value;
+          onChanged();
+        } else {
+          loginUserResponseBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+       */
+      public Builder setLoginUserResponse(
+          com.orange.protocol.message.MessageProtos.PBLoginUserResponse.Builder builderForValue) {
+        if (loginUserResponseBuilder_ == null) {
+          loginUserResponse_ = builderForValue.build();
+          onChanged();
+        } else {
+          loginUserResponseBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+       */
+      public Builder mergeLoginUserResponse(com.orange.protocol.message.MessageProtos.PBLoginUserResponse value) {
+        if (loginUserResponseBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              loginUserResponse_ != com.orange.protocol.message.MessageProtos.PBLoginUserResponse.getDefaultInstance()) {
+            loginUserResponse_ =
+              com.orange.protocol.message.MessageProtos.PBLoginUserResponse.newBuilder(loginUserResponse_).mergeFrom(value).buildPartial();
+          } else {
+            loginUserResponse_ = value;
+          }
+          onChanged();
+        } else {
+          loginUserResponseBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+       */
+      public Builder clearLoginUserResponse() {
+        if (loginUserResponseBuilder_ == null) {
+          loginUserResponse_ = com.orange.protocol.message.MessageProtos.PBLoginUserResponse.getDefaultInstance();
+          onChanged();
+        } else {
+          loginUserResponseBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+       */
+      public com.orange.protocol.message.MessageProtos.PBLoginUserResponse.Builder getLoginUserResponseBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getLoginUserResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+       */
+      public com.orange.protocol.message.MessageProtos.PBLoginUserResponseOrBuilder getLoginUserResponseOrBuilder() {
+        if (loginUserResponseBuilder_ != null) {
+          return loginUserResponseBuilder_.getMessageOrBuilder();
+        } else {
+          return loginUserResponse_;
+        }
+      }
+      /**
+       * <code>optional .barrage.PBLoginUserResponse loginUserResponse = 40;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.MessageProtos.PBLoginUserResponse, com.orange.protocol.message.MessageProtos.PBLoginUserResponse.Builder, com.orange.protocol.message.MessageProtos.PBLoginUserResponseOrBuilder> 
+          getLoginUserResponseFieldBuilder() {
+        if (loginUserResponseBuilder_ == null) {
+          loginUserResponseBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.orange.protocol.message.MessageProtos.PBLoginUserResponse, com.orange.protocol.message.MessageProtos.PBLoginUserResponse.Builder, com.orange.protocol.message.MessageProtos.PBLoginUserResponseOrBuilder>(
+                  getLoginUserResponse(),
+                  getParentForChildren(),
+                  isClean());
+          loginUserResponse_ = null;
+        }
+        return loginUserResponseBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:barrage.PBDataResponse)
     }
 
@@ -1755,6 +3772,16 @@ public final class MessageProtos {
     // @@protoc_insertion_point(class_scope:barrage.PBDataResponse)
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_barrage_PBLoginUserRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_barrage_PBLoginUserRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_barrage_PBLoginUserResponse_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_barrage_PBLoginUserResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_barrage_PBDataRequest_descriptor;
   private static
@@ -1774,15 +3801,24 @@ public final class MessageProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rMessage.proto\022\007barrage\032\017Constants.prot" +
-      "o\032\014Common.proto\"\217\001\n\rPBDataRequest\022\014\n\004typ" +
-      "e\030\001 \002(\005\022\021\n\trequestId\030\002 \001(\005\022\017\n\007version\030\003 " +
-      "\001(\005\022!\n\006device\030\036 \001(\0132\021.barrage.PBDevice\022\023" +
-      "\n\013countryCode\030\037 \001(\t\022\024\n\014languageCode\030  \001(" +
-      "\t\"_\n\016PBDataResponse\022\025\n\nresultCode\030\001 \002(\005:" +
-      "\0010\022\021\n\trequestId\030\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\022" +
-      "\n\ntotalCount\030\004 \001(\005B,\n\033com.orange.protoco" +
-      "l.messageB\rMessageProtos"
+      "\n\rMessage.proto\022\007barrage\032\014Common.proto\032\n" +
+      "User.proto\"S\n\022PBLoginUserRequest\022\014\n\004type" +
+      "\030\001 \002(\005\022\016\n\006xiaoji\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\020\n" +
+      "\010password\030\024 \001(\t\"4\n\023PBLoginUserResponse\022\035" +
+      "\n\004user\030\001 \001(\0132\017.barrage.PBUser\"\332\001\n\rPBData" +
+      "Request\022\014\n\004type\030\001 \002(\005\022\021\n\trequestId\030\002 \001(\005" +
+      "\022\017\n\007version\030\003 \001(\005\022!\n\006device\030\036 \001(\0132\021.barr" +
+      "age.PBDevice\022\023\n\013countryCode\030\037 \001(\t\022\024\n\014lan" +
+      "guageCode\030  \001(\t\022\022\n\nclientDate\030! \001(\005\0225\n\020l" +
+      "oginUserRequest\030( \001(\0132\033.barrage.PBLoginU",
+      "serRequest\"\230\001\n\016PBDataResponse\022\025\n\nresultC" +
+      "ode\030\001 \002(\005:\0010\022\021\n\trequestId\030\002 \001(\005\022\017\n\007versi" +
+      "on\030\003 \001(\005\022\022\n\ntotalCount\030\004 \001(\005\0227\n\021loginUse" +
+      "rResponse\030( \001(\0132\034.barrage.PBLoginUserRes" +
+      "ponse*`\n\013PBLoginType\022\020\n\014LOGIN_XIAOJI\020\001\022\017" +
+      "\n\013LOGIN_EMAIL\020\002\022\014\n\010LOGIN_QQ\020\003\022\016\n\nLOGIN_S" +
+      "INA\020\004\022\020\n\014LOGIN_WEIXIN\020\005B,\n\033com.orange.pr" +
+      "otocol.messageB\rMessageProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1795,23 +3831,35 @@ public final class MessageProtos {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.orange.protocol.message.ConstantsProtos.getDescriptor(),
           com.orange.protocol.message.CommonProtos.getDescriptor(),
+          com.orange.protocol.message.UserProtos.getDescriptor(),
         }, assigner);
-    internal_static_barrage_PBDataRequest_descriptor =
+    internal_static_barrage_PBLoginUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_barrage_PBLoginUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_barrage_PBLoginUserRequest_descriptor,
+        new java.lang.String[] { "Type", "Xiaoji", "Email", "Password", });
+    internal_static_barrage_PBLoginUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_barrage_PBLoginUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_barrage_PBLoginUserResponse_descriptor,
+        new java.lang.String[] { "User", });
+    internal_static_barrage_PBDataRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_barrage_PBDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBDataRequest_descriptor,
-        new java.lang.String[] { "Type", "RequestId", "Version", "Device", "CountryCode", "LanguageCode", });
+        new java.lang.String[] { "Type", "RequestId", "Version", "Device", "CountryCode", "LanguageCode", "ClientDate", "LoginUserRequest", });
     internal_static_barrage_PBDataResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_barrage_PBDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBDataResponse_descriptor,
-        new java.lang.String[] { "ResultCode", "RequestId", "Version", "TotalCount", });
-    com.orange.protocol.message.ConstantsProtos.getDescriptor();
+        new java.lang.String[] { "ResultCode", "RequestId", "Version", "TotalCount", "LoginUserResponse", });
     com.orange.protocol.message.CommonProtos.getDescriptor();
+    com.orange.protocol.message.UserProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1292,11 +1292,11 @@ public final class CommonProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014Common.proto\022\007barrage\032\017Constants.proto" +
-      "\"p\n\010PBDevice\022\014\n\004type\030\001 \002(\005\022\r\n\005model\030\002 \001(" +
-      "\t\022\n\n\002os\030\003 \001(\t\022\020\n\010deviceId\030\004 \001(\t\022\023\n\013devic" +
-      "eToken\030\005 \001(\t\022\024\n\014isJailBroken\030\006 \001(\tB+\n\033co" +
-      "m.orange.protocol.messageB\014CommonProtos"
+      "\n\014Common.proto\022\007barrage\"p\n\010PBDevice\022\014\n\004t" +
+      "ype\030\001 \002(\005\022\r\n\005model\030\002 \001(\t\022\n\n\002os\030\003 \001(\t\022\020\n\010" +
+      "deviceId\030\004 \001(\t\022\023\n\013deviceToken\030\005 \001(\t\022\024\n\014i" +
+      "sJailBroken\030\006 \001(\tB+\n\033com.orange.protocol" +
+      ".messageB\014CommonProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1309,7 +1309,6 @@ public final class CommonProtos {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.orange.protocol.message.ConstantsProtos.getDescriptor(),
         }, assigner);
     internal_static_barrage_PBDevice_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1317,7 +1316,6 @@ public final class CommonProtos {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBDevice_descriptor,
         new java.lang.String[] { "Type", "Model", "Os", "DeviceId", "DeviceToken", "IsJailBroken", });
-    com.orange.protocol.message.ConstantsProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
