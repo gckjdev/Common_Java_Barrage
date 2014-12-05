@@ -44,18 +44,18 @@ public final class UserProtos {
         getUserIdBytes();
 
     /**
-     * <code>optional string nickName = 3;</code>
+     * <code>optional string nick = 3;</code>
      */
-    boolean hasNickName();
+    boolean hasNick();
     /**
-     * <code>optional string nickName = 3;</code>
+     * <code>optional string nick = 3;</code>
      */
-    java.lang.String getNickName();
+    java.lang.String getNick();
     /**
-     * <code>optional string nickName = 3;</code>
+     * <code>optional string nick = 3;</code>
      */
     com.google.protobuf.ByteString
-        getNickNameBytes();
+        getNickBytes();
 
     /**
      * <code>optional string accessToken = 4;</code>
@@ -100,13 +100,13 @@ public final class UserProtos {
         getRefreshTokenBytes();
 
     /**
-     * <code>optional int32 expireTime = 7;</code>
+     * <code>optional int32 expiredTime = 7;</code>
      */
-    boolean hasExpireTime();
+    boolean hasExpiredTime();
     /**
-     * <code>optional int32 expireTime = 7;</code>
+     * <code>optional int32 expiredTime = 7;</code>
      */
-    int getExpireTime();
+    int getExpiredTime();
 
     /**
      * <code>optional string qqOpenId = 8;</code>
@@ -226,7 +226,7 @@ public final class UserProtos {
             case 26: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              nickName_ = bs;
+              nick_ = bs;
               break;
             }
             case 34: {
@@ -249,7 +249,7 @@ public final class UserProtos {
             }
             case 56: {
               bitField0_ |= 0x00000040;
-              expireTime_ = input.readInt32();
+              expiredTime_ = input.readInt32();
               break;
             }
             case 66: {
@@ -369,19 +369,19 @@ public final class UserProtos {
       }
     }
 
-    public static final int NICKNAME_FIELD_NUMBER = 3;
-    private java.lang.Object nickName_;
+    public static final int NICK_FIELD_NUMBER = 3;
+    private java.lang.Object nick_;
     /**
-     * <code>optional string nickName = 3;</code>
+     * <code>optional string nick = 3;</code>
      */
-    public boolean hasNickName() {
+    public boolean hasNick() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional string nickName = 3;</code>
+     * <code>optional string nick = 3;</code>
      */
-    public java.lang.String getNickName() {
-      java.lang.Object ref = nickName_;
+    public java.lang.String getNick() {
+      java.lang.Object ref = nick_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -389,22 +389,22 @@ public final class UserProtos {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          nickName_ = s;
+          nick_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string nickName = 3;</code>
+     * <code>optional string nick = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getNickNameBytes() {
-      java.lang.Object ref = nickName_;
+        getNickBytes() {
+      java.lang.Object ref = nick_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        nickName_ = b;
+        nick_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -537,19 +537,19 @@ public final class UserProtos {
       }
     }
 
-    public static final int EXPIRETIME_FIELD_NUMBER = 7;
-    private int expireTime_;
+    public static final int EXPIREDTIME_FIELD_NUMBER = 7;
+    private int expiredTime_;
     /**
-     * <code>optional int32 expireTime = 7;</code>
+     * <code>optional int32 expiredTime = 7;</code>
      */
-    public boolean hasExpireTime() {
+    public boolean hasExpiredTime() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>optional int32 expireTime = 7;</code>
+     * <code>optional int32 expiredTime = 7;</code>
      */
-    public int getExpireTime() {
-      return expireTime_;
+    public int getExpiredTime() {
+      return expiredTime_;
     }
 
     public static final int QQOPENID_FIELD_NUMBER = 8;
@@ -663,11 +663,11 @@ public final class UserProtos {
     private void initFields() {
       type_ = 0;
       userId_ = "";
-      nickName_ = "";
+      nick_ = "";
       accessToken_ = "";
       accessTokenSecret_ = "";
       refreshToken_ = "";
-      expireTime_ = 0;
+      expiredTime_ = 0;
       qqOpenId_ = "";
       credential_ = "";
     }
@@ -695,7 +695,7 @@ public final class UserProtos {
         output.writeBytes(2, getUserIdBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getNickNameBytes());
+        output.writeBytes(3, getNickBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(4, getAccessTokenBytes());
@@ -707,7 +707,7 @@ public final class UserProtos {
         output.writeBytes(6, getRefreshTokenBytes());
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeInt32(7, expireTime_);
+        output.writeInt32(7, expiredTime_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeBytes(8, getQqOpenIdBytes());
@@ -734,7 +734,7 @@ public final class UserProtos {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getNickNameBytes());
+          .computeBytesSize(3, getNickBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
@@ -750,7 +750,7 @@ public final class UserProtos {
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, expireTime_);
+          .computeInt32Size(7, expiredTime_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
@@ -881,7 +881,7 @@ public final class UserProtos {
         bitField0_ = (bitField0_ & ~0x00000001);
         userId_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        nickName_ = "";
+        nick_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
         accessToken_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -889,7 +889,7 @@ public final class UserProtos {
         bitField0_ = (bitField0_ & ~0x00000010);
         refreshToken_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
-        expireTime_ = 0;
+        expiredTime_ = 0;
         bitField0_ = (bitField0_ & ~0x00000040);
         qqOpenId_ = "";
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -934,7 +934,7 @@ public final class UserProtos {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.nickName_ = nickName_;
+        result.nick_ = nick_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
@@ -950,7 +950,7 @@ public final class UserProtos {
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.expireTime_ = expireTime_;
+        result.expiredTime_ = expiredTime_;
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
@@ -983,9 +983,9 @@ public final class UserProtos {
           userId_ = other.userId_;
           onChanged();
         }
-        if (other.hasNickName()) {
+        if (other.hasNick()) {
           bitField0_ |= 0x00000004;
-          nickName_ = other.nickName_;
+          nick_ = other.nick_;
           onChanged();
         }
         if (other.hasAccessToken()) {
@@ -1003,8 +1003,8 @@ public final class UserProtos {
           refreshToken_ = other.refreshToken_;
           onChanged();
         }
-        if (other.hasExpireTime()) {
-          setExpireTime(other.getExpireTime());
+        if (other.hasExpiredTime()) {
+          setExpiredTime(other.getExpiredTime());
         }
         if (other.hasQqOpenId()) {
           bitField0_ |= 0x00000080;
@@ -1171,24 +1171,24 @@ public final class UserProtos {
         return this;
       }
 
-      private java.lang.Object nickName_ = "";
+      private java.lang.Object nick_ = "";
       /**
-       * <code>optional string nickName = 3;</code>
+       * <code>optional string nick = 3;</code>
        */
-      public boolean hasNickName() {
+      public boolean hasNick() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional string nickName = 3;</code>
+       * <code>optional string nick = 3;</code>
        */
-      public java.lang.String getNickName() {
-        java.lang.Object ref = nickName_;
+      public java.lang.String getNick() {
+        java.lang.Object ref = nick_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            nickName_ = s;
+            nick_ = s;
           }
           return s;
         } else {
@@ -1196,53 +1196,53 @@ public final class UserProtos {
         }
       }
       /**
-       * <code>optional string nickName = 3;</code>
+       * <code>optional string nick = 3;</code>
        */
       public com.google.protobuf.ByteString
-          getNickNameBytes() {
-        java.lang.Object ref = nickName_;
+          getNickBytes() {
+        java.lang.Object ref = nick_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          nickName_ = b;
+          nick_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string nickName = 3;</code>
+       * <code>optional string nick = 3;</code>
        */
-      public Builder setNickName(
+      public Builder setNick(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000004;
-        nickName_ = value;
+        nick_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string nickName = 3;</code>
+       * <code>optional string nick = 3;</code>
        */
-      public Builder clearNickName() {
+      public Builder clearNick() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        nickName_ = getDefaultInstance().getNickName();
+        nick_ = getDefaultInstance().getNick();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string nickName = 3;</code>
+       * <code>optional string nick = 3;</code>
        */
-      public Builder setNickNameBytes(
+      public Builder setNickBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000004;
-        nickName_ = value;
+        nick_ = value;
         onChanged();
         return this;
       }
@@ -1475,34 +1475,34 @@ public final class UserProtos {
         return this;
       }
 
-      private int expireTime_ ;
+      private int expiredTime_ ;
       /**
-       * <code>optional int32 expireTime = 7;</code>
+       * <code>optional int32 expiredTime = 7;</code>
        */
-      public boolean hasExpireTime() {
+      public boolean hasExpiredTime() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>optional int32 expireTime = 7;</code>
+       * <code>optional int32 expiredTime = 7;</code>
        */
-      public int getExpireTime() {
-        return expireTime_;
+      public int getExpiredTime() {
+        return expiredTime_;
       }
       /**
-       * <code>optional int32 expireTime = 7;</code>
+       * <code>optional int32 expiredTime = 7;</code>
        */
-      public Builder setExpireTime(int value) {
+      public Builder setExpiredTime(int value) {
         bitField0_ |= 0x00000040;
-        expireTime_ = value;
+        expiredTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 expireTime = 7;</code>
+       * <code>optional int32 expiredTime = 7;</code>
        */
-      public Builder clearExpireTime() {
+      public Builder clearExpiredTime() {
         bitField0_ = (bitField0_ & ~0x00000040);
-        expireTime_ = 0;
+        expiredTime_ = 0;
         onChanged();
         return this;
       }
@@ -1749,30 +1749,30 @@ public final class UserProtos {
         getUserIdBytes();
 
     /**
-     * <code>required string nickName = 2;</code>
+     * <code>optional string nick = 2;</code>
      *
      * <pre>
      * 用户昵称
      * </pre>
      */
-    boolean hasNickName();
+    boolean hasNick();
     /**
-     * <code>required string nickName = 2;</code>
+     * <code>optional string nick = 2;</code>
      *
      * <pre>
      * 用户昵称
      * </pre>
      */
-    java.lang.String getNickName();
+    java.lang.String getNick();
     /**
-     * <code>required string nickName = 2;</code>
+     * <code>optional string nick = 2;</code>
      *
      * <pre>
      * 用户昵称
      * </pre>
      */
     com.google.protobuf.ByteString
-        getNickNameBytes();
+        getNickBytes();
 
     /**
      * <code>optional string avatar = 3;</code>
@@ -2378,7 +2378,7 @@ public final class UserProtos {
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              nickName_ = bs;
+              nick_ = bs;
               break;
             }
             case 26: {
@@ -2628,27 +2628,27 @@ public final class UserProtos {
       }
     }
 
-    public static final int NICKNAME_FIELD_NUMBER = 2;
-    private java.lang.Object nickName_;
+    public static final int NICK_FIELD_NUMBER = 2;
+    private java.lang.Object nick_;
     /**
-     * <code>required string nickName = 2;</code>
+     * <code>optional string nick = 2;</code>
      *
      * <pre>
      * 用户昵称
      * </pre>
      */
-    public boolean hasNickName() {
+    public boolean hasNick() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string nickName = 2;</code>
+     * <code>optional string nick = 2;</code>
      *
      * <pre>
      * 用户昵称
      * </pre>
      */
-    public java.lang.String getNickName() {
-      java.lang.Object ref = nickName_;
+    public java.lang.String getNick() {
+      java.lang.Object ref = nick_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -2656,26 +2656,26 @@ public final class UserProtos {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          nickName_ = s;
+          nick_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string nickName = 2;</code>
+     * <code>optional string nick = 2;</code>
      *
      * <pre>
      * 用户昵称
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getNickNameBytes() {
-      java.lang.Object ref = nickName_;
+        getNickBytes() {
+      java.lang.Object ref = nick_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        nickName_ = b;
+        nick_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3669,7 +3669,7 @@ public final class UserProtos {
 
     private void initFields() {
       userId_ = "";
-      nickName_ = "";
+      nick_ = "";
       avatar_ = "";
       gender_ = false;
       snsUsers_ = java.util.Collections.emptyList();
@@ -3705,10 +3705,6 @@ public final class UserProtos {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasNickName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       for (int i = 0; i < getSnsUsersCount(); i++) {
         if (!getSnsUsers(i).isInitialized()) {
           memoizedIsInitialized = 0;
@@ -3738,7 +3734,7 @@ public final class UserProtos {
         output.writeBytes(1, getUserIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getNickNameBytes());
+        output.writeBytes(2, getNickBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getAvatarBytes());
@@ -3827,7 +3823,7 @@ public final class UserProtos {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getNickNameBytes());
+          .computeBytesSize(2, getNickBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -4047,7 +4043,7 @@ public final class UserProtos {
         super.clear();
         userId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        nickName_ = "";
+        nick_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         avatar_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -4144,7 +4140,7 @@ public final class UserProtos {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.nickName_ = nickName_;
+        result.nick_ = nick_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -4276,9 +4272,9 @@ public final class UserProtos {
           userId_ = other.userId_;
           onChanged();
         }
-        if (other.hasNickName()) {
+        if (other.hasNick()) {
           bitField0_ |= 0x00000002;
-          nickName_ = other.nickName_;
+          nick_ = other.nick_;
           onChanged();
         }
         if (other.hasAvatar()) {
@@ -4434,10 +4430,6 @@ public final class UserProtos {
           
           return false;
         }
-        if (!hasNickName()) {
-          
-          return false;
-        }
         for (int i = 0; i < getSnsUsersCount(); i++) {
           if (!getSnsUsers(i).isInitialized()) {
             
@@ -4578,32 +4570,32 @@ public final class UserProtos {
         return this;
       }
 
-      private java.lang.Object nickName_ = "";
+      private java.lang.Object nick_ = "";
       /**
-       * <code>required string nickName = 2;</code>
+       * <code>optional string nick = 2;</code>
        *
        * <pre>
        * 用户昵称
        * </pre>
        */
-      public boolean hasNickName() {
+      public boolean hasNick() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string nickName = 2;</code>
+       * <code>optional string nick = 2;</code>
        *
        * <pre>
        * 用户昵称
        * </pre>
        */
-      public java.lang.String getNickName() {
-        java.lang.Object ref = nickName_;
+      public java.lang.String getNick() {
+        java.lang.Object ref = nick_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            nickName_ = s;
+            nick_ = s;
           }
           return s;
         } else {
@@ -4611,69 +4603,69 @@ public final class UserProtos {
         }
       }
       /**
-       * <code>required string nickName = 2;</code>
+       * <code>optional string nick = 2;</code>
        *
        * <pre>
        * 用户昵称
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getNickNameBytes() {
-        java.lang.Object ref = nickName_;
+          getNickBytes() {
+        java.lang.Object ref = nick_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          nickName_ = b;
+          nick_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string nickName = 2;</code>
+       * <code>optional string nick = 2;</code>
        *
        * <pre>
        * 用户昵称
        * </pre>
        */
-      public Builder setNickName(
+      public Builder setNick(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        nickName_ = value;
+        nick_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string nickName = 2;</code>
+       * <code>optional string nick = 2;</code>
        *
        * <pre>
        * 用户昵称
        * </pre>
        */
-      public Builder clearNickName() {
+      public Builder clearNick() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        nickName_ = getDefaultInstance().getNickName();
+        nick_ = getDefaultInstance().getNick();
         onChanged();
         return this;
       }
       /**
-       * <code>required string nickName = 2;</code>
+       * <code>optional string nick = 2;</code>
        *
        * <pre>
        * 用户昵称
        * </pre>
        */
-      public Builder setNickNameBytes(
+      public Builder setNickBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        nickName_ = value;
+        nick_ = value;
         onChanged();
         return this;
       }
@@ -7048,28 +7040,27 @@ public final class UserProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nUser.proto\022\007barrage\032\014Common.proto\"\273\001\n\t" +
+      "\n\nUser.proto\022\007barrage\032\014Common.proto\"\270\001\n\t" +
       "PBSNSUser\022\014\n\004type\030\001 \002(\005\022\016\n\006userId\030\002 \001(\t\022" +
-      "\020\n\010nickName\030\003 \001(\t\022\023\n\013accessToken\030\004 \001(\t\022\031" +
-      "\n\021accessTokenSecret\030\005 \001(\t\022\024\n\014refreshToke" +
-      "n\030\006 \001(\t\022\022\n\nexpireTime\030\007 \001(\005\022\020\n\010qqOpenId\030" +
-      "\010 \001(\t\022\022\n\ncredential\030\024 \001(\t\"\275\004\n\006PBUser\022\016\n\006" +
-      "userId\030\001 \002(\t\022\020\n\010nickName\030\002 \002(\t\022\016\n\006avatar" +
-      "\030\003 \001(\t\022\025\n\006gender\030\004 \001(\010:\005false\022$\n\010snsUser" +
-      "s\030\005 \003(\0132\022.barrage.PBSNSUser\022\024\n\014xiaojiNum" +
-      "ber\030\006 \001(\t\022\r\n\005email\030\007 \001(\t\022\020\n\010password\030\010 \001",
-      "(\t\022\016\n\006mobile\030\t \001(\t\022\020\n\010birthday\030\037 \001(\t\022\016\n\006" +
-      "zodiac\030  \001(\005\022\022\n\nbloodGroup\030! \001(\t\022\025\n\rback" +
-      "groundURL\030) \001(\t\022\021\n\tsignature\030* \001(\t\022\020\n\010lo" +
-      "cation\0303 \001(\t\022\023\n\013countryCode\0304 \001(\t\022\020\n\010lan" +
-      "guage\0305 \001(\t\022\021\n\tlongitude\0306 \001(\002\022\020\n\010latitu" +
-      "de\0307 \001(\002\022\r\n\005level\030= \001(\005\022\022\n\nexperience\030> " +
-      "\001(\003\022(\n\rcurrentDevice\030G \001(\0132\021.barrage.PBD" +
-      "evice\022\"\n\007devices\030H \003(\0132\021.barrage.PBDevic" +
-      "e\022\031\n\021emailVerifyStatus\030Q \001(\005\022\027\n\017emailVer" +
-      "ifyCode\030R \001(\t\022\032\n\022mobileVerifyStatus\030S \001(",
-      "\005B)\n\033com.orange.protocol.messageB\nUserPr" +
-      "otos"
+      "\014\n\004nick\030\003 \001(\t\022\023\n\013accessToken\030\004 \001(\t\022\031\n\021ac" +
+      "cessTokenSecret\030\005 \001(\t\022\024\n\014refreshToken\030\006 " +
+      "\001(\t\022\023\n\013expiredTime\030\007 \001(\005\022\020\n\010qqOpenId\030\010 \001" +
+      "(\t\022\022\n\ncredential\030\024 \001(\t\"\271\004\n\006PBUser\022\016\n\006use" +
+      "rId\030\001 \002(\t\022\014\n\004nick\030\002 \001(\t\022\016\n\006avatar\030\003 \001(\t\022" +
+      "\025\n\006gender\030\004 \001(\010:\005false\022$\n\010snsUsers\030\005 \003(\013" +
+      "2\022.barrage.PBSNSUser\022\024\n\014xiaojiNumber\030\006 \001" +
+      "(\t\022\r\n\005email\030\007 \001(\t\022\020\n\010password\030\010 \001(\t\022\016\n\006m",
+      "obile\030\t \001(\t\022\020\n\010birthday\030\037 \001(\t\022\016\n\006zodiac\030" +
+      "  \001(\005\022\022\n\nbloodGroup\030! \001(\t\022\025\n\rbackgroundU" +
+      "RL\030) \001(\t\022\021\n\tsignature\030* \001(\t\022\020\n\010location\030" +
+      "3 \001(\t\022\023\n\013countryCode\0304 \001(\t\022\020\n\010language\0305" +
+      " \001(\t\022\021\n\tlongitude\0306 \001(\002\022\020\n\010latitude\0307 \001(" +
+      "\002\022\r\n\005level\030= \001(\005\022\022\n\nexperience\030> \001(\003\022(\n\r" +
+      "currentDevice\030G \001(\0132\021.barrage.PBDevice\022\"" +
+      "\n\007devices\030H \003(\0132\021.barrage.PBDevice\022\031\n\021em" +
+      "ailVerifyStatus\030Q \001(\005\022\027\n\017emailVerifyCode" +
+      "\030R \001(\t\022\032\n\022mobileVerifyStatus\030S \001(\005B)\n\033co",
+      "m.orange.protocol.messageB\nUserProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7089,13 +7080,13 @@ public final class UserProtos {
     internal_static_barrage_PBSNSUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBSNSUser_descriptor,
-        new java.lang.String[] { "Type", "UserId", "NickName", "AccessToken", "AccessTokenSecret", "RefreshToken", "ExpireTime", "QqOpenId", "Credential", });
+        new java.lang.String[] { "Type", "UserId", "Nick", "AccessToken", "AccessTokenSecret", "RefreshToken", "ExpiredTime", "QqOpenId", "Credential", });
     internal_static_barrage_PBUser_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_barrage_PBUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBUser_descriptor,
-        new java.lang.String[] { "UserId", "NickName", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "Birthday", "Zodiac", "BloodGroup", "BackgroundURL", "Signature", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", });
+        new java.lang.String[] { "UserId", "Nick", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "Birthday", "Zodiac", "BloodGroup", "BackgroundURL", "Signature", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", });
     com.orange.protocol.message.CommonProtos.getDescriptor();
   }
 

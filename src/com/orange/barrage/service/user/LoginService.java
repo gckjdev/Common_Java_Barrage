@@ -1,10 +1,13 @@
 package com.orange.barrage.service.user;
 
 import com.orange.barrage.common.CommonModelService;
+import com.orange.barrage.constant.BarrageConstants;
+import com.orange.barrage.manager.user.ShareUserManager;
 import com.orange.common.api.service.CommonService;
 import com.orange.common.utils.StringUtil;
 import com.orange.protocol.message.ErrorProtos;
 import com.orange.protocol.message.MessageProtos;
+import com.orange.protocol.message.UserProtos;
 
 /**
  * Created by pipi on 14/12/2.
@@ -38,7 +41,8 @@ public class LoginService extends CommonModelService {
             return ErrorProtos.PBError.ERROR_USER_LOGIN_INFO_EMPTY_VALUE;
         }
 
-        
+        UserProtos.PBUser user = ShareUserManager.findUser(BarrageConstants.F_EMAIL, email);
+
 
         return 0;
     }

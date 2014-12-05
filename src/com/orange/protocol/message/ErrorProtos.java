@@ -45,6 +45,14 @@ public final class ErrorProtos {
      * <code>ERROR_USER_LOGIN_INFO_EMPTY = 2000002;</code>
      */
     ERROR_USER_LOGIN_INFO_EMPTY(5, 2000002),
+    /**
+     * <code>ERROR_USER_REGISTER_UNKNOWN_TYPE = 2000003;</code>
+     */
+    ERROR_USER_REGISTER_UNKNOWN_TYPE(6, 2000003),
+    /**
+     * <code>ERROR_USER_REGISTER_INFO_EMPTY = 2000004;</code>
+     */
+    ERROR_USER_REGISTER_INFO_EMPTY(7, 2000004),
     ;
 
     /**
@@ -79,6 +87,14 @@ public final class ErrorProtos {
      * <code>ERROR_USER_LOGIN_INFO_EMPTY = 2000002;</code>
      */
     public static final int ERROR_USER_LOGIN_INFO_EMPTY_VALUE = 2000002;
+    /**
+     * <code>ERROR_USER_REGISTER_UNKNOWN_TYPE = 2000003;</code>
+     */
+    public static final int ERROR_USER_REGISTER_UNKNOWN_TYPE_VALUE = 2000003;
+    /**
+     * <code>ERROR_USER_REGISTER_INFO_EMPTY = 2000004;</code>
+     */
+    public static final int ERROR_USER_REGISTER_INFO_EMPTY_VALUE = 2000004;
 
 
     public final int getNumber() { return value; }
@@ -91,6 +107,8 @@ public final class ErrorProtos {
         case 1000004: return ERROR_SERVICE_CATCH_EXCEPTION;
         case 2000001: return ERROR_USER_LOGIN_UNKNOWN_TYPE;
         case 2000002: return ERROR_USER_LOGIN_INFO_EMPTY;
+        case 2000003: return ERROR_USER_REGISTER_UNKNOWN_TYPE;
+        case 2000004: return ERROR_USER_REGISTER_INFO_EMPTY;
         default: return null;
       }
     }
@@ -151,13 +169,15 @@ public final class ErrorProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Error.proto\022\007barrage*\320\001\n\007PBError\022\032\n\024ER" +
+      "\n\013Error.proto\022\007barrage*\236\002\n\007PBError\022\032\n\024ER" +
       "ROR_READ_POST_DATA\020\301\204=\022\033\n\025ERROR_PARSE_PO" +
       "ST_DATA\020\302\204=\022\037\n\031ERROR_NO_SERVICE_FOR_TYPE" +
       "\020\303\204=\022#\n\035ERROR_SERVICE_CATCH_EXCEPTION\020\304\204" +
       "=\022#\n\035ERROR_USER_LOGIN_UNKNOWN_TYPE\020\201\211z\022!" +
-      "\n\033ERROR_USER_LOGIN_INFO_EMPTY\020\202\211zB*\n\033com" +
-      ".orange.protocol.messageB\013ErrorProtos"
+      "\n\033ERROR_USER_LOGIN_INFO_EMPTY\020\202\211z\022&\n ERR" +
+      "OR_USER_REGISTER_UNKNOWN_TYPE\020\203\211z\022$\n\036ERR" +
+      "OR_USER_REGISTER_INFO_EMPTY\020\204\211zB*\n\033com.o" +
+      "range.protocol.messageB\013ErrorProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

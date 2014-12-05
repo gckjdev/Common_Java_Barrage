@@ -9,13 +9,10 @@ import org.apache.log4j.Logger;
 /**
  * Created by pipi on 14/12/2.
  */
-public class CommonModelService {
+public class CommonModelManager {
 
     public static MongoDBClient mongoDBClient = DBService.getInstance().getMongoDBClient();
     public static RedisClient redisClient = RedisClient.getInstance();
     public static CassandraClient cassandraClient = CassandraClient.getInstance();
-
-    public static final Logger log = Logger.getLogger(CommonModelService.class.getName());
-
-
+    public static final Logger log = Logger.getLogger(CommonModelManager.class.getName());
 }
