@@ -92,7 +92,7 @@ public class NotificationService {
 //                        pollExpireTokens(pushManager);
                     }
                 }catch (Exception e){
-                    log.error("push manager clear exception exception="+e.toString(), e);
+                    log.error("push model clear exception exception="+e.toString(), e);
                 }
             }
         });
@@ -103,7 +103,7 @@ public class NotificationService {
 
     public static void clearPushManager(PushManager pushManager){
 
-        log.info("clear push manager");
+        log.info("clear push model");
         if (expiredTokensMap.containsKey(pushManager)){
             expiredTokensMap.remove(pushManager);
         }
@@ -117,7 +117,7 @@ public class NotificationService {
             // add into pushManagerSet
             pushManagerSet.add(pushManager);
             if (pushManager.isShutDown() || pushManager.isStarted() == false){
-                log.info("<pollExpireTokens> but push manager is shut down or is NOT started");
+                log.info("<pollExpireTokens> but push model is shut down or is NOT started");
                 return;
             }
 
@@ -141,10 +141,10 @@ public class NotificationService {
                     expireTokens.add(deviceToken);
                 }
             }
-            log.info("push manager get expired tokens="+expireTokens.toString());
+            log.info("push model get expired tokens="+expireTokens.toString());
 
         } catch (Exception e) {
-            log.error("push manager get expired token exception="+e.toString(), e);
+            log.error("push model get expired token exception="+e.toString(), e);
         }
     }
 
@@ -333,7 +333,7 @@ public class NotificationService {
                     pushManager.shutdown();
                     clearPushManager(pushManager);
                 } catch (InterruptedException e) {
-                    log.error("shutdown push manager but catch exception="+e.toString(), e);
+                    log.error("shutdown push model but catch exception="+e.toString(), e);
                 }
             }
         }
@@ -365,7 +365,7 @@ public class NotificationService {
                     return pushManager;
 
                 } catch (Exception e) {
-                    log.error("catch exception while create push manager, e="+e.toString(), e);
+                    log.error("catch exception while create push model, e="+e.toString(), e);
                     return null;
                 }
             }
@@ -389,7 +389,7 @@ public class NotificationService {
                     return pushManager;
 
                 } catch (Exception e) {
-                    log.error("catch exception while create push manager, e="+e.toString(), e);
+                    log.error("catch exception while create push model, e="+e.toString(), e);
                     return null;
                 }
             }
@@ -583,7 +583,7 @@ public class NotificationService {
         }
 
         if (!expiredTokensMap.containsKey(pushManager)){
-            log.warn("<isExpiredToken> but push manager map not in expire token map!!!");
+            log.warn("<isExpiredToken> but push model map not in expire token map!!!");
             return false;
         }
 

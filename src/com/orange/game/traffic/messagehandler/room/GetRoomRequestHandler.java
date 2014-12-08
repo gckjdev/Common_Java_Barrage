@@ -69,7 +69,7 @@ public class GetRoomRequestHandler extends AbstractMessageHandler {
 
 		// If search by friends, and you haven't follow any friends, the sessionIdList is empty.
 		if ( sessionIdList != null ) {
-			// Do real job ,get the session from gameSession manager.
+			// Do real job ,get the session from gameSession model.
 			for ( Integer sessionId: sessionIdList) {
 				gameSessionList.add(sessionManager.findSessionById(sessionId));
 			}

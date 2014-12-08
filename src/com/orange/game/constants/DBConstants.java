@@ -24,7 +24,7 @@ public class DBConstants {
 
 	// App Table
 
-	public static final String D_GAME = "game";
+	public static final String D_GAME = "barrage";
 
 	// tables
 	public static final String T_USER = "user";

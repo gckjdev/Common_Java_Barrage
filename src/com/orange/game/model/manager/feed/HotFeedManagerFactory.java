@@ -25,7 +25,7 @@ public class HotFeedManagerFactory {
 	}
 	
 	public static HotFeedManagerInterface getHotFeedManager(){
-//		HotFeedManagerInterface manager = HotFeedManager.getInstance();			// old implementation				
+//		HotFeedManagerInterface model = HotFeedManager.getInstance();			// old implementation
 		HotFeedManagerInterface manager = RedisHotFeedManager.getInstance(); 	// redis implementation
 		manager.loadDBCachedData();
 		if (manager.isCacheEmpty()){

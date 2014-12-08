@@ -1,4 +1,4 @@
-package com.orange.barrage.manager.user;
+package com.orange.barrage.model.user;
 
 import com.mongodb.DBCursor;
 import com.orange.barrage.common.CommonModelManager;
@@ -8,14 +8,14 @@ import com.orange.protocol.message.UserProtos;
 /**
  * Created by pipi on 14/12/2.
  */
-public class ShareUserManager extends CommonModelManager {
-    private static ShareUserManager ourInstance = new ShareUserManager();
+public class UserManager extends CommonModelManager {
+    private static UserManager ourInstance = new UserManager();
 
-    public static ShareUserManager getInstance() {
+    public static UserManager getInstance() {
         return ourInstance;
     }
 
-    private ShareUserManager() {
+    private UserManager() {
     }
 
 

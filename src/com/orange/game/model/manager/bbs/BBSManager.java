@@ -795,7 +795,7 @@ public class BBSManager extends CommonManager {
         // delete action in bbs_action_index table
         mongoClient.removeByObjectId(DBConstants.T_BBS_ACTION_INDEX, actionId);
 
-        //TODO delete action id from bbs user action manager.
+        //TODO delete action id from bbs user action model.
     }
 
     public static byte[] getBBSPostDrawData(MongoDBClient mongoClient,

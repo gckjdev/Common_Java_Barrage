@@ -1992,7 +1992,7 @@ public class OpusManager extends CommonManager {
         log.info("<changeOpusTargetUser> query=" + query.toString() + ", update="+ update.toString());
         mongoClient.updateOne(DBConstants.T_OPUS, query, update);
 
-        // update draw to user manager index
+        // update draw to user model index
         DrawToUserOpusManager drawToUserOpusManager = XiaojiFactory.getInstance().getXiaoji(opus.getCategory()).drawToUserOpusManager();
         if (!drawToUserOpusManager.isIdExistInList(targetUserId, opusId)){
             log.info("<changeOpusTargetUser> update draw to user index targetUserId="+targetUserId+", opusId="+opusId);

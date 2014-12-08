@@ -13,7 +13,7 @@ public final class BarrageProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int32 type = 1;</code>
+     * <code>required int32 type = 1 [default = 0];</code>
      *
      * <pre>
      * 类型
@@ -21,7 +21,7 @@ public final class BarrageProtos {
      */
     boolean hasType();
     /**
-     * <code>required int32 type = 1;</code>
+     * <code>required int32 type = 1 [default = 0];</code>
      *
      * <pre>
      * 类型
@@ -30,18 +30,18 @@ public final class BarrageProtos {
     int getType();
 
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      */
-    boolean hasPostId();
+    boolean hasFeedId();
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      */
-    java.lang.String getPostId();
+    java.lang.String getFeedId();
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      */
     com.google.protobuf.ByteString
-        getPostIdBytes();
+        getFeedIdBytes();
 
     /**
      * <code>optional .barrage.PBUser createUser = 3;</code>
@@ -263,7 +263,7 @@ public final class BarrageProtos {
      * <code>repeated .barrage.PBFeedAction actions = 100;</code>
      *
      * <pre>
-     * 弹幕列表
+     * 用于返回数据
      * </pre>
      */
     java.util.List<com.orange.protocol.message.BarrageProtos.PBFeedAction> 
@@ -272,7 +272,7 @@ public final class BarrageProtos {
      * <code>repeated .barrage.PBFeedAction actions = 100;</code>
      *
      * <pre>
-     * 弹幕列表
+     * 用于返回数据
      * </pre>
      */
     com.orange.protocol.message.BarrageProtos.PBFeedAction getActions(int index);
@@ -280,7 +280,7 @@ public final class BarrageProtos {
      * <code>repeated .barrage.PBFeedAction actions = 100;</code>
      *
      * <pre>
-     * 弹幕列表
+     * 用于返回数据
      * </pre>
      */
     int getActionsCount();
@@ -288,7 +288,7 @@ public final class BarrageProtos {
      * <code>repeated .barrage.PBFeedAction actions = 100;</code>
      *
      * <pre>
-     * 弹幕列表
+     * 用于返回数据
      * </pre>
      */
     java.util.List<? extends com.orange.protocol.message.BarrageProtos.PBFeedActionOrBuilder> 
@@ -297,7 +297,7 @@ public final class BarrageProtos {
      * <code>repeated .barrage.PBFeedAction actions = 100;</code>
      *
      * <pre>
-     * 弹幕列表
+     * 用于返回数据
      * </pre>
      */
     com.orange.protocol.message.BarrageProtos.PBFeedActionOrBuilder getActionsOrBuilder(
@@ -397,7 +397,7 @@ public final class BarrageProtos {
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              postId_ = bs;
+              feedId_ = bs;
               break;
             }
             case 26: {
@@ -539,7 +539,7 @@ public final class BarrageProtos {
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_;
     /**
-     * <code>required int32 type = 1;</code>
+     * <code>required int32 type = 1 [default = 0];</code>
      *
      * <pre>
      * 类型
@@ -549,7 +549,7 @@ public final class BarrageProtos {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 type = 1;</code>
+     * <code>required int32 type = 1 [default = 0];</code>
      *
      * <pre>
      * 类型
@@ -559,19 +559,19 @@ public final class BarrageProtos {
       return type_;
     }
 
-    public static final int POSTID_FIELD_NUMBER = 2;
-    private java.lang.Object postId_;
+    public static final int FEEDID_FIELD_NUMBER = 2;
+    private java.lang.Object feedId_;
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      */
-    public boolean hasPostId() {
+    public boolean hasFeedId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      */
-    public java.lang.String getPostId() {
-      java.lang.Object ref = postId_;
+    public java.lang.String getFeedId() {
+      java.lang.Object ref = feedId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -579,22 +579,22 @@ public final class BarrageProtos {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          postId_ = s;
+          feedId_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getPostIdBytes() {
-      java.lang.Object ref = postId_;
+        getFeedIdBytes() {
+      java.lang.Object ref = feedId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        postId_ = b;
+        feedId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -958,7 +958,7 @@ public final class BarrageProtos {
      * <code>repeated .barrage.PBFeedAction actions = 100;</code>
      *
      * <pre>
-     * 弹幕列表
+     * 用于返回数据
      * </pre>
      */
     public java.util.List<com.orange.protocol.message.BarrageProtos.PBFeedAction> getActionsList() {
@@ -968,7 +968,7 @@ public final class BarrageProtos {
      * <code>repeated .barrage.PBFeedAction actions = 100;</code>
      *
      * <pre>
-     * 弹幕列表
+     * 用于返回数据
      * </pre>
      */
     public java.util.List<? extends com.orange.protocol.message.BarrageProtos.PBFeedActionOrBuilder> 
@@ -979,7 +979,7 @@ public final class BarrageProtos {
      * <code>repeated .barrage.PBFeedAction actions = 100;</code>
      *
      * <pre>
-     * 弹幕列表
+     * 用于返回数据
      * </pre>
      */
     public int getActionsCount() {
@@ -989,7 +989,7 @@ public final class BarrageProtos {
      * <code>repeated .barrage.PBFeedAction actions = 100;</code>
      *
      * <pre>
-     * 弹幕列表
+     * 用于返回数据
      * </pre>
      */
     public com.orange.protocol.message.BarrageProtos.PBFeedAction getActions(int index) {
@@ -999,7 +999,7 @@ public final class BarrageProtos {
      * <code>repeated .barrage.PBFeedAction actions = 100;</code>
      *
      * <pre>
-     * 弹幕列表
+     * 用于返回数据
      * </pre>
      */
     public com.orange.protocol.message.BarrageProtos.PBFeedActionOrBuilder getActionsOrBuilder(
@@ -1055,7 +1055,7 @@ public final class BarrageProtos {
 
     private void initFields() {
       type_ = 0;
-      postId_ = "";
+      feedId_ = "";
       createUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
       toUsers_ = java.util.Collections.emptyList();
       openToAll_ = false;
@@ -1115,7 +1115,7 @@ public final class BarrageProtos {
         output.writeInt32(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getPostIdBytes());
+        output.writeBytes(2, getFeedIdBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(3, createUser_);
@@ -1171,7 +1171,7 @@ public final class BarrageProtos {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getPostIdBytes());
+          .computeBytesSize(2, getFeedIdBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1348,7 +1348,7 @@ public final class BarrageProtos {
         super.clear();
         type_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        postId_ = "";
+        feedId_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         if (createUserBuilder_ == null) {
           createUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
@@ -1427,7 +1427,7 @@ public final class BarrageProtos {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.postId_ = postId_;
+        result.feedId_ = feedId_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -1517,9 +1517,9 @@ public final class BarrageProtos {
         if (other.hasType()) {
           setType(other.getType());
         }
-        if (other.hasPostId()) {
+        if (other.hasFeedId()) {
           bitField0_ |= 0x00000002;
-          postId_ = other.postId_;
+          feedId_ = other.feedId_;
           onChanged();
         }
         if (other.hasCreateUser()) {
@@ -1670,7 +1670,7 @@ public final class BarrageProtos {
 
       private int type_ ;
       /**
-       * <code>required int32 type = 1;</code>
+       * <code>required int32 type = 1 [default = 0];</code>
        *
        * <pre>
        * 类型
@@ -1680,7 +1680,7 @@ public final class BarrageProtos {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 type = 1;</code>
+       * <code>required int32 type = 1 [default = 0];</code>
        *
        * <pre>
        * 类型
@@ -1690,7 +1690,7 @@ public final class BarrageProtos {
         return type_;
       }
       /**
-       * <code>required int32 type = 1;</code>
+       * <code>required int32 type = 1 [default = 0];</code>
        *
        * <pre>
        * 类型
@@ -1703,7 +1703,7 @@ public final class BarrageProtos {
         return this;
       }
       /**
-       * <code>required int32 type = 1;</code>
+       * <code>required int32 type = 1 [default = 0];</code>
        *
        * <pre>
        * 类型
@@ -1716,24 +1716,24 @@ public final class BarrageProtos {
         return this;
       }
 
-      private java.lang.Object postId_ = "";
+      private java.lang.Object feedId_ = "";
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        */
-      public boolean hasPostId() {
+      public boolean hasFeedId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        */
-      public java.lang.String getPostId() {
-        java.lang.Object ref = postId_;
+      public java.lang.String getFeedId() {
+        java.lang.Object ref = feedId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            postId_ = s;
+            feedId_ = s;
           }
           return s;
         } else {
@@ -1741,53 +1741,53 @@ public final class BarrageProtos {
         }
       }
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getPostIdBytes() {
-        java.lang.Object ref = postId_;
+          getFeedIdBytes() {
+        java.lang.Object ref = feedId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          postId_ = b;
+          feedId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        */
-      public Builder setPostId(
+      public Builder setFeedId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        postId_ = value;
+        feedId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        */
-      public Builder clearPostId() {
+      public Builder clearFeedId() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        postId_ = getDefaultInstance().getPostId();
+        feedId_ = getDefaultInstance().getFeedId();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        */
-      public Builder setPostIdBytes(
+      public Builder setFeedIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        postId_ = value;
+        feedId_ = value;
         onChanged();
         return this;
       }
@@ -2856,7 +2856,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public java.util.List<com.orange.protocol.message.BarrageProtos.PBFeedAction> getActionsList() {
@@ -2870,7 +2870,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public int getActionsCount() {
@@ -2884,7 +2884,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public com.orange.protocol.message.BarrageProtos.PBFeedAction getActions(int index) {
@@ -2898,7 +2898,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public Builder setActions(
@@ -2919,7 +2919,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public Builder setActions(
@@ -2937,7 +2937,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public Builder addActions(com.orange.protocol.message.BarrageProtos.PBFeedAction value) {
@@ -2957,7 +2957,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public Builder addActions(
@@ -2978,7 +2978,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public Builder addActions(
@@ -2996,7 +2996,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public Builder addActions(
@@ -3014,7 +3014,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public Builder addAllActions(
@@ -3033,7 +3033,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public Builder clearActions() {
@@ -3050,7 +3050,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public Builder removeActions(int index) {
@@ -3067,7 +3067,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public com.orange.protocol.message.BarrageProtos.PBFeedAction.Builder getActionsBuilder(
@@ -3078,7 +3078,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public com.orange.protocol.message.BarrageProtos.PBFeedActionOrBuilder getActionsOrBuilder(
@@ -3092,7 +3092,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public java.util.List<? extends com.orange.protocol.message.BarrageProtos.PBFeedActionOrBuilder> 
@@ -3107,7 +3107,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public com.orange.protocol.message.BarrageProtos.PBFeedAction.Builder addActionsBuilder() {
@@ -3118,7 +3118,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public com.orange.protocol.message.BarrageProtos.PBFeedAction.Builder addActionsBuilder(
@@ -3130,7 +3130,7 @@ public final class BarrageProtos {
        * <code>repeated .barrage.PBFeedAction actions = 100;</code>
        *
        * <pre>
-       * 弹幕列表
+       * 用于返回数据
        * </pre>
        */
       public java.util.List<com.orange.protocol.message.BarrageProtos.PBFeedAction.Builder> 
@@ -3290,30 +3290,30 @@ public final class BarrageProtos {
         getBarrageIdBytes();
 
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      *
      * <pre>
      * 对应的图片ID
      * </pre>
      */
-    boolean hasPostId();
+    boolean hasFeedId();
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      *
      * <pre>
      * 对应的图片ID
      * </pre>
      */
-    java.lang.String getPostId();
+    java.lang.String getFeedId();
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      *
      * <pre>
      * 对应的图片ID
      * </pre>
      */
     com.google.protobuf.ByteString
-        getPostIdBytes();
+        getFeedIdBytes();
 
     /**
      * <code>optional .barrage.PBUser user = 3;</code>
@@ -3367,7 +3367,50 @@ public final class BarrageProtos {
         getTextBytes();
 
     /**
-     * <code>optional float posX = 5;</code>
+     * <code>optional string avatar = 5;</code>
+     *
+     * <pre>
+     * 弹幕头像
+     * </pre>
+     */
+    boolean hasAvatar();
+    /**
+     * <code>optional string avatar = 5;</code>
+     *
+     * <pre>
+     * 弹幕头像
+     * </pre>
+     */
+    java.lang.String getAvatar();
+    /**
+     * <code>optional string avatar = 5;</code>
+     *
+     * <pre>
+     * 弹幕头像
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getAvatarBytes();
+
+    /**
+     * <code>optional bool showAvatar = 6 [default = true];</code>
+     *
+     * <pre>
+     * 是否显示弹幕头像
+     * </pre>
+     */
+    boolean hasShowAvatar();
+    /**
+     * <code>optional bool showAvatar = 6 [default = true];</code>
+     *
+     * <pre>
+     * 是否显示弹幕头像
+     * </pre>
+     */
+    boolean getShowAvatar();
+
+    /**
+     * <code>optional float posX = 10;</code>
      *
      * <pre>
      * 位置 X坐标
@@ -3375,7 +3418,7 @@ public final class BarrageProtos {
      */
     boolean hasPosX();
     /**
-     * <code>optional float posX = 5;</code>
+     * <code>optional float posX = 10;</code>
      *
      * <pre>
      * 位置 X坐标
@@ -3384,7 +3427,7 @@ public final class BarrageProtos {
     float getPosX();
 
     /**
-     * <code>optional float posY = 6;</code>
+     * <code>optional float posY = 11;</code>
      *
      * <pre>
      * 位置 Y坐标
@@ -3392,7 +3435,7 @@ public final class BarrageProtos {
      */
     boolean hasPosY();
     /**
-     * <code>optional float posY = 6;</code>
+     * <code>optional float posY = 11;</code>
      *
      * <pre>
      * 位置 Y坐标
@@ -3401,7 +3444,7 @@ public final class BarrageProtos {
     float getPosY();
 
     /**
-     * <code>optional int32 type = 7;</code>
+     * <code>optional int32 type = 12;</code>
      *
      * <pre>
      * 类型：默认为0（文字弹幕），参见PostActionType
@@ -3409,7 +3452,7 @@ public final class BarrageProtos {
      */
     boolean hasType();
     /**
-     * <code>optional int32 type = 7;</code>
+     * <code>optional int32 type = 12;</code>
      *
      * <pre>
      * 类型：默认为0（文字弹幕），参见PostActionType
@@ -3495,7 +3538,7 @@ public final class BarrageProtos {
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              postId_ = bs;
+              feedId_ = bs;
               break;
             }
             case 26: {
@@ -3517,23 +3560,34 @@ public final class BarrageProtos {
               text_ = bs;
               break;
             }
-            case 45: {
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
+              avatar_ = bs;
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              showAvatar_ = input.readBool();
+              break;
+            }
+            case 85: {
+              bitField0_ |= 0x00000040;
               posX_ = input.readFloat();
               break;
             }
-            case 53: {
-              bitField0_ |= 0x00000020;
+            case 93: {
+              bitField0_ |= 0x00000080;
               posY_ = input.readFloat();
               break;
             }
-            case 56: {
-              bitField0_ |= 0x00000040;
+            case 96: {
+              bitField0_ |= 0x00000100;
               type_ = input.readInt32();
               break;
             }
             case 160: {
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000200;
               date_ = input.readInt32();
               break;
             }
@@ -3631,27 +3685,27 @@ public final class BarrageProtos {
       }
     }
 
-    public static final int POSTID_FIELD_NUMBER = 2;
-    private java.lang.Object postId_;
+    public static final int FEEDID_FIELD_NUMBER = 2;
+    private java.lang.Object feedId_;
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      *
      * <pre>
      * 对应的图片ID
      * </pre>
      */
-    public boolean hasPostId() {
+    public boolean hasFeedId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      *
      * <pre>
      * 对应的图片ID
      * </pre>
      */
-    public java.lang.String getPostId() {
-      java.lang.Object ref = postId_;
+    public java.lang.String getFeedId() {
+      java.lang.Object ref = feedId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -3659,26 +3713,26 @@ public final class BarrageProtos {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          postId_ = s;
+          feedId_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string postId = 2;</code>
+     * <code>optional string feedId = 2;</code>
      *
      * <pre>
      * 对应的图片ID
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getPostIdBytes() {
-      java.lang.Object ref = postId_;
+        getFeedIdBytes() {
+      java.lang.Object ref = feedId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        postId_ = b;
+        feedId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3772,20 +3826,97 @@ public final class BarrageProtos {
       }
     }
 
-    public static final int POSX_FIELD_NUMBER = 5;
+    public static final int AVATAR_FIELD_NUMBER = 5;
+    private java.lang.Object avatar_;
+    /**
+     * <code>optional string avatar = 5;</code>
+     *
+     * <pre>
+     * 弹幕头像
+     * </pre>
+     */
+    public boolean hasAvatar() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string avatar = 5;</code>
+     *
+     * <pre>
+     * 弹幕头像
+     * </pre>
+     */
+    public java.lang.String getAvatar() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          avatar_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string avatar = 5;</code>
+     *
+     * <pre>
+     * 弹幕头像
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getAvatarBytes() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        avatar_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHOWAVATAR_FIELD_NUMBER = 6;
+    private boolean showAvatar_;
+    /**
+     * <code>optional bool showAvatar = 6 [default = true];</code>
+     *
+     * <pre>
+     * 是否显示弹幕头像
+     * </pre>
+     */
+    public boolean hasShowAvatar() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional bool showAvatar = 6 [default = true];</code>
+     *
+     * <pre>
+     * 是否显示弹幕头像
+     * </pre>
+     */
+    public boolean getShowAvatar() {
+      return showAvatar_;
+    }
+
+    public static final int POSX_FIELD_NUMBER = 10;
     private float posX_;
     /**
-     * <code>optional float posX = 5;</code>
+     * <code>optional float posX = 10;</code>
      *
      * <pre>
      * 位置 X坐标
      * </pre>
      */
     public boolean hasPosX() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>optional float posX = 5;</code>
+     * <code>optional float posX = 10;</code>
      *
      * <pre>
      * 位置 X坐标
@@ -3795,20 +3926,20 @@ public final class BarrageProtos {
       return posX_;
     }
 
-    public static final int POSY_FIELD_NUMBER = 6;
+    public static final int POSY_FIELD_NUMBER = 11;
     private float posY_;
     /**
-     * <code>optional float posY = 6;</code>
+     * <code>optional float posY = 11;</code>
      *
      * <pre>
      * 位置 Y坐标
      * </pre>
      */
     public boolean hasPosY() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>optional float posY = 6;</code>
+     * <code>optional float posY = 11;</code>
      *
      * <pre>
      * 位置 Y坐标
@@ -3818,20 +3949,20 @@ public final class BarrageProtos {
       return posY_;
     }
 
-    public static final int TYPE_FIELD_NUMBER = 7;
+    public static final int TYPE_FIELD_NUMBER = 12;
     private int type_;
     /**
-     * <code>optional int32 type = 7;</code>
+     * <code>optional int32 type = 12;</code>
      *
      * <pre>
      * 类型：默认为0（文字弹幕），参见PostActionType
      * </pre>
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
-     * <code>optional int32 type = 7;</code>
+     * <code>optional int32 type = 12;</code>
      *
      * <pre>
      * 类型：默认为0（文字弹幕），参见PostActionType
@@ -3851,7 +3982,7 @@ public final class BarrageProtos {
      * </pre>
      */
     public boolean hasDate() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>optional int32 date = 20;</code>
@@ -3866,9 +3997,11 @@ public final class BarrageProtos {
 
     private void initFields() {
       barrageId_ = "";
-      postId_ = "";
+      feedId_ = "";
       user_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
       text_ = "";
+      avatar_ = "";
+      showAvatar_ = true;
       posX_ = 0F;
       posY_ = 0F;
       type_ = 0;
@@ -3897,7 +4030,7 @@ public final class BarrageProtos {
         output.writeBytes(1, getBarrageIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getPostIdBytes());
+        output.writeBytes(2, getFeedIdBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(3, user_);
@@ -3906,15 +4039,21 @@ public final class BarrageProtos {
         output.writeBytes(4, getTextBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeFloat(5, posX_);
+        output.writeBytes(5, getAvatarBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeFloat(6, posY_);
+        output.writeBool(6, showAvatar_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeInt32(7, type_);
+        output.writeFloat(10, posX_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeFloat(11, posY_);
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeInt32(12, type_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeInt32(20, date_);
       }
       getUnknownFields().writeTo(output);
@@ -3932,7 +4071,7 @@ public final class BarrageProtos {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getPostIdBytes());
+          .computeBytesSize(2, getFeedIdBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3944,17 +4083,25 @@ public final class BarrageProtos {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, posX_);
+          .computeBytesSize(5, getAvatarBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(6, posY_);
+          .computeBoolSize(6, showAvatar_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, type_);
+          .computeFloatSize(10, posX_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(11, posY_);
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, type_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(20, date_);
       }
@@ -4078,7 +4225,7 @@ public final class BarrageProtos {
         super.clear();
         barrageId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        postId_ = "";
+        feedId_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         if (userBuilder_ == null) {
           user_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
@@ -4088,14 +4235,18 @@ public final class BarrageProtos {
         bitField0_ = (bitField0_ & ~0x00000004);
         text_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        posX_ = 0F;
+        avatar_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
-        posY_ = 0F;
+        showAvatar_ = true;
         bitField0_ = (bitField0_ & ~0x00000020);
-        type_ = 0;
+        posX_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000040);
-        date_ = 0;
+        posY_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000080);
+        type_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        date_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -4131,7 +4282,7 @@ public final class BarrageProtos {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.postId_ = postId_;
+        result.feedId_ = feedId_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -4147,17 +4298,25 @@ public final class BarrageProtos {
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.posX_ = posX_;
+        result.avatar_ = avatar_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.posY_ = posY_;
+        result.showAvatar_ = showAvatar_;
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.type_ = type_;
+        result.posX_ = posX_;
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
+        }
+        result.posY_ = posY_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
         }
         result.date_ = date_;
         result.bitField0_ = to_bitField0_;
@@ -4181,9 +4340,9 @@ public final class BarrageProtos {
           barrageId_ = other.barrageId_;
           onChanged();
         }
-        if (other.hasPostId()) {
+        if (other.hasFeedId()) {
           bitField0_ |= 0x00000002;
-          postId_ = other.postId_;
+          feedId_ = other.feedId_;
           onChanged();
         }
         if (other.hasUser()) {
@@ -4193,6 +4352,14 @@ public final class BarrageProtos {
           bitField0_ |= 0x00000008;
           text_ = other.text_;
           onChanged();
+        }
+        if (other.hasAvatar()) {
+          bitField0_ |= 0x00000010;
+          avatar_ = other.avatar_;
+          onChanged();
+        }
+        if (other.hasShowAvatar()) {
+          setShowAvatar(other.getShowAvatar());
         }
         if (other.hasPosX()) {
           setPosX(other.getPosX());
@@ -4339,32 +4506,32 @@ public final class BarrageProtos {
         return this;
       }
 
-      private java.lang.Object postId_ = "";
+      private java.lang.Object feedId_ = "";
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        *
        * <pre>
        * 对应的图片ID
        * </pre>
        */
-      public boolean hasPostId() {
+      public boolean hasFeedId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        *
        * <pre>
        * 对应的图片ID
        * </pre>
        */
-      public java.lang.String getPostId() {
-        java.lang.Object ref = postId_;
+      public java.lang.String getFeedId() {
+        java.lang.Object ref = feedId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            postId_ = s;
+            feedId_ = s;
           }
           return s;
         } else {
@@ -4372,69 +4539,69 @@ public final class BarrageProtos {
         }
       }
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        *
        * <pre>
        * 对应的图片ID
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getPostIdBytes() {
-        java.lang.Object ref = postId_;
+          getFeedIdBytes() {
+        java.lang.Object ref = feedId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          postId_ = b;
+          feedId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        *
        * <pre>
        * 对应的图片ID
        * </pre>
        */
-      public Builder setPostId(
+      public Builder setFeedId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        postId_ = value;
+        feedId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        *
        * <pre>
        * 对应的图片ID
        * </pre>
        */
-      public Builder clearPostId() {
+      public Builder clearFeedId() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        postId_ = getDefaultInstance().getPostId();
+        feedId_ = getDefaultInstance().getFeedId();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string postId = 2;</code>
+       * <code>optional string feedId = 2;</code>
        *
        * <pre>
        * 对应的图片ID
        * </pre>
        */
-      public Builder setPostIdBytes(
+      public Builder setFeedIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        postId_ = value;
+        feedId_ = value;
         onChanged();
         return this;
       }
@@ -4691,19 +4858,167 @@ public final class BarrageProtos {
         return this;
       }
 
+      private java.lang.Object avatar_ = "";
+      /**
+       * <code>optional string avatar = 5;</code>
+       *
+       * <pre>
+       * 弹幕头像
+       * </pre>
+       */
+      public boolean hasAvatar() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string avatar = 5;</code>
+       *
+       * <pre>
+       * 弹幕头像
+       * </pre>
+       */
+      public java.lang.String getAvatar() {
+        java.lang.Object ref = avatar_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            avatar_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string avatar = 5;</code>
+       *
+       * <pre>
+       * 弹幕头像
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getAvatarBytes() {
+        java.lang.Object ref = avatar_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          avatar_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string avatar = 5;</code>
+       *
+       * <pre>
+       * 弹幕头像
+       * </pre>
+       */
+      public Builder setAvatar(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        avatar_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string avatar = 5;</code>
+       *
+       * <pre>
+       * 弹幕头像
+       * </pre>
+       */
+      public Builder clearAvatar() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        avatar_ = getDefaultInstance().getAvatar();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string avatar = 5;</code>
+       *
+       * <pre>
+       * 弹幕头像
+       * </pre>
+       */
+      public Builder setAvatarBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        avatar_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean showAvatar_ = true;
+      /**
+       * <code>optional bool showAvatar = 6 [default = true];</code>
+       *
+       * <pre>
+       * 是否显示弹幕头像
+       * </pre>
+       */
+      public boolean hasShowAvatar() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional bool showAvatar = 6 [default = true];</code>
+       *
+       * <pre>
+       * 是否显示弹幕头像
+       * </pre>
+       */
+      public boolean getShowAvatar() {
+        return showAvatar_;
+      }
+      /**
+       * <code>optional bool showAvatar = 6 [default = true];</code>
+       *
+       * <pre>
+       * 是否显示弹幕头像
+       * </pre>
+       */
+      public Builder setShowAvatar(boolean value) {
+        bitField0_ |= 0x00000020;
+        showAvatar_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool showAvatar = 6 [default = true];</code>
+       *
+       * <pre>
+       * 是否显示弹幕头像
+       * </pre>
+       */
+      public Builder clearShowAvatar() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        showAvatar_ = true;
+        onChanged();
+        return this;
+      }
+
       private float posX_ ;
       /**
-       * <code>optional float posX = 5;</code>
+       * <code>optional float posX = 10;</code>
        *
        * <pre>
        * 位置 X坐标
        * </pre>
        */
       public boolean hasPosX() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>optional float posX = 5;</code>
+       * <code>optional float posX = 10;</code>
        *
        * <pre>
        * 位置 X坐标
@@ -4713,27 +5028,27 @@ public final class BarrageProtos {
         return posX_;
       }
       /**
-       * <code>optional float posX = 5;</code>
+       * <code>optional float posX = 10;</code>
        *
        * <pre>
        * 位置 X坐标
        * </pre>
        */
       public Builder setPosX(float value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         posX_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional float posX = 5;</code>
+       * <code>optional float posX = 10;</code>
        *
        * <pre>
        * 位置 X坐标
        * </pre>
        */
       public Builder clearPosX() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
         posX_ = 0F;
         onChanged();
         return this;
@@ -4741,17 +5056,17 @@ public final class BarrageProtos {
 
       private float posY_ ;
       /**
-       * <code>optional float posY = 6;</code>
+       * <code>optional float posY = 11;</code>
        *
        * <pre>
        * 位置 Y坐标
        * </pre>
        */
       public boolean hasPosY() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>optional float posY = 6;</code>
+       * <code>optional float posY = 11;</code>
        *
        * <pre>
        * 位置 Y坐标
@@ -4761,27 +5076,27 @@ public final class BarrageProtos {
         return posY_;
       }
       /**
-       * <code>optional float posY = 6;</code>
+       * <code>optional float posY = 11;</code>
        *
        * <pre>
        * 位置 Y坐标
        * </pre>
        */
       public Builder setPosY(float value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         posY_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional float posY = 6;</code>
+       * <code>optional float posY = 11;</code>
        *
        * <pre>
        * 位置 Y坐标
        * </pre>
        */
       public Builder clearPosY() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000080);
         posY_ = 0F;
         onChanged();
         return this;
@@ -4789,17 +5104,17 @@ public final class BarrageProtos {
 
       private int type_ ;
       /**
-       * <code>optional int32 type = 7;</code>
+       * <code>optional int32 type = 12;</code>
        *
        * <pre>
        * 类型：默认为0（文字弹幕），参见PostActionType
        * </pre>
        */
       public boolean hasType() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
-       * <code>optional int32 type = 7;</code>
+       * <code>optional int32 type = 12;</code>
        *
        * <pre>
        * 类型：默认为0（文字弹幕），参见PostActionType
@@ -4809,27 +5124,27 @@ public final class BarrageProtos {
         return type_;
       }
       /**
-       * <code>optional int32 type = 7;</code>
+       * <code>optional int32 type = 12;</code>
        *
        * <pre>
        * 类型：默认为0（文字弹幕），参见PostActionType
        * </pre>
        */
       public Builder setType(int value) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 type = 7;</code>
+       * <code>optional int32 type = 12;</code>
        *
        * <pre>
        * 类型：默认为0（文字弹幕），参见PostActionType
        * </pre>
        */
       public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
         type_ = 0;
         onChanged();
         return this;
@@ -4844,7 +5159,7 @@ public final class BarrageProtos {
        * </pre>
        */
       public boolean hasDate() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>optional int32 date = 20;</code>
@@ -4864,7 +5179,7 @@ public final class BarrageProtos {
        * </pre>
        */
       public Builder setDate(int value) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         date_ = value;
         onChanged();
         return this;
@@ -4877,7 +5192,7 @@ public final class BarrageProtos {
        * </pre>
        */
       public Builder clearDate() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000200);
         date_ = 0;
         onChanged();
         return this;
@@ -4914,20 +5229,22 @@ public final class BarrageProtos {
   static {
     java.lang.String[] descriptorData = {
       "\n\rBarrage.proto\022\007barrage\032\014Common.proto\032\n" +
-      "User.proto\"\331\002\n\006PBFeed\022\014\n\004type\030\001 \002(\005\022\016\n\006p" +
-      "ostId\030\002 \001(\t\022#\n\ncreateUser\030\003 \001(\0132\017.barrag" +
-      "e.PBUser\022 \n\007toUsers\030\004 \003(\0132\017.barrage.PBUs" +
-      "er\022\030\n\topenToAll\030\005 \001(\010:\005false\022!\n\006device\030\036" +
-      " \001(\0132\021.barrage.PBDevice\022\020\n\010location\030\" \001(" +
-      "\t\022\021\n\tlongitude\030# \001(\002\022\020\n\010latitude\030$ \001(\002\022\r" +
-      "\n\005image\030) \001(\t\022\014\n\004text\030* \001(\t\022\014\n\004date\030+ \001(" +
-      "\005\022&\n\007actions\030d \003(\0132\025.barrage.PBFeedActio" +
-      "n\022\021\n\tlastIndex\030e \001(\005\022\020\n\010newCount\030f \001(\005\"\226",
-      "\001\n\014PBFeedAction\022\021\n\tbarrageId\030\001 \001(\t\022\016\n\006po" +
-      "stId\030\002 \001(\t\022\035\n\004user\030\003 \001(\0132\017.barrage.PBUse" +
-      "r\022\014\n\004text\030\004 \001(\t\022\014\n\004posX\030\005 \001(\002\022\014\n\004posY\030\006 " +
-      "\001(\002\022\014\n\004type\030\007 \001(\005\022\014\n\004date\030\024 \001(\005B,\n\033com.o" +
-      "range.protocol.messageB\rBarrageProtos"
+      "User.proto\"\334\002\n\006PBFeed\022\017\n\004type\030\001 \002(\005:\0010\022\016" +
+      "\n\006feedId\030\002 \001(\t\022#\n\ncreateUser\030\003 \001(\0132\017.bar" +
+      "rage.PBUser\022 \n\007toUsers\030\004 \003(\0132\017.barrage.P" +
+      "BUser\022\030\n\topenToAll\030\005 \001(\010:\005false\022!\n\006devic" +
+      "e\030\036 \001(\0132\021.barrage.PBDevice\022\020\n\010location\030\"" +
+      " \001(\t\022\021\n\tlongitude\030# \001(\002\022\020\n\010latitude\030$ \001(" +
+      "\002\022\r\n\005image\030) \001(\t\022\014\n\004text\030* \001(\t\022\014\n\004date\030+" +
+      " \001(\005\022&\n\007actions\030d \003(\0132\025.barrage.PBFeedAc" +
+      "tion\022\021\n\tlastIndex\030e \001(\005\022\020\n\010newCount\030f \001(",
+      "\005\"\300\001\n\014PBFeedAction\022\021\n\tbarrageId\030\001 \001(\t\022\016\n" +
+      "\006feedId\030\002 \001(\t\022\035\n\004user\030\003 \001(\0132\017.barrage.PB" +
+      "User\022\014\n\004text\030\004 \001(\t\022\016\n\006avatar\030\005 \001(\t\022\030\n\nsh" +
+      "owAvatar\030\006 \001(\010:\004true\022\014\n\004posX\030\n \001(\002\022\014\n\004po" +
+      "sY\030\013 \001(\002\022\014\n\004type\030\014 \001(\005\022\014\n\004date\030\024 \001(\005B,\n\033" +
+      "com.orange.protocol.messageB\rBarrageProt" +
+      "os"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4948,13 +5265,13 @@ public final class BarrageProtos {
     internal_static_barrage_PBFeed_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBFeed_descriptor,
-        new java.lang.String[] { "Type", "PostId", "CreateUser", "ToUsers", "OpenToAll", "Device", "Location", "Longitude", "Latitude", "Image", "Text", "Date", "Actions", "LastIndex", "NewCount", });
+        new java.lang.String[] { "Type", "FeedId", "CreateUser", "ToUsers", "OpenToAll", "Device", "Location", "Longitude", "Latitude", "Image", "Text", "Date", "Actions", "LastIndex", "NewCount", });
     internal_static_barrage_PBFeedAction_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_barrage_PBFeedAction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBFeedAction_descriptor,
-        new java.lang.String[] { "BarrageId", "PostId", "User", "Text", "PosX", "PosY", "Type", "Date", });
+        new java.lang.String[] { "BarrageId", "FeedId", "User", "Text", "Avatar", "ShowAvatar", "PosX", "PosY", "Type", "Date", });
     com.orange.protocol.message.CommonProtos.getDescriptor();
     com.orange.protocol.message.UserProtos.getDescriptor();
   }

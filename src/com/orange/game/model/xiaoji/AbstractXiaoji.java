@@ -322,8 +322,8 @@ public abstract class AbstractXiaoji {
                 return hotTopUserGuessMap.get(contestId);
             }
             else{
-                TopUserGuessManager manager = new TopUserGuessManager(getCategoryName(), PBUserGuessMode.GUESS_MODE_CONTEST_VALUE, contestId, PBRankType.HOT_RANK_VALUE);
-                hotTopUserGuessMap.putIfAbsent(contestId, manager);
+                TopUserGuessManager model = new TopUserGuessManager(getCategoryName(), PBUserGuessMode.GUESS_MODE_CONTEST_VALUE, contestId, PBRankType.HOT_RANK_VALUE);
+                hotTopUserGuessMap.putIfAbsent(contestId, model);
                 return hotTopUserGuessMap.get(contestId);
             }
         }

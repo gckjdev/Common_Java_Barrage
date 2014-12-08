@@ -2,8 +2,7 @@ package com.orange.barrage.service.user;
 
 import com.orange.barrage.common.CommonModelService;
 import com.orange.barrage.constant.BarrageConstants;
-import com.orange.barrage.manager.user.ShareUserManager;
-import com.orange.common.api.service.CommonService;
+import com.orange.barrage.model.user.UserManager;
 import com.orange.common.utils.StringUtil;
 import com.orange.protocol.message.ErrorProtos;
 import com.orange.protocol.message.MessageProtos;
@@ -41,7 +40,7 @@ public class LoginService extends CommonModelService {
             return ErrorProtos.PBError.ERROR_USER_LOGIN_INFO_EMPTY_VALUE;
         }
 
-        UserProtos.PBUser user = ShareUserManager.findUser(BarrageConstants.F_EMAIL, email);
+        UserProtos.PBUser user = UserManager.findUser(BarrageConstants.F_EMAIL, email);
 
 
         return 0;

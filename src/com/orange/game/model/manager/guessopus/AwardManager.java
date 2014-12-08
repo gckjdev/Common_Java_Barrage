@@ -159,7 +159,7 @@ public class AwardManager {
 
                     TopUserGuessManager manager = XiaojiFactory.getInstance().getDraw().getContestTopGuessManager(contestId);
 
-//                    UserGuessAchievement achievement = manager.getAchievement(userId);
+//                    UserGuessAchievement achievement = model.getAchievement(userId);
 //                    log.info("<calculateAndInsertContestAward> get achievement "+ achievement.toString());
 
                     manager.updateArchievement(userId, DBConstants.F_EARN, award);

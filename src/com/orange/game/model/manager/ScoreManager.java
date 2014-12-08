@@ -310,7 +310,7 @@ public class ScoreManager extends CommonManager {
                 // put average score into return value
                 returnUpdateValue.put(getOpusUserRankScoreField(rankType), avgScore);
 
-                // update top contest manager
+                // update top contest model
                 ContestTopOpusManager contestSpecialTopOpusManager = XiaojiFactory.getInstance().getDraw().contestSpecialTopOpusManager(action.getContestId(), rankType);
                 if (contestSpecialTopOpusManager != null) {
                     contestSpecialTopOpusManager.updateOpusTopScore(action.getActionId(), avgScore);
