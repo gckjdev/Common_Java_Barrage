@@ -32,6 +32,7 @@ public class QiuNiuService extends CommonModelService {
         Mac mac = new Mac(Config.ACCESS_KEY, Config.SECRET_KEY);
         String bucketName = BUCKET_NAME;
         PutPolicy putPolicy = new PutPolicy(bucketName);
+        putPolicy.expires = System.currentTimeMillis()/1000 + 365*24*60*60;
         try {
             String uptoken = putPolicy.token(mac);
             log.info("upload token is "+uptoken);
