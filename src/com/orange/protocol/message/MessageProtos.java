@@ -5093,11 +5093,11 @@ public final class MessageProtos {
         getOffsetFeedIdBytes();
 
     /**
-     * <code>optional int32 limit = 2;</code>
+     * <code>optional int32 limit = 2 [default = 20];</code>
      */
     boolean hasLimit();
     /**
-     * <code>optional int32 limit = 2;</code>
+     * <code>optional int32 limit = 2 [default = 20];</code>
      */
     int getLimit();
   }
@@ -5249,13 +5249,13 @@ public final class MessageProtos {
     public static final int LIMIT_FIELD_NUMBER = 2;
     private int limit_;
     /**
-     * <code>optional int32 limit = 2;</code>
+     * <code>optional int32 limit = 2 [default = 20];</code>
      */
     public boolean hasLimit() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional int32 limit = 2;</code>
+     * <code>optional int32 limit = 2 [default = 20];</code>
      */
     public int getLimit() {
       return limit_;
@@ -5263,7 +5263,7 @@ public final class MessageProtos {
 
     private void initFields() {
       offsetFeedId_ = "";
-      limit_ = 0;
+      limit_ = 20;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -5420,7 +5420,7 @@ public final class MessageProtos {
         super.clear();
         offsetFeedId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        limit_ = 0;
+        limit_ = 20;
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -5585,21 +5585,21 @@ public final class MessageProtos {
         return this;
       }
 
-      private int limit_ ;
+      private int limit_ = 20;
       /**
-       * <code>optional int32 limit = 2;</code>
+       * <code>optional int32 limit = 2 [default = 20];</code>
        */
       public boolean hasLimit() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional int32 limit = 2;</code>
+       * <code>optional int32 limit = 2 [default = 20];</code>
        */
       public int getLimit() {
         return limit_;
       }
       /**
-       * <code>optional int32 limit = 2;</code>
+       * <code>optional int32 limit = 2 [default = 20];</code>
        */
       public Builder setLimit(int value) {
         bitField0_ |= 0x00000002;
@@ -5608,11 +5608,11 @@ public final class MessageProtos {
         return this;
       }
       /**
-       * <code>optional int32 limit = 2;</code>
+       * <code>optional int32 limit = 2 [default = 20];</code>
        */
       public Builder clearLimit() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        limit_ = 0;
+        limit_ = 20;
         onChanged();
         return this;
       }
@@ -10812,43 +10812,43 @@ public final class MessageProtos {
       "(\t\";\n\022PBReplyFeedRequest\022%\n\006action\030\001 \002(\013" +
       "2\025.barrage.PBFeedAction\"<\n\023PBReplyFeedRe" +
       "sponse\022%\n\006action\030\001 \002(\0132\025.barrage.PBFeedA" +
-      "ction\"C\n\034PBGetUserTimelineFeedRequest\022\024\n" +
-      "\014offsetFeedId\030\001 \001(\t\022\r\n\005limit\030\002 \001(\005\"?\n\035PB" +
-      "GetUserTimelineFeedResponse\022\036\n\005feeds\030\001 \003" +
-      "(\0132\017.barrage.PBFeed\"\342\003\n\rPBDataRequest\022\014\n" +
-      "\004type\030\001 \002(\005\022\021\n\trequestId\030\002 \001(\005\022\017\n\007versio" +
-      "n\030\003 \001(\005\022\016\n\006userId\030\004 \001(\t\022!\n\006device\030\036 \001(\0132",
-      "\021.barrage.PBDevice\022\023\n\013countryCode\030\037 \001(\t\022" +
-      "\024\n\014languageCode\030  \001(\t\022\022\n\nclientDate\030! \001(" +
-      "\005\0225\n\020loginUserRequest\030( \001(\0132\033.barrage.PB" +
-      "LoginUserRequest\022;\n\023registerUserRequest\030" +
-      ") \001(\0132\036.barrage.PBRegisterUserRequest\0227\n" +
-      "\021createFeedRequest\030< \001(\0132\034.barrage.PBCre" +
-      "ateFeedRequest\0225\n\020replyFeedRequest\030= \001(\013" +
-      "2\033.barrage.PBReplyFeedRequest\022I\n\032getUser" +
-      "TimelineFeedRequest\030> \001(\0132%.barrage.PBGe" +
-      "tUserTimelineFeedRequest\"\254\003\n\016PBDataRespo",
-      "nse\022\025\n\nresultCode\030\001 \002(\005:\0010\022\021\n\trequestId\030" +
-      "\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\022\n\ntotalCount\030\004 \001" +
-      "(\005\022\022\n\nstringData\030\005 \001(\t\0227\n\021loginUserRespo" +
-      "nse\030( \001(\0132\034.barrage.PBLoginUserResponse\022" +
-      "=\n\024registerUserResponse\030) \001(\0132\037.barrage." +
-      "PBRegisterUserResponse\0229\n\022createFeedResp" +
-      "onse\030< \001(\0132\035.barrage.PBCreateFeedRespons" +
-      "e\0227\n\021replyFeedResponse\030= \001(\0132\034.barrage.P" +
-      "BReplyFeedResponse\022K\n\033getUserTimelineFee" +
-      "dResponse\030> \001(\0132&.barrage.PBGetUserTimel",
-      "ineFeedResponse*`\n\013PBLoginType\022\020\n\014LOGIN_" +
-      "XIAOJI\020\001\022\017\n\013LOGIN_EMAIL\020\002\022\014\n\010LOGIN_QQ\020\003\022" +
-      "\016\n\nLOGIN_SINA\020\004\022\020\n\014LOGIN_WEIXIN\020\005*K\n\016PBR" +
-      "egisterType\022\022\n\016REGISTER_EMAIL\020\001\022\020\n\014REGIS" +
-      "TER_SNS\020\002\022\023\n\017REGISTER_MOBILE\020\003*\273\001\n\rPBMes" +
-      "sageType\022\026\n\022MESSAGE_LOGIN_USER\020\001\022\031\n\025MESS" +
-      "AGE_REGISTER_USER\020\002\022\027\n\023MESSAGE_CREATE_FE" +
-      "ED\020\036\022\026\n\022MESSAGE_REPLY_FEED\020\037\022\"\n\036MESSAGE_" +
-      "GET_USER_TIMELINE_FEED\020 \022\"\n\036MESSAGE_GET_" +
-      "QINIU_UPLOAD_TOKEN\020dB,\n\033com.orange.proto",
-      "col.messageB\rMessageProtos"
+      "ction\"G\n\034PBGetUserTimelineFeedRequest\022\024\n" +
+      "\014offsetFeedId\030\001 \001(\t\022\021\n\005limit\030\002 \001(\005:\00220\"?" +
+      "\n\035PBGetUserTimelineFeedResponse\022\036\n\005feeds" +
+      "\030\001 \003(\0132\017.barrage.PBFeed\"\342\003\n\rPBDataReques" +
+      "t\022\014\n\004type\030\001 \002(\005\022\021\n\trequestId\030\002 \001(\005\022\017\n\007ve" +
+      "rsion\030\003 \001(\005\022\016\n\006userId\030\004 \001(\t\022!\n\006device\030\036 ",
+      "\001(\0132\021.barrage.PBDevice\022\023\n\013countryCode\030\037 " +
+      "\001(\t\022\024\n\014languageCode\030  \001(\t\022\022\n\nclientDate\030" +
+      "! \001(\005\0225\n\020loginUserRequest\030( \001(\0132\033.barrag" +
+      "e.PBLoginUserRequest\022;\n\023registerUserRequ" +
+      "est\030) \001(\0132\036.barrage.PBRegisterUserReques" +
+      "t\0227\n\021createFeedRequest\030< \001(\0132\034.barrage.P" +
+      "BCreateFeedRequest\0225\n\020replyFeedRequest\030=" +
+      " \001(\0132\033.barrage.PBReplyFeedRequest\022I\n\032get" +
+      "UserTimelineFeedRequest\030> \001(\0132%.barrage." +
+      "PBGetUserTimelineFeedRequest\"\254\003\n\016PBDataR",
+      "esponse\022\025\n\nresultCode\030\001 \002(\005:\0010\022\021\n\treques" +
+      "tId\030\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\022\n\ntotalCount" +
+      "\030\004 \001(\005\022\022\n\nstringData\030\005 \001(\t\0227\n\021loginUserR" +
+      "esponse\030( \001(\0132\034.barrage.PBLoginUserRespo" +
+      "nse\022=\n\024registerUserResponse\030) \001(\0132\037.barr" +
+      "age.PBRegisterUserResponse\0229\n\022createFeed" +
+      "Response\030< \001(\0132\035.barrage.PBCreateFeedRes" +
+      "ponse\0227\n\021replyFeedResponse\030= \001(\0132\034.barra" +
+      "ge.PBReplyFeedResponse\022K\n\033getUserTimelin" +
+      "eFeedResponse\030> \001(\0132&.barrage.PBGetUserT",
+      "imelineFeedResponse*`\n\013PBLoginType\022\020\n\014LO" +
+      "GIN_XIAOJI\020\001\022\017\n\013LOGIN_EMAIL\020\002\022\014\n\010LOGIN_Q" +
+      "Q\020\003\022\016\n\nLOGIN_SINA\020\004\022\020\n\014LOGIN_WEIXIN\020\005*K\n" +
+      "\016PBRegisterType\022\022\n\016REGISTER_EMAIL\020\001\022\020\n\014R" +
+      "EGISTER_SNS\020\002\022\023\n\017REGISTER_MOBILE\020\003*\273\001\n\rP" +
+      "BMessageType\022\026\n\022MESSAGE_LOGIN_USER\020\001\022\031\n\025" +
+      "MESSAGE_REGISTER_USER\020\002\022\027\n\023MESSAGE_CREAT" +
+      "E_FEED\020\036\022\026\n\022MESSAGE_REPLY_FEED\020\037\022\"\n\036MESS" +
+      "AGE_GET_USER_TIMELINE_FEED\020 \022\"\n\036MESSAGE_" +
+      "GET_QINIU_UPLOAD_TOKEN\020dB,\n\033com.orange.p",
+      "rotocol.messageB\rMessageProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
