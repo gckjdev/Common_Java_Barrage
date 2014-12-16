@@ -3453,6 +3453,23 @@ public final class BarrageProtos {
     float getPosY();
 
     /**
+     * <code>optional int32 colorMode = 12;</code>
+     *
+     * <pre>
+     * 字体颜色模式
+     * </pre>
+     */
+    boolean hasColorMode();
+    /**
+     * <code>optional int32 colorMode = 12;</code>
+     *
+     * <pre>
+     * 字体颜色模式
+     * </pre>
+     */
+    int getColorMode();
+
+    /**
      * <code>optional int32 date = 20;</code>
      *
      * <pre>
@@ -3578,8 +3595,13 @@ public final class BarrageProtos {
               posY_ = input.readFloat();
               break;
             }
-            case 160: {
+            case 96: {
               bitField0_ |= 0x00000200;
+              colorMode_ = input.readInt32();
+              break;
+            }
+            case 160: {
+              bitField0_ |= 0x00000400;
               date_ = input.readInt32();
               break;
             }
@@ -3964,6 +3986,29 @@ public final class BarrageProtos {
       return posY_;
     }
 
+    public static final int COLORMODE_FIELD_NUMBER = 12;
+    private int colorMode_;
+    /**
+     * <code>optional int32 colorMode = 12;</code>
+     *
+     * <pre>
+     * 字体颜色模式
+     * </pre>
+     */
+    public boolean hasColorMode() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>optional int32 colorMode = 12;</code>
+     *
+     * <pre>
+     * 字体颜色模式
+     * </pre>
+     */
+    public int getColorMode() {
+      return colorMode_;
+    }
+
     public static final int DATE_FIELD_NUMBER = 20;
     private int date_;
     /**
@@ -3974,7 +4019,7 @@ public final class BarrageProtos {
      * </pre>
      */
     public boolean hasDate() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>optional int32 date = 20;</code>
@@ -3997,6 +4042,7 @@ public final class BarrageProtos {
       showAvatar_ = true;
       posX_ = 0F;
       posY_ = 0F;
+      colorMode_ = 0;
       date_ = 0;
     }
     private byte memoizedIsInitialized = -1;
@@ -4046,6 +4092,9 @@ public final class BarrageProtos {
         output.writeFloat(11, posY_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeInt32(12, colorMode_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeInt32(20, date_);
       }
       getUnknownFields().writeTo(output);
@@ -4094,6 +4143,10 @@ public final class BarrageProtos {
           .computeFloatSize(11, posY_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, colorMode_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(20, date_);
       }
@@ -4237,8 +4290,10 @@ public final class BarrageProtos {
         bitField0_ = (bitField0_ & ~0x00000080);
         posY_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000100);
-        date_ = 0;
+        colorMode_ = 0;
         bitField0_ = (bitField0_ & ~0x00000200);
+        date_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
 
@@ -4310,6 +4365,10 @@ public final class BarrageProtos {
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
         }
+        result.colorMode_ = colorMode_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
+        }
         result.date_ = date_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -4361,6 +4420,9 @@ public final class BarrageProtos {
         }
         if (other.hasPosY()) {
           setPosY(other.getPosY());
+        }
+        if (other.hasColorMode()) {
+          setColorMode(other.getColorMode());
         }
         if (other.hasDate()) {
           setDate(other.getDate());
@@ -5142,6 +5204,54 @@ public final class BarrageProtos {
         return this;
       }
 
+      private int colorMode_ ;
+      /**
+       * <code>optional int32 colorMode = 12;</code>
+       *
+       * <pre>
+       * 字体颜色模式
+       * </pre>
+       */
+      public boolean hasColorMode() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional int32 colorMode = 12;</code>
+       *
+       * <pre>
+       * 字体颜色模式
+       * </pre>
+       */
+      public int getColorMode() {
+        return colorMode_;
+      }
+      /**
+       * <code>optional int32 colorMode = 12;</code>
+       *
+       * <pre>
+       * 字体颜色模式
+       * </pre>
+       */
+      public Builder setColorMode(int value) {
+        bitField0_ |= 0x00000200;
+        colorMode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 colorMode = 12;</code>
+       *
+       * <pre>
+       * 字体颜色模式
+       * </pre>
+       */
+      public Builder clearColorMode() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        colorMode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int date_ ;
       /**
        * <code>optional int32 date = 20;</code>
@@ -5151,7 +5261,7 @@ public final class BarrageProtos {
        * </pre>
        */
       public boolean hasDate() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <code>optional int32 date = 20;</code>
@@ -5171,7 +5281,7 @@ public final class BarrageProtos {
        * </pre>
        */
       public Builder setDate(int value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         date_ = value;
         onChanged();
         return this;
@@ -5184,7 +5294,7 @@ public final class BarrageProtos {
        * </pre>
        */
       public Builder clearDate() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         date_ = 0;
         onChanged();
         return this;
@@ -5230,13 +5340,13 @@ public final class BarrageProtos {
       "\002\022\r\n\005image\030) \001(\t\022\014\n\004text\030* \001(\t\022\014\n\004date\030+" +
       " \001(\005\022&\n\007actions\030d \003(\0132\025.barrage.PBFeedAc" +
       "tion\022\021\n\tlastIndex\030e \001(\005\022\020\n\010newCount\030f \001(",
-      "\005\"\277\001\n\014PBFeedAction\022\020\n\010actionId\030\001 \001(\t\022\014\n\004" +
+      "\005\"\322\001\n\014PBFeedAction\022\020\n\010actionId\030\001 \001(\t\022\014\n\004" +
       "type\030\002 \001(\005\022\016\n\006feedId\030\003 \001(\t\022\035\n\004user\030\004 \001(\013" +
       "2\017.barrage.PBUser\022\014\n\004text\030\005 \001(\t\022\016\n\006avata" +
       "r\030\006 \001(\t\022\030\n\nshowAvatar\030\007 \001(\010:\004true\022\014\n\004pos" +
-      "X\030\n \001(\002\022\014\n\004posY\030\013 \001(\002\022\014\n\004date\030\024 \001(\005B,\n\033c" +
-      "om.orange.protocol.messageB\rBarrageProto" +
-      "s"
+      "X\030\n \001(\002\022\014\n\004posY\030\013 \001(\002\022\021\n\tcolorMode\030\014 \001(\005" +
+      "\022\014\n\004date\030\024 \001(\005B,\n\033com.orange.protocol.me" +
+      "ssageB\rBarrageProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5263,7 +5373,7 @@ public final class BarrageProtos {
     internal_static_barrage_PBFeedAction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBFeedAction_descriptor,
-        new java.lang.String[] { "ActionId", "Type", "FeedId", "User", "Text", "Avatar", "ShowAvatar", "PosX", "PosY", "Date", });
+        new java.lang.String[] { "ActionId", "Type", "FeedId", "User", "Text", "Avatar", "ShowAvatar", "PosX", "PosY", "ColorMode", "Date", });
     com.orange.protocol.message.CommonProtos.getDescriptor();
     com.orange.protocol.message.UserProtos.getDescriptor();
   }

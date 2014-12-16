@@ -7021,6 +7021,2295 @@ public final class UserProtos {
     // @@protoc_insertion_point(class_scope:barrage.PBUser)
   }
 
+  public interface PBUserTagOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:barrage.PBUserTag)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional string id = 2;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>optional string id = 2;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>optional string id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>repeated .barrage.PBUser users = 3;</code>
+     */
+    java.util.List<com.orange.protocol.message.UserProtos.PBUser> 
+        getUsersList();
+    /**
+     * <code>repeated .barrage.PBUser users = 3;</code>
+     */
+    com.orange.protocol.message.UserProtos.PBUser getUsers(int index);
+    /**
+     * <code>repeated .barrage.PBUser users = 3;</code>
+     */
+    int getUsersCount();
+    /**
+     * <code>repeated .barrage.PBUser users = 3;</code>
+     */
+    java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+        getUsersOrBuilderList();
+    /**
+     * <code>repeated .barrage.PBUser users = 3;</code>
+     */
+    com.orange.protocol.message.UserProtos.PBUserOrBuilder getUsersOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code barrage.PBUserTag}
+   */
+  public static final class PBUserTag extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:barrage.PBUserTag)
+      PBUserTagOrBuilder {
+    // Use PBUserTag.newBuilder() to construct.
+    private PBUserTag(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PBUserTag(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PBUserTag defaultInstance;
+    public static PBUserTag getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PBUserTag getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PBUserTag(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              id_ = bs;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                users_ = new java.util.ArrayList<com.orange.protocol.message.UserProtos.PBUser>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              users_.add(input.readMessage(com.orange.protocol.message.UserProtos.PBUser.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          users_ = java.util.Collections.unmodifiableList(users_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.internal_static_barrage_PBUserTag_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.orange.protocol.message.UserProtos.internal_static_barrage_PBUserTag_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.orange.protocol.message.UserProtos.PBUserTag.class, com.orange.protocol.message.UserProtos.PBUserTag.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PBUserTag> PARSER =
+        new com.google.protobuf.AbstractParser<PBUserTag>() {
+      public PBUserTag parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PBUserTag(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PBUserTag> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private java.lang.Object name_;
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private java.lang.Object id_;
+    /**
+     * <code>optional string id = 2;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string id = 2;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          id_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERS_FIELD_NUMBER = 3;
+    private java.util.List<com.orange.protocol.message.UserProtos.PBUser> users_;
+    /**
+     * <code>repeated .barrage.PBUser users = 3;</code>
+     */
+    public java.util.List<com.orange.protocol.message.UserProtos.PBUser> getUsersList() {
+      return users_;
+    }
+    /**
+     * <code>repeated .barrage.PBUser users = 3;</code>
+     */
+    public java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+        getUsersOrBuilderList() {
+      return users_;
+    }
+    /**
+     * <code>repeated .barrage.PBUser users = 3;</code>
+     */
+    public int getUsersCount() {
+      return users_.size();
+    }
+    /**
+     * <code>repeated .barrage.PBUser users = 3;</code>
+     */
+    public com.orange.protocol.message.UserProtos.PBUser getUsers(int index) {
+      return users_.get(index);
+    }
+    /**
+     * <code>repeated .barrage.PBUser users = 3;</code>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserOrBuilder getUsersOrBuilder(
+        int index) {
+      return users_.get(index);
+    }
+
+    private void initFields() {
+      name_ = "";
+      id_ = "";
+      users_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      for (int i = 0; i < getUsersCount(); i++) {
+        if (!getUsers(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getNameBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getIdBytes());
+      }
+      for (int i = 0; i < users_.size(); i++) {
+        output.writeMessage(3, users_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getNameBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getIdBytes());
+      }
+      for (int i = 0; i < users_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, users_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.orange.protocol.message.UserProtos.PBUserTag parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTag parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTag parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTag parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTag parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTag parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTag parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTag parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTag parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTag parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.orange.protocol.message.UserProtos.PBUserTag prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code barrage.PBUserTag}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:barrage.PBUserTag)
+        com.orange.protocol.message.UserProtos.PBUserTagOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.orange.protocol.message.UserProtos.internal_static_barrage_PBUserTag_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.orange.protocol.message.UserProtos.internal_static_barrage_PBUserTag_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.orange.protocol.message.UserProtos.PBUserTag.class, com.orange.protocol.message.UserProtos.PBUserTag.Builder.class);
+      }
+
+      // Construct using com.orange.protocol.message.UserProtos.PBUserTag.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getUsersFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (usersBuilder_ == null) {
+          users_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          usersBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.orange.protocol.message.UserProtos.internal_static_barrage_PBUserTag_descriptor;
+      }
+
+      public com.orange.protocol.message.UserProtos.PBUserTag getDefaultInstanceForType() {
+        return com.orange.protocol.message.UserProtos.PBUserTag.getDefaultInstance();
+      }
+
+      public com.orange.protocol.message.UserProtos.PBUserTag build() {
+        com.orange.protocol.message.UserProtos.PBUserTag result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.orange.protocol.message.UserProtos.PBUserTag buildPartial() {
+        com.orange.protocol.message.UserProtos.PBUserTag result = new com.orange.protocol.message.UserProtos.PBUserTag(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.id_ = id_;
+        if (usersBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            users_ = java.util.Collections.unmodifiableList(users_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.users_ = users_;
+        } else {
+          result.users_ = usersBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.orange.protocol.message.UserProtos.PBUserTag) {
+          return mergeFrom((com.orange.protocol.message.UserProtos.PBUserTag)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.orange.protocol.message.UserProtos.PBUserTag other) {
+        if (other == com.orange.protocol.message.UserProtos.PBUserTag.getDefaultInstance()) return this;
+        if (other.hasName()) {
+          bitField0_ |= 0x00000001;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasId()) {
+          bitField0_ |= 0x00000002;
+          id_ = other.id_;
+          onChanged();
+        }
+        if (usersBuilder_ == null) {
+          if (!other.users_.isEmpty()) {
+            if (users_.isEmpty()) {
+              users_ = other.users_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureUsersIsMutable();
+              users_.addAll(other.users_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.users_.isEmpty()) {
+            if (usersBuilder_.isEmpty()) {
+              usersBuilder_.dispose();
+              usersBuilder_ = null;
+              users_ = other.users_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              usersBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getUsersFieldBuilder() : null;
+            } else {
+              usersBuilder_.addAllMessages(other.users_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        for (int i = 0; i < getUsersCount(); i++) {
+          if (!getUsers(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.orange.protocol.message.UserProtos.PBUserTag parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.orange.protocol.message.UserProtos.PBUserTag) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>optional string id = 2;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string id = 2;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string id = 2;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string id = 2;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string id = 2;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.orange.protocol.message.UserProtos.PBUser> users_ =
+        java.util.Collections.emptyList();
+      private void ensureUsersIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          users_ = new java.util.ArrayList<com.orange.protocol.message.UserProtos.PBUser>(users_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> usersBuilder_;
+
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public java.util.List<com.orange.protocol.message.UserProtos.PBUser> getUsersList() {
+        if (usersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(users_);
+        } else {
+          return usersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public int getUsersCount() {
+        if (usersBuilder_ == null) {
+          return users_.size();
+        } else {
+          return usersBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser getUsers(int index) {
+        if (usersBuilder_ == null) {
+          return users_.get(index);
+        } else {
+          return usersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public Builder setUsers(
+          int index, com.orange.protocol.message.UserProtos.PBUser value) {
+        if (usersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUsersIsMutable();
+          users_.set(index, value);
+          onChanged();
+        } else {
+          usersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public Builder setUsers(
+          int index, com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
+        if (usersBuilder_ == null) {
+          ensureUsersIsMutable();
+          users_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          usersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public Builder addUsers(com.orange.protocol.message.UserProtos.PBUser value) {
+        if (usersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUsersIsMutable();
+          users_.add(value);
+          onChanged();
+        } else {
+          usersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public Builder addUsers(
+          int index, com.orange.protocol.message.UserProtos.PBUser value) {
+        if (usersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUsersIsMutable();
+          users_.add(index, value);
+          onChanged();
+        } else {
+          usersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public Builder addUsers(
+          com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
+        if (usersBuilder_ == null) {
+          ensureUsersIsMutable();
+          users_.add(builderForValue.build());
+          onChanged();
+        } else {
+          usersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public Builder addUsers(
+          int index, com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
+        if (usersBuilder_ == null) {
+          ensureUsersIsMutable();
+          users_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          usersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public Builder addAllUsers(
+          java.lang.Iterable<? extends com.orange.protocol.message.UserProtos.PBUser> values) {
+        if (usersBuilder_ == null) {
+          ensureUsersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, users_);
+          onChanged();
+        } else {
+          usersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public Builder clearUsers() {
+        if (usersBuilder_ == null) {
+          users_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          usersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public Builder removeUsers(int index) {
+        if (usersBuilder_ == null) {
+          ensureUsersIsMutable();
+          users_.remove(index);
+          onChanged();
+        } else {
+          usersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser.Builder getUsersBuilder(
+          int index) {
+        return getUsersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserOrBuilder getUsersOrBuilder(
+          int index) {
+        if (usersBuilder_ == null) {
+          return users_.get(index);  } else {
+          return usersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+           getUsersOrBuilderList() {
+        if (usersBuilder_ != null) {
+          return usersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(users_);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser.Builder addUsersBuilder() {
+        return getUsersFieldBuilder().addBuilder(
+            com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser.Builder addUsersBuilder(
+          int index) {
+        return getUsersFieldBuilder().addBuilder(
+            index, com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .barrage.PBUser users = 3;</code>
+       */
+      public java.util.List<com.orange.protocol.message.UserProtos.PBUser.Builder> 
+           getUsersBuilderList() {
+        return getUsersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+          getUsersFieldBuilder() {
+        if (usersBuilder_ == null) {
+          usersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder>(
+                  users_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          users_ = null;
+        }
+        return usersBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:barrage.PBUserTag)
+    }
+
+    static {
+      defaultInstance = new PBUserTag(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:barrage.PBUserTag)
+  }
+
+  public interface PBUserTagListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:barrage.PBUserTagList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .barrage.PBUserTag recents = 1;</code>
+     *
+     * <pre>
+     * 最近列表，保存在本地
+     * </pre>
+     */
+    java.util.List<com.orange.protocol.message.UserProtos.PBUserTag> 
+        getRecentsList();
+    /**
+     * <code>repeated .barrage.PBUserTag recents = 1;</code>
+     *
+     * <pre>
+     * 最近列表，保存在本地
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUserTag getRecents(int index);
+    /**
+     * <code>repeated .barrage.PBUserTag recents = 1;</code>
+     *
+     * <pre>
+     * 最近列表，保存在本地
+     * </pre>
+     */
+    int getRecentsCount();
+    /**
+     * <code>repeated .barrage.PBUserTag recents = 1;</code>
+     *
+     * <pre>
+     * 最近列表，保存在本地
+     * </pre>
+     */
+    java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserTagOrBuilder> 
+        getRecentsOrBuilderList();
+    /**
+     * <code>repeated .barrage.PBUserTag recents = 1;</code>
+     *
+     * <pre>
+     * 最近列表，保存在本地
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUserTagOrBuilder getRecentsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .barrage.PBUserTag tags = 2;</code>
+     *
+     * <pre>
+     * 标签列表
+     * </pre>
+     */
+    java.util.List<com.orange.protocol.message.UserProtos.PBUserTag> 
+        getTagsList();
+    /**
+     * <code>repeated .barrage.PBUserTag tags = 2;</code>
+     *
+     * <pre>
+     * 标签列表
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUserTag getTags(int index);
+    /**
+     * <code>repeated .barrage.PBUserTag tags = 2;</code>
+     *
+     * <pre>
+     * 标签列表
+     * </pre>
+     */
+    int getTagsCount();
+    /**
+     * <code>repeated .barrage.PBUserTag tags = 2;</code>
+     *
+     * <pre>
+     * 标签列表
+     * </pre>
+     */
+    java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserTagOrBuilder> 
+        getTagsOrBuilderList();
+    /**
+     * <code>repeated .barrage.PBUserTag tags = 2;</code>
+     *
+     * <pre>
+     * 标签列表
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUserTagOrBuilder getTagsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code barrage.PBUserTagList}
+   */
+  public static final class PBUserTagList extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:barrage.PBUserTagList)
+      PBUserTagListOrBuilder {
+    // Use PBUserTagList.newBuilder() to construct.
+    private PBUserTagList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PBUserTagList(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PBUserTagList defaultInstance;
+    public static PBUserTagList getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PBUserTagList getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PBUserTagList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                recents_ = new java.util.ArrayList<com.orange.protocol.message.UserProtos.PBUserTag>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              recents_.add(input.readMessage(com.orange.protocol.message.UserProtos.PBUserTag.PARSER, extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                tags_ = new java.util.ArrayList<com.orange.protocol.message.UserProtos.PBUserTag>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              tags_.add(input.readMessage(com.orange.protocol.message.UserProtos.PBUserTag.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          recents_ = java.util.Collections.unmodifiableList(recents_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          tags_ = java.util.Collections.unmodifiableList(tags_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.internal_static_barrage_PBUserTagList_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.orange.protocol.message.UserProtos.internal_static_barrage_PBUserTagList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.orange.protocol.message.UserProtos.PBUserTagList.class, com.orange.protocol.message.UserProtos.PBUserTagList.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PBUserTagList> PARSER =
+        new com.google.protobuf.AbstractParser<PBUserTagList>() {
+      public PBUserTagList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PBUserTagList(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PBUserTagList> getParserForType() {
+      return PARSER;
+    }
+
+    public static final int RECENTS_FIELD_NUMBER = 1;
+    private java.util.List<com.orange.protocol.message.UserProtos.PBUserTag> recents_;
+    /**
+     * <code>repeated .barrage.PBUserTag recents = 1;</code>
+     *
+     * <pre>
+     * 最近列表，保存在本地
+     * </pre>
+     */
+    public java.util.List<com.orange.protocol.message.UserProtos.PBUserTag> getRecentsList() {
+      return recents_;
+    }
+    /**
+     * <code>repeated .barrage.PBUserTag recents = 1;</code>
+     *
+     * <pre>
+     * 最近列表，保存在本地
+     * </pre>
+     */
+    public java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserTagOrBuilder> 
+        getRecentsOrBuilderList() {
+      return recents_;
+    }
+    /**
+     * <code>repeated .barrage.PBUserTag recents = 1;</code>
+     *
+     * <pre>
+     * 最近列表，保存在本地
+     * </pre>
+     */
+    public int getRecentsCount() {
+      return recents_.size();
+    }
+    /**
+     * <code>repeated .barrage.PBUserTag recents = 1;</code>
+     *
+     * <pre>
+     * 最近列表，保存在本地
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserTag getRecents(int index) {
+      return recents_.get(index);
+    }
+    /**
+     * <code>repeated .barrage.PBUserTag recents = 1;</code>
+     *
+     * <pre>
+     * 最近列表，保存在本地
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserTagOrBuilder getRecentsOrBuilder(
+        int index) {
+      return recents_.get(index);
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 2;
+    private java.util.List<com.orange.protocol.message.UserProtos.PBUserTag> tags_;
+    /**
+     * <code>repeated .barrage.PBUserTag tags = 2;</code>
+     *
+     * <pre>
+     * 标签列表
+     * </pre>
+     */
+    public java.util.List<com.orange.protocol.message.UserProtos.PBUserTag> getTagsList() {
+      return tags_;
+    }
+    /**
+     * <code>repeated .barrage.PBUserTag tags = 2;</code>
+     *
+     * <pre>
+     * 标签列表
+     * </pre>
+     */
+    public java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserTagOrBuilder> 
+        getTagsOrBuilderList() {
+      return tags_;
+    }
+    /**
+     * <code>repeated .barrage.PBUserTag tags = 2;</code>
+     *
+     * <pre>
+     * 标签列表
+     * </pre>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <code>repeated .barrage.PBUserTag tags = 2;</code>
+     *
+     * <pre>
+     * 标签列表
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserTag getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <code>repeated .barrage.PBUserTag tags = 2;</code>
+     *
+     * <pre>
+     * 标签列表
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserTagOrBuilder getTagsOrBuilder(
+        int index) {
+      return tags_.get(index);
+    }
+
+    private void initFields() {
+      recents_ = java.util.Collections.emptyList();
+      tags_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      for (int i = 0; i < getRecentsCount(); i++) {
+        if (!getRecents(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getTagsCount(); i++) {
+        if (!getTags(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < recents_.size(); i++) {
+        output.writeMessage(1, recents_.get(i));
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        output.writeMessage(2, tags_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < recents_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, recents_.get(i));
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, tags_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.orange.protocol.message.UserProtos.PBUserTagList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTagList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTagList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTagList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTagList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTagList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTagList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTagList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTagList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.UserProtos.PBUserTagList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.orange.protocol.message.UserProtos.PBUserTagList prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code barrage.PBUserTagList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:barrage.PBUserTagList)
+        com.orange.protocol.message.UserProtos.PBUserTagListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.orange.protocol.message.UserProtos.internal_static_barrage_PBUserTagList_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.orange.protocol.message.UserProtos.internal_static_barrage_PBUserTagList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.orange.protocol.message.UserProtos.PBUserTagList.class, com.orange.protocol.message.UserProtos.PBUserTagList.Builder.class);
+      }
+
+      // Construct using com.orange.protocol.message.UserProtos.PBUserTagList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getRecentsFieldBuilder();
+          getTagsFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (recentsBuilder_ == null) {
+          recents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          recentsBuilder_.clear();
+        }
+        if (tagsBuilder_ == null) {
+          tags_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          tagsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.orange.protocol.message.UserProtos.internal_static_barrage_PBUserTagList_descriptor;
+      }
+
+      public com.orange.protocol.message.UserProtos.PBUserTagList getDefaultInstanceForType() {
+        return com.orange.protocol.message.UserProtos.PBUserTagList.getDefaultInstance();
+      }
+
+      public com.orange.protocol.message.UserProtos.PBUserTagList build() {
+        com.orange.protocol.message.UserProtos.PBUserTagList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.orange.protocol.message.UserProtos.PBUserTagList buildPartial() {
+        com.orange.protocol.message.UserProtos.PBUserTagList result = new com.orange.protocol.message.UserProtos.PBUserTagList(this);
+        int from_bitField0_ = bitField0_;
+        if (recentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            recents_ = java.util.Collections.unmodifiableList(recents_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.recents_ = recents_;
+        } else {
+          result.recents_ = recentsBuilder_.build();
+        }
+        if (tagsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            tags_ = java.util.Collections.unmodifiableList(tags_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.tags_ = tags_;
+        } else {
+          result.tags_ = tagsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.orange.protocol.message.UserProtos.PBUserTagList) {
+          return mergeFrom((com.orange.protocol.message.UserProtos.PBUserTagList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.orange.protocol.message.UserProtos.PBUserTagList other) {
+        if (other == com.orange.protocol.message.UserProtos.PBUserTagList.getDefaultInstance()) return this;
+        if (recentsBuilder_ == null) {
+          if (!other.recents_.isEmpty()) {
+            if (recents_.isEmpty()) {
+              recents_ = other.recents_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRecentsIsMutable();
+              recents_.addAll(other.recents_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.recents_.isEmpty()) {
+            if (recentsBuilder_.isEmpty()) {
+              recentsBuilder_.dispose();
+              recentsBuilder_ = null;
+              recents_ = other.recents_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              recentsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getRecentsFieldBuilder() : null;
+            } else {
+              recentsBuilder_.addAllMessages(other.recents_);
+            }
+          }
+        }
+        if (tagsBuilder_ == null) {
+          if (!other.tags_.isEmpty()) {
+            if (tags_.isEmpty()) {
+              tags_ = other.tags_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureTagsIsMutable();
+              tags_.addAll(other.tags_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.tags_.isEmpty()) {
+            if (tagsBuilder_.isEmpty()) {
+              tagsBuilder_.dispose();
+              tagsBuilder_ = null;
+              tags_ = other.tags_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              tagsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getTagsFieldBuilder() : null;
+            } else {
+              tagsBuilder_.addAllMessages(other.tags_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        for (int i = 0; i < getRecentsCount(); i++) {
+          if (!getRecents(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getTagsCount(); i++) {
+          if (!getTags(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.orange.protocol.message.UserProtos.PBUserTagList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.orange.protocol.message.UserProtos.PBUserTagList) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.orange.protocol.message.UserProtos.PBUserTag> recents_ =
+        java.util.Collections.emptyList();
+      private void ensureRecentsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          recents_ = new java.util.ArrayList<com.orange.protocol.message.UserProtos.PBUserTag>(recents_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUserTag, com.orange.protocol.message.UserProtos.PBUserTag.Builder, com.orange.protocol.message.UserProtos.PBUserTagOrBuilder> recentsBuilder_;
+
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public java.util.List<com.orange.protocol.message.UserProtos.PBUserTag> getRecentsList() {
+        if (recentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(recents_);
+        } else {
+          return recentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public int getRecentsCount() {
+        if (recentsBuilder_ == null) {
+          return recents_.size();
+        } else {
+          return recentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserTag getRecents(int index) {
+        if (recentsBuilder_ == null) {
+          return recents_.get(index);
+        } else {
+          return recentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public Builder setRecents(
+          int index, com.orange.protocol.message.UserProtos.PBUserTag value) {
+        if (recentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRecentsIsMutable();
+          recents_.set(index, value);
+          onChanged();
+        } else {
+          recentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public Builder setRecents(
+          int index, com.orange.protocol.message.UserProtos.PBUserTag.Builder builderForValue) {
+        if (recentsBuilder_ == null) {
+          ensureRecentsIsMutable();
+          recents_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          recentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public Builder addRecents(com.orange.protocol.message.UserProtos.PBUserTag value) {
+        if (recentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRecentsIsMutable();
+          recents_.add(value);
+          onChanged();
+        } else {
+          recentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public Builder addRecents(
+          int index, com.orange.protocol.message.UserProtos.PBUserTag value) {
+        if (recentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRecentsIsMutable();
+          recents_.add(index, value);
+          onChanged();
+        } else {
+          recentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public Builder addRecents(
+          com.orange.protocol.message.UserProtos.PBUserTag.Builder builderForValue) {
+        if (recentsBuilder_ == null) {
+          ensureRecentsIsMutable();
+          recents_.add(builderForValue.build());
+          onChanged();
+        } else {
+          recentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public Builder addRecents(
+          int index, com.orange.protocol.message.UserProtos.PBUserTag.Builder builderForValue) {
+        if (recentsBuilder_ == null) {
+          ensureRecentsIsMutable();
+          recents_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          recentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public Builder addAllRecents(
+          java.lang.Iterable<? extends com.orange.protocol.message.UserProtos.PBUserTag> values) {
+        if (recentsBuilder_ == null) {
+          ensureRecentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, recents_);
+          onChanged();
+        } else {
+          recentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public Builder clearRecents() {
+        if (recentsBuilder_ == null) {
+          recents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          recentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public Builder removeRecents(int index) {
+        if (recentsBuilder_ == null) {
+          ensureRecentsIsMutable();
+          recents_.remove(index);
+          onChanged();
+        } else {
+          recentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserTag.Builder getRecentsBuilder(
+          int index) {
+        return getRecentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserTagOrBuilder getRecentsOrBuilder(
+          int index) {
+        if (recentsBuilder_ == null) {
+          return recents_.get(index);  } else {
+          return recentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserTagOrBuilder> 
+           getRecentsOrBuilderList() {
+        if (recentsBuilder_ != null) {
+          return recentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(recents_);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserTag.Builder addRecentsBuilder() {
+        return getRecentsFieldBuilder().addBuilder(
+            com.orange.protocol.message.UserProtos.PBUserTag.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserTag.Builder addRecentsBuilder(
+          int index) {
+        return getRecentsFieldBuilder().addBuilder(
+            index, com.orange.protocol.message.UserProtos.PBUserTag.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag recents = 1;</code>
+       *
+       * <pre>
+       * 最近列表，保存在本地
+       * </pre>
+       */
+      public java.util.List<com.orange.protocol.message.UserProtos.PBUserTag.Builder> 
+           getRecentsBuilderList() {
+        return getRecentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUserTag, com.orange.protocol.message.UserProtos.PBUserTag.Builder, com.orange.protocol.message.UserProtos.PBUserTagOrBuilder> 
+          getRecentsFieldBuilder() {
+        if (recentsBuilder_ == null) {
+          recentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.orange.protocol.message.UserProtos.PBUserTag, com.orange.protocol.message.UserProtos.PBUserTag.Builder, com.orange.protocol.message.UserProtos.PBUserTagOrBuilder>(
+                  recents_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          recents_ = null;
+        }
+        return recentsBuilder_;
+      }
+
+      private java.util.List<com.orange.protocol.message.UserProtos.PBUserTag> tags_ =
+        java.util.Collections.emptyList();
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          tags_ = new java.util.ArrayList<com.orange.protocol.message.UserProtos.PBUserTag>(tags_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUserTag, com.orange.protocol.message.UserProtos.PBUserTag.Builder, com.orange.protocol.message.UserProtos.PBUserTagOrBuilder> tagsBuilder_;
+
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public java.util.List<com.orange.protocol.message.UserProtos.PBUserTag> getTagsList() {
+        if (tagsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(tags_);
+        } else {
+          return tagsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public int getTagsCount() {
+        if (tagsBuilder_ == null) {
+          return tags_.size();
+        } else {
+          return tagsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserTag getTags(int index) {
+        if (tagsBuilder_ == null) {
+          return tags_.get(index);
+        } else {
+          return tagsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public Builder setTags(
+          int index, com.orange.protocol.message.UserProtos.PBUserTag value) {
+        if (tagsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTagsIsMutable();
+          tags_.set(index, value);
+          onChanged();
+        } else {
+          tagsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public Builder setTags(
+          int index, com.orange.protocol.message.UserProtos.PBUserTag.Builder builderForValue) {
+        if (tagsBuilder_ == null) {
+          ensureTagsIsMutable();
+          tags_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          tagsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public Builder addTags(com.orange.protocol.message.UserProtos.PBUserTag value) {
+        if (tagsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTagsIsMutable();
+          tags_.add(value);
+          onChanged();
+        } else {
+          tagsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public Builder addTags(
+          int index, com.orange.protocol.message.UserProtos.PBUserTag value) {
+        if (tagsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTagsIsMutable();
+          tags_.add(index, value);
+          onChanged();
+        } else {
+          tagsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public Builder addTags(
+          com.orange.protocol.message.UserProtos.PBUserTag.Builder builderForValue) {
+        if (tagsBuilder_ == null) {
+          ensureTagsIsMutable();
+          tags_.add(builderForValue.build());
+          onChanged();
+        } else {
+          tagsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public Builder addTags(
+          int index, com.orange.protocol.message.UserProtos.PBUserTag.Builder builderForValue) {
+        if (tagsBuilder_ == null) {
+          ensureTagsIsMutable();
+          tags_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          tagsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<? extends com.orange.protocol.message.UserProtos.PBUserTag> values) {
+        if (tagsBuilder_ == null) {
+          ensureTagsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, tags_);
+          onChanged();
+        } else {
+          tagsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public Builder clearTags() {
+        if (tagsBuilder_ == null) {
+          tags_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          tagsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public Builder removeTags(int index) {
+        if (tagsBuilder_ == null) {
+          ensureTagsIsMutable();
+          tags_.remove(index);
+          onChanged();
+        } else {
+          tagsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserTag.Builder getTagsBuilder(
+          int index) {
+        return getTagsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserTagOrBuilder getTagsOrBuilder(
+          int index) {
+        if (tagsBuilder_ == null) {
+          return tags_.get(index);  } else {
+          return tagsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserTagOrBuilder> 
+           getTagsOrBuilderList() {
+        if (tagsBuilder_ != null) {
+          return tagsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(tags_);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserTag.Builder addTagsBuilder() {
+        return getTagsFieldBuilder().addBuilder(
+            com.orange.protocol.message.UserProtos.PBUserTag.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserTag.Builder addTagsBuilder(
+          int index) {
+        return getTagsFieldBuilder().addBuilder(
+            index, com.orange.protocol.message.UserProtos.PBUserTag.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .barrage.PBUserTag tags = 2;</code>
+       *
+       * <pre>
+       * 标签列表
+       * </pre>
+       */
+      public java.util.List<com.orange.protocol.message.UserProtos.PBUserTag.Builder> 
+           getTagsBuilderList() {
+        return getTagsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUserTag, com.orange.protocol.message.UserProtos.PBUserTag.Builder, com.orange.protocol.message.UserProtos.PBUserTagOrBuilder> 
+          getTagsFieldBuilder() {
+        if (tagsBuilder_ == null) {
+          tagsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.orange.protocol.message.UserProtos.PBUserTag, com.orange.protocol.message.UserProtos.PBUserTag.Builder, com.orange.protocol.message.UserProtos.PBUserTagOrBuilder>(
+                  tags_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          tags_ = null;
+        }
+        return tagsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:barrage.PBUserTagList)
+    }
+
+    static {
+      defaultInstance = new PBUserTagList(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:barrage.PBUserTagList)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_barrage_PBSNSUser_descriptor;
   private static
@@ -7031,6 +9320,16 @@ public final class UserProtos {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_barrage_PBUser_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_barrage_PBUserTag_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_barrage_PBUserTag_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_barrage_PBUserTagList_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_barrage_PBUserTagList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7059,8 +9358,12 @@ public final class UserProtos {
       "currentDevice\030G \001(\0132\021.barrage.PBDevice\022\"" +
       "\n\007devices\030H \003(\0132\021.barrage.PBDevice\022\031\n\021em" +
       "ailVerifyStatus\030Q \001(\005\022\027\n\017emailVerifyCode" +
-      "\030R \001(\t\022\032\n\022mobileVerifyStatus\030S \001(\005B)\n\033co",
-      "m.orange.protocol.messageB\nUserProtos"
+      "\030R \001(\t\022\032\n\022mobileVerifyStatus\030S \001(\005\"E\n\tPB",
+      "UserTag\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\036\n\005use" +
+      "rs\030\003 \003(\0132\017.barrage.PBUser\"V\n\rPBUserTagLi" +
+      "st\022#\n\007recents\030\001 \003(\0132\022.barrage.PBUserTag\022" +
+      " \n\004tags\030\002 \003(\0132\022.barrage.PBUserTagB)\n\033com" +
+      ".orange.protocol.messageB\nUserProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7087,6 +9390,18 @@ public final class UserProtos {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBUser_descriptor,
         new java.lang.String[] { "UserId", "Nick", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "Birthday", "Zodiac", "BloodGroup", "BackgroundURL", "Signature", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", });
+    internal_static_barrage_PBUserTag_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_barrage_PBUserTag_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_barrage_PBUserTag_descriptor,
+        new java.lang.String[] { "Name", "Id", "Users", });
+    internal_static_barrage_PBUserTagList_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_barrage_PBUserTagList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_barrage_PBUserTagList_descriptor,
+        new java.lang.String[] { "Recents", "Tags", });
     com.orange.protocol.message.CommonProtos.getDescriptor();
   }
 
