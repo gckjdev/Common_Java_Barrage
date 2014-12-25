@@ -1,16 +1,12 @@
-package com.orange.barrage.model.user;
+package com.orange.barrage.model.feed;
 
-import com.googlecode.protobuf.format.JsonFormat;
-import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
-import com.mongodb.util.JSON;
 import com.orange.barrage.constant.BarrageConstants;
 import com.orange.common.elasticsearch.ESORMable;
 import com.orange.common.utils.MapUtil;
 import com.orange.game.model.common.ProtoBufCoding;
 import com.orange.game.model.dao.CommonData;
 import com.orange.network.game.protocol.message.GameMessageProtos;
-import com.orange.network.game.protocol.model.GroupProtos;
 import com.orange.protocol.message.BarrageProtos;
 import com.orange.protocol.message.UserProtos;
 import org.bson.types.ObjectId;
@@ -18,15 +14,15 @@ import org.bson.types.ObjectId;
 import java.util.Map;
 
 /**
- * Created by pipi on 14/12/8.
+ * Created by pipi on 14/12/25.
  */
-public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser>, ESORMable, MapUtil.MakeMapable<ObjectId, User> {
+public class FeedAction extends CommonData implements ProtoBufCoding<BarrageProtos.PBFeedAction>, ESORMable, MapUtil.MakeMapable<ObjectId, FeedAction> {
 
-    public User(DBObject dbObject) {
+    public FeedAction(DBObject dbObject) {
         super(dbObject);
     }
 
-    public User() {
+    public FeedAction() {
         super();
     }
 
@@ -58,13 +54,12 @@ public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser
         return null;
     }
 
-    public User getValue() {
+    public FeedAction getValue() {
         return null;
     }
 
-    public UserProtos.PBUser toProtoBufModel() {
-        UserProtos.PBUser.Builder builder = UserProtos.PBUser.newBuilder();
-        return toPB(builder, null);
+    public BarrageProtos.PBFeedAction toProtoBufModel() {
+        return null;
     }
 
     public void addIntoResponse(GameMessageProtos.DataQueryResponse.Builder builder) {
@@ -72,6 +67,7 @@ public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser
     }
 
     public static String getPbKeyFieldName(){
-        return BarrageConstants.F_USER_ID;
+        return BarrageConstants.F_ACTION_ID;
     }
+
 }

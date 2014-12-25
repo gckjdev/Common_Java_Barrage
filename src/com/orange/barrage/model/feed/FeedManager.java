@@ -15,7 +15,7 @@ import org.bson.types.ObjectId;
 /**
  * Created by pipi on 14/12/8.
  */
-public class FeedManager extends CommonModelManager {
+public class FeedManager extends CommonModelManager<Feed> {
     private static FeedManager ourInstance = new FeedManager();
 
     public static FeedManager getInstance() {
@@ -32,8 +32,10 @@ public class FeedManager extends CommonModelManager {
         BasicDBObject query = new BasicDBObject();
         query.put("_id", new ObjectId(feedId));
 
-        String jsonString = JsonFormat.printToString(action);
-        DBObject obj = (DBObject) JSON.parse(jsonString);
+//        String jsonString = JsonFormat.printToString(action);
+        DBObject obj = FeedAction.pbToDBObject(action);
+
+//                (DBObject) JSON.parse(jsonString);
         if (obj == null || obj.keySet().size() == 0){
             return ErrorProtos.PBError.ERROR_FEED_ACTION_INVALID_VALUE;
         }
@@ -53,5 +55,15 @@ public class FeedManager extends CommonModelManager {
         // insert into related index tables
 
         return 0;
+    }
+
+    @Override
+    public String getTableName() {
+        return BarrageConstants.T_FEED;
+    }
+
+    @Override
+    public Class getClazz() {
+        return Feed.class;
     }
 }

@@ -5,6 +5,7 @@ import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
 import com.orange.barrage.common.CommonModelService;
 import com.orange.barrage.constant.BarrageConstants;
+import com.orange.barrage.model.user.User;
 import com.orange.game.api.service.CommonGameService;
 import com.orange.protocol.message.MessageProtos;
 import com.orange.protocol.message.UserProtos;
@@ -26,12 +27,13 @@ public class RegisterService extends CommonModelService {
 
     public int registerByEmail(UserProtos.PBUser user, MessageProtos.PBRegisterUserResponse.Builder rspBuilder) {
 
-        String jsonString = JsonFormat.printToString(user);
-        DBObject obj = (DBObject)JSON.parse(jsonString);
+//        String jsonString = JsonFormat.printToString(user);
+        DBObject obj = User.pbToDBObject(user, true); //JSON.parse(jsonString);
+        String userId = obj.get("_id").toString();
 
-        ObjectId userId = new ObjectId();
-        obj.put("_id", userId);
-        obj.put(BarrageConstants.F_USER_ID, userId.toString());
+//        ObjectId userId = new ObjectId();
+//        obj.put("_id", userId);
+//        obj.put(BarrageConstants.F_USER_ID, userId.toString());
 
         mongoDBClient.insert(BarrageConstants.T_USER, obj);
 

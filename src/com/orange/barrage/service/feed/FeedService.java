@@ -5,6 +5,7 @@ import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
 import com.orange.barrage.common.CommonModelService;
 import com.orange.barrage.constant.BarrageConstants;
+import com.orange.barrage.model.feed.Feed;
 import com.orange.barrage.model.feed.UserTimelineFeedManager;
 import com.orange.protocol.message.BarrageProtos;
 import com.orange.protocol.message.MessageProtos;
@@ -50,12 +51,14 @@ public class FeedService extends CommonModelService {
         String userId = feed.getCreateUser().getUserId();
         List<UserProtos.PBUser> toUserList = feed.getToUsersList();
 
-        String jsonString = JsonFormat.printToString(feed);
-        DBObject obj = (DBObject) JSON.parse(jsonString);
+//        String jsonString = JsonFormat.printToString(feed);
+        DBObject obj = Feed.pbToDBObject(feed, true); // JSON.parse(jsonString);
 
-        ObjectId feedId = new ObjectId();
-        obj.put("_id", feedId);
-        obj.put(BarrageConstants.F_FEED_ID, feedId.toString());
+        // set feed ID
+        String feedId = obj.get("_id").toString(); //Feed.generateObjectId(obj);
+//        ObjectId feedId = new ObjectId();
+//        obj.put("_id", feedId);
+//        obj.put(BarrageConstants.F_FEED_ID, feedId.toString());
 
         mongoDBClient.insert(BarrageConstants.T_FEED, obj);
 

@@ -1,11 +1,18 @@
 package com.orange.game.model.dao;
 
+import java.lang.reflect.Method;
 import java.util.*;
 
+import com.google.protobuf.GeneratedMessage;
+import com.googlecode.protobuf.format.JsonFormat;
 import com.mongodb.BasicDBList;
+import com.mongodb.util.JSON;
+import com.orange.barrage.constant.BarrageConstants;
+import com.orange.common.utils.StringUtil;
 import com.orange.game.constants.DBConstants;
 import com.orange.game.model.dao.common.IntKeyValue;
 import com.orange.game.model.dao.common.UserAward;
+import com.orange.protocol.message.ErrorProtos;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 
@@ -166,6 +173,30 @@ public class CommonData {
 
     }
 
+
+    public <T extends GeneratedMessage> T toPB(T.Builder builder, Set<String> removeFields){
+        BasicDBObject obj = new BasicDBObject();
+        obj.putAll(getDbObject());
+        obj.remove("_id");
+        if (removeFields != null && removeFields.size() > 0){
+            for (String field : removeFields){
+                obj.remove(field);
+            }
+        }
+
+        String json = JSON.serialize(obj);
+        log.info(getClass().getName()+" json = "+json);
+        try {
+            JsonFormat.merge(json, builder);
+            T pb = (T)builder.build();
+            return pb;
+        } catch (JsonFormat.ParseException e) {
+            log.error("catch exception while convert pb, exception="+e.toString(), e);
+        }
+
+        return null;
+    }
+
     public BasicDBList getList(String key) {
         return (BasicDBList) dbObject.get(key);
     }
@@ -279,4 +310,46 @@ public class CommonData {
         }
     }
 
+    public static <T extends GeneratedMessage> BasicDBObject pbToDBObject(T pbMessage){
+        return pbToDBObject(pbMessage, false);
+    }
+
+    public static <T extends GeneratedMessage> BasicDBObject pbToDBObject(T pbMessage, boolean generateObjectId){
+
+        if (pbMessage == null){
+            return null;
+        }
+
+        // convert PB to JSON
+        String jsonString = JsonFormat.printToString(pbMessage);
+        if (jsonString == null){
+            return null;
+        }
+
+        // convert JSON to DB Object
+        BasicDBObject obj = (BasicDBObject) JSON.parse(jsonString);
+
+        if (generateObjectId){
+            generateObjectId(obj);
+        }
+
+        return obj;
+    }
+
+    // to be overried
+    public static String getPbKeyFieldName(){
+        return null;
+    }
+
+    public static String generateObjectId(DBObject obj) {
+        ObjectId id = new ObjectId();
+        obj.put("_id", id);
+
+        String pbKeyFieldName = getPbKeyFieldName();
+        if (!StringUtil.isEmpty(pbKeyFieldName)) {
+            obj.put(pbKeyFieldName, id);
+        }
+
+        return id.toString();
+    }
 }
