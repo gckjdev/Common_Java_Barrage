@@ -1,5 +1,7 @@
 package com.orange.barrage.model.user;
 
+import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.Message;
 import com.googlecode.protobuf.format.JsonFormat;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
@@ -15,7 +17,10 @@ import com.orange.protocol.message.BarrageProtos;
 import com.orange.protocol.message.UserProtos;
 import org.bson.types.ObjectId;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by pipi on 14/12/8.
@@ -67,11 +72,16 @@ public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser
         return toPB(builder, null);
     }
 
+
     public void addIntoResponse(GameMessageProtos.DataQueryResponse.Builder builder) {
 
     }
 
     public static String getPbKeyFieldName(){
         return BarrageConstants.F_USER_ID;
+    }
+
+    public Class getPBClass(){
+        return UserProtos.PBUser.class;
     }
 }

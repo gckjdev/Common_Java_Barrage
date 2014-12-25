@@ -3,16 +3,19 @@ package com.orange.game.model.dao;
 import java.lang.reflect.Method;
 import java.util.*;
 
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.*;
 import com.googlecode.protobuf.format.JsonFormat;
 import com.mongodb.BasicDBList;
 import com.mongodb.util.JSON;
 import com.orange.barrage.constant.BarrageConstants;
+import com.orange.barrage.model.feed.Feed;
 import com.orange.common.utils.StringUtil;
 import com.orange.game.constants.DBConstants;
 import com.orange.game.model.dao.common.IntKeyValue;
 import com.orange.game.model.dao.common.UserAward;
+import com.orange.protocol.message.BarrageProtos;
 import com.orange.protocol.message.ErrorProtos;
+import com.orange.protocol.message.UserProtos;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 
@@ -175,18 +178,26 @@ public class CommonData {
 
 
     public <T extends GeneratedMessage> T toPB(T.Builder builder, Set<String> removeFields){
+
+        // build DB Object
         BasicDBObject obj = new BasicDBObject();
         obj.putAll(getDbObject());
+
+        // remove _id field since this will cause PB parsing failure
         obj.remove("_id");
+
+        // remove unneeded fields
         if (removeFields != null && removeFields.size() > 0){
             for (String field : removeFields){
                 obj.remove(field);
             }
         }
 
+        // conver to JSON string
         String json = JSON.serialize(obj);
         log.info(getClass().getName()+" json = "+json);
         try {
+            // from JSON to PB
             JsonFormat.merge(json, builder);
             T pb = (T)builder.build();
             return pb;
@@ -196,6 +207,46 @@ public class CommonData {
 
         return null;
     }
+
+    public static Object invokeClassMethod(Class cls, String methodName){
+        Class noparams[] = {};
+        Method method = null;
+        try {
+            method = cls.getDeclaredMethod(methodName, noparams);
+            return method.invoke(null, null);
+        } catch (Exception e) {
+            log.error("catch exception while invoke class method by name"+methodName+", exception="+e.toString(), e);
+        }
+
+        return null;
+    }
+
+    public static <T extends GeneratedMessage, D extends CommonData> List<T> listToPB(List<D> list, Set<String> removeFields){
+        List<T> pbList = new ArrayList<T>();
+        for (D dataObj : list){
+            GeneratedMessage.Builder builder = (GeneratedMessage.Builder)invokeClassMethod(dataObj.getPBClass(), "newBuilder");
+            T pbObject = dataObj.toPB(builder, removeFields);
+            pbList.add(pbObject);
+        }
+
+        return pbList;
+    }
+
+//    public <T extends GeneratedMessage> com.google.protobuf.Message.Builder newPbBuilder(){
+//
+//        Class cls = getPBClass();
+//        Class noparams[] = {};
+//        String methodName = "newBuilder";
+//        Method method = null;
+//        try {
+//            method = cls.getDeclaredMethod(methodName, noparams);
+//            method.invoke(null, null);
+//        } catch (Exception e) {
+//            log.error("catch exception while invoke class method by name"+methodName+", exception="+e.toString(), e);
+//        }
+//
+//        return UserProtos.PBUser.newBuilder();
+//    }
 
     public BasicDBList getList(String key) {
         return (BasicDBList) dbObject.get(key);
@@ -338,6 +389,10 @@ public class CommonData {
 
     // to be overried
     public static String getPbKeyFieldName(){
+        return null;
+    }
+
+    public Class getPBClass(){
         return null;
     }
 

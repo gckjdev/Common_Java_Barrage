@@ -1,5 +1,6 @@
 package com.orange.barrage.model.feed;
 
+import com.google.protobuf.Message;
 import com.mongodb.DBObject;
 import com.orange.barrage.constant.BarrageConstants;
 import com.orange.common.elasticsearch.ESORMable;
@@ -62,12 +63,18 @@ public class FeedAction extends CommonData implements ProtoBufCoding<BarrageProt
         return null;
     }
 
+
+
     public void addIntoResponse(GameMessageProtos.DataQueryResponse.Builder builder) {
 
     }
 
     public static String getPbKeyFieldName(){
         return BarrageConstants.F_ACTION_ID;
+    }
+
+    public Class getPBClass(){
+        return BarrageProtos.PBFeedAction.class;
     }
 
 }

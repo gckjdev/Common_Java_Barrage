@@ -1,5 +1,6 @@
 package com.orange.barrage.model.feed;
 
+import com.google.protobuf.Message;
 import com.mongodb.DBObject;
 import com.orange.barrage.constant.BarrageConstants;
 import com.orange.common.elasticsearch.ESORMable;
@@ -9,6 +10,7 @@ import com.orange.game.model.dao.CommonData;
 import com.orange.network.game.protocol.message.GameMessageProtos;
 import com.orange.network.game.protocol.model.DrawProtos;
 import com.orange.protocol.message.BarrageProtos;
+import com.orange.protocol.message.UserProtos;
 import org.bson.types.ObjectId;
 
 import java.util.Map;
@@ -68,6 +70,10 @@ public class Feed extends CommonData  implements ProtoBufCoding<BarrageProtos.PB
 
     public static String getPbKeyFieldName(){
         return BarrageConstants.F_FEED_ID;
+    }
+
+    public Class getPBClass(){
+        return BarrageProtos.PBFeed.class;
     }
 
 }

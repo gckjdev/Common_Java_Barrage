@@ -1,5 +1,6 @@
 package com.orange.barrage.common;
 
+import com.google.protobuf.GeneratedMessage;
 import com.mongodb.DBObject;
 import com.orange.barrage.model.user.User;
 import com.orange.common.cassandra.CassandraClient;
@@ -8,7 +9,12 @@ import com.orange.common.redis.RedisClient;
 import com.orange.game.constants.DBConstants;
 import com.orange.game.model.dao.CommonData;
 import com.orange.game.model.service.DBService;
+import com.orange.protocol.message.BarrageProtos;
 import org.apache.log4j.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by pipi on 14/12/2.
@@ -44,7 +50,8 @@ public abstract class CommonModelManager<T extends CommonData> {
 
         T t = newClassInstance(getClazz());
         t.setDbObject(dbObject);
-
         return t;
     }
+
+
 }
