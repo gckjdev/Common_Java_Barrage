@@ -205,6 +205,219 @@ public final class UserProtos {
     // @@protoc_insertion_point(enum_scope:barrage.FriendAddConfigType)
   }
 
+  /**
+   * Protobuf enum {@code barrage.FriendRequestDirection}
+   */
+  public enum FriendRequestDirection
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>REQ_DIRECTION_SENDER = 0;</code>
+     *
+     * <pre>
+     * 发起者
+     * </pre>
+     */
+    REQ_DIRECTION_SENDER(0, 0),
+    /**
+     * <code>REQ_DIRECTION_RECEIVER = 1;</code>
+     *
+     * <pre>
+     * 接收者
+     * </pre>
+     */
+    REQ_DIRECTION_RECEIVER(1, 1),
+    ;
+
+    /**
+     * <code>REQ_DIRECTION_SENDER = 0;</code>
+     *
+     * <pre>
+     * 发起者
+     * </pre>
+     */
+    public static final int REQ_DIRECTION_SENDER_VALUE = 0;
+    /**
+     * <code>REQ_DIRECTION_RECEIVER = 1;</code>
+     *
+     * <pre>
+     * 接收者
+     * </pre>
+     */
+    public static final int REQ_DIRECTION_RECEIVER_VALUE = 1;
+
+
+    public final int getNumber() { return value; }
+
+    public static FriendRequestDirection valueOf(int value) {
+      switch (value) {
+        case 0: return REQ_DIRECTION_SENDER;
+        case 1: return REQ_DIRECTION_RECEIVER;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FriendRequestDirection>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<FriendRequestDirection>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<FriendRequestDirection>() {
+            public FriendRequestDirection findValueByNumber(int number) {
+              return FriendRequestDirection.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final FriendRequestDirection[] VALUES = values();
+
+    public static FriendRequestDirection valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private FriendRequestDirection(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:barrage.FriendRequestDirection)
+  }
+
+  /**
+   * Protobuf enum {@code barrage.FriendAddStatusType}
+   */
+  public enum FriendAddStatusType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>REQ_WAIT_ACCEPT = 0;</code>
+     *
+     * <pre>
+     * 待接受
+     * </pre>
+     */
+    REQ_WAIT_ACCEPT(0, 0),
+    /**
+     * <code>REQ_ACCEPTED = 1;</code>
+     *
+     * <pre>
+     * 已接受
+     * </pre>
+     */
+    REQ_ACCEPTED(1, 1),
+    /**
+     * <code>REQ_REJECTED = 2;</code>
+     *
+     * <pre>
+     * 已拒绝
+     * </pre>
+     */
+    REQ_REJECTED(2, 2),
+    ;
+
+    /**
+     * <code>REQ_WAIT_ACCEPT = 0;</code>
+     *
+     * <pre>
+     * 待接受
+     * </pre>
+     */
+    public static final int REQ_WAIT_ACCEPT_VALUE = 0;
+    /**
+     * <code>REQ_ACCEPTED = 1;</code>
+     *
+     * <pre>
+     * 已接受
+     * </pre>
+     */
+    public static final int REQ_ACCEPTED_VALUE = 1;
+    /**
+     * <code>REQ_REJECTED = 2;</code>
+     *
+     * <pre>
+     * 已拒绝
+     * </pre>
+     */
+    public static final int REQ_REJECTED_VALUE = 2;
+
+
+    public final int getNumber() { return value; }
+
+    public static FriendAddStatusType valueOf(int value) {
+      switch (value) {
+        case 0: return REQ_WAIT_ACCEPT;
+        case 1: return REQ_ACCEPTED;
+        case 2: return REQ_REJECTED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FriendAddStatusType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<FriendAddStatusType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<FriendAddStatusType>() {
+            public FriendAddStatusType findValueByNumber(int number) {
+              return FriendAddStatusType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final FriendAddStatusType[] VALUES = values();
+
+    public static FriendAddStatusType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private FriendAddStatusType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:barrage.FriendAddStatusType)
+  }
+
   public interface PBSNSUserOrBuilder extends
       // @@protoc_insertion_point(interface_extends:barrage.PBSNSUser)
       com.google.protobuf.MessageOrBuilder {
@@ -2208,30 +2421,30 @@ public final class UserProtos {
         getBloodGroupBytes();
 
     /**
-     * <code>optional string backgroundURL = 41;</code>
+     * <code>optional string avatarBg = 41;</code>
      *
      * <pre>
      * 用户背景图URL
      * </pre>
      */
-    boolean hasBackgroundURL();
+    boolean hasAvatarBg();
     /**
-     * <code>optional string backgroundURL = 41;</code>
+     * <code>optional string avatarBg = 41;</code>
      *
      * <pre>
      * 用户背景图URL
      * </pre>
      */
-    java.lang.String getBackgroundURL();
+    java.lang.String getAvatarBg();
     /**
-     * <code>optional string backgroundURL = 41;</code>
+     * <code>optional string avatarBg = 41;</code>
      *
      * <pre>
      * 用户背景图URL
      * </pre>
      */
     com.google.protobuf.ByteString
-        getBackgroundURLBytes();
+        getAvatarBgBytes();
 
     /**
      * <code>optional string signature = 42;</code>
@@ -2593,21 +2806,98 @@ public final class UserProtos {
         getMemoBytes();
 
     /**
-     * <code>optional int32 addSourceType = 102;</code>
+     * <code>optional int32 addSource = 102;</code>
      *
      * <pre>
      * 好友：从什么渠道添加，参考FriendAddSourceType
      * </pre>
      */
-    boolean hasAddSourceType();
+    boolean hasAddSource();
     /**
-     * <code>optional int32 addSourceType = 102;</code>
+     * <code>optional int32 addSource = 102;</code>
      *
      * <pre>
      * 好友：从什么渠道添加，参考FriendAddSourceType
      * </pre>
      */
-    int getAddSourceType();
+    int getAddSource();
+
+    /**
+     * <code>optional int32 addDate = 103;</code>
+     *
+     * <pre>
+     * 好友：添加时间
+     * </pre>
+     */
+    boolean hasAddDate();
+    /**
+     * <code>optional int32 addDate = 103;</code>
+     *
+     * <pre>
+     * 好友：添加时间
+     * </pre>
+     */
+    int getAddDate();
+
+    /**
+     * <code>optional int32 addDir = 104;</code>
+     *
+     * <pre>
+     * 好友：添加方向
+     * </pre>
+     */
+    boolean hasAddDir();
+    /**
+     * <code>optional int32 addDir = 104;</code>
+     *
+     * <pre>
+     * 好友：添加方向
+     * </pre>
+     */
+    int getAddDir();
+
+    /**
+     * <code>optional string replyMemo = 105;</code>
+     *
+     * <pre>
+     * 好友：回复请求的内容
+     * </pre>
+     */
+    boolean hasReplyMemo();
+    /**
+     * <code>optional string replyMemo = 105;</code>
+     *
+     * <pre>
+     * 好友：回复请求的内容
+     * </pre>
+     */
+    java.lang.String getReplyMemo();
+    /**
+     * <code>optional string replyMemo = 105;</code>
+     *
+     * <pre>
+     * 好友：回复请求的内容
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getReplyMemoBytes();
+
+    /**
+     * <code>optional int32 addStatus = 106;</code>
+     *
+     * <pre>
+     * 好友：回复状态，参考FriendAddStatusType
+     * </pre>
+     */
+    boolean hasAddStatus();
+    /**
+     * <code>optional int32 addStatus = 106;</code>
+     *
+     * <pre>
+     * 好友：回复状态，参考FriendAddStatusType
+     * </pre>
+     */
+    int getAddStatus();
   }
   /**
    * Protobuf type {@code barrage.PBUser}
@@ -2644,6 +2934,7 @@ public final class UserProtos {
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      int mutable_bitField1_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2736,7 +3027,7 @@ public final class UserProtos {
             case 330: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000800;
-              backgroundURL_ = bs;
+              avatarBg_ = bs;
               break;
             }
             case 338: {
@@ -2842,7 +3133,28 @@ public final class UserProtos {
             }
             case 816: {
               bitField0_ |= 0x04000000;
-              addSourceType_ = input.readInt32();
+              addSource_ = input.readInt32();
+              break;
+            }
+            case 824: {
+              bitField0_ |= 0x08000000;
+              addDate_ = input.readInt32();
+              break;
+            }
+            case 832: {
+              bitField0_ |= 0x10000000;
+              addDir_ = input.readInt32();
+              break;
+            }
+            case 842: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x20000000;
+              replyMemo_ = bs;
+              break;
+            }
+            case 848: {
+              bitField0_ |= 0x40000000;
+              addStatus_ = input.readInt32();
               break;
             }
           }
@@ -3457,27 +3769,27 @@ public final class UserProtos {
       }
     }
 
-    public static final int BACKGROUNDURL_FIELD_NUMBER = 41;
-    private java.lang.Object backgroundURL_;
+    public static final int AVATARBG_FIELD_NUMBER = 41;
+    private java.lang.Object avatarBg_;
     /**
-     * <code>optional string backgroundURL = 41;</code>
+     * <code>optional string avatarBg = 41;</code>
      *
      * <pre>
      * 用户背景图URL
      * </pre>
      */
-    public boolean hasBackgroundURL() {
+    public boolean hasAvatarBg() {
       return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>optional string backgroundURL = 41;</code>
+     * <code>optional string avatarBg = 41;</code>
      *
      * <pre>
      * 用户背景图URL
      * </pre>
      */
-    public java.lang.String getBackgroundURL() {
-      java.lang.Object ref = backgroundURL_;
+    public java.lang.String getAvatarBg() {
+      java.lang.Object ref = avatarBg_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -3485,26 +3797,26 @@ public final class UserProtos {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          backgroundURL_ = s;
+          avatarBg_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string backgroundURL = 41;</code>
+     * <code>optional string avatarBg = 41;</code>
      *
      * <pre>
      * 用户背景图URL
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getBackgroundURLBytes() {
-      java.lang.Object ref = backgroundURL_;
+        getAvatarBgBytes() {
+      java.lang.Object ref = avatarBg_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        backgroundURL_ = b;
+        avatarBg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4109,27 +4421,150 @@ public final class UserProtos {
       }
     }
 
-    public static final int ADDSOURCETYPE_FIELD_NUMBER = 102;
-    private int addSourceType_;
+    public static final int ADDSOURCE_FIELD_NUMBER = 102;
+    private int addSource_;
     /**
-     * <code>optional int32 addSourceType = 102;</code>
+     * <code>optional int32 addSource = 102;</code>
      *
      * <pre>
      * 好友：从什么渠道添加，参考FriendAddSourceType
      * </pre>
      */
-    public boolean hasAddSourceType() {
+    public boolean hasAddSource() {
       return ((bitField0_ & 0x04000000) == 0x04000000);
     }
     /**
-     * <code>optional int32 addSourceType = 102;</code>
+     * <code>optional int32 addSource = 102;</code>
      *
      * <pre>
      * 好友：从什么渠道添加，参考FriendAddSourceType
      * </pre>
      */
-    public int getAddSourceType() {
-      return addSourceType_;
+    public int getAddSource() {
+      return addSource_;
+    }
+
+    public static final int ADDDATE_FIELD_NUMBER = 103;
+    private int addDate_;
+    /**
+     * <code>optional int32 addDate = 103;</code>
+     *
+     * <pre>
+     * 好友：添加时间
+     * </pre>
+     */
+    public boolean hasAddDate() {
+      return ((bitField0_ & 0x08000000) == 0x08000000);
+    }
+    /**
+     * <code>optional int32 addDate = 103;</code>
+     *
+     * <pre>
+     * 好友：添加时间
+     * </pre>
+     */
+    public int getAddDate() {
+      return addDate_;
+    }
+
+    public static final int ADDDIR_FIELD_NUMBER = 104;
+    private int addDir_;
+    /**
+     * <code>optional int32 addDir = 104;</code>
+     *
+     * <pre>
+     * 好友：添加方向
+     * </pre>
+     */
+    public boolean hasAddDir() {
+      return ((bitField0_ & 0x10000000) == 0x10000000);
+    }
+    /**
+     * <code>optional int32 addDir = 104;</code>
+     *
+     * <pre>
+     * 好友：添加方向
+     * </pre>
+     */
+    public int getAddDir() {
+      return addDir_;
+    }
+
+    public static final int REPLYMEMO_FIELD_NUMBER = 105;
+    private java.lang.Object replyMemo_;
+    /**
+     * <code>optional string replyMemo = 105;</code>
+     *
+     * <pre>
+     * 好友：回复请求的内容
+     * </pre>
+     */
+    public boolean hasReplyMemo() {
+      return ((bitField0_ & 0x20000000) == 0x20000000);
+    }
+    /**
+     * <code>optional string replyMemo = 105;</code>
+     *
+     * <pre>
+     * 好友：回复请求的内容
+     * </pre>
+     */
+    public java.lang.String getReplyMemo() {
+      java.lang.Object ref = replyMemo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          replyMemo_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string replyMemo = 105;</code>
+     *
+     * <pre>
+     * 好友：回复请求的内容
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getReplyMemoBytes() {
+      java.lang.Object ref = replyMemo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        replyMemo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDSTATUS_FIELD_NUMBER = 106;
+    private int addStatus_;
+    /**
+     * <code>optional int32 addStatus = 106;</code>
+     *
+     * <pre>
+     * 好友：回复状态，参考FriendAddStatusType
+     * </pre>
+     */
+    public boolean hasAddStatus() {
+      return ((bitField0_ & 0x40000000) == 0x40000000);
+    }
+    /**
+     * <code>optional int32 addStatus = 106;</code>
+     *
+     * <pre>
+     * 好友：回复状态，参考FriendAddStatusType
+     * </pre>
+     */
+    public int getAddStatus() {
+      return addStatus_;
     }
 
     private void initFields() {
@@ -4145,7 +4580,7 @@ public final class UserProtos {
       birthday_ = "";
       zodiac_ = 0;
       bloodGroup_ = "";
-      backgroundURL_ = "";
+      avatarBg_ = "";
       signature_ = "";
       location_ = "";
       countryCode_ = "";
@@ -4162,7 +4597,11 @@ public final class UserProtos {
       addConfig_ = 0;
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       memo_ = "";
-      addSourceType_ = 0;
+      addSource_ = 0;
+      addDate_ = 0;
+      addDir_ = 0;
+      replyMemo_ = "";
+      addStatus_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4236,7 +4675,7 @@ public final class UserProtos {
         output.writeBytes(33, getBloodGroupBytes());
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeBytes(41, getBackgroundURLBytes());
+        output.writeBytes(41, getAvatarBgBytes());
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeBytes(42, getSignatureBytes());
@@ -4287,7 +4726,19 @@ public final class UserProtos {
         output.writeBytes(101, getMemoBytes());
       }
       if (((bitField0_ & 0x04000000) == 0x04000000)) {
-        output.writeInt32(102, addSourceType_);
+        output.writeInt32(102, addSource_);
+      }
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+        output.writeInt32(103, addDate_);
+      }
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+        output.writeInt32(104, addDir_);
+      }
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+        output.writeBytes(105, getReplyMemoBytes());
+      }
+      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+        output.writeInt32(106, addStatus_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4348,7 +4799,7 @@ public final class UserProtos {
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(41, getBackgroundURLBytes());
+          .computeBytesSize(41, getAvatarBgBytes());
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
@@ -4421,7 +4872,23 @@ public final class UserProtos {
       }
       if (((bitField0_ & 0x04000000) == 0x04000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(102, addSourceType_);
+          .computeInt32Size(102, addSource_);
+      }
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(103, addDate_);
+      }
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(104, addDir_);
+      }
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(105, getReplyMemoBytes());
+      }
+      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(106, addStatus_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4571,7 +5038,7 @@ public final class UserProtos {
         bitField0_ = (bitField0_ & ~0x00000400);
         bloodGroup_ = "";
         bitField0_ = (bitField0_ & ~0x00000800);
-        backgroundURL_ = "";
+        avatarBg_ = "";
         bitField0_ = (bitField0_ & ~0x00001000);
         signature_ = "";
         bitField0_ = (bitField0_ & ~0x00002000);
@@ -4613,8 +5080,16 @@ public final class UserProtos {
         bitField0_ = (bitField0_ & ~0x08000000);
         memo_ = "";
         bitField0_ = (bitField0_ & ~0x10000000);
-        addSourceType_ = 0;
+        addSource_ = 0;
         bitField0_ = (bitField0_ & ~0x20000000);
+        addDate_ = 0;
+        bitField0_ = (bitField0_ & ~0x40000000);
+        addDir_ = 0;
+        bitField0_ = (bitField0_ & ~0x80000000);
+        replyMemo_ = "";
+        bitField1_ = (bitField1_ & ~0x00000001);
+        addStatus_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000002);
         return this;
       }
 
@@ -4642,6 +5117,7 @@ public final class UserProtos {
       public com.orange.protocol.message.UserProtos.PBUser buildPartial() {
         com.orange.protocol.message.UserProtos.PBUser result = new com.orange.protocol.message.UserProtos.PBUser(this);
         int from_bitField0_ = bitField0_;
+        int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
@@ -4699,7 +5175,7 @@ public final class UserProtos {
         if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00000800;
         }
-        result.backgroundURL_ = backgroundURL_;
+        result.avatarBg_ = avatarBg_;
         if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00001000;
         }
@@ -4777,7 +5253,23 @@ public final class UserProtos {
         if (((from_bitField0_ & 0x20000000) == 0x20000000)) {
           to_bitField0_ |= 0x04000000;
         }
-        result.addSourceType_ = addSourceType_;
+        result.addSource_ = addSource_;
+        if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
+          to_bitField0_ |= 0x08000000;
+        }
+        result.addDate_ = addDate_;
+        if (((from_bitField0_ & 0x80000000) == 0x80000000)) {
+          to_bitField0_ |= 0x10000000;
+        }
+        result.addDir_ = addDir_;
+        if (((from_bitField1_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x20000000;
+        }
+        result.replyMemo_ = replyMemo_;
+        if (((from_bitField1_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x40000000;
+        }
+        result.addStatus_ = addStatus_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4871,9 +5363,9 @@ public final class UserProtos {
           bloodGroup_ = other.bloodGroup_;
           onChanged();
         }
-        if (other.hasBackgroundURL()) {
+        if (other.hasAvatarBg()) {
           bitField0_ |= 0x00001000;
-          backgroundURL_ = other.backgroundURL_;
+          avatarBg_ = other.avatarBg_;
           onChanged();
         }
         if (other.hasSignature()) {
@@ -4966,8 +5458,22 @@ public final class UserProtos {
           memo_ = other.memo_;
           onChanged();
         }
-        if (other.hasAddSourceType()) {
-          setAddSourceType(other.getAddSourceType());
+        if (other.hasAddSource()) {
+          setAddSource(other.getAddSource());
+        }
+        if (other.hasAddDate()) {
+          setAddDate(other.getAddDate());
+        }
+        if (other.hasAddDir()) {
+          setAddDir(other.getAddDir());
+        }
+        if (other.hasReplyMemo()) {
+          bitField1_ |= 0x00000001;
+          replyMemo_ = other.replyMemo_;
+          onChanged();
+        }
+        if (other.hasAddStatus()) {
+          setAddStatus(other.getAddStatus());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -5017,6 +5523,7 @@ public final class UserProtos {
         return this;
       }
       private int bitField0_;
+      private int bitField1_;
 
       private java.lang.Object userId_ = "";
       /**
@@ -6278,32 +6785,32 @@ public final class UserProtos {
         return this;
       }
 
-      private java.lang.Object backgroundURL_ = "";
+      private java.lang.Object avatarBg_ = "";
       /**
-       * <code>optional string backgroundURL = 41;</code>
+       * <code>optional string avatarBg = 41;</code>
        *
        * <pre>
        * 用户背景图URL
        * </pre>
        */
-      public boolean hasBackgroundURL() {
+      public boolean hasAvatarBg() {
         return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
-       * <code>optional string backgroundURL = 41;</code>
+       * <code>optional string avatarBg = 41;</code>
        *
        * <pre>
        * 用户背景图URL
        * </pre>
        */
-      public java.lang.String getBackgroundURL() {
-        java.lang.Object ref = backgroundURL_;
+      public java.lang.String getAvatarBg() {
+        java.lang.Object ref = avatarBg_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            backgroundURL_ = s;
+            avatarBg_ = s;
           }
           return s;
         } else {
@@ -6311,69 +6818,69 @@ public final class UserProtos {
         }
       }
       /**
-       * <code>optional string backgroundURL = 41;</code>
+       * <code>optional string avatarBg = 41;</code>
        *
        * <pre>
        * 用户背景图URL
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getBackgroundURLBytes() {
-        java.lang.Object ref = backgroundURL_;
+          getAvatarBgBytes() {
+        java.lang.Object ref = avatarBg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          backgroundURL_ = b;
+          avatarBg_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string backgroundURL = 41;</code>
+       * <code>optional string avatarBg = 41;</code>
        *
        * <pre>
        * 用户背景图URL
        * </pre>
        */
-      public Builder setBackgroundURL(
+      public Builder setAvatarBg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00001000;
-        backgroundURL_ = value;
+        avatarBg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string backgroundURL = 41;</code>
+       * <code>optional string avatarBg = 41;</code>
        *
        * <pre>
        * 用户背景图URL
        * </pre>
        */
-      public Builder clearBackgroundURL() {
+      public Builder clearAvatarBg() {
         bitField0_ = (bitField0_ & ~0x00001000);
-        backgroundURL_ = getDefaultInstance().getBackgroundURL();
+        avatarBg_ = getDefaultInstance().getAvatarBg();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string backgroundURL = 41;</code>
+       * <code>optional string avatarBg = 41;</code>
        *
        * <pre>
        * 用户背景图URL
        * </pre>
        */
-      public Builder setBackgroundURLBytes(
+      public Builder setAvatarBgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00001000;
-        backgroundURL_ = value;
+        avatarBg_ = value;
         onChanged();
         return this;
       }
@@ -7835,50 +8342,294 @@ public final class UserProtos {
         return this;
       }
 
-      private int addSourceType_ ;
+      private int addSource_ ;
       /**
-       * <code>optional int32 addSourceType = 102;</code>
+       * <code>optional int32 addSource = 102;</code>
        *
        * <pre>
        * 好友：从什么渠道添加，参考FriendAddSourceType
        * </pre>
        */
-      public boolean hasAddSourceType() {
+      public boolean hasAddSource() {
         return ((bitField0_ & 0x20000000) == 0x20000000);
       }
       /**
-       * <code>optional int32 addSourceType = 102;</code>
+       * <code>optional int32 addSource = 102;</code>
        *
        * <pre>
        * 好友：从什么渠道添加，参考FriendAddSourceType
        * </pre>
        */
-      public int getAddSourceType() {
-        return addSourceType_;
+      public int getAddSource() {
+        return addSource_;
       }
       /**
-       * <code>optional int32 addSourceType = 102;</code>
+       * <code>optional int32 addSource = 102;</code>
        *
        * <pre>
        * 好友：从什么渠道添加，参考FriendAddSourceType
        * </pre>
        */
-      public Builder setAddSourceType(int value) {
+      public Builder setAddSource(int value) {
         bitField0_ |= 0x20000000;
-        addSourceType_ = value;
+        addSource_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 addSourceType = 102;</code>
+       * <code>optional int32 addSource = 102;</code>
        *
        * <pre>
        * 好友：从什么渠道添加，参考FriendAddSourceType
        * </pre>
        */
-      public Builder clearAddSourceType() {
+      public Builder clearAddSource() {
         bitField0_ = (bitField0_ & ~0x20000000);
-        addSourceType_ = 0;
+        addSource_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int addDate_ ;
+      /**
+       * <code>optional int32 addDate = 103;</code>
+       *
+       * <pre>
+       * 好友：添加时间
+       * </pre>
+       */
+      public boolean hasAddDate() {
+        return ((bitField0_ & 0x40000000) == 0x40000000);
+      }
+      /**
+       * <code>optional int32 addDate = 103;</code>
+       *
+       * <pre>
+       * 好友：添加时间
+       * </pre>
+       */
+      public int getAddDate() {
+        return addDate_;
+      }
+      /**
+       * <code>optional int32 addDate = 103;</code>
+       *
+       * <pre>
+       * 好友：添加时间
+       * </pre>
+       */
+      public Builder setAddDate(int value) {
+        bitField0_ |= 0x40000000;
+        addDate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 addDate = 103;</code>
+       *
+       * <pre>
+       * 好友：添加时间
+       * </pre>
+       */
+      public Builder clearAddDate() {
+        bitField0_ = (bitField0_ & ~0x40000000);
+        addDate_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int addDir_ ;
+      /**
+       * <code>optional int32 addDir = 104;</code>
+       *
+       * <pre>
+       * 好友：添加方向
+       * </pre>
+       */
+      public boolean hasAddDir() {
+        return ((bitField0_ & 0x80000000) == 0x80000000);
+      }
+      /**
+       * <code>optional int32 addDir = 104;</code>
+       *
+       * <pre>
+       * 好友：添加方向
+       * </pre>
+       */
+      public int getAddDir() {
+        return addDir_;
+      }
+      /**
+       * <code>optional int32 addDir = 104;</code>
+       *
+       * <pre>
+       * 好友：添加方向
+       * </pre>
+       */
+      public Builder setAddDir(int value) {
+        bitField0_ |= 0x80000000;
+        addDir_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 addDir = 104;</code>
+       *
+       * <pre>
+       * 好友：添加方向
+       * </pre>
+       */
+      public Builder clearAddDir() {
+        bitField0_ = (bitField0_ & ~0x80000000);
+        addDir_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object replyMemo_ = "";
+      /**
+       * <code>optional string replyMemo = 105;</code>
+       *
+       * <pre>
+       * 好友：回复请求的内容
+       * </pre>
+       */
+      public boolean hasReplyMemo() {
+        return ((bitField1_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string replyMemo = 105;</code>
+       *
+       * <pre>
+       * 好友：回复请求的内容
+       * </pre>
+       */
+      public java.lang.String getReplyMemo() {
+        java.lang.Object ref = replyMemo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            replyMemo_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string replyMemo = 105;</code>
+       *
+       * <pre>
+       * 好友：回复请求的内容
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getReplyMemoBytes() {
+        java.lang.Object ref = replyMemo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          replyMemo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string replyMemo = 105;</code>
+       *
+       * <pre>
+       * 好友：回复请求的内容
+       * </pre>
+       */
+      public Builder setReplyMemo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000001;
+        replyMemo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string replyMemo = 105;</code>
+       *
+       * <pre>
+       * 好友：回复请求的内容
+       * </pre>
+       */
+      public Builder clearReplyMemo() {
+        bitField1_ = (bitField1_ & ~0x00000001);
+        replyMemo_ = getDefaultInstance().getReplyMemo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string replyMemo = 105;</code>
+       *
+       * <pre>
+       * 好友：回复请求的内容
+       * </pre>
+       */
+      public Builder setReplyMemoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000001;
+        replyMemo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int addStatus_ ;
+      /**
+       * <code>optional int32 addStatus = 106;</code>
+       *
+       * <pre>
+       * 好友：回复状态，参考FriendAddStatusType
+       * </pre>
+       */
+      public boolean hasAddStatus() {
+        return ((bitField1_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 addStatus = 106;</code>
+       *
+       * <pre>
+       * 好友：回复状态，参考FriendAddStatusType
+       * </pre>
+       */
+      public int getAddStatus() {
+        return addStatus_;
+      }
+      /**
+       * <code>optional int32 addStatus = 106;</code>
+       *
+       * <pre>
+       * 好友：回复状态，参考FriendAddStatusType
+       * </pre>
+       */
+      public Builder setAddStatus(int value) {
+        bitField1_ |= 0x00000002;
+        addStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 addStatus = 106;</code>
+       *
+       * <pre>
+       * 好友：回复状态，参考FriendAddStatusType
+       * </pre>
+       */
+      public Builder clearAddStatus() {
+        bitField1_ = (bitField1_ & ~0x00000002);
+        addStatus_ = 0;
         onChanged();
         return this;
       }
@@ -10217,32 +10968,37 @@ public final class UserProtos {
       "\014\n\004nick\030\003 \001(\t\022\023\n\013accessToken\030\004 \001(\t\022\031\n\021ac" +
       "cessTokenSecret\030\005 \001(\t\022\024\n\014refreshToken\030\006 " +
       "\001(\t\022\023\n\013expiredTime\030\007 \001(\005\022\020\n\010qqOpenId\030\010 \001" +
-      "(\t\022\022\n\ncredential\030\024 \001(\t\"\377\004\n\006PBUser\022\016\n\006use" +
+      "(\t\022\022\n\ncredential\030\024 \001(\t\"\275\005\n\006PBUser\022\016\n\006use" +
       "rId\030\001 \002(\t\022\014\n\004nick\030\002 \001(\t\022\016\n\006avatar\030\003 \001(\t\022" +
       "\025\n\006gender\030\004 \001(\010:\005false\022$\n\010snsUsers\030\005 \003(\013" +
       "2\022.barrage.PBSNSUser\022\024\n\014xiaojiNumber\030\006 \001" +
       "(\t\022\r\n\005email\030\007 \001(\t\022\020\n\010password\030\010 \001(\t\022\016\n\006m",
       "obile\030\t \001(\t\022\020\n\010birthday\030\037 \001(\t\022\016\n\006zodiac\030" +
-      "  \001(\005\022\022\n\nbloodGroup\030! \001(\t\022\025\n\rbackgroundU" +
-      "RL\030) \001(\t\022\021\n\tsignature\030* \001(\t\022\020\n\010location\030" +
-      "3 \001(\t\022\023\n\013countryCode\0304 \001(\t\022\020\n\010language\0305" +
-      " \001(\t\022\021\n\tlongitude\0306 \001(\002\022\020\n\010latitude\0307 \001(" +
-      "\002\022\r\n\005level\030= \001(\005\022\022\n\nexperience\030> \001(\003\022(\n\r" +
-      "currentDevice\030G \001(\0132\021.barrage.PBDevice\022\"" +
-      "\n\007devices\030H \003(\0132\021.barrage.PBDevice\022\031\n\021em" +
-      "ailVerifyStatus\030Q \001(\005\022\027\n\017emailVerifyCode" +
-      "\030R \001(\t\022\032\n\022mobileVerifyStatus\030S \001(\005\022\021\n\tad",
-      "dConfig\030[ \001(\005\022\014\n\004tags\030d \003(\t\022\014\n\004memo\030e \001(" +
-      "\t\022\025\n\raddSourceType\030f \001(\005\"E\n\tPBUserTag\022\014\n" +
-      "\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\036\n\005users\030\003 \003(\0132\017" +
-      ".barrage.PBUser\"V\n\rPBUserTagList\022#\n\007rece" +
-      "nts\030\001 \003(\0132\022.barrage.PBUserTag\022 \n\004tags\030\002 " +
-      "\003(\0132\022.barrage.PBUserTag*@\n\023FriendAddSour" +
-      "ceType\022\021\n\rADD_BY_SEARCH\020\001\022\026\n\022ADD_BY_SCAN" +
-      "_QRCODE\020\002*N\n\023FriendAddConfigType\022\022\n\016REQU" +
-      "IRE_ACCEPT\020\000\022\016\n\nACCEPT_ALL\020\001\022\023\n\017DISALLOW" +
-      "_ADD_ME\020\002B)\n\033com.orange.protocol.message",
-      "B\nUserProtos"
+      "  \001(\005\022\022\n\nbloodGroup\030! \001(\t\022\020\n\010avatarBg\030) " +
+      "\001(\t\022\021\n\tsignature\030* \001(\t\022\020\n\010location\0303 \001(\t" +
+      "\022\023\n\013countryCode\0304 \001(\t\022\020\n\010language\0305 \001(\t\022" +
+      "\021\n\tlongitude\0306 \001(\002\022\020\n\010latitude\0307 \001(\002\022\r\n\005" +
+      "level\030= \001(\005\022\022\n\nexperience\030> \001(\003\022(\n\rcurre" +
+      "ntDevice\030G \001(\0132\021.barrage.PBDevice\022\"\n\007dev" +
+      "ices\030H \003(\0132\021.barrage.PBDevice\022\031\n\021emailVe" +
+      "rifyStatus\030Q \001(\005\022\027\n\017emailVerifyCode\030R \001(" +
+      "\t\022\032\n\022mobileVerifyStatus\030S \001(\005\022\021\n\taddConf",
+      "ig\030[ \001(\005\022\014\n\004tags\030d \003(\t\022\014\n\004memo\030e \001(\t\022\021\n\t" +
+      "addSource\030f \001(\005\022\017\n\007addDate\030g \001(\005\022\016\n\006addD" +
+      "ir\030h \001(\005\022\021\n\treplyMemo\030i \001(\t\022\021\n\taddStatus" +
+      "\030j \001(\005\"E\n\tPBUserTag\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030" +
+      "\002 \001(\t\022\036\n\005users\030\003 \003(\0132\017.barrage.PBUser\"V\n" +
+      "\rPBUserTagList\022#\n\007recents\030\001 \003(\0132\022.barrag" +
+      "e.PBUserTag\022 \n\004tags\030\002 \003(\0132\022.barrage.PBUs" +
+      "erTag*@\n\023FriendAddSourceType\022\021\n\rADD_BY_S" +
+      "EARCH\020\001\022\026\n\022ADD_BY_SCAN_QRCODE\020\002*N\n\023Frien" +
+      "dAddConfigType\022\022\n\016REQUIRE_ACCEPT\020\000\022\016\n\nAC",
+      "CEPT_ALL\020\001\022\023\n\017DISALLOW_ADD_ME\020\002*N\n\026Frien" +
+      "dRequestDirection\022\030\n\024REQ_DIRECTION_SENDE" +
+      "R\020\000\022\032\n\026REQ_DIRECTION_RECEIVER\020\001*N\n\023Frien" +
+      "dAddStatusType\022\023\n\017REQ_WAIT_ACCEPT\020\000\022\020\n\014R" +
+      "EQ_ACCEPTED\020\001\022\020\n\014REQ_REJECTED\020\002B)\n\033com.o" +
+      "range.protocol.messageB\nUserProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10268,7 +11024,7 @@ public final class UserProtos {
     internal_static_barrage_PBUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBUser_descriptor,
-        new java.lang.String[] { "UserId", "Nick", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "Birthday", "Zodiac", "BloodGroup", "BackgroundURL", "Signature", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", "AddConfig", "Tags", "Memo", "AddSourceType", });
+        new java.lang.String[] { "UserId", "Nick", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "Birthday", "Zodiac", "BloodGroup", "AvatarBg", "Signature", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", "AddConfig", "Tags", "Memo", "AddSource", "AddDate", "AddDir", "ReplyMemo", "AddStatus", });
     internal_static_barrage_PBUserTag_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_barrage_PBUserTag_fieldAccessorTable = new

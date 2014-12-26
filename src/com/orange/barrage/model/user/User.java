@@ -84,4 +84,45 @@ public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser
     public Class getPBClass(){
         return UserProtos.PBUser.class;
     }
+
+    public String getUserId() {
+        return getStringObjectId();
+    }
+
+    public BasicDBObject toFriendDBObject(DBObject info) {
+        BasicDBObject obj = new BasicDBObject();
+        obj.put(BarrageConstants.F_FRIEND_ID, getObjectId());
+        obj.putAll(info);
+        return obj;
+    }
+
+    public BasicDBObject toFriendRequestDBObject(DBObject info, int direction) {
+        BasicDBObject obj = new BasicDBObject();
+        obj.put(BarrageConstants.F_FRIEND_ID, getObjectId());
+        obj.put(BarrageConstants.F_DIRECTION, direction);
+        obj.putAll(info);
+        return obj;
+    }
+
+    public static BasicDBObject getPublicReturnFields() {
+        BasicDBObject obj = new BasicDBObject();
+        obj.put(BarrageConstants.F_NICK, 1);
+        obj.put(BarrageConstants.F_USER_ID, 1);
+        obj.put(BarrageConstants.F_LOCATION, 1);
+        obj.put(BarrageConstants.F_AVATAR, 1);
+        obj.put(BarrageConstants.F_SIGNATURE, 1);
+        obj.put(BarrageConstants.F_AVATAR_BG, 1);
+        obj.put(BarrageConstants.F_GENDER, 1);
+        return obj;
+    }
+
+    public static BasicDBObject getMinReturnFields() {
+        BasicDBObject obj = new BasicDBObject();
+        obj.put(BarrageConstants.F_NICK, 1);
+        obj.put(BarrageConstants.F_USER_ID, 1);
+        obj.put(BarrageConstants.F_AVATAR, 1);
+        obj.put(BarrageConstants.F_SIGNATURE, 1);
+        obj.put(BarrageConstants.F_GENDER, 1);
+        return obj;
+    }
 }
