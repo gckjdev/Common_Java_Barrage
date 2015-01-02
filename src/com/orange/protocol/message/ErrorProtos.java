@@ -34,41 +34,53 @@ public final class ErrorProtos {
      */
     ERROR_SERVICE_CATCH_EXCEPTION(3, 1000004),
     /**
+     * <code>ERROR_UNKNOWN = 1000005;</code>
+     */
+    ERROR_UNKNOWN(4, 1000005),
+    /**
      * <code>ERROR_USER_LOGIN_UNKNOWN_TYPE = 2000001;</code>
      *
      * <pre>
      * user
      * </pre>
      */
-    ERROR_USER_LOGIN_UNKNOWN_TYPE(4, 2000001),
+    ERROR_USER_LOGIN_UNKNOWN_TYPE(5, 2000001),
     /**
      * <code>ERROR_USER_LOGIN_INFO_EMPTY = 2000002;</code>
      */
-    ERROR_USER_LOGIN_INFO_EMPTY(5, 2000002),
+    ERROR_USER_LOGIN_INFO_EMPTY(6, 2000002),
     /**
      * <code>ERROR_USER_REGISTER_UNKNOWN_TYPE = 2000003;</code>
      */
-    ERROR_USER_REGISTER_UNKNOWN_TYPE(6, 2000003),
+    ERROR_USER_REGISTER_UNKNOWN_TYPE(7, 2000003),
     /**
      * <code>ERROR_USER_REGISTER_INFO_EMPTY = 2000004;</code>
      */
-    ERROR_USER_REGISTER_INFO_EMPTY(7, 2000004),
+    ERROR_USER_REGISTER_INFO_EMPTY(8, 2000004),
     /**
      * <code>ERROR_USER_REGISTER_INVALID_INVITE_CODE = 2000005;</code>
      */
-    ERROR_USER_REGISTER_INVALID_INVITE_CODE(8, 2000005),
+    ERROR_USER_REGISTER_INVALID_INVITE_CODE(9, 2000005),
     /**
      * <code>ERROR_USER_NOT_FOUND = 2000006;</code>
      */
-    ERROR_USER_NOT_FOUND(9, 2000006),
+    ERROR_USER_NOT_FOUND(10, 2000006),
     /**
      * <code>ERROR_FRIEND_NOT_FOUND = 2000007;</code>
      */
-    ERROR_FRIEND_NOT_FOUND(10, 2000007),
+    ERROR_FRIEND_NOT_FOUND(11, 2000007),
     /**
      * <code>ERROR_FRIEND_NOT_ALLOW_ADD_ME = 2000008;</code>
      */
-    ERROR_FRIEND_NOT_ALLOW_ADD_ME(11, 2000008),
+    ERROR_FRIEND_NOT_ALLOW_ADD_ME(12, 2000008),
+    /**
+     * <code>ERROR_INVITE_CODE_NOT_EXIST = 2000009;</code>
+     */
+    ERROR_INVITE_CODE_NOT_EXIST(13, 2000009),
+    /**
+     * <code>ERROR_INVITE_CODE_USED = 2000010;</code>
+     */
+    ERROR_INVITE_CODE_USED(14, 2000010),
     /**
      * <code>ERROR_FEED_ACTION_INVALID = 3000001;</code>
      *
@@ -76,7 +88,7 @@ public final class ErrorProtos {
      * feed
      * </pre>
      */
-    ERROR_FEED_ACTION_INVALID(12, 3000001),
+    ERROR_FEED_ACTION_INVALID(15, 3000001),
     ;
 
     /**
@@ -99,6 +111,10 @@ public final class ErrorProtos {
      * <code>ERROR_SERVICE_CATCH_EXCEPTION = 1000004;</code>
      */
     public static final int ERROR_SERVICE_CATCH_EXCEPTION_VALUE = 1000004;
+    /**
+     * <code>ERROR_UNKNOWN = 1000005;</code>
+     */
+    public static final int ERROR_UNKNOWN_VALUE = 1000005;
     /**
      * <code>ERROR_USER_LOGIN_UNKNOWN_TYPE = 2000001;</code>
      *
@@ -136,6 +152,14 @@ public final class ErrorProtos {
      */
     public static final int ERROR_FRIEND_NOT_ALLOW_ADD_ME_VALUE = 2000008;
     /**
+     * <code>ERROR_INVITE_CODE_NOT_EXIST = 2000009;</code>
+     */
+    public static final int ERROR_INVITE_CODE_NOT_EXIST_VALUE = 2000009;
+    /**
+     * <code>ERROR_INVITE_CODE_USED = 2000010;</code>
+     */
+    public static final int ERROR_INVITE_CODE_USED_VALUE = 2000010;
+    /**
      * <code>ERROR_FEED_ACTION_INVALID = 3000001;</code>
      *
      * <pre>
@@ -153,6 +177,7 @@ public final class ErrorProtos {
         case 1000002: return ERROR_PARSE_POST_DATA;
         case 1000003: return ERROR_NO_SERVICE_FOR_TYPE;
         case 1000004: return ERROR_SERVICE_CATCH_EXCEPTION;
+        case 1000005: return ERROR_UNKNOWN;
         case 2000001: return ERROR_USER_LOGIN_UNKNOWN_TYPE;
         case 2000002: return ERROR_USER_LOGIN_INFO_EMPTY;
         case 2000003: return ERROR_USER_REGISTER_UNKNOWN_TYPE;
@@ -161,6 +186,8 @@ public final class ErrorProtos {
         case 2000006: return ERROR_USER_NOT_FOUND;
         case 2000007: return ERROR_FRIEND_NOT_FOUND;
         case 2000008: return ERROR_FRIEND_NOT_ALLOW_ADD_ME;
+        case 2000009: return ERROR_INVITE_CODE_NOT_EXIST;
+        case 2000010: return ERROR_INVITE_CODE_USED;
         case 3000001: return ERROR_FEED_ACTION_INVALID;
         default: return null;
       }
@@ -222,20 +249,22 @@ public final class ErrorProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Error.proto\022\007barrage*\316\003\n\007PBError\022\032\n\024ER" +
+      "\n\013Error.proto\022\007barrage*\244\004\n\007PBError\022\032\n\024ER" +
       "ROR_READ_POST_DATA\020\301\204=\022\033\n\025ERROR_PARSE_PO" +
       "ST_DATA\020\302\204=\022\037\n\031ERROR_NO_SERVICE_FOR_TYPE" +
       "\020\303\204=\022#\n\035ERROR_SERVICE_CATCH_EXCEPTION\020\304\204" +
-      "=\022#\n\035ERROR_USER_LOGIN_UNKNOWN_TYPE\020\201\211z\022!" +
-      "\n\033ERROR_USER_LOGIN_INFO_EMPTY\020\202\211z\022&\n ERR" +
-      "OR_USER_REGISTER_UNKNOWN_TYPE\020\203\211z\022$\n\036ERR" +
-      "OR_USER_REGISTER_INFO_EMPTY\020\204\211z\022-\n\'ERROR" +
-      "_USER_REGISTER_INVALID_INVITE_CODE\020\205\211z\022\032" +
-      "\n\024ERROR_USER_NOT_FOUND\020\206\211z\022\034\n\026ERROR_FRIE",
-      "ND_NOT_FOUND\020\207\211z\022#\n\035ERROR_FRIEND_NOT_ALL" +
-      "OW_ADD_ME\020\210\211z\022 \n\031ERROR_FEED_ACTION_INVAL" +
-      "ID\020\301\215\267\001B*\n\033com.orange.protocol.messageB\013" +
-      "ErrorProtos"
+      "=\022\023\n\rERROR_UNKNOWN\020\305\204=\022#\n\035ERROR_USER_LOG" +
+      "IN_UNKNOWN_TYPE\020\201\211z\022!\n\033ERROR_USER_LOGIN_" +
+      "INFO_EMPTY\020\202\211z\022&\n ERROR_USER_REGISTER_UN" +
+      "KNOWN_TYPE\020\203\211z\022$\n\036ERROR_USER_REGISTER_IN" +
+      "FO_EMPTY\020\204\211z\022-\n\'ERROR_USER_REGISTER_INVA" +
+      "LID_INVITE_CODE\020\205\211z\022\032\n\024ERROR_USER_NOT_FO",
+      "UND\020\206\211z\022\034\n\026ERROR_FRIEND_NOT_FOUND\020\207\211z\022#\n" +
+      "\035ERROR_FRIEND_NOT_ALLOW_ADD_ME\020\210\211z\022!\n\033ER" +
+      "ROR_INVITE_CODE_NOT_EXIST\020\211\211z\022\034\n\026ERROR_I" +
+      "NVITE_CODE_USED\020\212\211z\022 \n\031ERROR_FEED_ACTION" +
+      "_INVALID\020\301\215\267\001B*\n\033com.orange.protocol.mes" +
+      "sageB\013ErrorProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

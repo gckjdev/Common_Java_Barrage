@@ -195,6 +195,26 @@ public class XiaojiNumberService {
         }
     }
 
+    public void generateNumberPoolForInviteCode(final FreePoolManager freePoolManager){
+
+
+        RedisClient.getInstance().execute(new RedisCallable() {
+            @Override
+            public Object call(Jedis jedis) {
+
+                int INVITE_CODE_LEN = 6;
+                cal("", INVITE_CODE_LEN);
+                freePoolManager.putNumbers(jedis, numberSet);
+                numberSet.clear();
+                return null;
+
+            }
+
+        });
+
+
+    }
+
 
     public void generateNumberPool(final AbstractXiaoji xiaoji, final int requestPoolType, final String numberPrefix, final int codeLen){
 

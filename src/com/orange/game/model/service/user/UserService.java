@@ -10,6 +10,7 @@ import com.orange.game.model.manager.UserManager;
 import com.orange.game.model.service.DBService;
 import com.orange.game.model.xiaoji.AbstractXiaoji;
 import com.orange.game.model.xiaoji.XiaojiFactory;
+import com.orange.protocol.message.MessageProtos;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -102,5 +103,10 @@ public class UserService {
         else{
             return 100;
         }
+    }
+
+    public int searchUserByKey(String searchKey, MessageProtos.PBSearchUserResponse.Builder builder) {
+        // TODO
+        return 0;
     }
 }
