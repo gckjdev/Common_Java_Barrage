@@ -1,11 +1,13 @@
 package com.orange.barrage.common;
 
 import com.google.protobuf.GeneratedMessage;
+import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.orange.barrage.model.user.User;
 import com.orange.common.cassandra.CassandraClient;
 import com.orange.common.mongodb.MongoDBClient;
 import com.orange.common.redis.RedisClient;
+import com.orange.common.utils.StringUtil;
 import com.orange.game.constants.DBConstants;
 import com.orange.game.model.dao.CommonData;
 import com.orange.game.model.service.DBService;
@@ -53,5 +55,25 @@ public abstract class CommonModelManager<T extends CommonData> {
         return t;
     }
 
+    public T findObjectByField(String field, String value) {
+
+        if (StringUtil.isEmpty(field) || StringUtil.isEmpty(value)){
+            return null;
+        }
+
+        DBCursor cursor = mongoDBClient.find(getTableName(), field, value, 1);
+        if (cursor == null || cursor.hasNext()){
+            return null;
+        }
+
+        DBObject dbObject = cursor.next();
+        if (dbObject == null){
+            return null;
+        }
+
+        T t = newClassInstance(getClazz());
+        t.setDbObject(dbObject);
+        return t;
+    }
 
 }

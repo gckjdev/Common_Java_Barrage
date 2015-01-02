@@ -33,6 +33,31 @@ public class UserManager extends CommonModelManager<User> {
         return findObjectById(friendId);
     }
 
+    public User findUserByEmail(String email) {
+        return findObjectByField(BarrageConstants.F_EMAIL, email);
+    }
+
+    public User findUserByMobile(String mobile) {
+        return findObjectByField(BarrageConstants.F_MOBILE, mobile);
+    }
+
+    public User findUserBySnsId(String snsFieldName, String snsId) {
+        return findObjectByField(snsFieldName, snsId);
+    }
+
+    public User findUserByQQ(String qqOpenId) {
+        return findObjectByField(BarrageConstants.F_QQ_OPEN_ID, qqOpenId);
+    }
+
+    public User findUserBySina(String sinaId) {
+        return findObjectByField(BarrageConstants.F_SINA_ID, sinaId);
+    }
+
+    public User findUserByWeixin(String weixinId) {
+        return findObjectByField(BarrageConstants.F_WEIXIN_ID, weixinId);
+    }
+
+
     @Override
     public String getTableName() {
         return BarrageConstants.T_USER;
@@ -61,5 +86,20 @@ public class UserManager extends CommonModelManager<User> {
         }
 
         return 0;
+    }
+
+    public User createNewUser(UserProtos.PBUser pbUser) {
+
+        UserProtos.PBUser.Builder userBuilder = UserProtos.PBUser.newBuilder(pbUser);
+
+        // set some auto creation data here
+        userBuilder.setRegDate((int)(System.currentTimeMillis()/1000));
+        userBuilder.setVisitDate((int)(System.currentTimeMillis()/1000));
+
+        DBObject obj = User.pbToDBObject(userBuilder.build(), true);
+
+        log.info("create user = "+obj.toString());
+        mongoDBClient.insert(BarrageConstants.T_USER, obj);
+        return new User(obj);
     }
 }

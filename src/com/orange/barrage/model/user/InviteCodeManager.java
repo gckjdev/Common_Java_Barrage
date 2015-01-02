@@ -30,6 +30,18 @@ public class InviteCodeManager extends CommonModelManager<CommonData> {
 
     public int checkInviteCode(String code){
 
+        boolean valid = RedisClient.getInstance().zismember(INVITE_CODE_REDIS_KEY, code);
+        if (!valid){
+            if (RedisClient.getInstance().hget(USED_CODE_REDIS_KEY, code) != null){
+                log.warn("<useInviteCode> but code "+code+" used");
+                return ErrorProtos.PBError.ERROR_INVITE_CODE_USED_VALUE;
+            }
+            else {
+                log.warn("<useInviteCode> but code "+code+" not exist");
+                return ErrorProtos.PBError.ERROR_INVITE_CODE_NOT_EXIST_VALUE;
+            }
+        }
+
         return 0;
     }
 

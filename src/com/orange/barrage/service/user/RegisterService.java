@@ -6,7 +6,10 @@ import com.mongodb.util.JSON;
 import com.orange.barrage.common.CommonModelService;
 import com.orange.barrage.constant.BarrageConstants;
 import com.orange.barrage.model.user.User;
+import com.orange.barrage.model.user.UserManager;
+import com.orange.common.utils.StringUtil;
 import com.orange.game.api.service.CommonGameService;
+import com.orange.protocol.message.ErrorProtos;
 import com.orange.protocol.message.MessageProtos;
 import com.orange.protocol.message.UserProtos;
 import org.bson.types.ObjectId;
@@ -25,22 +28,88 @@ public class RegisterService extends CommonModelService {
 
     }
 
-    public int registerByEmail(UserProtos.PBUser user, MessageProtos.PBRegisterUserResponse.Builder rspBuilder) {
+    public int registerByEmail(UserProtos.PBUser pbUser, MessageProtos.PBRegisterUserResponse.Builder rspBuilder) {
 
-//        String jsonString = JsonFormat.printToString(user);
-        DBObject obj = User.pbToDBObject(user, true); //JSON.parse(jsonString);
-        String userId = obj.get("_id").toString();
+        String email = pbUser.getEmail();
+        if (StringUtil.isEmpty(email)){
+            return ErrorProtos.PBError.ERROR_EMAIL_EMPTY_VALUE;
+        }
 
-//        ObjectId userId = new ObjectId();
-//        obj.put("_id", userId);
-//        obj.put(BarrageConstants.F_USER_ID, userId.toString());
+        User user = UserManager.getInstance().findUserByEmail(pbUser.getEmail());
+        if (user != null){
+            // user exist
+            log.warn("<registerByEmail> but user exist, failure, user=" + user.toString());
+            return ErrorProtos.PBError.ERROR_EMAIL_REGISTERED_VALUE;
+        }
 
-        mongoDBClient.insert(BarrageConstants.T_USER, obj);
+        // user not found, create user by email directly
+        User retUser = UserManager.getInstance().createNewUser(pbUser);
 
         // set response builder
-        UserProtos.PBUser.Builder retUserBuilder = UserProtos.PBUser.newBuilder(user);
-        retUserBuilder.setUserId(userId.toString());
-        rspBuilder.setUser(retUserBuilder.build());
+        if (retUser == null){
+            return ErrorProtos.PBError.ERROR_UNKNOWN_VALUE;
+        }
+
+        rspBuilder.setUser(retUser.toProtoBufModel());
         return 0;
+    }
+
+    public int registerByMobile(UserProtos.PBUser pbUser, MessageProtos.PBRegisterUserResponse.Builder rspBuilder) {
+        String mobile = pbUser.getMobile();
+        if (StringUtil.isEmpty(mobile)){
+            return ErrorProtos.PBError.ERROR_MOBILE_EMPTY_VALUE;
+        }
+
+        User user = UserManager.getInstance().findUserByMobile(pbUser.getEmail());
+        if (user != null){
+            // user exist
+            log.warn("<registerByMobile> but user exist, return directly, user=" + user.toString());
+            rspBuilder.setUser(user.toProtoBufModel());
+            rspBuilder.setIsUserExist(true);
+            return 0;
+        }
+
+        // user not found, create user by email directly
+        User retUser = UserManager.getInstance().createNewUser(pbUser);
+
+        // set response builder
+        if (retUser == null){
+            return ErrorProtos.PBError.ERROR_UNKNOWN_VALUE;
+        }
+
+        rspBuilder.setUser(retUser.toProtoBufModel());
+        return 0;
+    }
+
+    public int registerBySNS(UserProtos.PBUser pbUser, MessageProtos.PBRegisterUserResponse.Builder rspBuilder,
+                             String snsFieldName, String snsId) {
+
+        if (StringUtil.isEmpty(snsId)){
+            return ErrorProtos.PBError.ERROR_SNSID_EMPTY_VALUE;
+        }
+
+        User user = UserManager.getInstance().findUserBySnsId(snsFieldName, snsId);
+        if (user != null){
+            // user exist
+            log.warn("<registerBySNS> but user exist, return directly, user=" + user.toString());
+            rspBuilder.setUser(user.toProtoBufModel());
+            rspBuilder.setIsUserExist(true);
+
+            // TODO update sns credential info in DB
+
+            return 0;
+        }
+
+        // user not found, create user by email directly
+        User retUser = UserManager.getInstance().createNewUser(pbUser);
+
+        // set response builder
+        if (retUser == null){
+            return ErrorProtos.PBError.ERROR_UNKNOWN_VALUE;
+        }
+
+        rspBuilder.setUser(retUser.toProtoBufModel());
+        return 0;
+
     }
 }

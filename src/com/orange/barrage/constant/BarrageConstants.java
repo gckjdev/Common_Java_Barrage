@@ -33,4 +33,9 @@ public class BarrageConstants {
     public static final String F_AVATAR_BG = "avatarBg";
     public static final String F_GENDER = "gender";
 
+    public static final String F_MOBILE = "mobile";
+    public static final String F_WEIXIN_ID = "weixinId";
+    public static final String F_SINA_ID = "sinaId";
+    public static final String F_QQ_OPEN_ID = "qqOpenId";
+    public static final String F_PASSWORD = "password";
 }

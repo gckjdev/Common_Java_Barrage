@@ -82,13 +82,33 @@ public final class ErrorProtos {
      */
     ERROR_INVITE_CODE_USED(14, 2000010),
     /**
+     * <code>ERROR_EMAIL_EMPTY = 2000011;</code>
+     */
+    ERROR_EMAIL_EMPTY(15, 2000011),
+    /**
+     * <code>ERROR_MOBILE_EMPTY = 2000012;</code>
+     */
+    ERROR_MOBILE_EMPTY(16, 2000012),
+    /**
+     * <code>ERROR_SNSID_EMPTY = 2000013;</code>
+     */
+    ERROR_SNSID_EMPTY(17, 2000013),
+    /**
+     * <code>ERROR_EMAIL_REGISTERED = 2000014;</code>
+     */
+    ERROR_EMAIL_REGISTERED(18, 2000014),
+    /**
+     * <code>ERROR_PASSWORD_INVALID = 2000015;</code>
+     */
+    ERROR_PASSWORD_INVALID(19, 2000015),
+    /**
      * <code>ERROR_FEED_ACTION_INVALID = 3000001;</code>
      *
      * <pre>
      * feed
      * </pre>
      */
-    ERROR_FEED_ACTION_INVALID(15, 3000001),
+    ERROR_FEED_ACTION_INVALID(20, 3000001),
     ;
 
     /**
@@ -160,6 +180,26 @@ public final class ErrorProtos {
      */
     public static final int ERROR_INVITE_CODE_USED_VALUE = 2000010;
     /**
+     * <code>ERROR_EMAIL_EMPTY = 2000011;</code>
+     */
+    public static final int ERROR_EMAIL_EMPTY_VALUE = 2000011;
+    /**
+     * <code>ERROR_MOBILE_EMPTY = 2000012;</code>
+     */
+    public static final int ERROR_MOBILE_EMPTY_VALUE = 2000012;
+    /**
+     * <code>ERROR_SNSID_EMPTY = 2000013;</code>
+     */
+    public static final int ERROR_SNSID_EMPTY_VALUE = 2000013;
+    /**
+     * <code>ERROR_EMAIL_REGISTERED = 2000014;</code>
+     */
+    public static final int ERROR_EMAIL_REGISTERED_VALUE = 2000014;
+    /**
+     * <code>ERROR_PASSWORD_INVALID = 2000015;</code>
+     */
+    public static final int ERROR_PASSWORD_INVALID_VALUE = 2000015;
+    /**
      * <code>ERROR_FEED_ACTION_INVALID = 3000001;</code>
      *
      * <pre>
@@ -188,6 +228,11 @@ public final class ErrorProtos {
         case 2000008: return ERROR_FRIEND_NOT_ALLOW_ADD_ME;
         case 2000009: return ERROR_INVITE_CODE_NOT_EXIST;
         case 2000010: return ERROR_INVITE_CODE_USED;
+        case 2000011: return ERROR_EMAIL_EMPTY;
+        case 2000012: return ERROR_MOBILE_EMPTY;
+        case 2000013: return ERROR_SNSID_EMPTY;
+        case 2000014: return ERROR_EMAIL_REGISTERED;
+        case 2000015: return ERROR_PASSWORD_INVALID;
         case 3000001: return ERROR_FEED_ACTION_INVALID;
         default: return null;
       }
@@ -249,7 +294,7 @@ public final class ErrorProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Error.proto\022\007barrage*\244\004\n\007PBError\022\032\n\024ER" +
+      "\n\013Error.proto\022\007barrage*\254\005\n\007PBError\022\032\n\024ER" +
       "ROR_READ_POST_DATA\020\301\204=\022\033\n\025ERROR_PARSE_PO" +
       "ST_DATA\020\302\204=\022\037\n\031ERROR_NO_SERVICE_FOR_TYPE" +
       "\020\303\204=\022#\n\035ERROR_SERVICE_CATCH_EXCEPTION\020\304\204" +
@@ -262,9 +307,12 @@ public final class ErrorProtos {
       "UND\020\206\211z\022\034\n\026ERROR_FRIEND_NOT_FOUND\020\207\211z\022#\n" +
       "\035ERROR_FRIEND_NOT_ALLOW_ADD_ME\020\210\211z\022!\n\033ER" +
       "ROR_INVITE_CODE_NOT_EXIST\020\211\211z\022\034\n\026ERROR_I" +
-      "NVITE_CODE_USED\020\212\211z\022 \n\031ERROR_FEED_ACTION" +
-      "_INVALID\020\301\215\267\001B*\n\033com.orange.protocol.mes" +
-      "sageB\013ErrorProtos"
+      "NVITE_CODE_USED\020\212\211z\022\027\n\021ERROR_EMAIL_EMPTY" +
+      "\020\213\211z\022\030\n\022ERROR_MOBILE_EMPTY\020\214\211z\022\027\n\021ERROR_" +
+      "SNSID_EMPTY\020\215\211z\022\034\n\026ERROR_EMAIL_REGISTERE" +
+      "D\020\216\211z\022\034\n\026ERROR_PASSWORD_INVALID\020\217\211z\022 \n\031E" +
+      "RROR_FEED_ACTION_INVALID\020\301\215\267\001B*\n\033com.ora" +
+      "nge.protocol.messageB\013ErrorProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

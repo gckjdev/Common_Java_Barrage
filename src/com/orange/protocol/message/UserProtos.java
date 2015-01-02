@@ -418,6 +418,242 @@ public final class UserProtos {
     // @@protoc_insertion_point(enum_scope:barrage.FriendAddStatusType)
   }
 
+  /**
+   * Protobuf enum {@code barrage.PBLoginType}
+   */
+  public enum PBLoginType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>LOGIN_XIAOJI = 1;</code>
+     */
+    LOGIN_XIAOJI(0, 1),
+    /**
+     * <code>LOGIN_EMAIL = 2;</code>
+     */
+    LOGIN_EMAIL(1, 2),
+    /**
+     * <code>LOGIN_QQ = 3;</code>
+     */
+    LOGIN_QQ(2, 3),
+    /**
+     * <code>LOGIN_SINA = 4;</code>
+     */
+    LOGIN_SINA(3, 4),
+    /**
+     * <code>LOGIN_WEIXIN = 5;</code>
+     */
+    LOGIN_WEIXIN(4, 5),
+    /**
+     * <code>LOGIN_MOBILE = 6;</code>
+     */
+    LOGIN_MOBILE(5, 6),
+    ;
+
+    /**
+     * <code>LOGIN_XIAOJI = 1;</code>
+     */
+    public static final int LOGIN_XIAOJI_VALUE = 1;
+    /**
+     * <code>LOGIN_EMAIL = 2;</code>
+     */
+    public static final int LOGIN_EMAIL_VALUE = 2;
+    /**
+     * <code>LOGIN_QQ = 3;</code>
+     */
+    public static final int LOGIN_QQ_VALUE = 3;
+    /**
+     * <code>LOGIN_SINA = 4;</code>
+     */
+    public static final int LOGIN_SINA_VALUE = 4;
+    /**
+     * <code>LOGIN_WEIXIN = 5;</code>
+     */
+    public static final int LOGIN_WEIXIN_VALUE = 5;
+    /**
+     * <code>LOGIN_MOBILE = 6;</code>
+     */
+    public static final int LOGIN_MOBILE_VALUE = 6;
+
+
+    public final int getNumber() { return value; }
+
+    public static PBLoginType valueOf(int value) {
+      switch (value) {
+        case 1: return LOGIN_XIAOJI;
+        case 2: return LOGIN_EMAIL;
+        case 3: return LOGIN_QQ;
+        case 4: return LOGIN_SINA;
+        case 5: return LOGIN_WEIXIN;
+        case 6: return LOGIN_MOBILE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PBLoginType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<PBLoginType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PBLoginType>() {
+            public PBLoginType findValueByNumber(int number) {
+              return PBLoginType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final PBLoginType[] VALUES = values();
+
+    public static PBLoginType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private PBLoginType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:barrage.PBLoginType)
+  }
+
+  /**
+   * Protobuf enum {@code barrage.PBRegisterType}
+   */
+  public enum PBRegisterType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>REG_XIAOJI = 1;</code>
+     */
+    REG_XIAOJI(0, 1),
+    /**
+     * <code>REG_EMAIL = 2;</code>
+     */
+    REG_EMAIL(1, 2),
+    /**
+     * <code>REG_QQ = 3;</code>
+     */
+    REG_QQ(2, 3),
+    /**
+     * <code>REG_SINA = 4;</code>
+     */
+    REG_SINA(3, 4),
+    /**
+     * <code>REG_WEIXIN = 5;</code>
+     */
+    REG_WEIXIN(4, 5),
+    /**
+     * <code>REG_MOBILE = 6;</code>
+     */
+    REG_MOBILE(5, 6),
+    ;
+
+    /**
+     * <code>REG_XIAOJI = 1;</code>
+     */
+    public static final int REG_XIAOJI_VALUE = 1;
+    /**
+     * <code>REG_EMAIL = 2;</code>
+     */
+    public static final int REG_EMAIL_VALUE = 2;
+    /**
+     * <code>REG_QQ = 3;</code>
+     */
+    public static final int REG_QQ_VALUE = 3;
+    /**
+     * <code>REG_SINA = 4;</code>
+     */
+    public static final int REG_SINA_VALUE = 4;
+    /**
+     * <code>REG_WEIXIN = 5;</code>
+     */
+    public static final int REG_WEIXIN_VALUE = 5;
+    /**
+     * <code>REG_MOBILE = 6;</code>
+     */
+    public static final int REG_MOBILE_VALUE = 6;
+
+
+    public final int getNumber() { return value; }
+
+    public static PBRegisterType valueOf(int value) {
+      switch (value) {
+        case 1: return REG_XIAOJI;
+        case 2: return REG_EMAIL;
+        case 3: return REG_QQ;
+        case 4: return REG_SINA;
+        case 5: return REG_WEIXIN;
+        case 6: return REG_MOBILE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PBRegisterType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<PBRegisterType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PBRegisterType>() {
+            public PBRegisterType findValueByNumber(int number) {
+              return PBRegisterType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.getDescriptor().getEnumTypes().get(5);
+    }
+
+    private static final PBRegisterType[] VALUES = values();
+
+    public static PBRegisterType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private PBRegisterType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:barrage.PBRegisterType)
+  }
+
   public interface PBSNSUserOrBuilder extends
       // @@protoc_insertion_point(interface_extends:barrage.PBSNSUser)
       com.google.protobuf.MessageOrBuilder {
@@ -2352,6 +2588,84 @@ public final class UserProtos {
         getMobileBytes();
 
     /**
+     * <code>optional string qqOpenId = 10;</code>
+     *
+     * <pre>
+     * QQ ID
+     * </pre>
+     */
+    boolean hasQqOpenId();
+    /**
+     * <code>optional string qqOpenId = 10;</code>
+     *
+     * <pre>
+     * QQ ID
+     * </pre>
+     */
+    java.lang.String getQqOpenId();
+    /**
+     * <code>optional string qqOpenId = 10;</code>
+     *
+     * <pre>
+     * QQ ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getQqOpenIdBytes();
+
+    /**
+     * <code>optional string sinaId = 11;</code>
+     *
+     * <pre>
+     * SINA UserID
+     * </pre>
+     */
+    boolean hasSinaId();
+    /**
+     * <code>optional string sinaId = 11;</code>
+     *
+     * <pre>
+     * SINA UserID
+     * </pre>
+     */
+    java.lang.String getSinaId();
+    /**
+     * <code>optional string sinaId = 11;</code>
+     *
+     * <pre>
+     * SINA UserID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getSinaIdBytes();
+
+    /**
+     * <code>optional string weixinId = 12;</code>
+     *
+     * <pre>
+     * WeChat UserID
+     * </pre>
+     */
+    boolean hasWeixinId();
+    /**
+     * <code>optional string weixinId = 12;</code>
+     *
+     * <pre>
+     * WeChat UserID
+     * </pre>
+     */
+    java.lang.String getWeixinId();
+    /**
+     * <code>optional string weixinId = 12;</code>
+     *
+     * <pre>
+     * WeChat UserID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getWeixinIdBytes();
+
+    /**
      * <code>optional string birthday = 31;</code>
      *
      * <pre>
@@ -2419,6 +2733,57 @@ public final class UserProtos {
      */
     com.google.protobuf.ByteString
         getBloodGroupBytes();
+
+    /**
+     * <code>optional int32 regDate = 34;</code>
+     *
+     * <pre>
+     * 注册日期
+     * </pre>
+     */
+    boolean hasRegDate();
+    /**
+     * <code>optional int32 regDate = 34;</code>
+     *
+     * <pre>
+     * 注册日期
+     * </pre>
+     */
+    int getRegDate();
+
+    /**
+     * <code>optional int32 regFrom = 35;</code>
+     *
+     * <pre>
+     * 注册来源，参考PBRegisterType
+     * </pre>
+     */
+    boolean hasRegFrom();
+    /**
+     * <code>optional int32 regFrom = 35;</code>
+     *
+     * <pre>
+     * 注册来源，参考PBRegisterType
+     * </pre>
+     */
+    int getRegFrom();
+
+    /**
+     * <code>optional int32 visitDate = 36;</code>
+     *
+     * <pre>
+     * 最后一次访问日期
+     * </pre>
+     */
+    boolean hasVisitDate();
+    /**
+     * <code>optional int32 visitDate = 36;</code>
+     *
+     * <pre>
+     * 最后一次访问日期
+     * </pre>
+     */
+    int getVisitDate();
 
     /**
      * <code>optional string avatarBg = 41;</code>
@@ -3007,76 +3372,109 @@ public final class UserProtos {
               mobile_ = bs;
               break;
             }
-            case 250: {
+            case 82: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000100;
+              qqOpenId_ = bs;
+              break;
+            }
+            case 90: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000200;
+              sinaId_ = bs;
+              break;
+            }
+            case 98: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000400;
+              weixinId_ = bs;
+              break;
+            }
+            case 250: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000800;
               birthday_ = bs;
               break;
             }
             case 256: {
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00001000;
               zodiac_ = input.readInt32();
               break;
             }
             case 266: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00002000;
               bloodGroup_ = bs;
+              break;
+            }
+            case 272: {
+              bitField0_ |= 0x00004000;
+              regDate_ = input.readInt32();
+              break;
+            }
+            case 280: {
+              bitField0_ |= 0x00008000;
+              regFrom_ = input.readInt32();
+              break;
+            }
+            case 288: {
+              bitField0_ |= 0x00010000;
+              visitDate_ = input.readInt32();
               break;
             }
             case 330: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00020000;
               avatarBg_ = bs;
               break;
             }
             case 338: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00040000;
               signature_ = bs;
               break;
             }
             case 410: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00080000;
               location_ = bs;
               break;
             }
             case 418: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00100000;
               countryCode_ = bs;
               break;
             }
             case 426: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00008000;
+              bitField0_ |= 0x00200000;
               language_ = bs;
               break;
             }
             case 437: {
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00400000;
               longitude_ = input.readFloat();
               break;
             }
             case 445: {
-              bitField0_ |= 0x00020000;
+              bitField0_ |= 0x00800000;
               latitude_ = input.readFloat();
               break;
             }
             case 488: {
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x01000000;
               level_ = input.readInt32();
               break;
             }
             case 496: {
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x02000000;
               experience_ = input.readInt64();
               break;
             }
             case 570: {
               com.orange.protocol.message.CommonProtos.PBDevice.Builder subBuilder = null;
-              if (((bitField0_ & 0x00100000) == 0x00100000)) {
+              if (((bitField0_ & 0x04000000) == 0x04000000)) {
                 subBuilder = currentDevice_.toBuilder();
               }
               currentDevice_ = input.readMessage(com.orange.protocol.message.CommonProtos.PBDevice.PARSER, extensionRegistry);
@@ -3084,76 +3482,76 @@ public final class UserProtos {
                 subBuilder.mergeFrom(currentDevice_);
                 currentDevice_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00100000;
+              bitField0_ |= 0x04000000;
               break;
             }
             case 578: {
-              if (!((mutable_bitField0_ & 0x00400000) == 0x00400000)) {
+              if (!((mutable_bitField0_ & 0x10000000) == 0x10000000)) {
                 devices_ = new java.util.ArrayList<com.orange.protocol.message.CommonProtos.PBDevice>();
-                mutable_bitField0_ |= 0x00400000;
+                mutable_bitField0_ |= 0x10000000;
               }
               devices_.add(input.readMessage(com.orange.protocol.message.CommonProtos.PBDevice.PARSER, extensionRegistry));
               break;
             }
             case 648: {
-              bitField0_ |= 0x00200000;
+              bitField0_ |= 0x08000000;
               emailVerifyStatus_ = input.readInt32();
               break;
             }
             case 658: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00400000;
+              bitField0_ |= 0x10000000;
               emailVerifyCode_ = bs;
               break;
             }
             case 664: {
-              bitField0_ |= 0x00800000;
+              bitField0_ |= 0x20000000;
               mobileVerifyStatus_ = input.readInt32();
               break;
             }
             case 728: {
-              bitField0_ |= 0x01000000;
+              bitField0_ |= 0x40000000;
               addConfig_ = input.readInt32();
               break;
             }
             case 802: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x08000000) == 0x08000000)) {
+              if (!((mutable_bitField1_ & 0x00000002) == 0x00000002)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x08000000;
+                mutable_bitField1_ |= 0x00000002;
               }
               tags_.add(bs);
               break;
             }
             case 810: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x02000000;
+              bitField0_ |= 0x80000000;
               memo_ = bs;
               break;
             }
             case 816: {
-              bitField0_ |= 0x04000000;
+              bitField1_ |= 0x00000001;
               addSource_ = input.readInt32();
               break;
             }
             case 824: {
-              bitField0_ |= 0x08000000;
+              bitField1_ |= 0x00000002;
               addDate_ = input.readInt32();
               break;
             }
             case 832: {
-              bitField0_ |= 0x10000000;
+              bitField1_ |= 0x00000004;
               addDir_ = input.readInt32();
               break;
             }
             case 842: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x20000000;
+              bitField1_ |= 0x00000008;
               replyMemo_ = bs;
               break;
             }
             case 848: {
-              bitField0_ |= 0x40000000;
+              bitField1_ |= 0x00000010;
               addStatus_ = input.readInt32();
               break;
             }
@@ -3168,10 +3566,10 @@ public final class UserProtos {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           snsUsers_ = java.util.Collections.unmodifiableList(snsUsers_);
         }
-        if (((mutable_bitField0_ & 0x00400000) == 0x00400000)) {
+        if (((mutable_bitField0_ & 0x10000000) == 0x10000000)) {
           devices_ = java.util.Collections.unmodifiableList(devices_);
         }
-        if (((mutable_bitField0_ & 0x08000000) == 0x08000000)) {
+        if (((mutable_bitField1_ & 0x00000002) == 0x00000002)) {
           tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -3206,6 +3604,7 @@ public final class UserProtos {
     }
 
     private int bitField0_;
+    private int bitField1_;
     public static final int USERID_FIELD_NUMBER = 1;
     private java.lang.Object userId_;
     /**
@@ -3638,6 +4037,168 @@ public final class UserProtos {
       }
     }
 
+    public static final int QQOPENID_FIELD_NUMBER = 10;
+    private java.lang.Object qqOpenId_;
+    /**
+     * <code>optional string qqOpenId = 10;</code>
+     *
+     * <pre>
+     * QQ ID
+     * </pre>
+     */
+    public boolean hasQqOpenId() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional string qqOpenId = 10;</code>
+     *
+     * <pre>
+     * QQ ID
+     * </pre>
+     */
+    public java.lang.String getQqOpenId() {
+      java.lang.Object ref = qqOpenId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          qqOpenId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string qqOpenId = 10;</code>
+     *
+     * <pre>
+     * QQ ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getQqOpenIdBytes() {
+      java.lang.Object ref = qqOpenId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        qqOpenId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SINAID_FIELD_NUMBER = 11;
+    private java.lang.Object sinaId_;
+    /**
+     * <code>optional string sinaId = 11;</code>
+     *
+     * <pre>
+     * SINA UserID
+     * </pre>
+     */
+    public boolean hasSinaId() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>optional string sinaId = 11;</code>
+     *
+     * <pre>
+     * SINA UserID
+     * </pre>
+     */
+    public java.lang.String getSinaId() {
+      java.lang.Object ref = sinaId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          sinaId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string sinaId = 11;</code>
+     *
+     * <pre>
+     * SINA UserID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getSinaIdBytes() {
+      java.lang.Object ref = sinaId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sinaId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int WEIXINID_FIELD_NUMBER = 12;
+    private java.lang.Object weixinId_;
+    /**
+     * <code>optional string weixinId = 12;</code>
+     *
+     * <pre>
+     * WeChat UserID
+     * </pre>
+     */
+    public boolean hasWeixinId() {
+      return ((bitField0_ & 0x00000400) == 0x00000400);
+    }
+    /**
+     * <code>optional string weixinId = 12;</code>
+     *
+     * <pre>
+     * WeChat UserID
+     * </pre>
+     */
+    public java.lang.String getWeixinId() {
+      java.lang.Object ref = weixinId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          weixinId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string weixinId = 12;</code>
+     *
+     * <pre>
+     * WeChat UserID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getWeixinIdBytes() {
+      java.lang.Object ref = weixinId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        weixinId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int BIRTHDAY_FIELD_NUMBER = 31;
     private java.lang.Object birthday_;
     /**
@@ -3648,7 +4209,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasBirthday() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <code>optional string birthday = 31;</code>
@@ -3702,7 +4263,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasZodiac() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <code>optional int32 zodiac = 32;</code>
@@ -3725,7 +4286,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasBloodGroup() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
      * <code>optional string bloodGroup = 33;</code>
@@ -3769,6 +4330,75 @@ public final class UserProtos {
       }
     }
 
+    public static final int REGDATE_FIELD_NUMBER = 34;
+    private int regDate_;
+    /**
+     * <code>optional int32 regDate = 34;</code>
+     *
+     * <pre>
+     * 注册日期
+     * </pre>
+     */
+    public boolean hasRegDate() {
+      return ((bitField0_ & 0x00004000) == 0x00004000);
+    }
+    /**
+     * <code>optional int32 regDate = 34;</code>
+     *
+     * <pre>
+     * 注册日期
+     * </pre>
+     */
+    public int getRegDate() {
+      return regDate_;
+    }
+
+    public static final int REGFROM_FIELD_NUMBER = 35;
+    private int regFrom_;
+    /**
+     * <code>optional int32 regFrom = 35;</code>
+     *
+     * <pre>
+     * 注册来源，参考PBRegisterType
+     * </pre>
+     */
+    public boolean hasRegFrom() {
+      return ((bitField0_ & 0x00008000) == 0x00008000);
+    }
+    /**
+     * <code>optional int32 regFrom = 35;</code>
+     *
+     * <pre>
+     * 注册来源，参考PBRegisterType
+     * </pre>
+     */
+    public int getRegFrom() {
+      return regFrom_;
+    }
+
+    public static final int VISITDATE_FIELD_NUMBER = 36;
+    private int visitDate_;
+    /**
+     * <code>optional int32 visitDate = 36;</code>
+     *
+     * <pre>
+     * 最后一次访问日期
+     * </pre>
+     */
+    public boolean hasVisitDate() {
+      return ((bitField0_ & 0x00010000) == 0x00010000);
+    }
+    /**
+     * <code>optional int32 visitDate = 36;</code>
+     *
+     * <pre>
+     * 最后一次访问日期
+     * </pre>
+     */
+    public int getVisitDate() {
+      return visitDate_;
+    }
+
     public static final int AVATARBG_FIELD_NUMBER = 41;
     private java.lang.Object avatarBg_;
     /**
@@ -3779,7 +4409,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasAvatarBg() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     /**
      * <code>optional string avatarBg = 41;</code>
@@ -3833,7 +4463,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasSignature() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00040000) == 0x00040000);
     }
     /**
      * <code>optional string signature = 42;</code>
@@ -3887,7 +4517,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasLocation() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00080000) == 0x00080000);
     }
     /**
      * <code>optional string location = 51;</code>
@@ -3941,7 +4571,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasCountryCode() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
+      return ((bitField0_ & 0x00100000) == 0x00100000);
     }
     /**
      * <code>optional string countryCode = 52;</code>
@@ -3995,7 +4625,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasLanguage() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
+      return ((bitField0_ & 0x00200000) == 0x00200000);
     }
     /**
      * <code>optional string language = 53;</code>
@@ -4049,7 +4679,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasLongitude() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
+      return ((bitField0_ & 0x00400000) == 0x00400000);
     }
     /**
      * <code>optional float longitude = 54;</code>
@@ -4072,7 +4702,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasLatitude() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
+      return ((bitField0_ & 0x00800000) == 0x00800000);
     }
     /**
      * <code>optional float latitude = 55;</code>
@@ -4095,7 +4725,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasLevel() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
+      return ((bitField0_ & 0x01000000) == 0x01000000);
     }
     /**
      * <code>optional int32 level = 61;</code>
@@ -4118,7 +4748,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasExperience() {
-      return ((bitField0_ & 0x00080000) == 0x00080000);
+      return ((bitField0_ & 0x02000000) == 0x02000000);
     }
     /**
      * <code>optional int64 experience = 62;</code>
@@ -4141,7 +4771,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasCurrentDevice() {
-      return ((bitField0_ & 0x00100000) == 0x00100000);
+      return ((bitField0_ & 0x04000000) == 0x04000000);
     }
     /**
      * <code>optional .barrage.PBDevice currentDevice = 71;</code>
@@ -4209,7 +4839,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasEmailVerifyStatus() {
-      return ((bitField0_ & 0x00200000) == 0x00200000);
+      return ((bitField0_ & 0x08000000) == 0x08000000);
     }
     /**
      * <code>optional int32 emailVerifyStatus = 81;</code>
@@ -4232,7 +4862,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasEmailVerifyCode() {
-      return ((bitField0_ & 0x00400000) == 0x00400000);
+      return ((bitField0_ & 0x10000000) == 0x10000000);
     }
     /**
      * <code>optional string emailVerifyCode = 82;</code>
@@ -4286,7 +4916,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasMobileVerifyStatus() {
-      return ((bitField0_ & 0x00800000) == 0x00800000);
+      return ((bitField0_ & 0x20000000) == 0x20000000);
     }
     /**
      * <code>optional int32 mobileVerifyStatus = 83;</code>
@@ -4309,7 +4939,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasAddConfig() {
-      return ((bitField0_ & 0x01000000) == 0x01000000);
+      return ((bitField0_ & 0x40000000) == 0x40000000);
     }
     /**
      * <code>optional int32 addConfig = 91;</code>
@@ -4377,7 +5007,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasMemo() {
-      return ((bitField0_ & 0x02000000) == 0x02000000);
+      return ((bitField0_ & 0x80000000) == 0x80000000);
     }
     /**
      * <code>optional string memo = 101;</code>
@@ -4431,7 +5061,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasAddSource() {
-      return ((bitField0_ & 0x04000000) == 0x04000000);
+      return ((bitField1_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>optional int32 addSource = 102;</code>
@@ -4454,7 +5084,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasAddDate() {
-      return ((bitField0_ & 0x08000000) == 0x08000000);
+      return ((bitField1_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional int32 addDate = 103;</code>
@@ -4477,7 +5107,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasAddDir() {
-      return ((bitField0_ & 0x10000000) == 0x10000000);
+      return ((bitField1_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional int32 addDir = 104;</code>
@@ -4500,7 +5130,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasReplyMemo() {
-      return ((bitField0_ & 0x20000000) == 0x20000000);
+      return ((bitField1_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>optional string replyMemo = 105;</code>
@@ -4554,7 +5184,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasAddStatus() {
-      return ((bitField0_ & 0x40000000) == 0x40000000);
+      return ((bitField1_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>optional int32 addStatus = 106;</code>
@@ -4577,9 +5207,15 @@ public final class UserProtos {
       email_ = "";
       password_ = "";
       mobile_ = "";
+      qqOpenId_ = "";
+      sinaId_ = "";
+      weixinId_ = "";
       birthday_ = "";
       zodiac_ = 0;
       bloodGroup_ = "";
+      regDate_ = 0;
+      regFrom_ = 0;
+      visitDate_ = 0;
       avatarBg_ = "";
       signature_ = "";
       location_ = "";
@@ -4666,78 +5302,96 @@ public final class UserProtos {
         output.writeBytes(9, getMobileBytes());
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeBytes(31, getBirthdayBytes());
+        output.writeBytes(10, getQqOpenIdBytes());
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeInt32(32, zodiac_);
+        output.writeBytes(11, getSinaIdBytes());
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeBytes(33, getBloodGroupBytes());
+        output.writeBytes(12, getWeixinIdBytes());
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeBytes(41, getAvatarBgBytes());
+        output.writeBytes(31, getBirthdayBytes());
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        output.writeBytes(42, getSignatureBytes());
+        output.writeInt32(32, zodiac_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        output.writeBytes(51, getLocationBytes());
+        output.writeBytes(33, getBloodGroupBytes());
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        output.writeBytes(52, getCountryCodeBytes());
+        output.writeInt32(34, regDate_);
       }
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
-        output.writeBytes(53, getLanguageBytes());
+        output.writeInt32(35, regFrom_);
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        output.writeFloat(54, longitude_);
+        output.writeInt32(36, visitDate_);
       }
       if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        output.writeFloat(55, latitude_);
+        output.writeBytes(41, getAvatarBgBytes());
       }
       if (((bitField0_ & 0x00040000) == 0x00040000)) {
-        output.writeInt32(61, level_);
+        output.writeBytes(42, getSignatureBytes());
       }
       if (((bitField0_ & 0x00080000) == 0x00080000)) {
-        output.writeInt64(62, experience_);
+        output.writeBytes(51, getLocationBytes());
       }
       if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        output.writeBytes(52, getCountryCodeBytes());
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        output.writeBytes(53, getLanguageBytes());
+      }
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        output.writeFloat(54, longitude_);
+      }
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+        output.writeFloat(55, latitude_);
+      }
+      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+        output.writeInt32(61, level_);
+      }
+      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+        output.writeInt64(62, experience_);
+      }
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
         output.writeMessage(71, currentDevice_);
       }
       for (int i = 0; i < devices_.size(); i++) {
         output.writeMessage(72, devices_.get(i));
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
         output.writeInt32(81, emailVerifyStatus_);
       }
-      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
         output.writeBytes(82, getEmailVerifyCodeBytes());
       }
-      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
         output.writeInt32(83, mobileVerifyStatus_);
       }
-      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+      if (((bitField0_ & 0x40000000) == 0x40000000)) {
         output.writeInt32(91, addConfig_);
       }
       for (int i = 0; i < tags_.size(); i++) {
         output.writeBytes(100, tags_.getByteString(i));
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+      if (((bitField0_ & 0x80000000) == 0x80000000)) {
         output.writeBytes(101, getMemoBytes());
       }
-      if (((bitField0_ & 0x04000000) == 0x04000000)) {
+      if (((bitField1_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(102, addSource_);
       }
-      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+      if (((bitField1_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(103, addDate_);
       }
-      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+      if (((bitField1_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(104, addDir_);
       }
-      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+      if (((bitField1_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(105, getReplyMemoBytes());
       }
-      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+      if (((bitField1_ & 0x00000010) == 0x00000010)) {
         output.writeInt32(106, addStatus_);
       }
       getUnknownFields().writeTo(output);
@@ -4787,53 +5441,77 @@ public final class UserProtos {
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(31, getBirthdayBytes());
+          .computeBytesSize(10, getQqOpenIdBytes());
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(32, zodiac_);
+          .computeBytesSize(11, getSinaIdBytes());
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(33, getBloodGroupBytes());
+          .computeBytesSize(12, getWeixinIdBytes());
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(41, getAvatarBgBytes());
+          .computeBytesSize(31, getBirthdayBytes());
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(42, getSignatureBytes());
+          .computeInt32Size(32, zodiac_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(51, getLocationBytes());
+          .computeBytesSize(33, getBloodGroupBytes());
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(52, getCountryCodeBytes());
+          .computeInt32Size(34, regDate_);
       }
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(53, getLanguageBytes());
+          .computeInt32Size(35, regFrom_);
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(54, longitude_);
+          .computeInt32Size(36, visitDate_);
       }
       if (((bitField0_ & 0x00020000) == 0x00020000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(55, latitude_);
+          .computeBytesSize(41, getAvatarBgBytes());
       }
       if (((bitField0_ & 0x00040000) == 0x00040000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(61, level_);
+          .computeBytesSize(42, getSignatureBytes());
       }
       if (((bitField0_ & 0x00080000) == 0x00080000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(62, experience_);
+          .computeBytesSize(51, getLocationBytes());
       }
       if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(52, getCountryCodeBytes());
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(53, getLanguageBytes());
+      }
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(54, longitude_);
+      }
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(55, latitude_);
+      }
+      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(61, level_);
+      }
+      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(62, experience_);
+      }
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(71, currentDevice_);
       }
@@ -4841,19 +5519,19 @@ public final class UserProtos {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(72, devices_.get(i));
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(81, emailVerifyStatus_);
       }
-      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(82, getEmailVerifyCodeBytes());
       }
-      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(83, mobileVerifyStatus_);
       }
-      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+      if (((bitField0_ & 0x40000000) == 0x40000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(91, addConfig_);
       }
@@ -4866,27 +5544,27 @@ public final class UserProtos {
         size += dataSize;
         size += 2 * getTagsList().size();
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+      if (((bitField0_ & 0x80000000) == 0x80000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(101, getMemoBytes());
       }
-      if (((bitField0_ & 0x04000000) == 0x04000000)) {
+      if (((bitField1_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(102, addSource_);
       }
-      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+      if (((bitField1_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(103, addDate_);
       }
-      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+      if (((bitField1_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(104, addDir_);
       }
-      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+      if (((bitField1_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(105, getReplyMemoBytes());
       }
-      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+      if (((bitField1_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(106, addStatus_);
       }
@@ -5032,64 +5710,76 @@ public final class UserProtos {
         bitField0_ = (bitField0_ & ~0x00000080);
         mobile_ = "";
         bitField0_ = (bitField0_ & ~0x00000100);
-        birthday_ = "";
+        qqOpenId_ = "";
         bitField0_ = (bitField0_ & ~0x00000200);
-        zodiac_ = 0;
+        sinaId_ = "";
         bitField0_ = (bitField0_ & ~0x00000400);
-        bloodGroup_ = "";
+        weixinId_ = "";
         bitField0_ = (bitField0_ & ~0x00000800);
-        avatarBg_ = "";
+        birthday_ = "";
         bitField0_ = (bitField0_ & ~0x00001000);
-        signature_ = "";
+        zodiac_ = 0;
         bitField0_ = (bitField0_ & ~0x00002000);
-        location_ = "";
+        bloodGroup_ = "";
         bitField0_ = (bitField0_ & ~0x00004000);
-        countryCode_ = "";
+        regDate_ = 0;
         bitField0_ = (bitField0_ & ~0x00008000);
-        language_ = "";
+        regFrom_ = 0;
         bitField0_ = (bitField0_ & ~0x00010000);
-        longitude_ = 0F;
+        visitDate_ = 0;
         bitField0_ = (bitField0_ & ~0x00020000);
-        latitude_ = 0F;
+        avatarBg_ = "";
         bitField0_ = (bitField0_ & ~0x00040000);
-        level_ = 0;
+        signature_ = "";
         bitField0_ = (bitField0_ & ~0x00080000);
-        experience_ = 0L;
+        location_ = "";
         bitField0_ = (bitField0_ & ~0x00100000);
+        countryCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00200000);
+        language_ = "";
+        bitField0_ = (bitField0_ & ~0x00400000);
+        longitude_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00800000);
+        latitude_ = 0F;
+        bitField0_ = (bitField0_ & ~0x01000000);
+        level_ = 0;
+        bitField0_ = (bitField0_ & ~0x02000000);
+        experience_ = 0L;
+        bitField0_ = (bitField0_ & ~0x04000000);
         if (currentDeviceBuilder_ == null) {
           currentDevice_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
         } else {
           currentDeviceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         if (devicesBuilder_ == null) {
           devices_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00400000);
+          bitField0_ = (bitField0_ & ~0x10000000);
         } else {
           devicesBuilder_.clear();
         }
         emailVerifyStatus_ = 0;
-        bitField0_ = (bitField0_ & ~0x00800000);
-        emailVerifyCode_ = "";
-        bitField0_ = (bitField0_ & ~0x01000000);
-        mobileVerifyStatus_ = 0;
-        bitField0_ = (bitField0_ & ~0x02000000);
-        addConfig_ = 0;
-        bitField0_ = (bitField0_ & ~0x04000000);
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x08000000);
-        memo_ = "";
-        bitField0_ = (bitField0_ & ~0x10000000);
-        addSource_ = 0;
         bitField0_ = (bitField0_ & ~0x20000000);
-        addDate_ = 0;
+        emailVerifyCode_ = "";
         bitField0_ = (bitField0_ & ~0x40000000);
-        addDir_ = 0;
+        mobileVerifyStatus_ = 0;
         bitField0_ = (bitField0_ & ~0x80000000);
-        replyMemo_ = "";
+        addConfig_ = 0;
         bitField1_ = (bitField1_ & ~0x00000001);
-        addStatus_ = 0;
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField1_ = (bitField1_ & ~0x00000002);
+        memo_ = "";
+        bitField1_ = (bitField1_ & ~0x00000004);
+        addSource_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000008);
+        addDate_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000010);
+        addDir_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000020);
+        replyMemo_ = "";
+        bitField1_ = (bitField1_ & ~0x00000040);
+        addStatus_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000080);
         return this;
       }
 
@@ -5119,6 +5809,7 @@ public final class UserProtos {
         int from_bitField0_ = bitField0_;
         int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
+        int to_bitField1_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
@@ -5163,53 +5854,77 @@ public final class UserProtos {
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.birthday_ = birthday_;
+        result.qqOpenId_ = qqOpenId_;
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.zodiac_ = zodiac_;
+        result.sinaId_ = sinaId_;
         if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.bloodGroup_ = bloodGroup_;
+        result.weixinId_ = weixinId_;
         if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00000800;
         }
-        result.avatarBg_ = avatarBg_;
+        result.birthday_ = birthday_;
         if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00001000;
         }
-        result.signature_ = signature_;
+        result.zodiac_ = zodiac_;
         if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
           to_bitField0_ |= 0x00002000;
         }
-        result.location_ = location_;
+        result.bloodGroup_ = bloodGroup_;
         if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
           to_bitField0_ |= 0x00004000;
         }
-        result.countryCode_ = countryCode_;
+        result.regDate_ = regDate_;
         if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
           to_bitField0_ |= 0x00008000;
         }
-        result.language_ = language_;
+        result.regFrom_ = regFrom_;
         if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
           to_bitField0_ |= 0x00010000;
         }
-        result.longitude_ = longitude_;
+        result.visitDate_ = visitDate_;
         if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
           to_bitField0_ |= 0x00020000;
         }
-        result.latitude_ = latitude_;
+        result.avatarBg_ = avatarBg_;
         if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
           to_bitField0_ |= 0x00040000;
         }
-        result.level_ = level_;
+        result.signature_ = signature_;
         if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
           to_bitField0_ |= 0x00080000;
         }
-        result.experience_ = experience_;
+        result.location_ = location_;
         if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
           to_bitField0_ |= 0x00100000;
+        }
+        result.countryCode_ = countryCode_;
+        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
+          to_bitField0_ |= 0x00200000;
+        }
+        result.language_ = language_;
+        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
+          to_bitField0_ |= 0x00400000;
+        }
+        result.longitude_ = longitude_;
+        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
+          to_bitField0_ |= 0x00800000;
+        }
+        result.latitude_ = latitude_;
+        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
+          to_bitField0_ |= 0x01000000;
+        }
+        result.level_ = level_;
+        if (((from_bitField0_ & 0x04000000) == 0x04000000)) {
+          to_bitField0_ |= 0x02000000;
+        }
+        result.experience_ = experience_;
+        if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
+          to_bitField0_ |= 0x04000000;
         }
         if (currentDeviceBuilder_ == null) {
           result.currentDevice_ = currentDevice_;
@@ -5217,60 +5932,61 @@ public final class UserProtos {
           result.currentDevice_ = currentDeviceBuilder_.build();
         }
         if (devicesBuilder_ == null) {
-          if (((bitField0_ & 0x00400000) == 0x00400000)) {
+          if (((bitField0_ & 0x10000000) == 0x10000000)) {
             devices_ = java.util.Collections.unmodifiableList(devices_);
-            bitField0_ = (bitField0_ & ~0x00400000);
+            bitField0_ = (bitField0_ & ~0x10000000);
           }
           result.devices_ = devices_;
         } else {
           result.devices_ = devicesBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
-          to_bitField0_ |= 0x00200000;
-        }
-        result.emailVerifyStatus_ = emailVerifyStatus_;
-        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
-          to_bitField0_ |= 0x00400000;
-        }
-        result.emailVerifyCode_ = emailVerifyCode_;
-        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
-          to_bitField0_ |= 0x00800000;
-        }
-        result.mobileVerifyStatus_ = mobileVerifyStatus_;
-        if (((from_bitField0_ & 0x04000000) == 0x04000000)) {
-          to_bitField0_ |= 0x01000000;
-        }
-        result.addConfig_ = addConfig_;
-        if (((bitField0_ & 0x08000000) == 0x08000000)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x08000000);
-        }
-        result.tags_ = tags_;
-        if (((from_bitField0_ & 0x10000000) == 0x10000000)) {
-          to_bitField0_ |= 0x02000000;
-        }
-        result.memo_ = memo_;
         if (((from_bitField0_ & 0x20000000) == 0x20000000)) {
-          to_bitField0_ |= 0x04000000;
-        }
-        result.addSource_ = addSource_;
-        if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
           to_bitField0_ |= 0x08000000;
         }
-        result.addDate_ = addDate_;
-        if (((from_bitField0_ & 0x80000000) == 0x80000000)) {
+        result.emailVerifyStatus_ = emailVerifyStatus_;
+        if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
           to_bitField0_ |= 0x10000000;
         }
-        result.addDir_ = addDir_;
-        if (((from_bitField1_ & 0x00000001) == 0x00000001)) {
+        result.emailVerifyCode_ = emailVerifyCode_;
+        if (((from_bitField0_ & 0x80000000) == 0x80000000)) {
           to_bitField0_ |= 0x20000000;
         }
-        result.replyMemo_ = replyMemo_;
-        if (((from_bitField1_ & 0x00000002) == 0x00000002)) {
+        result.mobileVerifyStatus_ = mobileVerifyStatus_;
+        if (((from_bitField1_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x40000000;
+        }
+        result.addConfig_ = addConfig_;
+        if (((bitField1_ & 0x00000002) == 0x00000002)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField1_ = (bitField1_ & ~0x00000002);
+        }
+        result.tags_ = tags_;
+        if (((from_bitField1_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x80000000;
+        }
+        result.memo_ = memo_;
+        if (((from_bitField1_ & 0x00000008) == 0x00000008)) {
+          to_bitField1_ |= 0x00000001;
+        }
+        result.addSource_ = addSource_;
+        if (((from_bitField1_ & 0x00000010) == 0x00000010)) {
+          to_bitField1_ |= 0x00000002;
+        }
+        result.addDate_ = addDate_;
+        if (((from_bitField1_ & 0x00000020) == 0x00000020)) {
+          to_bitField1_ |= 0x00000004;
+        }
+        result.addDir_ = addDir_;
+        if (((from_bitField1_ & 0x00000040) == 0x00000040)) {
+          to_bitField1_ |= 0x00000008;
+        }
+        result.replyMemo_ = replyMemo_;
+        if (((from_bitField1_ & 0x00000080) == 0x00000080)) {
+          to_bitField1_ |= 0x00000010;
         }
         result.addStatus_ = addStatus_;
         result.bitField0_ = to_bitField0_;
+        result.bitField1_ = to_bitField1_;
         onBuilt();
         return result;
       }
@@ -5350,8 +6066,23 @@ public final class UserProtos {
           mobile_ = other.mobile_;
           onChanged();
         }
-        if (other.hasBirthday()) {
+        if (other.hasQqOpenId()) {
           bitField0_ |= 0x00000200;
+          qqOpenId_ = other.qqOpenId_;
+          onChanged();
+        }
+        if (other.hasSinaId()) {
+          bitField0_ |= 0x00000400;
+          sinaId_ = other.sinaId_;
+          onChanged();
+        }
+        if (other.hasWeixinId()) {
+          bitField0_ |= 0x00000800;
+          weixinId_ = other.weixinId_;
+          onChanged();
+        }
+        if (other.hasBirthday()) {
+          bitField0_ |= 0x00001000;
           birthday_ = other.birthday_;
           onChanged();
         }
@@ -5359,32 +6090,41 @@ public final class UserProtos {
           setZodiac(other.getZodiac());
         }
         if (other.hasBloodGroup()) {
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00004000;
           bloodGroup_ = other.bloodGroup_;
           onChanged();
         }
+        if (other.hasRegDate()) {
+          setRegDate(other.getRegDate());
+        }
+        if (other.hasRegFrom()) {
+          setRegFrom(other.getRegFrom());
+        }
+        if (other.hasVisitDate()) {
+          setVisitDate(other.getVisitDate());
+        }
         if (other.hasAvatarBg()) {
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00040000;
           avatarBg_ = other.avatarBg_;
           onChanged();
         }
         if (other.hasSignature()) {
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00080000;
           signature_ = other.signature_;
           onChanged();
         }
         if (other.hasLocation()) {
-          bitField0_ |= 0x00004000;
+          bitField0_ |= 0x00100000;
           location_ = other.location_;
           onChanged();
         }
         if (other.hasCountryCode()) {
-          bitField0_ |= 0x00008000;
+          bitField0_ |= 0x00200000;
           countryCode_ = other.countryCode_;
           onChanged();
         }
         if (other.hasLanguage()) {
-          bitField0_ |= 0x00010000;
+          bitField0_ |= 0x00400000;
           language_ = other.language_;
           onChanged();
         }
@@ -5407,7 +6147,7 @@ public final class UserProtos {
           if (!other.devices_.isEmpty()) {
             if (devices_.isEmpty()) {
               devices_ = other.devices_;
-              bitField0_ = (bitField0_ & ~0x00400000);
+              bitField0_ = (bitField0_ & ~0x10000000);
             } else {
               ensureDevicesIsMutable();
               devices_.addAll(other.devices_);
@@ -5420,7 +6160,7 @@ public final class UserProtos {
               devicesBuilder_.dispose();
               devicesBuilder_ = null;
               devices_ = other.devices_;
-              bitField0_ = (bitField0_ & ~0x00400000);
+              bitField0_ = (bitField0_ & ~0x10000000);
               devicesBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getDevicesFieldBuilder() : null;
@@ -5433,7 +6173,7 @@ public final class UserProtos {
           setEmailVerifyStatus(other.getEmailVerifyStatus());
         }
         if (other.hasEmailVerifyCode()) {
-          bitField0_ |= 0x01000000;
+          bitField0_ |= 0x40000000;
           emailVerifyCode_ = other.emailVerifyCode_;
           onChanged();
         }
@@ -5446,7 +6186,7 @@ public final class UserProtos {
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x08000000);
+            bitField1_ = (bitField1_ & ~0x00000002);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -5454,7 +6194,7 @@ public final class UserProtos {
           onChanged();
         }
         if (other.hasMemo()) {
-          bitField0_ |= 0x10000000;
+          bitField1_ |= 0x00000004;
           memo_ = other.memo_;
           onChanged();
         }
@@ -5468,7 +6208,7 @@ public final class UserProtos {
           setAddDir(other.getAddDir());
         }
         if (other.hasReplyMemo()) {
-          bitField1_ |= 0x00000001;
+          bitField1_ |= 0x00000040;
           replyMemo_ = other.replyMemo_;
           onChanged();
         }
@@ -6537,6 +7277,306 @@ public final class UserProtos {
         return this;
       }
 
+      private java.lang.Object qqOpenId_ = "";
+      /**
+       * <code>optional string qqOpenId = 10;</code>
+       *
+       * <pre>
+       * QQ ID
+       * </pre>
+       */
+      public boolean hasQqOpenId() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional string qqOpenId = 10;</code>
+       *
+       * <pre>
+       * QQ ID
+       * </pre>
+       */
+      public java.lang.String getQqOpenId() {
+        java.lang.Object ref = qqOpenId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            qqOpenId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string qqOpenId = 10;</code>
+       *
+       * <pre>
+       * QQ ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getQqOpenIdBytes() {
+        java.lang.Object ref = qqOpenId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          qqOpenId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string qqOpenId = 10;</code>
+       *
+       * <pre>
+       * QQ ID
+       * </pre>
+       */
+      public Builder setQqOpenId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        qqOpenId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string qqOpenId = 10;</code>
+       *
+       * <pre>
+       * QQ ID
+       * </pre>
+       */
+      public Builder clearQqOpenId() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        qqOpenId_ = getDefaultInstance().getQqOpenId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string qqOpenId = 10;</code>
+       *
+       * <pre>
+       * QQ ID
+       * </pre>
+       */
+      public Builder setQqOpenIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        qqOpenId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sinaId_ = "";
+      /**
+       * <code>optional string sinaId = 11;</code>
+       *
+       * <pre>
+       * SINA UserID
+       * </pre>
+       */
+      public boolean hasSinaId() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional string sinaId = 11;</code>
+       *
+       * <pre>
+       * SINA UserID
+       * </pre>
+       */
+      public java.lang.String getSinaId() {
+        java.lang.Object ref = sinaId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            sinaId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string sinaId = 11;</code>
+       *
+       * <pre>
+       * SINA UserID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getSinaIdBytes() {
+        java.lang.Object ref = sinaId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sinaId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string sinaId = 11;</code>
+       *
+       * <pre>
+       * SINA UserID
+       * </pre>
+       */
+      public Builder setSinaId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        sinaId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string sinaId = 11;</code>
+       *
+       * <pre>
+       * SINA UserID
+       * </pre>
+       */
+      public Builder clearSinaId() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        sinaId_ = getDefaultInstance().getSinaId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string sinaId = 11;</code>
+       *
+       * <pre>
+       * SINA UserID
+       * </pre>
+       */
+      public Builder setSinaIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        sinaId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object weixinId_ = "";
+      /**
+       * <code>optional string weixinId = 12;</code>
+       *
+       * <pre>
+       * WeChat UserID
+       * </pre>
+       */
+      public boolean hasWeixinId() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional string weixinId = 12;</code>
+       *
+       * <pre>
+       * WeChat UserID
+       * </pre>
+       */
+      public java.lang.String getWeixinId() {
+        java.lang.Object ref = weixinId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            weixinId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string weixinId = 12;</code>
+       *
+       * <pre>
+       * WeChat UserID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getWeixinIdBytes() {
+        java.lang.Object ref = weixinId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          weixinId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string weixinId = 12;</code>
+       *
+       * <pre>
+       * WeChat UserID
+       * </pre>
+       */
+      public Builder setWeixinId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        weixinId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string weixinId = 12;</code>
+       *
+       * <pre>
+       * WeChat UserID
+       * </pre>
+       */
+      public Builder clearWeixinId() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        weixinId_ = getDefaultInstance().getWeixinId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string weixinId = 12;</code>
+       *
+       * <pre>
+       * WeChat UserID
+       * </pre>
+       */
+      public Builder setWeixinIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        weixinId_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object birthday_ = "";
       /**
        * <code>optional string birthday = 31;</code>
@@ -6546,7 +7586,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasBirthday() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional string birthday = 31;</code>
@@ -6601,7 +7641,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
+  bitField0_ |= 0x00001000;
         birthday_ = value;
         onChanged();
         return this;
@@ -6614,7 +7654,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearBirthday() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00001000);
         birthday_ = getDefaultInstance().getBirthday();
         onChanged();
         return this;
@@ -6631,7 +7671,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
+  bitField0_ |= 0x00001000;
         birthday_ = value;
         onChanged();
         return this;
@@ -6646,7 +7686,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasZodiac() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <code>optional int32 zodiac = 32;</code>
@@ -6666,7 +7706,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setZodiac(int value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00002000;
         zodiac_ = value;
         onChanged();
         return this;
@@ -6679,7 +7719,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearZodiac() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00002000);
         zodiac_ = 0;
         onChanged();
         return this;
@@ -6694,7 +7734,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasBloodGroup() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
        * <code>optional string bloodGroup = 33;</code>
@@ -6749,7 +7789,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  bitField0_ |= 0x00004000;
         bloodGroup_ = value;
         onChanged();
         return this;
@@ -6762,7 +7802,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearBloodGroup() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00004000);
         bloodGroup_ = getDefaultInstance().getBloodGroup();
         onChanged();
         return this;
@@ -6779,8 +7819,152 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  bitField0_ |= 0x00004000;
         bloodGroup_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int regDate_ ;
+      /**
+       * <code>optional int32 regDate = 34;</code>
+       *
+       * <pre>
+       * 注册日期
+       * </pre>
+       */
+      public boolean hasRegDate() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      /**
+       * <code>optional int32 regDate = 34;</code>
+       *
+       * <pre>
+       * 注册日期
+       * </pre>
+       */
+      public int getRegDate() {
+        return regDate_;
+      }
+      /**
+       * <code>optional int32 regDate = 34;</code>
+       *
+       * <pre>
+       * 注册日期
+       * </pre>
+       */
+      public Builder setRegDate(int value) {
+        bitField0_ |= 0x00008000;
+        regDate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 regDate = 34;</code>
+       *
+       * <pre>
+       * 注册日期
+       * </pre>
+       */
+      public Builder clearRegDate() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        regDate_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int regFrom_ ;
+      /**
+       * <code>optional int32 regFrom = 35;</code>
+       *
+       * <pre>
+       * 注册来源，参考PBRegisterType
+       * </pre>
+       */
+      public boolean hasRegFrom() {
+        return ((bitField0_ & 0x00010000) == 0x00010000);
+      }
+      /**
+       * <code>optional int32 regFrom = 35;</code>
+       *
+       * <pre>
+       * 注册来源，参考PBRegisterType
+       * </pre>
+       */
+      public int getRegFrom() {
+        return regFrom_;
+      }
+      /**
+       * <code>optional int32 regFrom = 35;</code>
+       *
+       * <pre>
+       * 注册来源，参考PBRegisterType
+       * </pre>
+       */
+      public Builder setRegFrom(int value) {
+        bitField0_ |= 0x00010000;
+        regFrom_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 regFrom = 35;</code>
+       *
+       * <pre>
+       * 注册来源，参考PBRegisterType
+       * </pre>
+       */
+      public Builder clearRegFrom() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        regFrom_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int visitDate_ ;
+      /**
+       * <code>optional int32 visitDate = 36;</code>
+       *
+       * <pre>
+       * 最后一次访问日期
+       * </pre>
+       */
+      public boolean hasVisitDate() {
+        return ((bitField0_ & 0x00020000) == 0x00020000);
+      }
+      /**
+       * <code>optional int32 visitDate = 36;</code>
+       *
+       * <pre>
+       * 最后一次访问日期
+       * </pre>
+       */
+      public int getVisitDate() {
+        return visitDate_;
+      }
+      /**
+       * <code>optional int32 visitDate = 36;</code>
+       *
+       * <pre>
+       * 最后一次访问日期
+       * </pre>
+       */
+      public Builder setVisitDate(int value) {
+        bitField0_ |= 0x00020000;
+        visitDate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 visitDate = 36;</code>
+       *
+       * <pre>
+       * 最后一次访问日期
+       * </pre>
+       */
+      public Builder clearVisitDate() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        visitDate_ = 0;
         onChanged();
         return this;
       }
@@ -6794,7 +7978,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasAvatarBg() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00040000) == 0x00040000);
       }
       /**
        * <code>optional string avatarBg = 41;</code>
@@ -6849,7 +8033,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  bitField0_ |= 0x00040000;
         avatarBg_ = value;
         onChanged();
         return this;
@@ -6862,7 +8046,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearAvatarBg() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         avatarBg_ = getDefaultInstance().getAvatarBg();
         onChanged();
         return this;
@@ -6879,7 +8063,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  bitField0_ |= 0x00040000;
         avatarBg_ = value;
         onChanged();
         return this;
@@ -6894,7 +8078,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasSignature() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00080000) == 0x00080000);
       }
       /**
        * <code>optional string signature = 42;</code>
@@ -6949,7 +8133,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00002000;
+  bitField0_ |= 0x00080000;
         signature_ = value;
         onChanged();
         return this;
@@ -6962,7 +8146,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearSignature() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         signature_ = getDefaultInstance().getSignature();
         onChanged();
         return this;
@@ -6979,7 +8163,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00002000;
+  bitField0_ |= 0x00080000;
         signature_ = value;
         onChanged();
         return this;
@@ -6994,7 +8178,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasLocation() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00100000) == 0x00100000);
       }
       /**
        * <code>optional string location = 51;</code>
@@ -7049,7 +8233,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00004000;
+  bitField0_ |= 0x00100000;
         location_ = value;
         onChanged();
         return this;
@@ -7062,7 +8246,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearLocation() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         location_ = getDefaultInstance().getLocation();
         onChanged();
         return this;
@@ -7079,7 +8263,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00004000;
+  bitField0_ |= 0x00100000;
         location_ = value;
         onChanged();
         return this;
@@ -7094,7 +8278,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasCountryCode() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00200000) == 0x00200000);
       }
       /**
        * <code>optional string countryCode = 52;</code>
@@ -7149,7 +8333,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00008000;
+  bitField0_ |= 0x00200000;
         countryCode_ = value;
         onChanged();
         return this;
@@ -7162,7 +8346,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearCountryCode() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         countryCode_ = getDefaultInstance().getCountryCode();
         onChanged();
         return this;
@@ -7179,7 +8363,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00008000;
+  bitField0_ |= 0x00200000;
         countryCode_ = value;
         onChanged();
         return this;
@@ -7194,7 +8378,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasLanguage() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
+        return ((bitField0_ & 0x00400000) == 0x00400000);
       }
       /**
        * <code>optional string language = 53;</code>
@@ -7249,7 +8433,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00010000;
+  bitField0_ |= 0x00400000;
         language_ = value;
         onChanged();
         return this;
@@ -7262,7 +8446,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearLanguage() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         language_ = getDefaultInstance().getLanguage();
         onChanged();
         return this;
@@ -7279,7 +8463,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00010000;
+  bitField0_ |= 0x00400000;
         language_ = value;
         onChanged();
         return this;
@@ -7294,7 +8478,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasLongitude() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
+        return ((bitField0_ & 0x00800000) == 0x00800000);
       }
       /**
        * <code>optional float longitude = 54;</code>
@@ -7314,7 +8498,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setLongitude(float value) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00800000;
         longitude_ = value;
         onChanged();
         return this;
@@ -7327,7 +8511,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearLongitude() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         longitude_ = 0F;
         onChanged();
         return this;
@@ -7342,7 +8526,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasLatitude() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
+        return ((bitField0_ & 0x01000000) == 0x01000000);
       }
       /**
        * <code>optional float latitude = 55;</code>
@@ -7362,7 +8546,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setLatitude(float value) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x01000000;
         latitude_ = value;
         onChanged();
         return this;
@@ -7375,7 +8559,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearLatitude() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         latitude_ = 0F;
         onChanged();
         return this;
@@ -7390,7 +8574,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasLevel() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
+        return ((bitField0_ & 0x02000000) == 0x02000000);
       }
       /**
        * <code>optional int32 level = 61;</code>
@@ -7410,7 +8594,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setLevel(int value) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x02000000;
         level_ = value;
         onChanged();
         return this;
@@ -7423,7 +8607,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearLevel() {
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         level_ = 0;
         onChanged();
         return this;
@@ -7438,7 +8622,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasExperience() {
-        return ((bitField0_ & 0x00100000) == 0x00100000);
+        return ((bitField0_ & 0x04000000) == 0x04000000);
       }
       /**
        * <code>optional int64 experience = 62;</code>
@@ -7458,7 +8642,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setExperience(long value) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x04000000;
         experience_ = value;
         onChanged();
         return this;
@@ -7471,7 +8655,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearExperience() {
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         experience_ = 0L;
         onChanged();
         return this;
@@ -7488,7 +8672,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasCurrentDevice() {
-        return ((bitField0_ & 0x00200000) == 0x00200000);
+        return ((bitField0_ & 0x08000000) == 0x08000000);
       }
       /**
        * <code>optional .barrage.PBDevice currentDevice = 71;</code>
@@ -7521,7 +8705,7 @@ public final class UserProtos {
         } else {
           currentDeviceBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x08000000;
         return this;
       }
       /**
@@ -7539,7 +8723,7 @@ public final class UserProtos {
         } else {
           currentDeviceBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x08000000;
         return this;
       }
       /**
@@ -7551,7 +8735,7 @@ public final class UserProtos {
        */
       public Builder mergeCurrentDevice(com.orange.protocol.message.CommonProtos.PBDevice value) {
         if (currentDeviceBuilder_ == null) {
-          if (((bitField0_ & 0x00200000) == 0x00200000) &&
+          if (((bitField0_ & 0x08000000) == 0x08000000) &&
               currentDevice_ != com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance()) {
             currentDevice_ =
               com.orange.protocol.message.CommonProtos.PBDevice.newBuilder(currentDevice_).mergeFrom(value).buildPartial();
@@ -7562,7 +8746,7 @@ public final class UserProtos {
         } else {
           currentDeviceBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x08000000;
         return this;
       }
       /**
@@ -7579,7 +8763,7 @@ public final class UserProtos {
         } else {
           currentDeviceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         return this;
       }
       /**
@@ -7590,7 +8774,7 @@ public final class UserProtos {
        * </pre>
        */
       public com.orange.protocol.message.CommonProtos.PBDevice.Builder getCurrentDeviceBuilder() {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x08000000;
         onChanged();
         return getCurrentDeviceFieldBuilder().getBuilder();
       }
@@ -7632,9 +8816,9 @@ public final class UserProtos {
       private java.util.List<com.orange.protocol.message.CommonProtos.PBDevice> devices_ =
         java.util.Collections.emptyList();
       private void ensureDevicesIsMutable() {
-        if (!((bitField0_ & 0x00400000) == 0x00400000)) {
+        if (!((bitField0_ & 0x10000000) == 0x10000000)) {
           devices_ = new java.util.ArrayList<com.orange.protocol.message.CommonProtos.PBDevice>(devices_);
-          bitField0_ |= 0x00400000;
+          bitField0_ |= 0x10000000;
          }
       }
 
@@ -7784,7 +8968,7 @@ public final class UserProtos {
       public Builder clearDevices() {
         if (devicesBuilder_ == null) {
           devices_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00400000);
+          bitField0_ = (bitField0_ & ~0x10000000);
           onChanged();
         } else {
           devicesBuilder_.clear();
@@ -7861,7 +9045,7 @@ public final class UserProtos {
           devicesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder>(
                   devices_,
-                  ((bitField0_ & 0x00400000) == 0x00400000),
+                  ((bitField0_ & 0x10000000) == 0x10000000),
                   getParentForChildren(),
                   isClean());
           devices_ = null;
@@ -7878,7 +9062,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasEmailVerifyStatus() {
-        return ((bitField0_ & 0x00800000) == 0x00800000);
+        return ((bitField0_ & 0x20000000) == 0x20000000);
       }
       /**
        * <code>optional int32 emailVerifyStatus = 81;</code>
@@ -7898,7 +9082,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setEmailVerifyStatus(int value) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x20000000;
         emailVerifyStatus_ = value;
         onChanged();
         return this;
@@ -7911,7 +9095,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearEmailVerifyStatus() {
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         emailVerifyStatus_ = 0;
         onChanged();
         return this;
@@ -7926,7 +9110,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasEmailVerifyCode() {
-        return ((bitField0_ & 0x01000000) == 0x01000000);
+        return ((bitField0_ & 0x40000000) == 0x40000000);
       }
       /**
        * <code>optional string emailVerifyCode = 82;</code>
@@ -7981,7 +9165,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x01000000;
+  bitField0_ |= 0x40000000;
         emailVerifyCode_ = value;
         onChanged();
         return this;
@@ -7994,7 +9178,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearEmailVerifyCode() {
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
         emailVerifyCode_ = getDefaultInstance().getEmailVerifyCode();
         onChanged();
         return this;
@@ -8011,7 +9195,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x01000000;
+  bitField0_ |= 0x40000000;
         emailVerifyCode_ = value;
         onChanged();
         return this;
@@ -8026,7 +9210,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasMobileVerifyStatus() {
-        return ((bitField0_ & 0x02000000) == 0x02000000);
+        return ((bitField0_ & 0x80000000) == 0x80000000);
       }
       /**
        * <code>optional int32 mobileVerifyStatus = 83;</code>
@@ -8046,7 +9230,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setMobileVerifyStatus(int value) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x80000000;
         mobileVerifyStatus_ = value;
         onChanged();
         return this;
@@ -8059,7 +9243,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearMobileVerifyStatus() {
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x80000000);
         mobileVerifyStatus_ = 0;
         onChanged();
         return this;
@@ -8074,7 +9258,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasAddConfig() {
-        return ((bitField0_ & 0x04000000) == 0x04000000);
+        return ((bitField1_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>optional int32 addConfig = 91;</code>
@@ -8094,7 +9278,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setAddConfig(int value) {
-        bitField0_ |= 0x04000000;
+        bitField1_ |= 0x00000001;
         addConfig_ = value;
         onChanged();
         return this;
@@ -8107,7 +9291,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearAddConfig() {
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField1_ = (bitField1_ & ~0x00000001);
         addConfig_ = 0;
         onChanged();
         return this;
@@ -8115,9 +9299,9 @@ public final class UserProtos {
 
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x08000000) == 0x08000000)) {
+        if (!((bitField1_ & 0x00000002) == 0x00000002)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x08000000;
+          bitField1_ |= 0x00000002;
          }
       }
       /**
@@ -8220,7 +9404,7 @@ public final class UserProtos {
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField1_ = (bitField1_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -8251,7 +9435,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasMemo() {
-        return ((bitField0_ & 0x10000000) == 0x10000000);
+        return ((bitField1_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional string memo = 101;</code>
@@ -8306,7 +9490,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x10000000;
+  bitField1_ |= 0x00000004;
         memo_ = value;
         onChanged();
         return this;
@@ -8319,7 +9503,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearMemo() {
-        bitField0_ = (bitField0_ & ~0x10000000);
+        bitField1_ = (bitField1_ & ~0x00000004);
         memo_ = getDefaultInstance().getMemo();
         onChanged();
         return this;
@@ -8336,7 +9520,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x10000000;
+  bitField1_ |= 0x00000004;
         memo_ = value;
         onChanged();
         return this;
@@ -8351,7 +9535,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasAddSource() {
-        return ((bitField0_ & 0x20000000) == 0x20000000);
+        return ((bitField1_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>optional int32 addSource = 102;</code>
@@ -8371,7 +9555,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setAddSource(int value) {
-        bitField0_ |= 0x20000000;
+        bitField1_ |= 0x00000008;
         addSource_ = value;
         onChanged();
         return this;
@@ -8384,7 +9568,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearAddSource() {
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField1_ = (bitField1_ & ~0x00000008);
         addSource_ = 0;
         onChanged();
         return this;
@@ -8399,7 +9583,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasAddDate() {
-        return ((bitField0_ & 0x40000000) == 0x40000000);
+        return ((bitField1_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>optional int32 addDate = 103;</code>
@@ -8419,7 +9603,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setAddDate(int value) {
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000010;
         addDate_ = value;
         onChanged();
         return this;
@@ -8432,7 +9616,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearAddDate() {
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField1_ = (bitField1_ & ~0x00000010);
         addDate_ = 0;
         onChanged();
         return this;
@@ -8447,7 +9631,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasAddDir() {
-        return ((bitField0_ & 0x80000000) == 0x80000000);
+        return ((bitField1_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>optional int32 addDir = 104;</code>
@@ -8467,7 +9651,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setAddDir(int value) {
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000020;
         addDir_ = value;
         onChanged();
         return this;
@@ -8480,7 +9664,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearAddDir() {
-        bitField0_ = (bitField0_ & ~0x80000000);
+        bitField1_ = (bitField1_ & ~0x00000020);
         addDir_ = 0;
         onChanged();
         return this;
@@ -8495,7 +9679,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasReplyMemo() {
-        return ((bitField1_ & 0x00000001) == 0x00000001);
+        return ((bitField1_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>optional string replyMemo = 105;</code>
@@ -8550,7 +9734,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField1_ |= 0x00000001;
+  bitField1_ |= 0x00000040;
         replyMemo_ = value;
         onChanged();
         return this;
@@ -8563,7 +9747,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearReplyMemo() {
-        bitField1_ = (bitField1_ & ~0x00000001);
+        bitField1_ = (bitField1_ & ~0x00000040);
         replyMemo_ = getDefaultInstance().getReplyMemo();
         onChanged();
         return this;
@@ -8580,7 +9764,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField1_ |= 0x00000001;
+  bitField1_ |= 0x00000040;
         replyMemo_ = value;
         onChanged();
         return this;
@@ -8595,7 +9779,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasAddStatus() {
-        return ((bitField1_ & 0x00000002) == 0x00000002);
+        return ((bitField1_ & 0x00000080) == 0x00000080);
       }
       /**
        * <code>optional int32 addStatus = 106;</code>
@@ -8615,7 +9799,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setAddStatus(int value) {
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000080;
         addStatus_ = value;
         onChanged();
         return this;
@@ -8628,7 +9812,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearAddStatus() {
-        bitField1_ = (bitField1_ & ~0x00000002);
+        bitField1_ = (bitField1_ & ~0x00000080);
         addStatus_ = 0;
         onChanged();
         return this;
@@ -10968,37 +12152,46 @@ public final class UserProtos {
       "\014\n\004nick\030\003 \001(\t\022\023\n\013accessToken\030\004 \001(\t\022\031\n\021ac" +
       "cessTokenSecret\030\005 \001(\t\022\024\n\014refreshToken\030\006 " +
       "\001(\t\022\023\n\013expiredTime\030\007 \001(\005\022\020\n\010qqOpenId\030\010 \001" +
-      "(\t\022\022\n\ncredential\030\024 \001(\t\"\275\005\n\006PBUser\022\016\n\006use" +
+      "(\t\022\022\n\ncredential\030\024 \001(\t\"\246\006\n\006PBUser\022\016\n\006use" +
       "rId\030\001 \002(\t\022\014\n\004nick\030\002 \001(\t\022\016\n\006avatar\030\003 \001(\t\022" +
       "\025\n\006gender\030\004 \001(\010:\005false\022$\n\010snsUsers\030\005 \003(\013" +
       "2\022.barrage.PBSNSUser\022\024\n\014xiaojiNumber\030\006 \001" +
       "(\t\022\r\n\005email\030\007 \001(\t\022\020\n\010password\030\010 \001(\t\022\016\n\006m",
-      "obile\030\t \001(\t\022\020\n\010birthday\030\037 \001(\t\022\016\n\006zodiac\030" +
-      "  \001(\005\022\022\n\nbloodGroup\030! \001(\t\022\020\n\010avatarBg\030) " +
-      "\001(\t\022\021\n\tsignature\030* \001(\t\022\020\n\010location\0303 \001(\t" +
-      "\022\023\n\013countryCode\0304 \001(\t\022\020\n\010language\0305 \001(\t\022" +
-      "\021\n\tlongitude\0306 \001(\002\022\020\n\010latitude\0307 \001(\002\022\r\n\005" +
-      "level\030= \001(\005\022\022\n\nexperience\030> \001(\003\022(\n\rcurre" +
-      "ntDevice\030G \001(\0132\021.barrage.PBDevice\022\"\n\007dev" +
-      "ices\030H \003(\0132\021.barrage.PBDevice\022\031\n\021emailVe" +
-      "rifyStatus\030Q \001(\005\022\027\n\017emailVerifyCode\030R \001(" +
-      "\t\022\032\n\022mobileVerifyStatus\030S \001(\005\022\021\n\taddConf",
-      "ig\030[ \001(\005\022\014\n\004tags\030d \003(\t\022\014\n\004memo\030e \001(\t\022\021\n\t" +
-      "addSource\030f \001(\005\022\017\n\007addDate\030g \001(\005\022\016\n\006addD" +
-      "ir\030h \001(\005\022\021\n\treplyMemo\030i \001(\t\022\021\n\taddStatus" +
-      "\030j \001(\005\"E\n\tPBUserTag\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030" +
-      "\002 \001(\t\022\036\n\005users\030\003 \003(\0132\017.barrage.PBUser\"V\n" +
-      "\rPBUserTagList\022#\n\007recents\030\001 \003(\0132\022.barrag" +
-      "e.PBUserTag\022 \n\004tags\030\002 \003(\0132\022.barrage.PBUs" +
-      "erTag*@\n\023FriendAddSourceType\022\021\n\rADD_BY_S" +
-      "EARCH\020\001\022\026\n\022ADD_BY_SCAN_QRCODE\020\002*N\n\023Frien" +
-      "dAddConfigType\022\022\n\016REQUIRE_ACCEPT\020\000\022\016\n\nAC",
-      "CEPT_ALL\020\001\022\023\n\017DISALLOW_ADD_ME\020\002*N\n\026Frien" +
-      "dRequestDirection\022\030\n\024REQ_DIRECTION_SENDE" +
-      "R\020\000\022\032\n\026REQ_DIRECTION_RECEIVER\020\001*N\n\023Frien" +
-      "dAddStatusType\022\023\n\017REQ_WAIT_ACCEPT\020\000\022\020\n\014R" +
-      "EQ_ACCEPTED\020\001\022\020\n\014REQ_REJECTED\020\002B)\n\033com.o" +
-      "range.protocol.messageB\nUserProtos"
+      "obile\030\t \001(\t\022\020\n\010qqOpenId\030\n \001(\t\022\016\n\006sinaId\030" +
+      "\013 \001(\t\022\020\n\010weixinId\030\014 \001(\t\022\020\n\010birthday\030\037 \001(" +
+      "\t\022\016\n\006zodiac\030  \001(\005\022\022\n\nbloodGroup\030! \001(\t\022\017\n" +
+      "\007regDate\030\" \001(\005\022\017\n\007regFrom\030# \001(\005\022\021\n\tvisit" +
+      "Date\030$ \001(\005\022\020\n\010avatarBg\030) \001(\t\022\021\n\tsignatur" +
+      "e\030* \001(\t\022\020\n\010location\0303 \001(\t\022\023\n\013countryCode" +
+      "\0304 \001(\t\022\020\n\010language\0305 \001(\t\022\021\n\tlongitude\0306 " +
+      "\001(\002\022\020\n\010latitude\0307 \001(\002\022\r\n\005level\030= \001(\005\022\022\n\n" +
+      "experience\030> \001(\003\022(\n\rcurrentDevice\030G \001(\0132" +
+      "\021.barrage.PBDevice\022\"\n\007devices\030H \003(\0132\021.ba",
+      "rrage.PBDevice\022\031\n\021emailVerifyStatus\030Q \001(" +
+      "\005\022\027\n\017emailVerifyCode\030R \001(\t\022\032\n\022mobileVeri" +
+      "fyStatus\030S \001(\005\022\021\n\taddConfig\030[ \001(\005\022\014\n\004tag" +
+      "s\030d \003(\t\022\014\n\004memo\030e \001(\t\022\021\n\taddSource\030f \001(\005" +
+      "\022\017\n\007addDate\030g \001(\005\022\016\n\006addDir\030h \001(\005\022\021\n\trep" +
+      "lyMemo\030i \001(\t\022\021\n\taddStatus\030j \001(\005\"E\n\tPBUse" +
+      "rTag\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\036\n\005users\030" +
+      "\003 \003(\0132\017.barrage.PBUser\"V\n\rPBUserTagList\022" +
+      "#\n\007recents\030\001 \003(\0132\022.barrage.PBUserTag\022 \n\004" +
+      "tags\030\002 \003(\0132\022.barrage.PBUserTag*@\n\023Friend",
+      "AddSourceType\022\021\n\rADD_BY_SEARCH\020\001\022\026\n\022ADD_" +
+      "BY_SCAN_QRCODE\020\002*N\n\023FriendAddConfigType\022" +
+      "\022\n\016REQUIRE_ACCEPT\020\000\022\016\n\nACCEPT_ALL\020\001\022\023\n\017D" +
+      "ISALLOW_ADD_ME\020\002*N\n\026FriendRequestDirecti" +
+      "on\022\030\n\024REQ_DIRECTION_SENDER\020\000\022\032\n\026REQ_DIRE" +
+      "CTION_RECEIVER\020\001*N\n\023FriendAddStatusType\022" +
+      "\023\n\017REQ_WAIT_ACCEPT\020\000\022\020\n\014REQ_ACCEPTED\020\001\022\020" +
+      "\n\014REQ_REJECTED\020\002*r\n\013PBLoginType\022\020\n\014LOGIN" +
+      "_XIAOJI\020\001\022\017\n\013LOGIN_EMAIL\020\002\022\014\n\010LOGIN_QQ\020\003" +
+      "\022\016\n\nLOGIN_SINA\020\004\022\020\n\014LOGIN_WEIXIN\020\005\022\020\n\014LO",
+      "GIN_MOBILE\020\006*i\n\016PBRegisterType\022\016\n\nREG_XI" +
+      "AOJI\020\001\022\r\n\tREG_EMAIL\020\002\022\n\n\006REG_QQ\020\003\022\014\n\010REG" +
+      "_SINA\020\004\022\016\n\nREG_WEIXIN\020\005\022\016\n\nREG_MOBILE\020\006B" +
+      ")\n\033com.orange.protocol.messageB\nUserProt" +
+      "os"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11024,7 +12217,7 @@ public final class UserProtos {
     internal_static_barrage_PBUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBUser_descriptor,
-        new java.lang.String[] { "UserId", "Nick", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "Birthday", "Zodiac", "BloodGroup", "AvatarBg", "Signature", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", "AddConfig", "Tags", "Memo", "AddSource", "AddDate", "AddDir", "ReplyMemo", "AddStatus", });
+        new java.lang.String[] { "UserId", "Nick", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "QqOpenId", "SinaId", "WeixinId", "Birthday", "Zodiac", "BloodGroup", "RegDate", "RegFrom", "VisitDate", "AvatarBg", "Signature", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", "AddConfig", "Tags", "Memo", "AddSource", "AddDate", "AddDir", "ReplyMemo", "AddStatus", });
     internal_static_barrage_PBUserTag_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_barrage_PBUserTag_fieldAccessorTable = new

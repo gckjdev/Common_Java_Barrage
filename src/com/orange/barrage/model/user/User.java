@@ -9,6 +9,8 @@ import com.mongodb.util.JSON;
 import com.orange.barrage.constant.BarrageConstants;
 import com.orange.common.elasticsearch.ESORMable;
 import com.orange.common.utils.MapUtil;
+import com.orange.common.utils.RandomUtil;
+import com.orange.common.utils.StringUtil;
 import com.orange.game.model.common.ProtoBufCoding;
 import com.orange.game.model.dao.CommonData;
 import com.orange.network.game.protocol.message.GameMessageProtos;
@@ -26,6 +28,8 @@ import java.util.Set;
  * Created by pipi on 14/12/8.
  */
 public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser>, ESORMable, MapUtil.MakeMapable<ObjectId, User> {
+
+    private static final int RANDOM_PASSWORD_LENGTH = 6;
 
     public User(DBObject dbObject) {
         super(dbObject);
@@ -125,4 +129,32 @@ public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser
         obj.put(BarrageConstants.F_GENDER, 1);
         return obj;
     }
+
+    public boolean checkPassword(String passwordToCompare) {
+
+        String password = getPassword();
+        if (StringUtil.isEmpty(password)){
+            return false;
+        }
+        return password.equalsIgnoreCase(passwordToCompare);
+    }
+
+    private String getPassword() {
+        return getString(BarrageConstants.F_PASSWORD);
+    }
+
+    public String createPassword() {
+
+        return RandomUtil.randomNumberString(RANDOM_PASSWORD_LENGTH);
+    }
+
+    static final String PASSWORD_KEY = "PASSWORD_KEY_DRAW_DSAQC";     // must align with client settings
+
+    public String encryptPassword(String password) {
+        if (password == null)
+            return null;
+
+        return StringUtil.md5base64encode(password + PASSWORD_KEY);
+    }
+
 }
