@@ -74,6 +74,8 @@ public class UserManager extends CommonModelManager<User> {
         query.put("_id", new ObjectId(userId));
 
         DBObject updateObj = User.pbToDBObject(pbUser);
+        updateObj.removeField(BarrageConstants.F_USER_ID);
+
         BasicDBObject update = new BasicDBObject();
         update.put("$set", updateObj);
 

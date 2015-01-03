@@ -2117,7 +2117,7 @@ public final class MessageProtos {
      * <code>required int32 type = 1;</code>
      *
      * <pre>
-     * refer to register type
+     * refer to PBRegisterType
      * </pre>
      */
     boolean hasType();
@@ -2125,7 +2125,7 @@ public final class MessageProtos {
      * <code>required int32 type = 1;</code>
      *
      * <pre>
-     * refer to register type
+     * refer to PBRegisterType
      * </pre>
      */
     int getType();
@@ -2142,23 +2142,6 @@ public final class MessageProtos {
      * <code>required .barrage.PBUser user = 2;</code>
      */
     com.orange.protocol.message.UserProtos.PBUserOrBuilder getUserOrBuilder();
-
-    /**
-     * <code>optional int32 snsType = 3;</code>
-     *
-     * <pre>
-     * refer to ShareSDK shareType
-     * </pre>
-     */
-    boolean hasSnsType();
-    /**
-     * <code>optional int32 snsType = 3;</code>
-     *
-     * <pre>
-     * refer to ShareSDK shareType
-     * </pre>
-     */
-    int getSnsType();
 
     /**
      * <code>optional string inviteCode = 50;</code>
@@ -2256,14 +2239,9 @@ public final class MessageProtos {
               bitField0_ |= 0x00000002;
               break;
             }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              snsType_ = input.readInt32();
-              break;
-            }
             case 402: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000004;
               inviteCode_ = bs;
               break;
             }
@@ -2313,7 +2291,7 @@ public final class MessageProtos {
      * <code>required int32 type = 1;</code>
      *
      * <pre>
-     * refer to register type
+     * refer to PBRegisterType
      * </pre>
      */
     public boolean hasType() {
@@ -2323,7 +2301,7 @@ public final class MessageProtos {
      * <code>required int32 type = 1;</code>
      *
      * <pre>
-     * refer to register type
+     * refer to PBRegisterType
      * </pre>
      */
     public int getType() {
@@ -2351,29 +2329,6 @@ public final class MessageProtos {
       return user_;
     }
 
-    public static final int SNSTYPE_FIELD_NUMBER = 3;
-    private int snsType_;
-    /**
-     * <code>optional int32 snsType = 3;</code>
-     *
-     * <pre>
-     * refer to ShareSDK shareType
-     * </pre>
-     */
-    public boolean hasSnsType() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional int32 snsType = 3;</code>
-     *
-     * <pre>
-     * refer to ShareSDK shareType
-     * </pre>
-     */
-    public int getSnsType() {
-      return snsType_;
-    }
-
     public static final int INVITECODE_FIELD_NUMBER = 50;
     private java.lang.Object inviteCode_;
     /**
@@ -2384,7 +2339,7 @@ public final class MessageProtos {
      * </pre>
      */
     public boolean hasInviteCode() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional string inviteCode = 50;</code>
@@ -2431,7 +2386,6 @@ public final class MessageProtos {
     private void initFields() {
       type_ = 0;
       user_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
-      snsType_ = 0;
       inviteCode_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -2466,9 +2420,6 @@ public final class MessageProtos {
         output.writeMessage(2, user_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(3, snsType_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(50, getInviteCodeBytes());
       }
       getUnknownFields().writeTo(output);
@@ -2489,10 +2440,6 @@ public final class MessageProtos {
           .computeMessageSize(2, user_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, snsType_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(50, getInviteCodeBytes());
       }
@@ -2622,10 +2569,8 @@ public final class MessageProtos {
           userBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
-        snsType_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
         inviteCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -2669,10 +2614,6 @@ public final class MessageProtos {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.snsType_ = snsType_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
         result.inviteCode_ = inviteCode_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -2696,11 +2637,8 @@ public final class MessageProtos {
         if (other.hasUser()) {
           mergeUser(other.getUser());
         }
-        if (other.hasSnsType()) {
-          setSnsType(other.getSnsType());
-        }
         if (other.hasInviteCode()) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
           inviteCode_ = other.inviteCode_;
           onChanged();
         }
@@ -2748,7 +2686,7 @@ public final class MessageProtos {
        * <code>required int32 type = 1;</code>
        *
        * <pre>
-       * refer to register type
+       * refer to PBRegisterType
        * </pre>
        */
       public boolean hasType() {
@@ -2758,7 +2696,7 @@ public final class MessageProtos {
        * <code>required int32 type = 1;</code>
        *
        * <pre>
-       * refer to register type
+       * refer to PBRegisterType
        * </pre>
        */
       public int getType() {
@@ -2768,7 +2706,7 @@ public final class MessageProtos {
        * <code>required int32 type = 1;</code>
        *
        * <pre>
-       * refer to register type
+       * refer to PBRegisterType
        * </pre>
        */
       public Builder setType(int value) {
@@ -2781,7 +2719,7 @@ public final class MessageProtos {
        * <code>required int32 type = 1;</code>
        *
        * <pre>
-       * refer to register type
+       * refer to PBRegisterType
        * </pre>
        */
       public Builder clearType() {
@@ -2907,54 +2845,6 @@ public final class MessageProtos {
         return userBuilder_;
       }
 
-      private int snsType_ ;
-      /**
-       * <code>optional int32 snsType = 3;</code>
-       *
-       * <pre>
-       * refer to ShareSDK shareType
-       * </pre>
-       */
-      public boolean hasSnsType() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional int32 snsType = 3;</code>
-       *
-       * <pre>
-       * refer to ShareSDK shareType
-       * </pre>
-       */
-      public int getSnsType() {
-        return snsType_;
-      }
-      /**
-       * <code>optional int32 snsType = 3;</code>
-       *
-       * <pre>
-       * refer to ShareSDK shareType
-       * </pre>
-       */
-      public Builder setSnsType(int value) {
-        bitField0_ |= 0x00000004;
-        snsType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 snsType = 3;</code>
-       *
-       * <pre>
-       * refer to ShareSDK shareType
-       * </pre>
-       */
-      public Builder clearSnsType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        snsType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object inviteCode_ = "";
       /**
        * <code>optional string inviteCode = 50;</code>
@@ -2964,7 +2854,7 @@ public final class MessageProtos {
        * </pre>
        */
       public boolean hasInviteCode() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional string inviteCode = 50;</code>
@@ -3019,7 +2909,7 @@ public final class MessageProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000004;
         inviteCode_ = value;
         onChanged();
         return this;
@@ -3032,7 +2922,7 @@ public final class MessageProtos {
        * </pre>
        */
       public Builder clearInviteCode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         inviteCode_ = getDefaultInstance().getInviteCode();
         onChanged();
         return this;
@@ -3049,7 +2939,7 @@ public final class MessageProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000004;
         inviteCode_ = value;
         onChanged();
         return this;
@@ -20982,94 +20872,94 @@ public final class MessageProtos {
       "Request\022\014\n\004type\030\001 \002(\005\022\016\n\006xiaoji\030\002 \001(\t\022\r\n" +
       "\005email\030\003 \001(\t\022\016\n\006mobile\030\004 \001(\t\022\r\n\005snsId\030\005 " +
       "\001(\t\022\020\n\010password\030\024 \001(\t\"4\n\023PBLoginUserResp" +
-      "onse\022\035\n\004user\030\001 \001(\0132\017.barrage.PBUser\"i\n\025P" +
+      "onse\022\035\n\004user\030\001 \001(\0132\017.barrage.PBUser\"X\n\025P" +
       "BRegisterUserRequest\022\014\n\004type\030\001 \002(\005\022\035\n\004us" +
-      "er\030\002 \002(\0132\017.barrage.PBUser\022\017\n\007snsType\030\003 \001" +
-      "(\005\022\022\n\ninviteCode\0302 \001(\t\"L\n\026PBRegisterUser" +
-      "Response\022\035\n\004user\030\001 \001(\0132\017.barrage.PBUser\022",
-      "\023\n\013isUserExist\030\002 \001(\010\"/\n\031PBVerifyInviteCo" +
-      "deRequest\022\022\n\ninviteCode\030\001 \002(\t\";\n\032PBVerif" +
-      "yInviteCodeResponse\022\035\n\004user\030\001 \001(\0132\017.barr" +
-      "age.PBUser\"&\n\023PBSearchUserRequest\022\017\n\007key" +
-      "word\030\001 \002(\t\"5\n\024PBSearchUserResponse\022\035\n\004us" +
-      "er\030\001 \003(\0132\017.barrage.PBUser\"8\n\027PBUpdateUse" +
-      "rInfoRequest\022\035\n\004user\030\001 \002(\0132\017.barrage.PBU" +
-      "ser\"9\n\030PBUpdateUserInfoResponse\022\035\n\004user\030" +
-      "\001 \001(\0132\017.barrage.PBUser\"m\n\026PBAddUserFrien" +
-      "dRequest\022\037\n\006friend\030\001 \001(\0132\017.barrage.PBUse",
-      "r\022\014\n\004memo\030\002 \001(\t\022\022\n\nsourceType\030\003 \001(\005\022\020\n\010s" +
-      "canCode\030\004 \001(\t\"\031\n\027PBAddUserFriendResponse" +
-      "\"\034\n\032PBGetUserFriendListRequest\"?\n\033PBGetU" +
-      "serFriendListResponse\022 \n\007friends\030\001 \003(\0132\017" +
-      ".barrage.PBUser\"S\n\032PBProcessUserFriendRe" +
-      "quest\022\020\n\010friendId\030\001 \002(\t\022\025\n\rprocessResult" +
-      "\030\002 \001(\005\022\014\n\004memo\030\003 \001(\t\"?\n\033PBProcessUserFri" +
-      "endResponse\022 \n\007friends\030\001 \001(\0132\017.barrage.P" +
-      "BUser\"4\n\023PBCreateFeedRequest\022\035\n\004feed\030\001 \002" +
-      "(\0132\017.barrage.PBFeed\"&\n\024PBCreateFeedRespo",
-      "nse\022\016\n\006feedId\030\001 \001(\t\";\n\022PBReplyFeedReques" +
-      "t\022%\n\006action\030\001 \002(\0132\025.barrage.PBFeedAction" +
-      "\"<\n\023PBReplyFeedResponse\022%\n\006action\030\001 \002(\0132" +
-      "\025.barrage.PBFeedAction\"G\n\034PBGetUserTimel" +
-      "ineFeedRequest\022\024\n\014offsetFeedId\030\001 \001(\t\022\021\n\005" +
-      "limit\030\002 \001(\005:\00220\"?\n\035PBGetUserTimelineFeed" +
-      "Response\022\036\n\005feeds\030\001 \003(\0132\017.barrage.PBFeed" +
-      "\"\356\006\n\rPBDataRequest\022\014\n\004type\030\001 \002(\005\022\021\n\trequ" +
-      "estId\030\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\016\n\006userId\030\004" +
-      " \001(\t\022!\n\006device\030\036 \001(\0132\021.barrage.PBDevice\022",
-      "\023\n\013countryCode\030\037 \001(\t\022\024\n\014languageCode\030  \001" +
-      "(\t\022\022\n\nclientDate\030! \001(\005\0225\n\020loginUserReque" +
-      "st\030( \001(\0132\033.barrage.PBLoginUserRequest\022;\n" +
-      "\023registerUserRequest\030) \001(\0132\036.barrage.PBR" +
-      "egisterUserRequest\0227\n\021searchUserRequest\030" +
-      "* \001(\0132\034.barrage.PBSearchUserRequest\022?\n\025u" +
-      "pdateUserInfoRequest\030+ \001(\0132 .barrage.PBU" +
-      "pdateUserInfoRequest\022=\n\024addUserFriendReq" +
-      "uest\030, \001(\0132\037.barrage.PBAddUserFriendRequ" +
-      "est\022E\n\030getUserFriendListRequest\030- \001(\0132#.",
-      "barrage.PBGetUserFriendListRequest\022C\n\027ve" +
-      "rifyInviteCodeRequest\030. \001(\0132\".barrage.PB" +
-      "VerifyInviteCodeRequest\022E\n\030processUserFr" +
-      "iendRequest\030/ \001(\0132#.barrage.PBProcessUse" +
-      "rFriendRequest\0227\n\021createFeedRequest\030< \001(" +
-      "\0132\034.barrage.PBCreateFeedRequest\0225\n\020reply" +
-      "FeedRequest\030= \001(\0132\033.barrage.PBReplyFeedR" +
-      "equest\022I\n\032getUserTimelineFeedRequest\030> \001" +
-      "(\0132%.barrage.PBGetUserTimelineFeedReques" +
-      "t\"\304\006\n\016PBDataResponse\022\025\n\nresultCode\030\001 \002(\005",
-      ":\0010\022\021\n\trequestId\030\002 \001(\005\022\017\n\007version\030\003 \001(\005\022" +
-      "\022\n\ntotalCount\030\004 \001(\005\022\022\n\nstringData\030\005 \001(\t\022" +
-      "7\n\021loginUserResponse\030( \001(\0132\034.barrage.PBL" +
-      "oginUserResponse\022=\n\024registerUserResponse" +
-      "\030) \001(\0132\037.barrage.PBRegisterUserResponse\022" +
-      "9\n\022searchUserResponse\030* \001(\0132\035.barrage.PB" +
-      "SearchUserResponse\022A\n\026updateUserInfoResp" +
-      "onse\030+ \001(\0132!.barrage.PBUpdateUserInfoRes" +
-      "ponse\022?\n\025addUserFriendResponse\030, \001(\0132 .b" +
-      "arrage.PBAddUserFriendResponse\022G\n\031getUse",
-      "rFriendListResponse\030- \001(\0132$.barrage.PBGe" +
-      "tUserFriendListResponse\022E\n\030verifyInviteC" +
-      "odeResponse\030. \001(\0132#.barrage.PBVerifyInvi" +
-      "teCodeResponse\022G\n\031processUserFriendRespo" +
-      "nse\030/ \001(\0132$.barrage.PBProcessUserFriendR" +
-      "esponse\0229\n\022createFeedResponse\030< \001(\0132\035.ba" +
-      "rrage.PBCreateFeedResponse\0227\n\021replyFeedR" +
-      "esponse\030= \001(\0132\034.barrage.PBReplyFeedRespo" +
-      "nse\022K\n\033getUserTimelineFeedResponse\030> \001(\013" +
-      "2&.barrage.PBGetUserTimelineFeedResponse",
-      "*Q\n\031PBProcessFriendResultType\022\021\n\rACCEPT_" +
-      "FRIEND\020\000\022\021\n\rREJECT_FRIEND\020\001\022\016\n\nREPLY_MEM" +
-      "O\020\002*\362\002\n\rPBMessageType\022\026\n\022MESSAGE_LOGIN_U" +
-      "SER\020\001\022\031\n\025MESSAGE_REGISTER_USER\020\002\022\027\n\023MESS" +
-      "AGE_SEARCH_USER\020\003\022\034\n\030MESSAGE_UPDATE_USER" +
-      "_INFO\020\004\022\033\n\027MESSAGE_ADD_USER_FRIEND\020\005\022 \n\034" +
-      "MESSAGE_GET_USER_FRIEND_LIST\020\006\022\037\n\033MESSAG" +
-      "E_PROCESS_USER_FRIEND\020\007\022\036\n\032MESSAGE_VERIF" +
-      "Y_INVITE_CODE\020\010\022\027\n\023MESSAGE_CREATE_FEED\020\036" +
-      "\022\026\n\022MESSAGE_REPLY_FEED\020\037\022\"\n\036MESSAGE_GET_",
-      "USER_TIMELINE_FEED\020 \022\"\n\036MESSAGE_GET_QINI" +
-      "U_UPLOAD_TOKEN\020dB,\n\033com.orange.protocol." +
-      "messageB\rMessageProtos"
+      "er\030\002 \002(\0132\017.barrage.PBUser\022\022\n\ninviteCode\030" +
+      "2 \001(\t\"L\n\026PBRegisterUserResponse\022\035\n\004user\030" +
+      "\001 \001(\0132\017.barrage.PBUser\022\023\n\013isUserExist\030\002 ",
+      "\001(\010\"/\n\031PBVerifyInviteCodeRequest\022\022\n\ninvi" +
+      "teCode\030\001 \002(\t\";\n\032PBVerifyInviteCodeRespon" +
+      "se\022\035\n\004user\030\001 \001(\0132\017.barrage.PBUser\"&\n\023PBS" +
+      "earchUserRequest\022\017\n\007keyword\030\001 \002(\t\"5\n\024PBS" +
+      "earchUserResponse\022\035\n\004user\030\001 \003(\0132\017.barrag" +
+      "e.PBUser\"8\n\027PBUpdateUserInfoRequest\022\035\n\004u" +
+      "ser\030\001 \002(\0132\017.barrage.PBUser\"9\n\030PBUpdateUs" +
+      "erInfoResponse\022\035\n\004user\030\001 \001(\0132\017.barrage.P" +
+      "BUser\"m\n\026PBAddUserFriendRequest\022\037\n\006frien" +
+      "d\030\001 \001(\0132\017.barrage.PBUser\022\014\n\004memo\030\002 \001(\t\022\022",
+      "\n\nsourceType\030\003 \001(\005\022\020\n\010scanCode\030\004 \001(\t\"\031\n\027" +
+      "PBAddUserFriendResponse\"\034\n\032PBGetUserFrie" +
+      "ndListRequest\"?\n\033PBGetUserFriendListResp" +
+      "onse\022 \n\007friends\030\001 \003(\0132\017.barrage.PBUser\"S" +
+      "\n\032PBProcessUserFriendRequest\022\020\n\010friendId" +
+      "\030\001 \002(\t\022\025\n\rprocessResult\030\002 \001(\005\022\014\n\004memo\030\003 " +
+      "\001(\t\"?\n\033PBProcessUserFriendResponse\022 \n\007fr" +
+      "iends\030\001 \001(\0132\017.barrage.PBUser\"4\n\023PBCreate" +
+      "FeedRequest\022\035\n\004feed\030\001 \002(\0132\017.barrage.PBFe" +
+      "ed\"&\n\024PBCreateFeedResponse\022\016\n\006feedId\030\001 \001",
+      "(\t\";\n\022PBReplyFeedRequest\022%\n\006action\030\001 \002(\013" +
+      "2\025.barrage.PBFeedAction\"<\n\023PBReplyFeedRe" +
+      "sponse\022%\n\006action\030\001 \002(\0132\025.barrage.PBFeedA" +
+      "ction\"G\n\034PBGetUserTimelineFeedRequest\022\024\n" +
+      "\014offsetFeedId\030\001 \001(\t\022\021\n\005limit\030\002 \001(\005:\00220\"?" +
+      "\n\035PBGetUserTimelineFeedResponse\022\036\n\005feeds" +
+      "\030\001 \003(\0132\017.barrage.PBFeed\"\356\006\n\rPBDataReques" +
+      "t\022\014\n\004type\030\001 \002(\005\022\021\n\trequestId\030\002 \001(\005\022\017\n\007ve" +
+      "rsion\030\003 \001(\005\022\016\n\006userId\030\004 \001(\t\022!\n\006device\030\036 " +
+      "\001(\0132\021.barrage.PBDevice\022\023\n\013countryCode\030\037 ",
+      "\001(\t\022\024\n\014languageCode\030  \001(\t\022\022\n\nclientDate\030" +
+      "! \001(\005\0225\n\020loginUserRequest\030( \001(\0132\033.barrag" +
+      "e.PBLoginUserRequest\022;\n\023registerUserRequ" +
+      "est\030) \001(\0132\036.barrage.PBRegisterUserReques" +
+      "t\0227\n\021searchUserRequest\030* \001(\0132\034.barrage.P" +
+      "BSearchUserRequest\022?\n\025updateUserInfoRequ" +
+      "est\030+ \001(\0132 .barrage.PBUpdateUserInfoRequ" +
+      "est\022=\n\024addUserFriendRequest\030, \001(\0132\037.barr" +
+      "age.PBAddUserFriendRequest\022E\n\030getUserFri" +
+      "endListRequest\030- \001(\0132#.barrage.PBGetUser",
+      "FriendListRequest\022C\n\027verifyInviteCodeReq" +
+      "uest\030. \001(\0132\".barrage.PBVerifyInviteCodeR" +
+      "equest\022E\n\030processUserFriendRequest\030/ \001(\013" +
+      "2#.barrage.PBProcessUserFriendRequest\0227\n" +
+      "\021createFeedRequest\030< \001(\0132\034.barrage.PBCre" +
+      "ateFeedRequest\0225\n\020replyFeedRequest\030= \001(\013" +
+      "2\033.barrage.PBReplyFeedRequest\022I\n\032getUser" +
+      "TimelineFeedRequest\030> \001(\0132%.barrage.PBGe" +
+      "tUserTimelineFeedRequest\"\304\006\n\016PBDataRespo" +
+      "nse\022\025\n\nresultCode\030\001 \002(\005:\0010\022\021\n\trequestId\030",
+      "\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\022\n\ntotalCount\030\004 \001" +
+      "(\005\022\022\n\nstringData\030\005 \001(\t\0227\n\021loginUserRespo" +
+      "nse\030( \001(\0132\034.barrage.PBLoginUserResponse\022" +
+      "=\n\024registerUserResponse\030) \001(\0132\037.barrage." +
+      "PBRegisterUserResponse\0229\n\022searchUserResp" +
+      "onse\030* \001(\0132\035.barrage.PBSearchUserRespons" +
+      "e\022A\n\026updateUserInfoResponse\030+ \001(\0132!.barr" +
+      "age.PBUpdateUserInfoResponse\022?\n\025addUserF" +
+      "riendResponse\030, \001(\0132 .barrage.PBAddUserF" +
+      "riendResponse\022G\n\031getUserFriendListRespon",
+      "se\030- \001(\0132$.barrage.PBGetUserFriendListRe" +
+      "sponse\022E\n\030verifyInviteCodeResponse\030. \001(\013" +
+      "2#.barrage.PBVerifyInviteCodeResponse\022G\n" +
+      "\031processUserFriendResponse\030/ \001(\0132$.barra" +
+      "ge.PBProcessUserFriendResponse\0229\n\022create" +
+      "FeedResponse\030< \001(\0132\035.barrage.PBCreateFee" +
+      "dResponse\0227\n\021replyFeedResponse\030= \001(\0132\034.b" +
+      "arrage.PBReplyFeedResponse\022K\n\033getUserTim" +
+      "elineFeedResponse\030> \001(\0132&.barrage.PBGetU" +
+      "serTimelineFeedResponse*Q\n\031PBProcessFrie",
+      "ndResultType\022\021\n\rACCEPT_FRIEND\020\000\022\021\n\rREJEC" +
+      "T_FRIEND\020\001\022\016\n\nREPLY_MEMO\020\002*\362\002\n\rPBMessage" +
+      "Type\022\026\n\022MESSAGE_LOGIN_USER\020\001\022\031\n\025MESSAGE_" +
+      "REGISTER_USER\020\002\022\027\n\023MESSAGE_SEARCH_USER\020\003" +
+      "\022\034\n\030MESSAGE_UPDATE_USER_INFO\020\004\022\033\n\027MESSAG" +
+      "E_ADD_USER_FRIEND\020\005\022 \n\034MESSAGE_GET_USER_" +
+      "FRIEND_LIST\020\006\022\037\n\033MESSAGE_PROCESS_USER_FR" +
+      "IEND\020\007\022\036\n\032MESSAGE_VERIFY_INVITE_CODE\020\010\022\027" +
+      "\n\023MESSAGE_CREATE_FEED\020\036\022\026\n\022MESSAGE_REPLY" +
+      "_FEED\020\037\022\"\n\036MESSAGE_GET_USER_TIMELINE_FEE",
+      "D\020 \022\"\n\036MESSAGE_GET_QINIU_UPLOAD_TOKEN\020dB" +
+      ",\n\033com.orange.protocol.messageB\rMessageP" +
+      "rotos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21103,7 +20993,7 @@ public final class MessageProtos {
     internal_static_barrage_PBRegisterUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBRegisterUserRequest_descriptor,
-        new java.lang.String[] { "Type", "User", "SnsType", "InviteCode", });
+        new java.lang.String[] { "Type", "User", "InviteCode", });
     internal_static_barrage_PBRegisterUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_barrage_PBRegisterUserResponse_fieldAccessorTable = new
