@@ -68,7 +68,7 @@ public class Feed extends CommonData  implements ProtoBufCoding<BarrageProtos.PB
 
     }
 
-    public static String getPbKeyFieldName(){
+    public String getPbKeyFieldName(){
         return BarrageConstants.F_FEED_ID;
     }
 

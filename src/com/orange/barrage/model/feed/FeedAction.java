@@ -69,9 +69,6 @@ public class FeedAction extends CommonData implements ProtoBufCoding<BarrageProt
 
     }
 
-    public static String getPbKeyFieldName(){
-        return BarrageConstants.F_ACTION_ID;
-    }
 
     public Class getPBClass(){
         return BarrageProtos.PBFeedAction.class;

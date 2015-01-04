@@ -81,10 +81,6 @@ public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser
 
     }
 
-    public static String getPbKeyFieldName(){
-        return BarrageConstants.F_USER_ID;
-    }
-
     public Class getPBClass(){
         return UserProtos.PBUser.class;
     }

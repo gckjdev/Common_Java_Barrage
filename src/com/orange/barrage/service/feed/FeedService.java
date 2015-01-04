@@ -51,14 +51,8 @@ public class FeedService extends CommonModelService {
         String userId = feed.getCreateUser().getUserId();
         List<UserProtos.PBUser> toUserList = feed.getToUsersList();
 
-//        String jsonString = JsonFormat.printToString(feed);
-        DBObject obj = Feed.pbToDBObject(feed, true); // JSON.parse(jsonString);
-
-        // set feed ID
-        String feedId = obj.get("_id").toString(); //Feed.generateObjectId(obj);
-//        ObjectId feedId = new ObjectId();
-//        obj.put("_id", feedId);
-//        obj.put(BarrageConstants.F_FEED_ID, feedId.toString());
+        DBObject obj = Feed.pbToDBObject(feed, true, BarrageConstants.F_FEED_ID);
+        String feedId = obj.get("_id").toString();
 
         mongoDBClient.insert(BarrageConstants.T_FEED, obj);
 

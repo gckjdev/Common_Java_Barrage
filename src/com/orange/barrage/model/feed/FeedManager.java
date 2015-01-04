@@ -32,17 +32,14 @@ public class FeedManager extends CommonModelManager<Feed> {
         BasicDBObject query = new BasicDBObject();
         query.put("_id", new ObjectId(feedId));
 
-//        String jsonString = JsonFormat.printToString(action);
-        DBObject obj = FeedAction.pbToDBObject(action);
+        DBObject obj = FeedAction.pbToDBObject(action, true, BarrageConstants.F_ACTION_ID);
 
-//                (DBObject) JSON.parse(jsonString);
         if (obj == null || obj.keySet().size() == 0){
             return ErrorProtos.PBError.ERROR_FEED_ACTION_INVALID_VALUE;
         }
 
-        // set acitonId
-        ObjectId actionId = new ObjectId();
-        obj.put(BarrageConstants.F_ACTION_ID, actionId.toString());
+        // warning here!!! we must delete actionID _id field !!!
+        obj.removeField("_id");
 
         DBObject pushUpdate = new BasicDBObject();
         pushUpdate.put(BarrageConstants.F_ACTIONS, obj);

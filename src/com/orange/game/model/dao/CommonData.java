@@ -362,10 +362,10 @@ public class CommonData {
     }
 
     public static <T extends GeneratedMessage> BasicDBObject pbToDBObject(T pbMessage){
-        return pbToDBObject(pbMessage, false);
+        return pbToDBObject(pbMessage, false, null);
     }
 
-    public static <T extends GeneratedMessage> BasicDBObject pbToDBObject(T pbMessage, boolean generateObjectId){
+    public static <T extends GeneratedMessage> BasicDBObject pbToDBObject(T pbMessage, boolean generateObjectId, String pbKeyFieldName){
 
         if (pbMessage == null){
             return null;
@@ -381,14 +381,14 @@ public class CommonData {
         BasicDBObject obj = (BasicDBObject) JSON.parse(jsonString);
 
         if (generateObjectId){
-            generateObjectId(obj);
+            generateObjectId(obj, pbKeyFieldName);
         }
 
         return obj;
     }
 
     // to be overried
-    public static String getPbKeyFieldName(){
+    public String getPbKeyFieldName(){
         return null;
     }
 
@@ -396,13 +396,12 @@ public class CommonData {
         return null;
     }
 
-    public static String generateObjectId(DBObject obj) {
+    public static String generateObjectId(DBObject obj, String pbKeyFieldName) {
         ObjectId id = new ObjectId();
         obj.put("_id", id);
 
-        String pbKeyFieldName = getPbKeyFieldName();
         if (!StringUtil.isEmpty(pbKeyFieldName)) {
-            obj.put(pbKeyFieldName, id);
+            obj.put(pbKeyFieldName, id.toString());
         }
 
         return id.toString();

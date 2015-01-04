@@ -98,7 +98,7 @@ public class UserManager extends CommonModelManager<User> {
         userBuilder.setRegDate((int)(System.currentTimeMillis()/1000));
         userBuilder.setVisitDate((int)(System.currentTimeMillis()/1000));
 
-        DBObject obj = User.pbToDBObject(userBuilder.build(), true);
+        DBObject obj = User.pbToDBObject(userBuilder.build(), true, BarrageConstants.F_USER_ID);
 
         log.info("create user = "+obj.toString());
         mongoDBClient.insert(BarrageConstants.T_USER, obj);

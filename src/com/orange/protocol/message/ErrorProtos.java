@@ -125,6 +125,14 @@ public final class ErrorProtos {
      * </pre>
      */
     ERROR_FEED_ACTION_INVALID(24, 3000001),
+    /**
+     * <code>ERROR_CREATE_IMAGE = 3000002;</code>
+     */
+    ERROR_CREATE_IMAGE(25, 3000002),
+    /**
+     * <code>ERROR_UPLOAD_IMAGE = 3000003;</code>
+     */
+    ERROR_UPLOAD_IMAGE(26, 3000003),
     ;
 
     /**
@@ -239,6 +247,14 @@ public final class ErrorProtos {
      * </pre>
      */
     public static final int ERROR_FEED_ACTION_INVALID_VALUE = 3000001;
+    /**
+     * <code>ERROR_CREATE_IMAGE = 3000002;</code>
+     */
+    public static final int ERROR_CREATE_IMAGE_VALUE = 3000002;
+    /**
+     * <code>ERROR_UPLOAD_IMAGE = 3000003;</code>
+     */
+    public static final int ERROR_UPLOAD_IMAGE_VALUE = 3000003;
 
 
     public final int getNumber() { return value; }
@@ -270,6 +286,8 @@ public final class ErrorProtos {
         case 2000018: return ERROR_SNS_AUTH_ERROR_UNKNOWN;
         case 2000019: return ERROR_SNS_GET_USER_INFO;
         case 3000001: return ERROR_FEED_ACTION_INVALID;
+        case 3000002: return ERROR_CREATE_IMAGE;
+        case 3000003: return ERROR_UPLOAD_IMAGE;
         default: return null;
       }
     }
@@ -330,7 +348,7 @@ public final class ErrorProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Error.proto\022\007barrage*\247\006\n\007PBError\022\032\n\024ER" +
+      "\n\013Error.proto\022\007barrage*\335\006\n\007PBError\022\032\n\024ER" +
       "ROR_READ_POST_DATA\020\301\204=\022\033\n\025ERROR_PARSE_PO" +
       "ST_DATA\020\302\204=\022\037\n\031ERROR_NO_SERVICE_FOR_TYPE" +
       "\020\303\204=\022#\n\035ERROR_SERVICE_CATCH_EXCEPTION\020\304\204" +
@@ -350,8 +368,10 @@ public final class ErrorProtos {
       "RROR_SNS_AUTH_FAIL\020\220\211z\022\033\n\025ERROR_SNS_AUTH" +
       "_CANCEL\020\221\211z\022\"\n\034ERROR_SNS_AUTH_ERROR_UNKN" +
       "OWN\020\222\211z\022\035\n\027ERROR_SNS_GET_USER_INFO\020\223\211z\022 ",
-      "\n\031ERROR_FEED_ACTION_INVALID\020\301\215\267\001B*\n\033com." +
-      "orange.protocol.messageB\013ErrorProtos"
+      "\n\031ERROR_FEED_ACTION_INVALID\020\301\215\267\001\022\031\n\022ERRO" +
+      "R_CREATE_IMAGE\020\302\215\267\001\022\031\n\022ERROR_UPLOAD_IMAG" +
+      "E\020\303\215\267\001B*\n\033com.orange.protocol.messageB\013E" +
+      "rrorProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
