@@ -674,281 +674,6 @@ public final class UserProtos {
     // @@protoc_insertion_point(enum_scope:barrage.PBRegisterType)
   }
 
-  /**
-   * Protobuf enum {@code barrage.PBBarrageStyle}
-   */
-  public enum PBBarrageStyle
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>POP_DECAY = 0;</code>
-     *
-     * <pre>
-     * 摩擦
-     * </pre>
-     */
-    POP_DECAY(0, 0),
-    /**
-     * <code>POP_SPRING = 1;</code>
-     *
-     * <pre>
-     * 弹簧
-     * </pre>
-     */
-    POP_SPRING(1, 1),
-    /**
-     * <code>POP_LINEAR = 2;</code>
-     *
-     * <pre>
-     * 匀速
-     * </pre>
-     */
-    POP_LINEAR(2, 2),
-    /**
-     * <code>POP_EASE_IN = 3;</code>
-     *
-     * <pre>
-     * 加速
-     * </pre>
-     */
-    POP_EASE_IN(3, 3),
-    /**
-     * <code>POP_EASE_OUT = 4;</code>
-     *
-     * <pre>
-     * 减速
-     * </pre>
-     */
-    POP_EASE_OUT(4, 4),
-    /**
-     * <code>POP_EASE_INOUT = 5;</code>
-     *
-     * <pre>
-     * 先加速再减速
-     * </pre>
-     */
-    POP_EASE_INOUT(5, 5),
-    ;
-
-    /**
-     * <code>POP_DECAY = 0;</code>
-     *
-     * <pre>
-     * 摩擦
-     * </pre>
-     */
-    public static final int POP_DECAY_VALUE = 0;
-    /**
-     * <code>POP_SPRING = 1;</code>
-     *
-     * <pre>
-     * 弹簧
-     * </pre>
-     */
-    public static final int POP_SPRING_VALUE = 1;
-    /**
-     * <code>POP_LINEAR = 2;</code>
-     *
-     * <pre>
-     * 匀速
-     * </pre>
-     */
-    public static final int POP_LINEAR_VALUE = 2;
-    /**
-     * <code>POP_EASE_IN = 3;</code>
-     *
-     * <pre>
-     * 加速
-     * </pre>
-     */
-    public static final int POP_EASE_IN_VALUE = 3;
-    /**
-     * <code>POP_EASE_OUT = 4;</code>
-     *
-     * <pre>
-     * 减速
-     * </pre>
-     */
-    public static final int POP_EASE_OUT_VALUE = 4;
-    /**
-     * <code>POP_EASE_INOUT = 5;</code>
-     *
-     * <pre>
-     * 先加速再减速
-     * </pre>
-     */
-    public static final int POP_EASE_INOUT_VALUE = 5;
-
-
-    public final int getNumber() { return value; }
-
-    public static PBBarrageStyle valueOf(int value) {
-      switch (value) {
-        case 0: return POP_DECAY;
-        case 1: return POP_SPRING;
-        case 2: return POP_LINEAR;
-        case 3: return POP_EASE_IN;
-        case 4: return POP_EASE_OUT;
-        case 5: return POP_EASE_INOUT;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<PBBarrageStyle>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static com.google.protobuf.Internal.EnumLiteMap<PBBarrageStyle>
-        internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<PBBarrageStyle>() {
-            public PBBarrageStyle findValueByNumber(int number) {
-              return PBBarrageStyle.valueOf(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(index);
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.orange.protocol.message.UserProtos.getDescriptor().getEnumTypes().get(6);
-    }
-
-    private static final PBBarrageStyle[] VALUES = values();
-
-    public static PBBarrageStyle valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int index;
-    private final int value;
-
-    private PBBarrageStyle(int index, int value) {
-      this.index = index;
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:barrage.PBBarrageStyle)
-  }
-
-  /**
-   * Protobuf enum {@code barrage.PBBarrageSpeed}
-   */
-  public enum PBBarrageSpeed
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>NORMAL = 0;</code>
-     */
-    NORMAL(0, 0),
-    /**
-     * <code>SUPER_HIGH = 1;</code>
-     */
-    SUPER_HIGH(1, 1),
-    /**
-     * <code>HIGH = 2;</code>
-     */
-    HIGH(2, 2),
-    /**
-     * <code>LOW = 4;</code>
-     */
-    LOW(3, 4),
-    /**
-     * <code>VERY_LOW = 5;</code>
-     */
-    VERY_LOW(4, 5),
-    ;
-
-    /**
-     * <code>NORMAL = 0;</code>
-     */
-    public static final int NORMAL_VALUE = 0;
-    /**
-     * <code>SUPER_HIGH = 1;</code>
-     */
-    public static final int SUPER_HIGH_VALUE = 1;
-    /**
-     * <code>HIGH = 2;</code>
-     */
-    public static final int HIGH_VALUE = 2;
-    /**
-     * <code>LOW = 4;</code>
-     */
-    public static final int LOW_VALUE = 4;
-    /**
-     * <code>VERY_LOW = 5;</code>
-     */
-    public static final int VERY_LOW_VALUE = 5;
-
-
-    public final int getNumber() { return value; }
-
-    public static PBBarrageSpeed valueOf(int value) {
-      switch (value) {
-        case 0: return NORMAL;
-        case 1: return SUPER_HIGH;
-        case 2: return HIGH;
-        case 4: return LOW;
-        case 5: return VERY_LOW;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<PBBarrageSpeed>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static com.google.protobuf.Internal.EnumLiteMap<PBBarrageSpeed>
-        internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<PBBarrageSpeed>() {
-            public PBBarrageSpeed findValueByNumber(int number) {
-              return PBBarrageSpeed.valueOf(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(index);
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.orange.protocol.message.UserProtos.getDescriptor().getEnumTypes().get(7);
-    }
-
-    private static final PBBarrageSpeed[] VALUES = values();
-
-    public static PBBarrageSpeed valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int index;
-    private final int value;
-
-    private PBBarrageSpeed(int index, int value) {
-      this.index = index;
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:barrage.PBBarrageSpeed)
-  }
-
   public interface PBSNSUserOrBuilder extends
       // @@protoc_insertion_point(interface_extends:barrage.PBSNSUser)
       com.google.protobuf.MessageOrBuilder {
@@ -1100,20 +825,6 @@ public final class UserProtos {
      */
     com.google.protobuf.ByteString
         getCredentialBytes();
-
-    /**
-     * <code>optional string _id = 100;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>optional string _id = 100;</code>
-     */
-    java.lang.String getId();
-    /**
-     * <code>optional string _id = 100;</code>
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
   }
   /**
    * Protobuf type {@code barrage.PBSNSUser}
@@ -1217,12 +928,6 @@ public final class UserProtos {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000100;
               credential_ = bs;
-              break;
-            }
-            case 802: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000200;
-              Id_ = bs;
               break;
             }
           }
@@ -1621,48 +1326,6 @@ public final class UserProtos {
       }
     }
 
-    public static final int _ID_FIELD_NUMBER = 100;
-    private java.lang.Object Id_;
-    /**
-     * <code>optional string _id = 100;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
-    }
-    /**
-     * <code>optional string _id = 100;</code>
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = Id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          Id_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string _id = 100;</code>
-     */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = Id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        Id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private void initFields() {
       type_ = 0;
       userId_ = "";
@@ -1673,7 +1336,6 @@ public final class UserProtos {
       expiredTime_ = 0;
       qqOpenId_ = "";
       credential_ = "";
-      Id_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1719,9 +1381,6 @@ public final class UserProtos {
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeBytes(20, getCredentialBytes());
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeBytes(100, getIdBytes());
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1766,10 +1425,6 @@ public final class UserProtos {
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, getCredentialBytes());
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(100, getIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1906,8 +1561,6 @@ public final class UserProtos {
         bitField0_ = (bitField0_ & ~0x00000080);
         credential_ = "";
         bitField0_ = (bitField0_ & ~0x00000100);
-        Id_ = "";
-        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -1972,10 +1625,6 @@ public final class UserProtos {
           to_bitField0_ |= 0x00000100;
         }
         result.credential_ = credential_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-          to_bitField0_ |= 0x00000200;
-        }
-        result.Id_ = Id_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2031,11 +1680,6 @@ public final class UserProtos {
         if (other.hasCredential()) {
           bitField0_ |= 0x00000100;
           credential_ = other.credential_;
-          onChanged();
-        }
-        if (other.hasId()) {
-          bitField0_ |= 0x00000200;
-          Id_ = other.Id_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2725,82 +2369,6 @@ public final class UserProtos {
   }
   bitField0_ |= 0x00000100;
         credential_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object Id_ = "";
-      /**
-       * <code>optional string _id = 100;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
-      }
-      /**
-       * <code>optional string _id = 100;</code>
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = Id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            Id_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string _id = 100;</code>
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = Id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          Id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string _id = 100;</code>
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-        Id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string _id = 100;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        Id_ = getDefaultInstance().getId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string _id = 100;</code>
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-        Id_ = value;
         onChanged();
         return this;
       }
@@ -12819,57 +12387,51 @@ public final class UserProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nUser.proto\022\007barrage\032\014Common.proto\"\305\001\n\t" +
+      "\n\nUser.proto\022\007barrage\032\014Common.proto\"\270\001\n\t" +
       "PBSNSUser\022\014\n\004type\030\001 \002(\005\022\016\n\006userId\030\002 \001(\t\022" +
       "\014\n\004nick\030\003 \001(\t\022\023\n\013accessToken\030\004 \001(\t\022\031\n\021ac" +
       "cessTokenSecret\030\005 \001(\t\022\024\n\014refreshToken\030\006 " +
       "\001(\t\022\023\n\013expiredTime\030\007 \001(\005\022\020\n\010qqOpenId\030\010 \001" +
-      "(\t\022\022\n\ncredential\030\024 \001(\t\022\013\n\003_id\030d \001(\t\"\310\006\n\006" +
-      "PBUser\022\016\n\006userId\030\001 \002(\t\022\014\n\004nick\030\002 \001(\t\022\016\n\006" +
-      "avatar\030\003 \001(\t\022\025\n\006gender\030\004 \001(\010:\005false\022$\n\010s" +
-      "nsUsers\030\005 \003(\0132\022.barrage.PBSNSUser\022\024\n\014xia" +
-      "ojiNumber\030\006 \001(\t\022\r\n\005email\030\007 \001(\t\022\020\n\010passwo",
-      "rd\030\010 \001(\t\022\016\n\006mobile\030\t \001(\t\022\020\n\010qqOpenId\030\n \001" +
-      "(\t\022\016\n\006sinaId\030\013 \001(\t\022\020\n\010weixinId\030\014 \001(\t\022\020\n\010" +
-      "birthday\030\037 \001(\t\022\016\n\006zodiac\030  \001(\005\022\022\n\nbloodG" +
-      "roup\030! \001(\t\022\017\n\007regDate\030\" \001(\005\022\017\n\007regFrom\030#" +
-      " \001(\005\022\021\n\tvisitDate\030$ \001(\005\022\020\n\010avatarBg\030) \001(" +
-      "\t\022\021\n\tsignature\030* \001(\t\022\020\n\010location\0303 \001(\t\022\023" +
-      "\n\013countryCode\0304 \001(\t\022\020\n\010language\0305 \001(\t\022\021\n" +
-      "\tlongitude\0306 \001(\002\022\020\n\010latitude\0307 \001(\002\022\r\n\005le" +
-      "vel\030= \001(\005\022\022\n\nexperience\030> \001(\003\022(\n\rcurrent" +
-      "Device\030G \001(\0132\021.barrage.PBDevice\022\"\n\007devic",
-      "es\030H \003(\0132\021.barrage.PBDevice\022\031\n\021emailVeri" +
-      "fyStatus\030Q \001(\005\022\027\n\017emailVerifyCode\030R \001(\t\022" +
-      "\032\n\022mobileVerifyStatus\030S \001(\005\022\021\n\taddConfig" +
-      "\030[ \001(\005\022\014\n\004tags\030d \003(\t\022\014\n\004memo\030e \001(\t\022\021\n\tad" +
-      "dSource\030f \001(\005\022\017\n\007addDate\030g \001(\005\022\016\n\006addDir" +
-      "\030h \001(\005\022\021\n\treplyMemo\030i \001(\t\022\021\n\taddStatus\030j" +
-      " \001(\005\022\017\n\006bStyle\030\310\001 \001(\005\022\017\n\006bSpeed\030\311\001 \001(\005\"E" +
-      "\n\tPBUserTag\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\036\n" +
-      "\005users\030\003 \003(\0132\017.barrage.PBUser\"V\n\rPBUserT" +
-      "agList\022#\n\007recents\030\001 \003(\0132\022.barrage.PBUser",
-      "Tag\022 \n\004tags\030\002 \003(\0132\022.barrage.PBUserTag*@\n" +
-      "\023FriendAddSourceType\022\021\n\rADD_BY_SEARCH\020\001\022" +
-      "\026\n\022ADD_BY_SCAN_QRCODE\020\002*N\n\023FriendAddConf" +
-      "igType\022\022\n\016REQUIRE_ACCEPT\020\000\022\016\n\nACCEPT_ALL" +
-      "\020\001\022\023\n\017DISALLOW_ADD_ME\020\002*N\n\026FriendRequest" +
-      "Direction\022\030\n\024REQ_DIRECTION_SENDER\020\000\022\032\n\026R" +
-      "EQ_DIRECTION_RECEIVER\020\001*N\n\023FriendAddStat" +
-      "usType\022\023\n\017REQ_WAIT_ACCEPT\020\000\022\020\n\014REQ_ACCEP" +
-      "TED\020\001\022\020\n\014REQ_REJECTED\020\002*r\n\013PBLoginType\022\020" +
-      "\n\014LOGIN_XIAOJI\020d\022\017\n\013LOGIN_EMAIL\020e\022\020\n\014LOG",
-      "IN_MOBILE\020f\022\014\n\010LOGIN_QQ\020\006\022\016\n\nLOGIN_SINA\020" +
-      "\001\022\020\n\014LOGIN_WEIXIN\020\027*i\n\016PBRegisterType\022\016\n" +
-      "\nREG_XIAOJI\020d\022\r\n\tREG_EMAIL\020e\022\016\n\nREG_MOBI" +
-      "LE\020f\022\n\n\006REG_QQ\020\006\022\014\n\010REG_SINA\020\001\022\016\n\nREG_WE" +
-      "IXIN\020\027*v\n\016PBBarrageStyle\022\r\n\tPOP_DECAY\020\000\022" +
-      "\016\n\nPOP_SPRING\020\001\022\016\n\nPOP_LINEAR\020\002\022\017\n\013POP_E" +
-      "ASE_IN\020\003\022\020\n\014POP_EASE_OUT\020\004\022\022\n\016POP_EASE_I" +
-      "NOUT\020\005*M\n\016PBBarrageSpeed\022\n\n\006NORMAL\020\000\022\016\n\n" +
-      "SUPER_HIGH\020\001\022\010\n\004HIGH\020\002\022\007\n\003LOW\020\004\022\014\n\010VERY_" +
-      "LOW\020\005B)\n\033com.orange.protocol.messageB\nUs",
-      "erProtos"
+      "(\t\022\022\n\ncredential\030\024 \001(\t\"\310\006\n\006PBUser\022\016\n\006use" +
+      "rId\030\001 \002(\t\022\014\n\004nick\030\002 \001(\t\022\016\n\006avatar\030\003 \001(\t\022" +
+      "\025\n\006gender\030\004 \001(\010:\005false\022$\n\010snsUsers\030\005 \003(\013" +
+      "2\022.barrage.PBSNSUser\022\024\n\014xiaojiNumber\030\006 \001" +
+      "(\t\022\r\n\005email\030\007 \001(\t\022\020\n\010password\030\010 \001(\t\022\016\n\006m",
+      "obile\030\t \001(\t\022\020\n\010qqOpenId\030\n \001(\t\022\016\n\006sinaId\030" +
+      "\013 \001(\t\022\020\n\010weixinId\030\014 \001(\t\022\020\n\010birthday\030\037 \001(" +
+      "\t\022\016\n\006zodiac\030  \001(\005\022\022\n\nbloodGroup\030! \001(\t\022\017\n" +
+      "\007regDate\030\" \001(\005\022\017\n\007regFrom\030# \001(\005\022\021\n\tvisit" +
+      "Date\030$ \001(\005\022\020\n\010avatarBg\030) \001(\t\022\021\n\tsignatur" +
+      "e\030* \001(\t\022\020\n\010location\0303 \001(\t\022\023\n\013countryCode" +
+      "\0304 \001(\t\022\020\n\010language\0305 \001(\t\022\021\n\tlongitude\0306 " +
+      "\001(\002\022\020\n\010latitude\0307 \001(\002\022\r\n\005level\030= \001(\005\022\022\n\n" +
+      "experience\030> \001(\003\022(\n\rcurrentDevice\030G \001(\0132" +
+      "\021.barrage.PBDevice\022\"\n\007devices\030H \003(\0132\021.ba",
+      "rrage.PBDevice\022\031\n\021emailVerifyStatus\030Q \001(" +
+      "\005\022\027\n\017emailVerifyCode\030R \001(\t\022\032\n\022mobileVeri" +
+      "fyStatus\030S \001(\005\022\021\n\taddConfig\030[ \001(\005\022\014\n\004tag" +
+      "s\030d \003(\t\022\014\n\004memo\030e \001(\t\022\021\n\taddSource\030f \001(\005" +
+      "\022\017\n\007addDate\030g \001(\005\022\016\n\006addDir\030h \001(\005\022\021\n\trep" +
+      "lyMemo\030i \001(\t\022\021\n\taddStatus\030j \001(\005\022\017\n\006bStyl" +
+      "e\030\310\001 \001(\005\022\017\n\006bSpeed\030\311\001 \001(\005\"E\n\tPBUserTag\022\014" +
+      "\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\036\n\005users\030\003 \003(\0132" +
+      "\017.barrage.PBUser\"V\n\rPBUserTagList\022#\n\007rec" +
+      "ents\030\001 \003(\0132\022.barrage.PBUserTag\022 \n\004tags\030\002",
+      " \003(\0132\022.barrage.PBUserTag*@\n\023FriendAddSou" +
+      "rceType\022\021\n\rADD_BY_SEARCH\020\001\022\026\n\022ADD_BY_SCA" +
+      "N_QRCODE\020\002*N\n\023FriendAddConfigType\022\022\n\016REQ" +
+      "UIRE_ACCEPT\020\000\022\016\n\nACCEPT_ALL\020\001\022\023\n\017DISALLO" +
+      "W_ADD_ME\020\002*N\n\026FriendRequestDirection\022\030\n\024" +
+      "REQ_DIRECTION_SENDER\020\000\022\032\n\026REQ_DIRECTION_" +
+      "RECEIVER\020\001*N\n\023FriendAddStatusType\022\023\n\017REQ" +
+      "_WAIT_ACCEPT\020\000\022\020\n\014REQ_ACCEPTED\020\001\022\020\n\014REQ_" +
+      "REJECTED\020\002*r\n\013PBLoginType\022\020\n\014LOGIN_XIAOJ" +
+      "I\020d\022\017\n\013LOGIN_EMAIL\020e\022\020\n\014LOGIN_MOBILE\020f\022\014",
+      "\n\010LOGIN_QQ\020\006\022\016\n\nLOGIN_SINA\020\001\022\020\n\014LOGIN_WE" +
+      "IXIN\020\027*i\n\016PBRegisterType\022\016\n\nREG_XIAOJI\020d" +
+      "\022\r\n\tREG_EMAIL\020e\022\016\n\nREG_MOBILE\020f\022\n\n\006REG_Q" +
+      "Q\020\006\022\014\n\010REG_SINA\020\001\022\016\n\nREG_WEIXIN\020\027B)\n\033com" +
+      ".orange.protocol.messageB\nUserProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12889,7 +12451,7 @@ public final class UserProtos {
     internal_static_barrage_PBSNSUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBSNSUser_descriptor,
-        new java.lang.String[] { "Type", "UserId", "Nick", "AccessToken", "AccessTokenSecret", "RefreshToken", "ExpiredTime", "QqOpenId", "Credential", "Id", });
+        new java.lang.String[] { "Type", "UserId", "Nick", "AccessToken", "AccessTokenSecret", "RefreshToken", "ExpiredTime", "QqOpenId", "Credential", });
     internal_static_barrage_PBUser_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_barrage_PBUser_fieldAccessorTable = new

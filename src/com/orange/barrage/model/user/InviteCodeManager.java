@@ -30,6 +30,10 @@ public class InviteCodeManager extends CommonModelManager<CommonData> {
 
     public int checkInviteCode(String code){
 
+        if (StringUtil.isEmpty(code)){
+            return ErrorProtos.PBError.ERROR_INVITE_CODE_NULL_VALUE;
+        }
+
         boolean valid = RedisClient.getInstance().zismember(INVITE_CODE_REDIS_KEY, code);
         if (!valid){
             if (RedisClient.getInstance().hget(USED_CODE_REDIS_KEY, code) != null){

@@ -62,7 +62,7 @@ public abstract class CommonModelManager<T extends CommonData> {
         }
 
         DBCursor cursor = mongoDBClient.find(getTableName(), field, value, 1);
-        if (cursor == null || cursor.hasNext()){
+        if (cursor == null || cursor.hasNext() == false){
             return null;
         }
 
