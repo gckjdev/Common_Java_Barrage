@@ -78,6 +78,10 @@ public class UserManager extends CommonModelManager<User> {
 
         BasicDBObject update = new BasicDBObject();
         update.put("$set", updateObj);
+        if (updateObj.keySet().size() == 0){
+            log.info("<updateUser> but no data to update");
+            return 0;
+        }
 
         log.info("<updateUser> query="+query.toString()+",update="+update.toString());
         DBObject obj = mongoDBClient.findAndModify(BarrageConstants.T_USER, query, update);
