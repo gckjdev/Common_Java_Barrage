@@ -13506,28 +13506,17 @@ public final class MessageProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .barrage.PBUser friends = 1;</code>
+     * <code>optional .barrage.PBUserFriendList friends = 1;</code>
      */
-    java.util.List<com.orange.protocol.message.UserProtos.PBUser> 
-        getFriendsList();
+    boolean hasFriends();
     /**
-     * <code>repeated .barrage.PBUser friends = 1;</code>
+     * <code>optional .barrage.PBUserFriendList friends = 1;</code>
      */
-    com.orange.protocol.message.UserProtos.PBUser getFriends(int index);
+    com.orange.protocol.message.UserProtos.PBUserFriendList getFriends();
     /**
-     * <code>repeated .barrage.PBUser friends = 1;</code>
+     * <code>optional .barrage.PBUserFriendList friends = 1;</code>
      */
-    int getFriendsCount();
-    /**
-     * <code>repeated .barrage.PBUser friends = 1;</code>
-     */
-    java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
-        getFriendsOrBuilderList();
-    /**
-     * <code>repeated .barrage.PBUser friends = 1;</code>
-     */
-    com.orange.protocol.message.UserProtos.PBUserOrBuilder getFriendsOrBuilder(
-        int index);
+    com.orange.protocol.message.UserProtos.PBUserFriendListOrBuilder getFriendsOrBuilder();
   }
   /**
    * Protobuf type {@code barrage.PBGetUserFriendListResponse}
@@ -13582,11 +13571,16 @@ public final class MessageProtos {
               break;
             }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                friends_ = new java.util.ArrayList<com.orange.protocol.message.UserProtos.PBUser>();
-                mutable_bitField0_ |= 0x00000001;
+              com.orange.protocol.message.UserProtos.PBUserFriendList.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = friends_.toBuilder();
               }
-              friends_.add(input.readMessage(com.orange.protocol.message.UserProtos.PBUser.PARSER, extensionRegistry));
+              friends_ = input.readMessage(com.orange.protocol.message.UserProtos.PBUserFriendList.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(friends_);
+                friends_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
               break;
             }
           }
@@ -13597,9 +13591,6 @@ public final class MessageProtos {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          friends_ = java.util.Collections.unmodifiableList(friends_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -13631,43 +13622,30 @@ public final class MessageProtos {
       return PARSER;
     }
 
+    private int bitField0_;
     public static final int FRIENDS_FIELD_NUMBER = 1;
-    private java.util.List<com.orange.protocol.message.UserProtos.PBUser> friends_;
+    private com.orange.protocol.message.UserProtos.PBUserFriendList friends_;
     /**
-     * <code>repeated .barrage.PBUser friends = 1;</code>
+     * <code>optional .barrage.PBUserFriendList friends = 1;</code>
      */
-    public java.util.List<com.orange.protocol.message.UserProtos.PBUser> getFriendsList() {
+    public boolean hasFriends() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .barrage.PBUserFriendList friends = 1;</code>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserFriendList getFriends() {
       return friends_;
     }
     /**
-     * <code>repeated .barrage.PBUser friends = 1;</code>
+     * <code>optional .barrage.PBUserFriendList friends = 1;</code>
      */
-    public java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
-        getFriendsOrBuilderList() {
+    public com.orange.protocol.message.UserProtos.PBUserFriendListOrBuilder getFriendsOrBuilder() {
       return friends_;
-    }
-    /**
-     * <code>repeated .barrage.PBUser friends = 1;</code>
-     */
-    public int getFriendsCount() {
-      return friends_.size();
-    }
-    /**
-     * <code>repeated .barrage.PBUser friends = 1;</code>
-     */
-    public com.orange.protocol.message.UserProtos.PBUser getFriends(int index) {
-      return friends_.get(index);
-    }
-    /**
-     * <code>repeated .barrage.PBUser friends = 1;</code>
-     */
-    public com.orange.protocol.message.UserProtos.PBUserOrBuilder getFriendsOrBuilder(
-        int index) {
-      return friends_.get(index);
     }
 
     private void initFields() {
-      friends_ = java.util.Collections.emptyList();
+      friends_ = com.orange.protocol.message.UserProtos.PBUserFriendList.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -13675,8 +13653,8 @@ public final class MessageProtos {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      for (int i = 0; i < getFriendsCount(); i++) {
-        if (!getFriends(i).isInitialized()) {
+      if (hasFriends()) {
+        if (!getFriends().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -13688,8 +13666,8 @@ public final class MessageProtos {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < friends_.size(); i++) {
-        output.writeMessage(1, friends_.get(i));
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, friends_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -13700,9 +13678,9 @@ public final class MessageProtos {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < friends_.size(); i++) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, friends_.get(i));
+          .computeMessageSize(1, friends_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -13823,11 +13801,11 @@ public final class MessageProtos {
       public Builder clear() {
         super.clear();
         if (friendsBuilder_ == null) {
-          friends_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          friends_ = com.orange.protocol.message.UserProtos.PBUserFriendList.getDefaultInstance();
         } else {
           friendsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -13855,15 +13833,16 @@ public final class MessageProtos {
       public com.orange.protocol.message.MessageProtos.PBGetUserFriendListResponse buildPartial() {
         com.orange.protocol.message.MessageProtos.PBGetUserFriendListResponse result = new com.orange.protocol.message.MessageProtos.PBGetUserFriendListResponse(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
         if (friendsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            friends_ = java.util.Collections.unmodifiableList(friends_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
           result.friends_ = friends_;
         } else {
           result.friends_ = friendsBuilder_.build();
         }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -13879,39 +13858,16 @@ public final class MessageProtos {
 
       public Builder mergeFrom(com.orange.protocol.message.MessageProtos.PBGetUserFriendListResponse other) {
         if (other == com.orange.protocol.message.MessageProtos.PBGetUserFriendListResponse.getDefaultInstance()) return this;
-        if (friendsBuilder_ == null) {
-          if (!other.friends_.isEmpty()) {
-            if (friends_.isEmpty()) {
-              friends_ = other.friends_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureFriendsIsMutable();
-              friends_.addAll(other.friends_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.friends_.isEmpty()) {
-            if (friendsBuilder_.isEmpty()) {
-              friendsBuilder_.dispose();
-              friendsBuilder_ = null;
-              friends_ = other.friends_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              friendsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getFriendsFieldBuilder() : null;
-            } else {
-              friendsBuilder_.addAllMessages(other.friends_);
-            }
-          }
+        if (other.hasFriends()) {
+          mergeFriends(other.getFriends());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
-        for (int i = 0; i < getFriendsCount(); i++) {
-          if (!getFriends(i).isInitialized()) {
+        if (hasFriends()) {
+          if (!getFriends().isInitialized()) {
             
             return false;
           }
@@ -13938,239 +13894,115 @@ public final class MessageProtos {
       }
       private int bitField0_;
 
-      private java.util.List<com.orange.protocol.message.UserProtos.PBUser> friends_ =
-        java.util.Collections.emptyList();
-      private void ensureFriendsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          friends_ = new java.util.ArrayList<com.orange.protocol.message.UserProtos.PBUser>(friends_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> friendsBuilder_;
-
+      private com.orange.protocol.message.UserProtos.PBUserFriendList friends_ = com.orange.protocol.message.UserProtos.PBUserFriendList.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUserFriendList, com.orange.protocol.message.UserProtos.PBUserFriendList.Builder, com.orange.protocol.message.UserProtos.PBUserFriendListOrBuilder> friendsBuilder_;
       /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
+       * <code>optional .barrage.PBUserFriendList friends = 1;</code>
        */
-      public java.util.List<com.orange.protocol.message.UserProtos.PBUser> getFriendsList() {
+      public boolean hasFriends() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .barrage.PBUserFriendList friends = 1;</code>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserFriendList getFriends() {
         if (friendsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(friends_);
+          return friends_;
         } else {
-          return friendsBuilder_.getMessageList();
+          return friendsBuilder_.getMessage();
         }
       }
       /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
+       * <code>optional .barrage.PBUserFriendList friends = 1;</code>
        */
-      public int getFriendsCount() {
+      public Builder setFriends(com.orange.protocol.message.UserProtos.PBUserFriendList value) {
         if (friendsBuilder_ == null) {
-          return friends_.size();
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          friends_ = value;
+          onChanged();
         } else {
-          return friendsBuilder_.getCount();
+          friendsBuilder_.setMessage(value);
         }
+        bitField0_ |= 0x00000001;
+        return this;
       }
       /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public com.orange.protocol.message.UserProtos.PBUser getFriends(int index) {
-        if (friendsBuilder_ == null) {
-          return friends_.get(index);
-        } else {
-          return friendsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
+       * <code>optional .barrage.PBUserFriendList friends = 1;</code>
        */
       public Builder setFriends(
-          int index, com.orange.protocol.message.UserProtos.PBUser value) {
+          com.orange.protocol.message.UserProtos.PBUserFriendList.Builder builderForValue) {
         if (friendsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
+          friends_ = builderForValue.build();
+          onChanged();
+        } else {
+          friendsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUserFriendList friends = 1;</code>
+       */
+      public Builder mergeFriends(com.orange.protocol.message.UserProtos.PBUserFriendList value) {
+        if (friendsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              friends_ != com.orange.protocol.message.UserProtos.PBUserFriendList.getDefaultInstance()) {
+            friends_ =
+              com.orange.protocol.message.UserProtos.PBUserFriendList.newBuilder(friends_).mergeFrom(value).buildPartial();
+          } else {
+            friends_ = value;
           }
-          ensureFriendsIsMutable();
-          friends_.set(index, value);
           onChanged();
         } else {
-          friendsBuilder_.setMessage(index, value);
+          friendsBuilder_.mergeFrom(value);
         }
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public Builder setFriends(
-          int index, com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
-        if (friendsBuilder_ == null) {
-          ensureFriendsIsMutable();
-          friends_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          friendsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public Builder addFriends(com.orange.protocol.message.UserProtos.PBUser value) {
-        if (friendsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFriendsIsMutable();
-          friends_.add(value);
-          onChanged();
-        } else {
-          friendsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public Builder addFriends(
-          int index, com.orange.protocol.message.UserProtos.PBUser value) {
-        if (friendsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFriendsIsMutable();
-          friends_.add(index, value);
-          onChanged();
-        } else {
-          friendsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public Builder addFriends(
-          com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
-        if (friendsBuilder_ == null) {
-          ensureFriendsIsMutable();
-          friends_.add(builderForValue.build());
-          onChanged();
-        } else {
-          friendsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public Builder addFriends(
-          int index, com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
-        if (friendsBuilder_ == null) {
-          ensureFriendsIsMutable();
-          friends_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          friendsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public Builder addAllFriends(
-          java.lang.Iterable<? extends com.orange.protocol.message.UserProtos.PBUser> values) {
-        if (friendsBuilder_ == null) {
-          ensureFriendsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, friends_);
-          onChanged();
-        } else {
-          friendsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
+       * <code>optional .barrage.PBUserFriendList friends = 1;</code>
        */
       public Builder clearFriends() {
         if (friendsBuilder_ == null) {
-          friends_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          friends_ = com.orange.protocol.message.UserProtos.PBUserFriendList.getDefaultInstance();
           onChanged();
         } else {
           friendsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
+       * <code>optional .barrage.PBUserFriendList friends = 1;</code>
        */
-      public Builder removeFriends(int index) {
-        if (friendsBuilder_ == null) {
-          ensureFriendsIsMutable();
-          friends_.remove(index);
-          onChanged();
-        } else {
-          friendsBuilder_.remove(index);
-        }
-        return this;
+      public com.orange.protocol.message.UserProtos.PBUserFriendList.Builder getFriendsBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getFriendsFieldBuilder().getBuilder();
       }
       /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
+       * <code>optional .barrage.PBUserFriendList friends = 1;</code>
        */
-      public com.orange.protocol.message.UserProtos.PBUser.Builder getFriendsBuilder(
-          int index) {
-        return getFriendsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public com.orange.protocol.message.UserProtos.PBUserOrBuilder getFriendsOrBuilder(
-          int index) {
-        if (friendsBuilder_ == null) {
-          return friends_.get(index);  } else {
-          return friendsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
-           getFriendsOrBuilderList() {
+      public com.orange.protocol.message.UserProtos.PBUserFriendListOrBuilder getFriendsOrBuilder() {
         if (friendsBuilder_ != null) {
-          return friendsBuilder_.getMessageOrBuilderList();
+          return friendsBuilder_.getMessageOrBuilder();
         } else {
-          return java.util.Collections.unmodifiableList(friends_);
+          return friends_;
         }
       }
       /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
+       * <code>optional .barrage.PBUserFriendList friends = 1;</code>
        */
-      public com.orange.protocol.message.UserProtos.PBUser.Builder addFriendsBuilder() {
-        return getFriendsFieldBuilder().addBuilder(
-            com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public com.orange.protocol.message.UserProtos.PBUser.Builder addFriendsBuilder(
-          int index) {
-        return getFriendsFieldBuilder().addBuilder(
-            index, com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .barrage.PBUser friends = 1;</code>
-       */
-      public java.util.List<com.orange.protocol.message.UserProtos.PBUser.Builder> 
-           getFriendsBuilderList() {
-        return getFriendsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUserFriendList, com.orange.protocol.message.UserProtos.PBUserFriendList.Builder, com.orange.protocol.message.UserProtos.PBUserFriendListOrBuilder> 
           getFriendsFieldBuilder() {
         if (friendsBuilder_ == null) {
-          friendsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder>(
-                  friends_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+          friendsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.orange.protocol.message.UserProtos.PBUserFriendList, com.orange.protocol.message.UserProtos.PBUserFriendList.Builder, com.orange.protocol.message.UserProtos.PBUserFriendListOrBuilder>(
+                  getFriends(),
                   getParentForChildren(),
                   isClean());
           friends_ = null;
@@ -27386,93 +27218,93 @@ public final class MessageProtos {
       "t\"\031\n\027PBGetUserTagListRequest\"@\n\030PBGetUse" +
       "rTagListResponse\022$\n\004tags\030\001 \001(\0132\026.barrage" +
       ".PBUserTagList\"=\n\032PBGetUserFriendListReq" +
-      "uest\022\037\n\003tag\030\001 \001(\0132\022.barrage.PBUserTag\"?\n" +
-      "\033PBGetUserFriendListResponse\022 \n\007friends\030" +
-      "\001 \003(\0132\017.barrage.PBUser\"S\n\032PBProcessUserF" +
-      "riendRequest\022\020\n\010friendId\030\001 \002(\t\022\025\n\rproces" +
-      "sResult\030\002 \001(\005\022\014\n\004memo\030\003 \001(\t\"?\n\033PBProcess" +
-      "UserFriendResponse\022 \n\007friends\030\001 \001(\0132\017.ba",
-      "rrage.PBUser\"4\n\023PBCreateFeedRequest\022\035\n\004f" +
-      "eed\030\001 \002(\0132\017.barrage.PBFeed\"&\n\024PBCreateFe" +
-      "edResponse\022\016\n\006feedId\030\001 \001(\t\";\n\022PBReplyFee" +
-      "dRequest\022%\n\006action\030\001 \002(\0132\025.barrage.PBFee" +
-      "dAction\"<\n\023PBReplyFeedResponse\022%\n\006action" +
-      "\030\001 \002(\0132\025.barrage.PBFeedAction\"G\n\034PBGetUs" +
-      "erTimelineFeedRequest\022\024\n\014offsetFeedId\030\001 " +
-      "\001(\t\022\021\n\005limit\030\002 \001(\005:\00220\"?\n\035PBGetUserTimel" +
-      "ineFeedResponse\022\036\n\005feeds\030\001 \003(\0132\017.barrage" +
-      ".PBFeed\"\354\010\n\rPBDataRequest\022\014\n\004type\030\001 \002(\005\022",
-      "\021\n\trequestId\030\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\016\n\006u" +
-      "serId\030\004 \001(\t\022!\n\006device\030\036 \001(\0132\021.barrage.PB" +
-      "Device\022\023\n\013countryCode\030\037 \001(\t\022\024\n\014languageC" +
-      "ode\030  \001(\t\022\022\n\nclientDate\030! \001(\005\0225\n\020loginUs" +
-      "erRequest\030( \001(\0132\033.barrage.PBLoginUserReq" +
-      "uest\022;\n\023registerUserRequest\030) \001(\0132\036.barr" +
-      "age.PBRegisterUserRequest\0227\n\021searchUserR" +
-      "equest\030* \001(\0132\034.barrage.PBSearchUserReque" +
-      "st\022?\n\025updateUserInfoRequest\030+ \001(\0132 .barr" +
-      "age.PBUpdateUserInfoRequest\022=\n\024addUserFr",
-      "iendRequest\030, \001(\0132\037.barrage.PBAddUserFri" +
-      "endRequest\022E\n\030getUserFriendListRequest\030-" +
-      " \001(\0132#.barrage.PBGetUserFriendListReques" +
-      "t\022C\n\027verifyInviteCodeRequest\030. \001(\0132\".bar" +
-      "rage.PBVerifyInviteCodeRequest\022E\n\030proces" +
-      "sUserFriendRequest\030/ \001(\0132#.barrage.PBPro" +
-      "cessUserFriendRequest\022C\n\027getNewInviteCod" +
-      "eRequest\0300 \001(\0132\".barrage.PBGetNewInviteC" +
-      "odeRequest\0227\n\021addUserTagRequest\0301 \001(\0132\034." +
-      "barrage.PBAddUserTagRequest\022=\n\024deleteUse",
-      "rTagRequest\0302 \001(\0132\037.barrage.PBDeleteUser" +
-      "TagRequest\022?\n\025getUserTagListRequest\0303 \001(" +
-      "\0132 .barrage.PBGetUserTagListRequest\0227\n\021c" +
-      "reateFeedRequest\030< \001(\0132\034.barrage.PBCreat" +
-      "eFeedRequest\0225\n\020replyFeedRequest\030= \001(\0132\033" +
-      ".barrage.PBReplyFeedRequest\022I\n\032getUserTi" +
-      "melineFeedRequest\030> \001(\0132%.barrage.PBGetU" +
-      "serTimelineFeedRequest\"\312\010\n\016PBDataRespons" +
-      "e\022\025\n\nresultCode\030\001 \002(\005:\0010\022\021\n\trequestId\030\002 " +
-      "\001(\005\022\017\n\007version\030\003 \001(\005\022\022\n\ntotalCount\030\004 \001(\005",
-      "\022\022\n\nstringData\030\005 \001(\t\0227\n\021loginUserRespons" +
-      "e\030( \001(\0132\034.barrage.PBLoginUserResponse\022=\n" +
-      "\024registerUserResponse\030) \001(\0132\037.barrage.PB" +
-      "RegisterUserResponse\0229\n\022searchUserRespon" +
-      "se\030* \001(\0132\035.barrage.PBSearchUserResponse\022" +
-      "A\n\026updateUserInfoResponse\030+ \001(\0132!.barrag" +
-      "e.PBUpdateUserInfoResponse\022?\n\025addUserFri" +
-      "endResponse\030, \001(\0132 .barrage.PBAddUserFri" +
-      "endResponse\022G\n\031getUserFriendListResponse" +
-      "\030- \001(\0132$.barrage.PBGetUserFriendListResp",
-      "onse\022E\n\030verifyInviteCodeResponse\030. \001(\0132#" +
-      ".barrage.PBVerifyInviteCodeResponse\022G\n\031p" +
-      "rocessUserFriendResponse\030/ \001(\0132$.barrage" +
-      ".PBProcessUserFriendResponse\022E\n\030getNewIn" +
-      "viteCodeResponse\0300 \001(\0132#.barrage.PBGetNe" +
-      "wInviteCodeResponse\0229\n\022addUserTagRespons" +
-      "e\0301 \001(\0132\035.barrage.PBAddUserTagResponse\022?" +
-      "\n\025deleteUserTagResponse\0302 \001(\0132 .barrage." +
-      "PBDeleteUserTagResponse\022A\n\026getUserTagLis" +
-      "tResponse\0303 \001(\0132!.barrage.PBGetUserTagLi",
-      "stResponse\0229\n\022createFeedResponse\030< \001(\0132\035" +
-      ".barrage.PBCreateFeedResponse\0227\n\021replyFe" +
-      "edResponse\030= \001(\0132\034.barrage.PBReplyFeedRe" +
-      "sponse\022K\n\033getUserTimelineFeedResponse\030> " +
-      "\001(\0132&.barrage.PBGetUserTimelineFeedRespo" +
-      "nse*Q\n\031PBProcessFriendResultType\022\021\n\rACCE" +
-      "PT_FRIEND\020\000\022\021\n\rREJECT_FRIEND\020\001\022\016\n\nREPLY_" +
-      "MEMO\020\002*\351\003\n\rPBMessageType\022\026\n\022MESSAGE_LOGI" +
-      "N_USER\020\001\022\031\n\025MESSAGE_REGISTER_USER\020\002\022\027\n\023M" +
-      "ESSAGE_SEARCH_USER\020\003\022\034\n\030MESSAGE_UPDATE_U",
-      "SER_INFO\020\004\022\033\n\027MESSAGE_ADD_USER_FRIEND\020\005\022" +
-      " \n\034MESSAGE_GET_USER_FRIEND_LIST\020\006\022\037\n\033MES" +
-      "SAGE_PROCESS_USER_FRIEND\020\007\022\036\n\032MESSAGE_VE" +
-      "RIFY_INVITE_CODE\020\010\022\037\n\033MESSAGE_GET_NEW_IN" +
-      "VITE_CODE\020\t\022\030\n\024MESSAGE_ADD_USER_TAG\020\n\022\033\n" +
-      "\027MESSAGE_DELETE_USER_TAG\020\013\022\035\n\031MESSAGE_GE" +
-      "T_USER_TAG_LIST\020\014\022\027\n\023MESSAGE_CREATE_FEED" +
-      "\020\036\022\026\n\022MESSAGE_REPLY_FEED\020\037\022\"\n\036MESSAGE_GE" +
-      "T_USER_TIMELINE_FEED\020 \022\"\n\036MESSAGE_GET_QI" +
-      "NIU_UPLOAD_TOKEN\020dB,\n\033com.orange.protoco",
-      "l.messageB\rMessageProtos"
+      "uest\022\037\n\003tag\030\001 \001(\0132\022.barrage.PBUserTag\"I\n" +
+      "\033PBGetUserFriendListResponse\022*\n\007friends\030" +
+      "\001 \001(\0132\031.barrage.PBUserFriendList\"S\n\032PBPr" +
+      "ocessUserFriendRequest\022\020\n\010friendId\030\001 \002(\t" +
+      "\022\025\n\rprocessResult\030\002 \001(\005\022\014\n\004memo\030\003 \001(\t\"?\n" +
+      "\033PBProcessUserFriendResponse\022 \n\007friends\030",
+      "\001 \001(\0132\017.barrage.PBUser\"4\n\023PBCreateFeedRe" +
+      "quest\022\035\n\004feed\030\001 \002(\0132\017.barrage.PBFeed\"&\n\024" +
+      "PBCreateFeedResponse\022\016\n\006feedId\030\001 \001(\t\";\n\022" +
+      "PBReplyFeedRequest\022%\n\006action\030\001 \002(\0132\025.bar" +
+      "rage.PBFeedAction\"<\n\023PBReplyFeedResponse" +
+      "\022%\n\006action\030\001 \002(\0132\025.barrage.PBFeedAction\"" +
+      "G\n\034PBGetUserTimelineFeedRequest\022\024\n\014offse" +
+      "tFeedId\030\001 \001(\t\022\021\n\005limit\030\002 \001(\005:\00220\"?\n\035PBGe" +
+      "tUserTimelineFeedResponse\022\036\n\005feeds\030\001 \003(\013" +
+      "2\017.barrage.PBFeed\"\354\010\n\rPBDataRequest\022\014\n\004t",
+      "ype\030\001 \002(\005\022\021\n\trequestId\030\002 \001(\005\022\017\n\007version\030" +
+      "\003 \001(\005\022\016\n\006userId\030\004 \001(\t\022!\n\006device\030\036 \001(\0132\021." +
+      "barrage.PBDevice\022\023\n\013countryCode\030\037 \001(\t\022\024\n" +
+      "\014languageCode\030  \001(\t\022\022\n\nclientDate\030! \001(\005\022" +
+      "5\n\020loginUserRequest\030( \001(\0132\033.barrage.PBLo" +
+      "ginUserRequest\022;\n\023registerUserRequest\030) " +
+      "\001(\0132\036.barrage.PBRegisterUserRequest\0227\n\021s" +
+      "earchUserRequest\030* \001(\0132\034.barrage.PBSearc" +
+      "hUserRequest\022?\n\025updateUserInfoRequest\030+ " +
+      "\001(\0132 .barrage.PBUpdateUserInfoRequest\022=\n",
+      "\024addUserFriendRequest\030, \001(\0132\037.barrage.PB" +
+      "AddUserFriendRequest\022E\n\030getUserFriendLis" +
+      "tRequest\030- \001(\0132#.barrage.PBGetUserFriend" +
+      "ListRequest\022C\n\027verifyInviteCodeRequest\030." +
+      " \001(\0132\".barrage.PBVerifyInviteCodeRequest" +
+      "\022E\n\030processUserFriendRequest\030/ \001(\0132#.bar" +
+      "rage.PBProcessUserFriendRequest\022C\n\027getNe" +
+      "wInviteCodeRequest\0300 \001(\0132\".barrage.PBGet" +
+      "NewInviteCodeRequest\0227\n\021addUserTagReques" +
+      "t\0301 \001(\0132\034.barrage.PBAddUserTagRequest\022=\n",
+      "\024deleteUserTagRequest\0302 \001(\0132\037.barrage.PB" +
+      "DeleteUserTagRequest\022?\n\025getUserTagListRe" +
+      "quest\0303 \001(\0132 .barrage.PBGetUserTagListRe" +
+      "quest\0227\n\021createFeedRequest\030< \001(\0132\034.barra" +
+      "ge.PBCreateFeedRequest\0225\n\020replyFeedReque" +
+      "st\030= \001(\0132\033.barrage.PBReplyFeedRequest\022I\n" +
+      "\032getUserTimelineFeedRequest\030> \001(\0132%.barr" +
+      "age.PBGetUserTimelineFeedRequest\"\312\010\n\016PBD" +
+      "ataResponse\022\025\n\nresultCode\030\001 \002(\005:\0010\022\021\n\tre" +
+      "questId\030\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\022\n\ntotalC",
+      "ount\030\004 \001(\005\022\022\n\nstringData\030\005 \001(\t\0227\n\021loginU" +
+      "serResponse\030( \001(\0132\034.barrage.PBLoginUserR" +
+      "esponse\022=\n\024registerUserResponse\030) \001(\0132\037." +
+      "barrage.PBRegisterUserResponse\0229\n\022search" +
+      "UserResponse\030* \001(\0132\035.barrage.PBSearchUse" +
+      "rResponse\022A\n\026updateUserInfoResponse\030+ \001(" +
+      "\0132!.barrage.PBUpdateUserInfoResponse\022?\n\025" +
+      "addUserFriendResponse\030, \001(\0132 .barrage.PB" +
+      "AddUserFriendResponse\022G\n\031getUserFriendLi" +
+      "stResponse\030- \001(\0132$.barrage.PBGetUserFrie",
+      "ndListResponse\022E\n\030verifyInviteCodeRespon" +
+      "se\030. \001(\0132#.barrage.PBVerifyInviteCodeRes" +
+      "ponse\022G\n\031processUserFriendResponse\030/ \001(\013" +
+      "2$.barrage.PBProcessUserFriendResponse\022E" +
+      "\n\030getNewInviteCodeResponse\0300 \001(\0132#.barra" +
+      "ge.PBGetNewInviteCodeResponse\0229\n\022addUser" +
+      "TagResponse\0301 \001(\0132\035.barrage.PBAddUserTag" +
+      "Response\022?\n\025deleteUserTagResponse\0302 \001(\0132" +
+      " .barrage.PBDeleteUserTagResponse\022A\n\026get" +
+      "UserTagListResponse\0303 \001(\0132!.barrage.PBGe",
+      "tUserTagListResponse\0229\n\022createFeedRespon" +
+      "se\030< \001(\0132\035.barrage.PBCreateFeedResponse\022" +
+      "7\n\021replyFeedResponse\030= \001(\0132\034.barrage.PBR" +
+      "eplyFeedResponse\022K\n\033getUserTimelineFeedR" +
+      "esponse\030> \001(\0132&.barrage.PBGetUserTimelin" +
+      "eFeedResponse*Q\n\031PBProcessFriendResultTy" +
+      "pe\022\021\n\rACCEPT_FRIEND\020\000\022\021\n\rREJECT_FRIEND\020\001" +
+      "\022\016\n\nREPLY_MEMO\020\002*\351\003\n\rPBMessageType\022\026\n\022ME" +
+      "SSAGE_LOGIN_USER\020\001\022\031\n\025MESSAGE_REGISTER_U" +
+      "SER\020\002\022\027\n\023MESSAGE_SEARCH_USER\020\003\022\034\n\030MESSAG",
+      "E_UPDATE_USER_INFO\020\004\022\033\n\027MESSAGE_ADD_USER" +
+      "_FRIEND\020\005\022 \n\034MESSAGE_GET_USER_FRIEND_LIS" +
+      "T\020\006\022\037\n\033MESSAGE_PROCESS_USER_FRIEND\020\007\022\036\n\032" +
+      "MESSAGE_VERIFY_INVITE_CODE\020\010\022\037\n\033MESSAGE_" +
+      "GET_NEW_INVITE_CODE\020\t\022\030\n\024MESSAGE_ADD_USE" +
+      "R_TAG\020\n\022\033\n\027MESSAGE_DELETE_USER_TAG\020\013\022\035\n\031" +
+      "MESSAGE_GET_USER_TAG_LIST\020\014\022\027\n\023MESSAGE_C" +
+      "REATE_FEED\020\036\022\026\n\022MESSAGE_REPLY_FEED\020\037\022\"\n\036" +
+      "MESSAGE_GET_USER_TIMELINE_FEED\020 \022\"\n\036MESS" +
+      "AGE_GET_QINIU_UPLOAD_TOKEN\020dB,\n\033com.oran",
+      "ge.protocol.messageB\rMessageProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
