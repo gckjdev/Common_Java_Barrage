@@ -6,6 +6,7 @@ import com.orange.barrage.common.CommonModelManager;
 import com.orange.barrage.constant.BarrageConstants;
 import com.orange.barrage.model.feed.Feed;
 import com.orange.game.model.common.CommonMongoIdComplexListManager;
+import org.bson.types.ObjectId;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class FriendManager extends CommonMongoIdComplexListManager<User> {
 
     private FriendManager() {
         super(BarrageConstants.T_FRIEND, BarrageConstants.T_USER, BarrageConstants.F_FRIEND_ID, User.class);
+        this.useObjectIdForListKey = false;
     }
 
 
@@ -48,12 +50,12 @@ public class FriendManager extends CommonMongoIdComplexListManager<User> {
 
         BasicDBObject requestInfoForUser = new BasicDBObject();
         requestInfoForUser.putAll(friendRequestInfo);
-        requestInfoForUser.put(BarrageConstants.F_FRIEND_ID, friendId);
+        requestInfoForUser.put(BarrageConstants.F_FRIEND_ID, friendId);     // replace to string for PB conversion
         insertObject(userId, requestInfoForUser, false, false, false);
 
         BasicDBObject requestInfoForFriend = new BasicDBObject();
         requestInfoForFriend.putAll(friendRequestInfo);
-        requestInfoForFriend.put(BarrageConstants.F_FRIEND_ID, userId);
+        requestInfoForFriend.put(BarrageConstants.F_FRIEND_ID, userId);     // replace to string for PB conversion
         insertObject(friendId, requestInfoForFriend, false, false, false);
     }
 

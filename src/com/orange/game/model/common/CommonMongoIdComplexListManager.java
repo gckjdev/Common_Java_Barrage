@@ -23,18 +23,27 @@ import java.util.List;
 public abstract class CommonMongoIdComplexListManager<T> extends CommonMongoIdListManager {
 
     final String idListKeyFieldName;
+    public boolean useObjectIdForListKey = true;
 
     public CommonMongoIdComplexListManager(String idListTableName, String idTableName, String idListKeyFieldName, Class returnDataObjectClass) {
         super(idListTableName, idTableName, returnDataObjectClass);
         this.idListKeyFieldName = idListKeyFieldName;
     }
 
-    private ObjectId getIdFromObject(BasicDBObject object) {
+    private Object getIdFromObject(BasicDBObject object) {
         if (object == null)
             return null;
 
         Object objId = object.get(idListKeyFieldName);
-        if (objId instanceof ObjectId){
+        if (!useObjectIdForListKey){
+            if (objId instanceof String) {
+                return (String) objId;
+            }
+            else{
+                return null;
+            }
+        }
+        else if (objId instanceof ObjectId){
             return (ObjectId)objId;
         }
         else{
@@ -180,7 +189,7 @@ public abstract class CommonMongoIdComplexListManager<T> extends CommonMongoIdLi
     protected DBObject findObjectByIdInList(String key, String id, BasicDBObject returnFields) {
 
         Object keyObjectId = getId(key, useObjectIdForKey);
-        Object valueObjectId = getId(id, useObjectIdForKey);
+        Object valueObjectId = getId(id, useObjectIdForListKey);
         if (keyObjectId == null || valueObjectId == null){
             log.warn(this.idListTableName+"<isIdExistInList> but key or id is null");
             return null;
@@ -267,7 +276,7 @@ public abstract class CommonMongoIdComplexListManager<T> extends CommonMongoIdLi
     public void removeId(String key, String id, boolean background){
 
         Object keyObjectId = getId(key, useObjectIdForKey);
-        Object valueObjectId = getId(id, true);
+        Object valueObjectId = getId(id, useObjectIdForListKey);
         if (keyObjectId == null || valueObjectId == null){
             log.warn("<removeId> but key or id is null");
             return;
@@ -335,7 +344,7 @@ public abstract class CommonMongoIdComplexListManager<T> extends CommonMongoIdLi
         
         objectIdList = new ArrayList<ObjectId>();
         for (DBObject obj : objectList){
-        	ObjectId objId = (ObjectId)obj.get(idListKeyFieldName);
+        	ObjectId objId = getObjectIdFromListField(obj); //(ObjectId)obj.get(idListKeyFieldName);
         	if (objId != null){
         		if (objectIdList.indexOf(objId) == -1){ // avoid duplicate id
         			objectIdList.add(objId);
@@ -346,6 +355,36 @@ public abstract class CommonMongoIdComplexListManager<T> extends CommonMongoIdLi
         log.info("<getObjectIdList> objectId = "+keyObjectId.toString()+", total "+objectIdList.size()+" returned");
         
         return objectIdList;    	
+    }
+
+    private String getStringFromListField(DBObject obj) {
+        Object retIdObj = obj.get(idListKeyFieldName);
+        if (retIdObj == null){
+            return null;
+        }
+
+        if (!useObjectIdForListKey){
+            if (retIdObj instanceof String){
+                return (String)retIdObj;
+            }
+        }
+
+        return null;
+    }
+
+    private ObjectId getObjectIdFromListField(DBObject obj) {
+        Object retIdObj = obj.get(idListKeyFieldName);
+        if (retIdObj == null){
+            return null;
+        }
+
+        if (useObjectIdForListKey){
+            if (retIdObj instanceof ObjectId){
+                return (ObjectId)retIdObj;
+            }
+        }
+
+        return null;
     }
 
     public List<String> getIdList(final String key, final int offset, final int limit){
@@ -406,9 +445,10 @@ public abstract class CommonMongoIdComplexListManager<T> extends CommonMongoIdLi
 
         List<String> idList = new ArrayList<String>();
         for (DBObject dbObject : objectList){
-            ObjectId listKey = (ObjectId)dbObject.get(idListKeyFieldName);
+//            ObjectId listKey = (ObjectId)dbObject.get(idListKeyFieldName);
+            String listKey = getStringFromListField(dbObject);
             if (listKey != null){
-                idList.add(listKey.toString());
+                idList.add(listKey);
             }
         }
 
@@ -478,7 +518,7 @@ public abstract class CommonMongoIdComplexListManager<T> extends CommonMongoIdLi
     protected void updateIndexObject(String key, String objectKeyValue, BasicDBObject objectData) {
 
         Object keyObjectId = getId(key, useObjectIdForKey);
-        Object objectKeyObjectId = getId(objectKeyValue, useObjectIdForKey);
+        Object objectKeyObjectId = getId(objectKeyValue, useObjectIdForListKey);
         if (keyObjectId == null){
             log.warn("<updateIndexObject> but key is null");
             return;
@@ -503,7 +543,7 @@ public abstract class CommonMongoIdComplexListManager<T> extends CommonMongoIdLi
     protected DBObject getObjectInfo(String key, String id) {
 
         Object keyObjectId = getId(key, useObjectIdForKey);
-        Object valueObjectId = getId(id, useObjectIdForKey);
+        Object valueObjectId = getId(id, useObjectIdForListKey);
         if (keyObjectId == null || valueObjectId == null){
             log.warn(this.idListTableName+"<isIdExistInList> but key or id is null");
             return null;

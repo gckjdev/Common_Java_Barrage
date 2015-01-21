@@ -25,6 +25,19 @@ public class MongoGetIdListUtils<T extends CommonData> {
         return getList(mongoClient, tableName, keyFieldName, deleteStatusFieldName, deleteStatusValue, objectIdList, returnFields, clazz);
     }
 
+    public static ObjectId safeGetObjectId(Object value){
+        if (value instanceof String){
+            return new ObjectId((String)value);
+        }
+        else if (value instanceof ObjectId){
+            return ((ObjectId)value);
+        }
+        else{
+            log.error("<safeGetObjectId> but value is NOT String or ObjectId, key = "+value.toString());
+            return null;
+        }
+    }
+
     public List<T> getList(MongoDBClient mongoClient, String tableName, String keyFieldName, String objectKeyFieldName, List<DBObject> objectList, String deleteStatusFieldName, int deleteStatusValue, BasicDBObject returnFields, Class<T> clazz) {
 
         if (objectList.size() == 0) {
@@ -35,9 +48,12 @@ public class MongoGetIdListUtils<T extends CommonData> {
         // construct object id list
         List<ObjectId> idList = new ArrayList<ObjectId>();
         for (DBObject obj : objectList) {
-            ObjectId key = (ObjectId) obj.get(objectKeyFieldName);
-            if (key != null) {
+            ObjectId key = safeGetObjectId(obj.get(objectKeyFieldName));
+            if (key != null){
                 idList.add(key);
+            }
+            else{
+                log.error("<getListFromMongo> but key invalid"+obj.get(objectKeyFieldName));
             }
         }
 
@@ -76,13 +92,16 @@ public class MongoGetIdListUtils<T extends CommonData> {
         // sort data by using id sequence
         List<T> retList = new ArrayList<T>();
         for (DBObject object : objectList) {
-            ObjectId key = (ObjectId) object.get(objectKeyFieldName);
-            if (key != null) {
+            ObjectId key = safeGetObjectId(object.get(objectKeyFieldName));
+            if (key != null){
                 if (map.containsKey(key)) {
                     T t = map.get(key);
                     t.getDbObject().putAll(object);     // append extra data into this object
                     retList.add(t);
                 }
+            }
+            else{
+                log.error("<getListFromMongo> but key invalid"+object.get(objectKeyFieldName));
             }
         }
         log.info("<getListFromMongo> return data count = " + retList.size());
