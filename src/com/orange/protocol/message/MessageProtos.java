@@ -6052,6 +6052,24 @@ public final class MessageProtos {
      */
     com.google.protobuf.ByteString
         getKeywordBytes();
+
+    /**
+     * <code>optional int32 offset = 2;</code>
+     */
+    boolean hasOffset();
+    /**
+     * <code>optional int32 offset = 2;</code>
+     */
+    int getOffset();
+
+    /**
+     * <code>optional int32 limit = 3 [default = 30];</code>
+     */
+    boolean hasLimit();
+    /**
+     * <code>optional int32 limit = 3 [default = 30];</code>
+     */
+    int getLimit();
   }
   /**
    * Protobuf type {@code barrage.PBSearchUserRequest}
@@ -6109,6 +6127,16 @@ public final class MessageProtos {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               keyword_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              offset_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              limit_ = input.readInt32();
               break;
             }
           }
@@ -6205,8 +6233,40 @@ public final class MessageProtos {
       }
     }
 
+    public static final int OFFSET_FIELD_NUMBER = 2;
+    private int offset_;
+    /**
+     * <code>optional int32 offset = 2;</code>
+     */
+    public boolean hasOffset() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 offset = 2;</code>
+     */
+    public int getOffset() {
+      return offset_;
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 3;
+    private int limit_;
+    /**
+     * <code>optional int32 limit = 3 [default = 30];</code>
+     */
+    public boolean hasLimit() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 limit = 3 [default = 30];</code>
+     */
+    public int getLimit() {
+      return limit_;
+    }
+
     private void initFields() {
       keyword_ = "";
+      offset_ = 0;
+      limit_ = 30;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -6228,6 +6288,12 @@ public final class MessageProtos {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getKeywordBytes());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, offset_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, limit_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6240,6 +6306,14 @@ public final class MessageProtos {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getKeywordBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, offset_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, limit_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -6360,6 +6434,10 @@ public final class MessageProtos {
         super.clear();
         keyword_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        offset_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        limit_ = 30;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -6392,6 +6470,14 @@ public final class MessageProtos {
           to_bitField0_ |= 0x00000001;
         }
         result.keyword_ = keyword_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.offset_ = offset_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.limit_ = limit_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -6412,6 +6498,12 @@ public final class MessageProtos {
           bitField0_ |= 0x00000001;
           keyword_ = other.keyword_;
           onChanged();
+        }
+        if (other.hasOffset()) {
+          setOffset(other.getOffset());
+        }
+        if (other.hasLimit()) {
+          setLimit(other.getLimit());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -6540,6 +6632,70 @@ public final class MessageProtos {
   }
   bitField0_ |= 0x00000001;
         keyword_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int offset_ ;
+      /**
+       * <code>optional int32 offset = 2;</code>
+       */
+      public boolean hasOffset() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 offset = 2;</code>
+       */
+      public int getOffset() {
+        return offset_;
+      }
+      /**
+       * <code>optional int32 offset = 2;</code>
+       */
+      public Builder setOffset(int value) {
+        bitField0_ |= 0x00000002;
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 offset = 2;</code>
+       */
+      public Builder clearOffset() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        offset_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int limit_ = 30;
+      /**
+       * <code>optional int32 limit = 3 [default = 30];</code>
+       */
+      public boolean hasLimit() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 limit = 3 [default = 30];</code>
+       */
+      public int getLimit() {
+        return limit_;
+      }
+      /**
+       * <code>optional int32 limit = 3 [default = 30];</code>
+       */
+      public Builder setLimit(int value) {
+        bitField0_ |= 0x00000004;
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 limit = 3 [default = 30];</code>
+       */
+      public Builder clearLimit() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        limit_ = 30;
         onChanged();
         return this;
       }
@@ -8285,1419 +8441,6 @@ public final class MessageProtos {
     }
 
     // @@protoc_insertion_point(class_scope:barrage.PBUpdateUserInfoResponse)
-  }
-
-  public interface PBAddUserFriendRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:barrage.PBAddUserFriendRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional .barrage.PBUser friend = 1;</code>
-     *
-     * <pre>
-     * 用户信息，非二维码扫描添加需要传递本信息
-     * </pre>
-     */
-    boolean hasFriend();
-    /**
-     * <code>optional .barrage.PBUser friend = 1;</code>
-     *
-     * <pre>
-     * 用户信息，非二维码扫描添加需要传递本信息
-     * </pre>
-     */
-    com.orange.protocol.message.UserProtos.PBUser getFriend();
-    /**
-     * <code>optional .barrage.PBUser friend = 1;</code>
-     *
-     * <pre>
-     * 用户信息，非二维码扫描添加需要传递本信息
-     * </pre>
-     */
-    com.orange.protocol.message.UserProtos.PBUserOrBuilder getFriendOrBuilder();
-
-    /**
-     * <code>optional string memo = 2;</code>
-     *
-     * <pre>
-     * 添加好友申请备注
-     * </pre>
-     */
-    boolean hasMemo();
-    /**
-     * <code>optional string memo = 2;</code>
-     *
-     * <pre>
-     * 添加好友申请备注
-     * </pre>
-     */
-    java.lang.String getMemo();
-    /**
-     * <code>optional string memo = 2;</code>
-     *
-     * <pre>
-     * 添加好友申请备注
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getMemoBytes();
-
-    /**
-     * <code>optional int32 sourceType = 3;</code>
-     *
-     * <pre>
-     * 来源，参考FriendAddSourceType
-     * </pre>
-     */
-    boolean hasSourceType();
-    /**
-     * <code>optional int32 sourceType = 3;</code>
-     *
-     * <pre>
-     * 来源，参考FriendAddSourceType
-     * </pre>
-     */
-    int getSourceType();
-
-    /**
-     * <code>optional string scanCode = 4;</code>
-     *
-     * <pre>
-     * 如果是二维码扫描，这个是扫描获得的扫描码
-     * </pre>
-     */
-    boolean hasScanCode();
-    /**
-     * <code>optional string scanCode = 4;</code>
-     *
-     * <pre>
-     * 如果是二维码扫描，这个是扫描获得的扫描码
-     * </pre>
-     */
-    java.lang.String getScanCode();
-    /**
-     * <code>optional string scanCode = 4;</code>
-     *
-     * <pre>
-     * 如果是二维码扫描，这个是扫描获得的扫描码
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getScanCodeBytes();
-  }
-  /**
-   * Protobuf type {@code barrage.PBAddUserFriendRequest}
-   */
-  public static final class PBAddUserFriendRequest extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:barrage.PBAddUserFriendRequest)
-      PBAddUserFriendRequestOrBuilder {
-    // Use PBAddUserFriendRequest.newBuilder() to construct.
-    private PBAddUserFriendRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private PBAddUserFriendRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final PBAddUserFriendRequest defaultInstance;
-    public static PBAddUserFriendRequest getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public PBAddUserFriendRequest getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private PBAddUserFriendRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              com.orange.protocol.message.UserProtos.PBUser.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                subBuilder = friend_.toBuilder();
-              }
-              friend_ = input.readMessage(com.orange.protocol.message.UserProtos.PBUser.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(friend_);
-                friend_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              memo_ = bs;
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              sourceType_ = input.readInt32();
-              break;
-            }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
-              scanCode_ = bs;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendRequest_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.class, com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<PBAddUserFriendRequest> PARSER =
-        new com.google.protobuf.AbstractParser<PBAddUserFriendRequest>() {
-      public PBAddUserFriendRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PBAddUserFriendRequest(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PBAddUserFriendRequest> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    public static final int FRIEND_FIELD_NUMBER = 1;
-    private com.orange.protocol.message.UserProtos.PBUser friend_;
-    /**
-     * <code>optional .barrage.PBUser friend = 1;</code>
-     *
-     * <pre>
-     * 用户信息，非二维码扫描添加需要传递本信息
-     * </pre>
-     */
-    public boolean hasFriend() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional .barrage.PBUser friend = 1;</code>
-     *
-     * <pre>
-     * 用户信息，非二维码扫描添加需要传递本信息
-     * </pre>
-     */
-    public com.orange.protocol.message.UserProtos.PBUser getFriend() {
-      return friend_;
-    }
-    /**
-     * <code>optional .barrage.PBUser friend = 1;</code>
-     *
-     * <pre>
-     * 用户信息，非二维码扫描添加需要传递本信息
-     * </pre>
-     */
-    public com.orange.protocol.message.UserProtos.PBUserOrBuilder getFriendOrBuilder() {
-      return friend_;
-    }
-
-    public static final int MEMO_FIELD_NUMBER = 2;
-    private java.lang.Object memo_;
-    /**
-     * <code>optional string memo = 2;</code>
-     *
-     * <pre>
-     * 添加好友申请备注
-     * </pre>
-     */
-    public boolean hasMemo() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string memo = 2;</code>
-     *
-     * <pre>
-     * 添加好友申请备注
-     * </pre>
-     */
-    public java.lang.String getMemo() {
-      java.lang.Object ref = memo_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          memo_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string memo = 2;</code>
-     *
-     * <pre>
-     * 添加好友申请备注
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getMemoBytes() {
-      java.lang.Object ref = memo_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        memo_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SOURCETYPE_FIELD_NUMBER = 3;
-    private int sourceType_;
-    /**
-     * <code>optional int32 sourceType = 3;</code>
-     *
-     * <pre>
-     * 来源，参考FriendAddSourceType
-     * </pre>
-     */
-    public boolean hasSourceType() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional int32 sourceType = 3;</code>
-     *
-     * <pre>
-     * 来源，参考FriendAddSourceType
-     * </pre>
-     */
-    public int getSourceType() {
-      return sourceType_;
-    }
-
-    public static final int SCANCODE_FIELD_NUMBER = 4;
-    private java.lang.Object scanCode_;
-    /**
-     * <code>optional string scanCode = 4;</code>
-     *
-     * <pre>
-     * 如果是二维码扫描，这个是扫描获得的扫描码
-     * </pre>
-     */
-    public boolean hasScanCode() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional string scanCode = 4;</code>
-     *
-     * <pre>
-     * 如果是二维码扫描，这个是扫描获得的扫描码
-     * </pre>
-     */
-    public java.lang.String getScanCode() {
-      java.lang.Object ref = scanCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          scanCode_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string scanCode = 4;</code>
-     *
-     * <pre>
-     * 如果是二维码扫描，这个是扫描获得的扫描码
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getScanCodeBytes() {
-      java.lang.Object ref = scanCode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        scanCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private void initFields() {
-      friend_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
-      memo_ = "";
-      sourceType_ = 0;
-      scanCode_ = "";
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (hasFriend()) {
-        if (!getFriend().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(1, friend_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getMemoBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(3, sourceType_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getScanCodeBytes());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, friend_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getMemoBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, sourceType_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getScanCodeBytes());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code barrage.PBAddUserFriendRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:barrage.PBAddUserFriendRequest)
-        com.orange.protocol.message.MessageProtos.PBAddUserFriendRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendRequest_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.class, com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.Builder.class);
-      }
-
-      // Construct using com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getFriendFieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        if (friendBuilder_ == null) {
-          friend_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
-        } else {
-          friendBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        memo_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        sourceType_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        scanCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendRequest_descriptor;
-      }
-
-      public com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest getDefaultInstanceForType() {
-        return com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.getDefaultInstance();
-      }
-
-      public com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest build() {
-        com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest buildPartial() {
-        com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest result = new com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        if (friendBuilder_ == null) {
-          result.friend_ = friend_;
-        } else {
-          result.friend_ = friendBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.memo_ = memo_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.sourceType_ = sourceType_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.scanCode_ = scanCode_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest) {
-          return mergeFrom((com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest other) {
-        if (other == com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.getDefaultInstance()) return this;
-        if (other.hasFriend()) {
-          mergeFriend(other.getFriend());
-        }
-        if (other.hasMemo()) {
-          bitField0_ |= 0x00000002;
-          memo_ = other.memo_;
-          onChanged();
-        }
-        if (other.hasSourceType()) {
-          setSourceType(other.getSourceType());
-        }
-        if (other.hasScanCode()) {
-          bitField0_ |= 0x00000008;
-          scanCode_ = other.scanCode_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (hasFriend()) {
-          if (!getFriend().isInitialized()) {
-            
-            return false;
-          }
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.orange.protocol.message.UserProtos.PBUser friend_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> friendBuilder_;
-      /**
-       * <code>optional .barrage.PBUser friend = 1;</code>
-       *
-       * <pre>
-       * 用户信息，非二维码扫描添加需要传递本信息
-       * </pre>
-       */
-      public boolean hasFriend() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>optional .barrage.PBUser friend = 1;</code>
-       *
-       * <pre>
-       * 用户信息，非二维码扫描添加需要传递本信息
-       * </pre>
-       */
-      public com.orange.protocol.message.UserProtos.PBUser getFriend() {
-        if (friendBuilder_ == null) {
-          return friend_;
-        } else {
-          return friendBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .barrage.PBUser friend = 1;</code>
-       *
-       * <pre>
-       * 用户信息，非二维码扫描添加需要传递本信息
-       * </pre>
-       */
-      public Builder setFriend(com.orange.protocol.message.UserProtos.PBUser value) {
-        if (friendBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          friend_ = value;
-          onChanged();
-        } else {
-          friendBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      /**
-       * <code>optional .barrage.PBUser friend = 1;</code>
-       *
-       * <pre>
-       * 用户信息，非二维码扫描添加需要传递本信息
-       * </pre>
-       */
-      public Builder setFriend(
-          com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
-        if (friendBuilder_ == null) {
-          friend_ = builderForValue.build();
-          onChanged();
-        } else {
-          friendBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      /**
-       * <code>optional .barrage.PBUser friend = 1;</code>
-       *
-       * <pre>
-       * 用户信息，非二维码扫描添加需要传递本信息
-       * </pre>
-       */
-      public Builder mergeFriend(com.orange.protocol.message.UserProtos.PBUser value) {
-        if (friendBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001) &&
-              friend_ != com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance()) {
-            friend_ =
-              com.orange.protocol.message.UserProtos.PBUser.newBuilder(friend_).mergeFrom(value).buildPartial();
-          } else {
-            friend_ = value;
-          }
-          onChanged();
-        } else {
-          friendBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      /**
-       * <code>optional .barrage.PBUser friend = 1;</code>
-       *
-       * <pre>
-       * 用户信息，非二维码扫描添加需要传递本信息
-       * </pre>
-       */
-      public Builder clearFriend() {
-        if (friendBuilder_ == null) {
-          friend_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
-          onChanged();
-        } else {
-          friendBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-      /**
-       * <code>optional .barrage.PBUser friend = 1;</code>
-       *
-       * <pre>
-       * 用户信息，非二维码扫描添加需要传递本信息
-       * </pre>
-       */
-      public com.orange.protocol.message.UserProtos.PBUser.Builder getFriendBuilder() {
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return getFriendFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .barrage.PBUser friend = 1;</code>
-       *
-       * <pre>
-       * 用户信息，非二维码扫描添加需要传递本信息
-       * </pre>
-       */
-      public com.orange.protocol.message.UserProtos.PBUserOrBuilder getFriendOrBuilder() {
-        if (friendBuilder_ != null) {
-          return friendBuilder_.getMessageOrBuilder();
-        } else {
-          return friend_;
-        }
-      }
-      /**
-       * <code>optional .barrage.PBUser friend = 1;</code>
-       *
-       * <pre>
-       * 用户信息，非二维码扫描添加需要传递本信息
-       * </pre>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
-          getFriendFieldBuilder() {
-        if (friendBuilder_ == null) {
-          friendBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder>(
-                  getFriend(),
-                  getParentForChildren(),
-                  isClean());
-          friend_ = null;
-        }
-        return friendBuilder_;
-      }
-
-      private java.lang.Object memo_ = "";
-      /**
-       * <code>optional string memo = 2;</code>
-       *
-       * <pre>
-       * 添加好友申请备注
-       * </pre>
-       */
-      public boolean hasMemo() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional string memo = 2;</code>
-       *
-       * <pre>
-       * 添加好友申请备注
-       * </pre>
-       */
-      public java.lang.String getMemo() {
-        java.lang.Object ref = memo_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            memo_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string memo = 2;</code>
-       *
-       * <pre>
-       * 添加好友申请备注
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getMemoBytes() {
-        java.lang.Object ref = memo_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          memo_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string memo = 2;</code>
-       *
-       * <pre>
-       * 添加好友申请备注
-       * </pre>
-       */
-      public Builder setMemo(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        memo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string memo = 2;</code>
-       *
-       * <pre>
-       * 添加好友申请备注
-       * </pre>
-       */
-      public Builder clearMemo() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        memo_ = getDefaultInstance().getMemo();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string memo = 2;</code>
-       *
-       * <pre>
-       * 添加好友申请备注
-       * </pre>
-       */
-      public Builder setMemoBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        memo_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int sourceType_ ;
-      /**
-       * <code>optional int32 sourceType = 3;</code>
-       *
-       * <pre>
-       * 来源，参考FriendAddSourceType
-       * </pre>
-       */
-      public boolean hasSourceType() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional int32 sourceType = 3;</code>
-       *
-       * <pre>
-       * 来源，参考FriendAddSourceType
-       * </pre>
-       */
-      public int getSourceType() {
-        return sourceType_;
-      }
-      /**
-       * <code>optional int32 sourceType = 3;</code>
-       *
-       * <pre>
-       * 来源，参考FriendAddSourceType
-       * </pre>
-       */
-      public Builder setSourceType(int value) {
-        bitField0_ |= 0x00000004;
-        sourceType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 sourceType = 3;</code>
-       *
-       * <pre>
-       * 来源，参考FriendAddSourceType
-       * </pre>
-       */
-      public Builder clearSourceType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        sourceType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object scanCode_ = "";
-      /**
-       * <code>optional string scanCode = 4;</code>
-       *
-       * <pre>
-       * 如果是二维码扫描，这个是扫描获得的扫描码
-       * </pre>
-       */
-      public boolean hasScanCode() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional string scanCode = 4;</code>
-       *
-       * <pre>
-       * 如果是二维码扫描，这个是扫描获得的扫描码
-       * </pre>
-       */
-      public java.lang.String getScanCode() {
-        java.lang.Object ref = scanCode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            scanCode_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string scanCode = 4;</code>
-       *
-       * <pre>
-       * 如果是二维码扫描，这个是扫描获得的扫描码
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getScanCodeBytes() {
-        java.lang.Object ref = scanCode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          scanCode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string scanCode = 4;</code>
-       *
-       * <pre>
-       * 如果是二维码扫描，这个是扫描获得的扫描码
-       * </pre>
-       */
-      public Builder setScanCode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        scanCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string scanCode = 4;</code>
-       *
-       * <pre>
-       * 如果是二维码扫描，这个是扫描获得的扫描码
-       * </pre>
-       */
-      public Builder clearScanCode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        scanCode_ = getDefaultInstance().getScanCode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string scanCode = 4;</code>
-       *
-       * <pre>
-       * 如果是二维码扫描，这个是扫描获得的扫描码
-       * </pre>
-       */
-      public Builder setScanCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        scanCode_ = value;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:barrage.PBAddUserFriendRequest)
-    }
-
-    static {
-      defaultInstance = new PBAddUserFriendRequest(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:barrage.PBAddUserFriendRequest)
-  }
-
-  public interface PBAddUserFriendResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:barrage.PBAddUserFriendResponse)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * Protobuf type {@code barrage.PBAddUserFriendResponse}
-   */
-  public static final class PBAddUserFriendResponse extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:barrage.PBAddUserFriendResponse)
-      PBAddUserFriendResponseOrBuilder {
-    // Use PBAddUserFriendResponse.newBuilder() to construct.
-    private PBAddUserFriendResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private PBAddUserFriendResponse(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final PBAddUserFriendResponse defaultInstance;
-    public static PBAddUserFriendResponse getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public PBAddUserFriendResponse getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private PBAddUserFriendResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendResponse_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.class, com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<PBAddUserFriendResponse> PARSER =
-        new com.google.protobuf.AbstractParser<PBAddUserFriendResponse>() {
-      public PBAddUserFriendResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PBAddUserFriendResponse(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PBAddUserFriendResponse> getParserForType() {
-      return PARSER;
-    }
-
-    private void initFields() {
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code barrage.PBAddUserFriendResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:barrage.PBAddUserFriendResponse)
-        com.orange.protocol.message.MessageProtos.PBAddUserFriendResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendResponse_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.class, com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.Builder.class);
-      }
-
-      // Construct using com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendResponse_descriptor;
-      }
-
-      public com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse getDefaultInstanceForType() {
-        return com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.getDefaultInstance();
-      }
-
-      public com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse build() {
-        com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse buildPartial() {
-        com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse result = new com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse(this);
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse) {
-          return mergeFrom((com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse other) {
-        if (other == com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:barrage.PBAddUserFriendResponse)
-    }
-
-    static {
-      defaultInstance = new PBAddUserFriendResponse(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:barrage.PBAddUserFriendResponse)
   }
 
   public interface PBAddUserTagRequestOrBuilder extends
@@ -12919,6 +11662,1419 @@ public final class MessageProtos {
     }
 
     // @@protoc_insertion_point(class_scope:barrage.PBGetUserTagListResponse)
+  }
+
+  public interface PBAddUserFriendRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:barrage.PBAddUserFriendRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .barrage.PBUser friend = 1;</code>
+     *
+     * <pre>
+     * 用户信息，非二维码扫描添加需要传递本信息
+     * </pre>
+     */
+    boolean hasFriend();
+    /**
+     * <code>optional .barrage.PBUser friend = 1;</code>
+     *
+     * <pre>
+     * 用户信息，非二维码扫描添加需要传递本信息
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUser getFriend();
+    /**
+     * <code>optional .barrage.PBUser friend = 1;</code>
+     *
+     * <pre>
+     * 用户信息，非二维码扫描添加需要传递本信息
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUserOrBuilder getFriendOrBuilder();
+
+    /**
+     * <code>optional string memo = 2;</code>
+     *
+     * <pre>
+     * 添加好友申请备注
+     * </pre>
+     */
+    boolean hasMemo();
+    /**
+     * <code>optional string memo = 2;</code>
+     *
+     * <pre>
+     * 添加好友申请备注
+     * </pre>
+     */
+    java.lang.String getMemo();
+    /**
+     * <code>optional string memo = 2;</code>
+     *
+     * <pre>
+     * 添加好友申请备注
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getMemoBytes();
+
+    /**
+     * <code>optional int32 sourceType = 3;</code>
+     *
+     * <pre>
+     * 来源，参考FriendAddSourceType
+     * </pre>
+     */
+    boolean hasSourceType();
+    /**
+     * <code>optional int32 sourceType = 3;</code>
+     *
+     * <pre>
+     * 来源，参考FriendAddSourceType
+     * </pre>
+     */
+    int getSourceType();
+
+    /**
+     * <code>optional string scanCode = 4;</code>
+     *
+     * <pre>
+     * 如果是二维码扫描，这个是扫描获得的扫描码
+     * </pre>
+     */
+    boolean hasScanCode();
+    /**
+     * <code>optional string scanCode = 4;</code>
+     *
+     * <pre>
+     * 如果是二维码扫描，这个是扫描获得的扫描码
+     * </pre>
+     */
+    java.lang.String getScanCode();
+    /**
+     * <code>optional string scanCode = 4;</code>
+     *
+     * <pre>
+     * 如果是二维码扫描，这个是扫描获得的扫描码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getScanCodeBytes();
+  }
+  /**
+   * Protobuf type {@code barrage.PBAddUserFriendRequest}
+   */
+  public static final class PBAddUserFriendRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:barrage.PBAddUserFriendRequest)
+      PBAddUserFriendRequestOrBuilder {
+    // Use PBAddUserFriendRequest.newBuilder() to construct.
+    private PBAddUserFriendRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PBAddUserFriendRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PBAddUserFriendRequest defaultInstance;
+    public static PBAddUserFriendRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PBAddUserFriendRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PBAddUserFriendRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.orange.protocol.message.UserProtos.PBUser.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = friend_.toBuilder();
+              }
+              friend_ = input.readMessage(com.orange.protocol.message.UserProtos.PBUser.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(friend_);
+                friend_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              memo_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              sourceType_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              scanCode_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.class, com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PBAddUserFriendRequest> PARSER =
+        new com.google.protobuf.AbstractParser<PBAddUserFriendRequest>() {
+      public PBAddUserFriendRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PBAddUserFriendRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PBAddUserFriendRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int FRIEND_FIELD_NUMBER = 1;
+    private com.orange.protocol.message.UserProtos.PBUser friend_;
+    /**
+     * <code>optional .barrage.PBUser friend = 1;</code>
+     *
+     * <pre>
+     * 用户信息，非二维码扫描添加需要传递本信息
+     * </pre>
+     */
+    public boolean hasFriend() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .barrage.PBUser friend = 1;</code>
+     *
+     * <pre>
+     * 用户信息，非二维码扫描添加需要传递本信息
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUser getFriend() {
+      return friend_;
+    }
+    /**
+     * <code>optional .barrage.PBUser friend = 1;</code>
+     *
+     * <pre>
+     * 用户信息，非二维码扫描添加需要传递本信息
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserOrBuilder getFriendOrBuilder() {
+      return friend_;
+    }
+
+    public static final int MEMO_FIELD_NUMBER = 2;
+    private java.lang.Object memo_;
+    /**
+     * <code>optional string memo = 2;</code>
+     *
+     * <pre>
+     * 添加好友申请备注
+     * </pre>
+     */
+    public boolean hasMemo() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string memo = 2;</code>
+     *
+     * <pre>
+     * 添加好友申请备注
+     * </pre>
+     */
+    public java.lang.String getMemo() {
+      java.lang.Object ref = memo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          memo_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string memo = 2;</code>
+     *
+     * <pre>
+     * 添加好友申请备注
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getMemoBytes() {
+      java.lang.Object ref = memo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        memo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCETYPE_FIELD_NUMBER = 3;
+    private int sourceType_;
+    /**
+     * <code>optional int32 sourceType = 3;</code>
+     *
+     * <pre>
+     * 来源，参考FriendAddSourceType
+     * </pre>
+     */
+    public boolean hasSourceType() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 sourceType = 3;</code>
+     *
+     * <pre>
+     * 来源，参考FriendAddSourceType
+     * </pre>
+     */
+    public int getSourceType() {
+      return sourceType_;
+    }
+
+    public static final int SCANCODE_FIELD_NUMBER = 4;
+    private java.lang.Object scanCode_;
+    /**
+     * <code>optional string scanCode = 4;</code>
+     *
+     * <pre>
+     * 如果是二维码扫描，这个是扫描获得的扫描码
+     * </pre>
+     */
+    public boolean hasScanCode() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string scanCode = 4;</code>
+     *
+     * <pre>
+     * 如果是二维码扫描，这个是扫描获得的扫描码
+     * </pre>
+     */
+    public java.lang.String getScanCode() {
+      java.lang.Object ref = scanCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          scanCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string scanCode = 4;</code>
+     *
+     * <pre>
+     * 如果是二维码扫描，这个是扫描获得的扫描码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getScanCodeBytes() {
+      java.lang.Object ref = scanCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        scanCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      friend_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+      memo_ = "";
+      sourceType_ = 0;
+      scanCode_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (hasFriend()) {
+        if (!getFriend().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, friend_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getMemoBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, sourceType_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getScanCodeBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, friend_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getMemoBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, sourceType_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getScanCodeBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code barrage.PBAddUserFriendRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:barrage.PBAddUserFriendRequest)
+        com.orange.protocol.message.MessageProtos.PBAddUserFriendRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.class, com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.Builder.class);
+      }
+
+      // Construct using com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getFriendFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (friendBuilder_ == null) {
+          friend_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+        } else {
+          friendBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        memo_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sourceType_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        scanCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendRequest_descriptor;
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest getDefaultInstanceForType() {
+        return com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.getDefaultInstance();
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest build() {
+        com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest buildPartial() {
+        com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest result = new com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (friendBuilder_ == null) {
+          result.friend_ = friend_;
+        } else {
+          result.friend_ = friendBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.memo_ = memo_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.sourceType_ = sourceType_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.scanCode_ = scanCode_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest) {
+          return mergeFrom((com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest other) {
+        if (other == com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest.getDefaultInstance()) return this;
+        if (other.hasFriend()) {
+          mergeFriend(other.getFriend());
+        }
+        if (other.hasMemo()) {
+          bitField0_ |= 0x00000002;
+          memo_ = other.memo_;
+          onChanged();
+        }
+        if (other.hasSourceType()) {
+          setSourceType(other.getSourceType());
+        }
+        if (other.hasScanCode()) {
+          bitField0_ |= 0x00000008;
+          scanCode_ = other.scanCode_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (hasFriend()) {
+          if (!getFriend().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.orange.protocol.message.MessageProtos.PBAddUserFriendRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.orange.protocol.message.UserProtos.PBUser friend_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> friendBuilder_;
+      /**
+       * <code>optional .barrage.PBUser friend = 1;</code>
+       *
+       * <pre>
+       * 用户信息，非二维码扫描添加需要传递本信息
+       * </pre>
+       */
+      public boolean hasFriend() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .barrage.PBUser friend = 1;</code>
+       *
+       * <pre>
+       * 用户信息，非二维码扫描添加需要传递本信息
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser getFriend() {
+        if (friendBuilder_ == null) {
+          return friend_;
+        } else {
+          return friendBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .barrage.PBUser friend = 1;</code>
+       *
+       * <pre>
+       * 用户信息，非二维码扫描添加需要传递本信息
+       * </pre>
+       */
+      public Builder setFriend(com.orange.protocol.message.UserProtos.PBUser value) {
+        if (friendBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          friend_ = value;
+          onChanged();
+        } else {
+          friendBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser friend = 1;</code>
+       *
+       * <pre>
+       * 用户信息，非二维码扫描添加需要传递本信息
+       * </pre>
+       */
+      public Builder setFriend(
+          com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
+        if (friendBuilder_ == null) {
+          friend_ = builderForValue.build();
+          onChanged();
+        } else {
+          friendBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser friend = 1;</code>
+       *
+       * <pre>
+       * 用户信息，非二维码扫描添加需要传递本信息
+       * </pre>
+       */
+      public Builder mergeFriend(com.orange.protocol.message.UserProtos.PBUser value) {
+        if (friendBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              friend_ != com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance()) {
+            friend_ =
+              com.orange.protocol.message.UserProtos.PBUser.newBuilder(friend_).mergeFrom(value).buildPartial();
+          } else {
+            friend_ = value;
+          }
+          onChanged();
+        } else {
+          friendBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser friend = 1;</code>
+       *
+       * <pre>
+       * 用户信息，非二维码扫描添加需要传递本信息
+       * </pre>
+       */
+      public Builder clearFriend() {
+        if (friendBuilder_ == null) {
+          friend_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+          onChanged();
+        } else {
+          friendBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser friend = 1;</code>
+       *
+       * <pre>
+       * 用户信息，非二维码扫描添加需要传递本信息
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser.Builder getFriendBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getFriendFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .barrage.PBUser friend = 1;</code>
+       *
+       * <pre>
+       * 用户信息，非二维码扫描添加需要传递本信息
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserOrBuilder getFriendOrBuilder() {
+        if (friendBuilder_ != null) {
+          return friendBuilder_.getMessageOrBuilder();
+        } else {
+          return friend_;
+        }
+      }
+      /**
+       * <code>optional .barrage.PBUser friend = 1;</code>
+       *
+       * <pre>
+       * 用户信息，非二维码扫描添加需要传递本信息
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+          getFriendFieldBuilder() {
+        if (friendBuilder_ == null) {
+          friendBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder>(
+                  getFriend(),
+                  getParentForChildren(),
+                  isClean());
+          friend_ = null;
+        }
+        return friendBuilder_;
+      }
+
+      private java.lang.Object memo_ = "";
+      /**
+       * <code>optional string memo = 2;</code>
+       *
+       * <pre>
+       * 添加好友申请备注
+       * </pre>
+       */
+      public boolean hasMemo() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string memo = 2;</code>
+       *
+       * <pre>
+       * 添加好友申请备注
+       * </pre>
+       */
+      public java.lang.String getMemo() {
+        java.lang.Object ref = memo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            memo_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string memo = 2;</code>
+       *
+       * <pre>
+       * 添加好友申请备注
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getMemoBytes() {
+        java.lang.Object ref = memo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          memo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string memo = 2;</code>
+       *
+       * <pre>
+       * 添加好友申请备注
+       * </pre>
+       */
+      public Builder setMemo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        memo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string memo = 2;</code>
+       *
+       * <pre>
+       * 添加好友申请备注
+       * </pre>
+       */
+      public Builder clearMemo() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        memo_ = getDefaultInstance().getMemo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string memo = 2;</code>
+       *
+       * <pre>
+       * 添加好友申请备注
+       * </pre>
+       */
+      public Builder setMemoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        memo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int sourceType_ ;
+      /**
+       * <code>optional int32 sourceType = 3;</code>
+       *
+       * <pre>
+       * 来源，参考FriendAddSourceType
+       * </pre>
+       */
+      public boolean hasSourceType() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 sourceType = 3;</code>
+       *
+       * <pre>
+       * 来源，参考FriendAddSourceType
+       * </pre>
+       */
+      public int getSourceType() {
+        return sourceType_;
+      }
+      /**
+       * <code>optional int32 sourceType = 3;</code>
+       *
+       * <pre>
+       * 来源，参考FriendAddSourceType
+       * </pre>
+       */
+      public Builder setSourceType(int value) {
+        bitField0_ |= 0x00000004;
+        sourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 sourceType = 3;</code>
+       *
+       * <pre>
+       * 来源，参考FriendAddSourceType
+       * </pre>
+       */
+      public Builder clearSourceType() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        sourceType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object scanCode_ = "";
+      /**
+       * <code>optional string scanCode = 4;</code>
+       *
+       * <pre>
+       * 如果是二维码扫描，这个是扫描获得的扫描码
+       * </pre>
+       */
+      public boolean hasScanCode() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string scanCode = 4;</code>
+       *
+       * <pre>
+       * 如果是二维码扫描，这个是扫描获得的扫描码
+       * </pre>
+       */
+      public java.lang.String getScanCode() {
+        java.lang.Object ref = scanCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            scanCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string scanCode = 4;</code>
+       *
+       * <pre>
+       * 如果是二维码扫描，这个是扫描获得的扫描码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getScanCodeBytes() {
+        java.lang.Object ref = scanCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          scanCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string scanCode = 4;</code>
+       *
+       * <pre>
+       * 如果是二维码扫描，这个是扫描获得的扫描码
+       * </pre>
+       */
+      public Builder setScanCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        scanCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string scanCode = 4;</code>
+       *
+       * <pre>
+       * 如果是二维码扫描，这个是扫描获得的扫描码
+       * </pre>
+       */
+      public Builder clearScanCode() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        scanCode_ = getDefaultInstance().getScanCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string scanCode = 4;</code>
+       *
+       * <pre>
+       * 如果是二维码扫描，这个是扫描获得的扫描码
+       * </pre>
+       */
+      public Builder setScanCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        scanCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:barrage.PBAddUserFriendRequest)
+    }
+
+    static {
+      defaultInstance = new PBAddUserFriendRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:barrage.PBAddUserFriendRequest)
+  }
+
+  public interface PBAddUserFriendResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:barrage.PBAddUserFriendResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code barrage.PBAddUserFriendResponse}
+   */
+  public static final class PBAddUserFriendResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:barrage.PBAddUserFriendResponse)
+      PBAddUserFriendResponseOrBuilder {
+    // Use PBAddUserFriendResponse.newBuilder() to construct.
+    private PBAddUserFriendResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PBAddUserFriendResponse(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PBAddUserFriendResponse defaultInstance;
+    public static PBAddUserFriendResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PBAddUserFriendResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PBAddUserFriendResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendResponse_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.class, com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PBAddUserFriendResponse> PARSER =
+        new com.google.protobuf.AbstractParser<PBAddUserFriendResponse>() {
+      public PBAddUserFriendResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PBAddUserFriendResponse(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PBAddUserFriendResponse> getParserForType() {
+      return PARSER;
+    }
+
+    private void initFields() {
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code barrage.PBAddUserFriendResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:barrage.PBAddUserFriendResponse)
+        com.orange.protocol.message.MessageProtos.PBAddUserFriendResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendResponse_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.class, com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.Builder.class);
+      }
+
+      // Construct using com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.orange.protocol.message.MessageProtos.internal_static_barrage_PBAddUserFriendResponse_descriptor;
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse getDefaultInstanceForType() {
+        return com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.getDefaultInstance();
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse build() {
+        com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse buildPartial() {
+        com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse result = new com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse) {
+          return mergeFrom((com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse other) {
+        if (other == com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.orange.protocol.message.MessageProtos.PBAddUserFriendResponse) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:barrage.PBAddUserFriendResponse)
+    }
+
+    static {
+      defaultInstance = new PBAddUserFriendResponse(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:barrage.PBAddUserFriendResponse)
   }
 
   public interface PBGetUserFriendListRequestOrBuilder extends
@@ -27076,16 +27232,6 @@ public final class MessageProtos {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_barrage_PBUpdateUserInfoResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_barrage_PBAddUserFriendRequest_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_barrage_PBAddUserFriendRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_barrage_PBAddUserFriendResponse_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_barrage_PBAddUserFriendResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_barrage_PBAddUserTagRequest_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -27115,6 +27261,16 @@ public final class MessageProtos {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_barrage_PBGetUserTagListResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_barrage_PBAddUserFriendRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_barrage_PBAddUserFriendRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_barrage_PBAddUserFriendResponse_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_barrage_PBAddUserFriendResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_barrage_PBGetUserFriendListRequest_descriptor;
   private static
@@ -27200,111 +27356,112 @@ public final class MessageProtos {
       "\022\035\n\004user\030\001 \001(\0132\017.barrage.PBUser\"-\n\031PBGet" +
       "NewInviteCodeRequest\022\020\n\005count\030\001 \001(\005:\0011\"1" +
       "\n\032PBGetNewInviteCodeResponse\022\023\n\013inviteCo" +
-      "des\030\001 \003(\t\"&\n\023PBSearchUserRequest\022\017\n\007keyw" +
-      "ord\030\001 \002(\t\"5\n\024PBSearchUserResponse\022\035\n\004use" +
-      "r\030\001 \003(\0132\017.barrage.PBUser\"8\n\027PBUpdateUser" +
-      "InfoRequest\022\035\n\004user\030\001 \002(\0132\017.barrage.PBUs",
-      "er\"9\n\030PBUpdateUserInfoResponse\022\035\n\004user\030\001" +
-      " \001(\0132\017.barrage.PBUser\"m\n\026PBAddUserFriend" +
-      "Request\022\037\n\006friend\030\001 \001(\0132\017.barrage.PBUser" +
-      "\022\014\n\004memo\030\002 \001(\t\022\022\n\nsourceType\030\003 \001(\005\022\020\n\010sc" +
-      "anCode\030\004 \001(\t\"\031\n\027PBAddUserFriendResponse\"" +
-      "6\n\023PBAddUserTagRequest\022\037\n\003tag\030\001 \002(\0132\022.ba" +
-      "rrage.PBUserTag\"<\n\024PBAddUserTagResponse\022" +
-      "$\n\004tags\030\001 \001(\0132\026.barrage.PBUserTagList\"9\n" +
-      "\026PBDeleteUserTagRequest\022\037\n\003tag\030\001 \002(\0132\022.b" +
-      "arrage.PBUserTag\"?\n\027PBDeleteUserTagRespo",
-      "nse\022$\n\004tags\030\001 \001(\0132\026.barrage.PBUserTagLis" +
-      "t\"\031\n\027PBGetUserTagListRequest\"@\n\030PBGetUse" +
-      "rTagListResponse\022$\n\004tags\030\001 \001(\0132\026.barrage" +
-      ".PBUserTagList\"=\n\032PBGetUserFriendListReq" +
-      "uest\022\037\n\003tag\030\001 \001(\0132\022.barrage.PBUserTag\"I\n" +
-      "\033PBGetUserFriendListResponse\022*\n\007friends\030" +
-      "\001 \001(\0132\031.barrage.PBUserFriendList\"S\n\032PBPr" +
-      "ocessUserFriendRequest\022\020\n\010friendId\030\001 \002(\t" +
-      "\022\025\n\rprocessResult\030\002 \001(\005\022\014\n\004memo\030\003 \001(\t\"?\n" +
-      "\033PBProcessUserFriendResponse\022 \n\007friends\030",
-      "\001 \001(\0132\017.barrage.PBUser\"4\n\023PBCreateFeedRe" +
-      "quest\022\035\n\004feed\030\001 \002(\0132\017.barrage.PBFeed\"&\n\024" +
-      "PBCreateFeedResponse\022\016\n\006feedId\030\001 \001(\t\";\n\022" +
-      "PBReplyFeedRequest\022%\n\006action\030\001 \002(\0132\025.bar" +
-      "rage.PBFeedAction\"<\n\023PBReplyFeedResponse" +
-      "\022%\n\006action\030\001 \002(\0132\025.barrage.PBFeedAction\"" +
-      "G\n\034PBGetUserTimelineFeedRequest\022\024\n\014offse" +
-      "tFeedId\030\001 \001(\t\022\021\n\005limit\030\002 \001(\005:\00220\"?\n\035PBGe" +
-      "tUserTimelineFeedResponse\022\036\n\005feeds\030\001 \003(\013" +
-      "2\017.barrage.PBFeed\"\354\010\n\rPBDataRequest\022\014\n\004t",
-      "ype\030\001 \002(\005\022\021\n\trequestId\030\002 \001(\005\022\017\n\007version\030" +
-      "\003 \001(\005\022\016\n\006userId\030\004 \001(\t\022!\n\006device\030\036 \001(\0132\021." +
-      "barrage.PBDevice\022\023\n\013countryCode\030\037 \001(\t\022\024\n" +
-      "\014languageCode\030  \001(\t\022\022\n\nclientDate\030! \001(\005\022" +
-      "5\n\020loginUserRequest\030( \001(\0132\033.barrage.PBLo" +
-      "ginUserRequest\022;\n\023registerUserRequest\030) " +
-      "\001(\0132\036.barrage.PBRegisterUserRequest\0227\n\021s" +
-      "earchUserRequest\030* \001(\0132\034.barrage.PBSearc" +
-      "hUserRequest\022?\n\025updateUserInfoRequest\030+ " +
-      "\001(\0132 .barrage.PBUpdateUserInfoRequest\022=\n",
-      "\024addUserFriendRequest\030, \001(\0132\037.barrage.PB" +
-      "AddUserFriendRequest\022E\n\030getUserFriendLis" +
-      "tRequest\030- \001(\0132#.barrage.PBGetUserFriend" +
-      "ListRequest\022C\n\027verifyInviteCodeRequest\030." +
-      " \001(\0132\".barrage.PBVerifyInviteCodeRequest" +
-      "\022E\n\030processUserFriendRequest\030/ \001(\0132#.bar" +
-      "rage.PBProcessUserFriendRequest\022C\n\027getNe" +
-      "wInviteCodeRequest\0300 \001(\0132\".barrage.PBGet" +
-      "NewInviteCodeRequest\0227\n\021addUserTagReques" +
-      "t\0301 \001(\0132\034.barrage.PBAddUserTagRequest\022=\n",
-      "\024deleteUserTagRequest\0302 \001(\0132\037.barrage.PB" +
-      "DeleteUserTagRequest\022?\n\025getUserTagListRe" +
-      "quest\0303 \001(\0132 .barrage.PBGetUserTagListRe" +
-      "quest\0227\n\021createFeedRequest\030< \001(\0132\034.barra" +
-      "ge.PBCreateFeedRequest\0225\n\020replyFeedReque" +
-      "st\030= \001(\0132\033.barrage.PBReplyFeedRequest\022I\n" +
-      "\032getUserTimelineFeedRequest\030> \001(\0132%.barr" +
-      "age.PBGetUserTimelineFeedRequest\"\312\010\n\016PBD" +
-      "ataResponse\022\025\n\nresultCode\030\001 \002(\005:\0010\022\021\n\tre" +
-      "questId\030\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\022\n\ntotalC",
-      "ount\030\004 \001(\005\022\022\n\nstringData\030\005 \001(\t\0227\n\021loginU" +
-      "serResponse\030( \001(\0132\034.barrage.PBLoginUserR" +
-      "esponse\022=\n\024registerUserResponse\030) \001(\0132\037." +
-      "barrage.PBRegisterUserResponse\0229\n\022search" +
-      "UserResponse\030* \001(\0132\035.barrage.PBSearchUse" +
-      "rResponse\022A\n\026updateUserInfoResponse\030+ \001(" +
-      "\0132!.barrage.PBUpdateUserInfoResponse\022?\n\025" +
-      "addUserFriendResponse\030, \001(\0132 .barrage.PB" +
-      "AddUserFriendResponse\022G\n\031getUserFriendLi" +
-      "stResponse\030- \001(\0132$.barrage.PBGetUserFrie",
-      "ndListResponse\022E\n\030verifyInviteCodeRespon" +
-      "se\030. \001(\0132#.barrage.PBVerifyInviteCodeRes" +
-      "ponse\022G\n\031processUserFriendResponse\030/ \001(\013" +
-      "2$.barrage.PBProcessUserFriendResponse\022E" +
-      "\n\030getNewInviteCodeResponse\0300 \001(\0132#.barra" +
-      "ge.PBGetNewInviteCodeResponse\0229\n\022addUser" +
-      "TagResponse\0301 \001(\0132\035.barrage.PBAddUserTag" +
-      "Response\022?\n\025deleteUserTagResponse\0302 \001(\0132" +
-      " .barrage.PBDeleteUserTagResponse\022A\n\026get" +
-      "UserTagListResponse\0303 \001(\0132!.barrage.PBGe",
-      "tUserTagListResponse\0229\n\022createFeedRespon" +
-      "se\030< \001(\0132\035.barrage.PBCreateFeedResponse\022" +
-      "7\n\021replyFeedResponse\030= \001(\0132\034.barrage.PBR" +
-      "eplyFeedResponse\022K\n\033getUserTimelineFeedR" +
-      "esponse\030> \001(\0132&.barrage.PBGetUserTimelin" +
-      "eFeedResponse*Q\n\031PBProcessFriendResultTy" +
-      "pe\022\021\n\rACCEPT_FRIEND\020\000\022\021\n\rREJECT_FRIEND\020\001" +
-      "\022\016\n\nREPLY_MEMO\020\002*\351\003\n\rPBMessageType\022\026\n\022ME" +
-      "SSAGE_LOGIN_USER\020\001\022\031\n\025MESSAGE_REGISTER_U" +
-      "SER\020\002\022\027\n\023MESSAGE_SEARCH_USER\020\003\022\034\n\030MESSAG",
-      "E_UPDATE_USER_INFO\020\004\022\033\n\027MESSAGE_ADD_USER" +
-      "_FRIEND\020\005\022 \n\034MESSAGE_GET_USER_FRIEND_LIS" +
-      "T\020\006\022\037\n\033MESSAGE_PROCESS_USER_FRIEND\020\007\022\036\n\032" +
-      "MESSAGE_VERIFY_INVITE_CODE\020\010\022\037\n\033MESSAGE_" +
-      "GET_NEW_INVITE_CODE\020\t\022\030\n\024MESSAGE_ADD_USE" +
-      "R_TAG\020\n\022\033\n\027MESSAGE_DELETE_USER_TAG\020\013\022\035\n\031" +
-      "MESSAGE_GET_USER_TAG_LIST\020\014\022\027\n\023MESSAGE_C" +
-      "REATE_FEED\020\036\022\026\n\022MESSAGE_REPLY_FEED\020\037\022\"\n\036" +
-      "MESSAGE_GET_USER_TIMELINE_FEED\020 \022\"\n\036MESS" +
-      "AGE_GET_QINIU_UPLOAD_TOKEN\020dB,\n\033com.oran",
-      "ge.protocol.messageB\rMessageProtos"
+      "des\030\001 \003(\t\"I\n\023PBSearchUserRequest\022\017\n\007keyw" +
+      "ord\030\001 \002(\t\022\016\n\006offset\030\002 \001(\005\022\021\n\005limit\030\003 \001(\005" +
+      ":\00230\"5\n\024PBSearchUserResponse\022\035\n\004user\030\001 \003" +
+      "(\0132\017.barrage.PBUser\"8\n\027PBUpdateUserInfoR",
+      "equest\022\035\n\004user\030\001 \002(\0132\017.barrage.PBUser\"9\n" +
+      "\030PBUpdateUserInfoResponse\022\035\n\004user\030\001 \001(\0132" +
+      "\017.barrage.PBUser\"6\n\023PBAddUserTagRequest\022" +
+      "\037\n\003tag\030\001 \002(\0132\022.barrage.PBUserTag\"<\n\024PBAd" +
+      "dUserTagResponse\022$\n\004tags\030\001 \001(\0132\026.barrage" +
+      ".PBUserTagList\"9\n\026PBDeleteUserTagRequest" +
+      "\022\037\n\003tag\030\001 \002(\0132\022.barrage.PBUserTag\"?\n\027PBD" +
+      "eleteUserTagResponse\022$\n\004tags\030\001 \001(\0132\026.bar" +
+      "rage.PBUserTagList\"\031\n\027PBGetUserTagListRe" +
+      "quest\"@\n\030PBGetUserTagListResponse\022$\n\004tag",
+      "s\030\001 \001(\0132\026.barrage.PBUserTagList\"m\n\026PBAdd" +
+      "UserFriendRequest\022\037\n\006friend\030\001 \001(\0132\017.barr" +
+      "age.PBUser\022\014\n\004memo\030\002 \001(\t\022\022\n\nsourceType\030\003" +
+      " \001(\005\022\020\n\010scanCode\030\004 \001(\t\"\031\n\027PBAddUserFrien" +
+      "dResponse\"=\n\032PBGetUserFriendListRequest\022" +
+      "\037\n\003tag\030\001 \001(\0132\022.barrage.PBUserTag\"I\n\033PBGe" +
+      "tUserFriendListResponse\022*\n\007friends\030\001 \001(\013" +
+      "2\031.barrage.PBUserFriendList\"S\n\032PBProcess" +
+      "UserFriendRequest\022\020\n\010friendId\030\001 \002(\t\022\025\n\rp" +
+      "rocessResult\030\002 \001(\005\022\014\n\004memo\030\003 \001(\t\"?\n\033PBPr",
+      "ocessUserFriendResponse\022 \n\007friends\030\001 \001(\013" +
+      "2\017.barrage.PBUser\"4\n\023PBCreateFeedRequest" +
+      "\022\035\n\004feed\030\001 \002(\0132\017.barrage.PBFeed\"&\n\024PBCre" +
+      "ateFeedResponse\022\016\n\006feedId\030\001 \001(\t\";\n\022PBRep" +
+      "lyFeedRequest\022%\n\006action\030\001 \002(\0132\025.barrage." +
+      "PBFeedAction\"<\n\023PBReplyFeedResponse\022%\n\006a" +
+      "ction\030\001 \002(\0132\025.barrage.PBFeedAction\"G\n\034PB" +
+      "GetUserTimelineFeedRequest\022\024\n\014offsetFeed" +
+      "Id\030\001 \001(\t\022\021\n\005limit\030\002 \001(\005:\00220\"?\n\035PBGetUser" +
+      "TimelineFeedResponse\022\036\n\005feeds\030\001 \003(\0132\017.ba",
+      "rrage.PBFeed\"\354\010\n\rPBDataRequest\022\014\n\004type\030\001" +
+      " \002(\005\022\021\n\trequestId\030\002 \001(\005\022\017\n\007version\030\003 \001(\005" +
+      "\022\016\n\006userId\030\004 \001(\t\022!\n\006device\030\036 \001(\0132\021.barra" +
+      "ge.PBDevice\022\023\n\013countryCode\030\037 \001(\t\022\024\n\014lang" +
+      "uageCode\030  \001(\t\022\022\n\nclientDate\030! \001(\005\0225\n\020lo" +
+      "ginUserRequest\030( \001(\0132\033.barrage.PBLoginUs" +
+      "erRequest\022;\n\023registerUserRequest\030) \001(\0132\036" +
+      ".barrage.PBRegisterUserRequest\0227\n\021search" +
+      "UserRequest\030* \001(\0132\034.barrage.PBSearchUser" +
+      "Request\022?\n\025updateUserInfoRequest\030+ \001(\0132 ",
+      ".barrage.PBUpdateUserInfoRequest\022=\n\024addU" +
+      "serFriendRequest\030, \001(\0132\037.barrage.PBAddUs" +
+      "erFriendRequest\022E\n\030getUserFriendListRequ" +
+      "est\030- \001(\0132#.barrage.PBGetUserFriendListR" +
+      "equest\022C\n\027verifyInviteCodeRequest\030. \001(\0132" +
+      "\".barrage.PBVerifyInviteCodeRequest\022E\n\030p" +
+      "rocessUserFriendRequest\030/ \001(\0132#.barrage." +
+      "PBProcessUserFriendRequest\022C\n\027getNewInvi" +
+      "teCodeRequest\0300 \001(\0132\".barrage.PBGetNewIn" +
+      "viteCodeRequest\0227\n\021addUserTagRequest\0301 \001",
+      "(\0132\034.barrage.PBAddUserTagRequest\022=\n\024dele" +
+      "teUserTagRequest\0302 \001(\0132\037.barrage.PBDelet" +
+      "eUserTagRequest\022?\n\025getUserTagListRequest" +
+      "\0303 \001(\0132 .barrage.PBGetUserTagListRequest" +
+      "\0227\n\021createFeedRequest\030< \001(\0132\034.barrage.PB" +
+      "CreateFeedRequest\0225\n\020replyFeedRequest\030= " +
+      "\001(\0132\033.barrage.PBReplyFeedRequest\022I\n\032getU" +
+      "serTimelineFeedRequest\030> \001(\0132%.barrage.P" +
+      "BGetUserTimelineFeedRequest\"\312\010\n\016PBDataRe" +
+      "sponse\022\025\n\nresultCode\030\001 \002(\005:\0010\022\021\n\trequest",
+      "Id\030\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\022\n\ntotalCount\030" +
+      "\004 \001(\005\022\022\n\nstringData\030\005 \001(\t\0227\n\021loginUserRe" +
+      "sponse\030( \001(\0132\034.barrage.PBLoginUserRespon" +
+      "se\022=\n\024registerUserResponse\030) \001(\0132\037.barra" +
+      "ge.PBRegisterUserResponse\0229\n\022searchUserR" +
+      "esponse\030* \001(\0132\035.barrage.PBSearchUserResp" +
+      "onse\022A\n\026updateUserInfoResponse\030+ \001(\0132!.b" +
+      "arrage.PBUpdateUserInfoResponse\022?\n\025addUs" +
+      "erFriendResponse\030, \001(\0132 .barrage.PBAddUs" +
+      "erFriendResponse\022G\n\031getUserFriendListRes",
+      "ponse\030- \001(\0132$.barrage.PBGetUserFriendLis" +
+      "tResponse\022E\n\030verifyInviteCodeResponse\030. " +
+      "\001(\0132#.barrage.PBVerifyInviteCodeResponse" +
+      "\022G\n\031processUserFriendResponse\030/ \001(\0132$.ba" +
+      "rrage.PBProcessUserFriendResponse\022E\n\030get" +
+      "NewInviteCodeResponse\0300 \001(\0132#.barrage.PB" +
+      "GetNewInviteCodeResponse\0229\n\022addUserTagRe" +
+      "sponse\0301 \001(\0132\035.barrage.PBAddUserTagRespo" +
+      "nse\022?\n\025deleteUserTagResponse\0302 \001(\0132 .bar" +
+      "rage.PBDeleteUserTagResponse\022A\n\026getUserT",
+      "agListResponse\0303 \001(\0132!.barrage.PBGetUser" +
+      "TagListResponse\0229\n\022createFeedResponse\030< " +
+      "\001(\0132\035.barrage.PBCreateFeedResponse\0227\n\021re" +
+      "plyFeedResponse\030= \001(\0132\034.barrage.PBReplyF" +
+      "eedResponse\022K\n\033getUserTimelineFeedRespon" +
+      "se\030> \001(\0132&.barrage.PBGetUserTimelineFeed" +
+      "Response*Q\n\031PBProcessFriendResultType\022\021\n" +
+      "\rACCEPT_FRIEND\020\000\022\021\n\rREJECT_FRIEND\020\001\022\016\n\nR" +
+      "EPLY_MEMO\020\002*\351\003\n\rPBMessageType\022\026\n\022MESSAGE" +
+      "_LOGIN_USER\020\001\022\031\n\025MESSAGE_REGISTER_USER\020\002",
+      "\022\027\n\023MESSAGE_SEARCH_USER\020\003\022\034\n\030MESSAGE_UPD" +
+      "ATE_USER_INFO\020\004\022\033\n\027MESSAGE_ADD_USER_FRIE" +
+      "ND\020\005\022 \n\034MESSAGE_GET_USER_FRIEND_LIST\020\006\022\037" +
+      "\n\033MESSAGE_PROCESS_USER_FRIEND\020\007\022\036\n\032MESSA" +
+      "GE_VERIFY_INVITE_CODE\020\010\022\037\n\033MESSAGE_GET_N" +
+      "EW_INVITE_CODE\020\t\022\030\n\024MESSAGE_ADD_USER_TAG" +
+      "\020\n\022\033\n\027MESSAGE_DELETE_USER_TAG\020\013\022\035\n\031MESSA" +
+      "GE_GET_USER_TAG_LIST\020\014\022\027\n\023MESSAGE_CREATE" +
+      "_FEED\020\036\022\026\n\022MESSAGE_REPLY_FEED\020\037\022\"\n\036MESSA" +
+      "GE_GET_USER_TIMELINE_FEED\020 \022\"\n\036MESSAGE_G",
+      "ET_QINIU_UPLOAD_TOKEN\020dB,\n\033com.orange.pr" +
+      "otocol.messageB\rMessageProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -27374,7 +27531,7 @@ public final class MessageProtos {
     internal_static_barrage_PBSearchUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBSearchUserRequest_descriptor,
-        new java.lang.String[] { "Keyword", });
+        new java.lang.String[] { "Keyword", "Offset", "Limit", });
     internal_static_barrage_PBSearchUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_barrage_PBSearchUserResponse_fieldAccessorTable = new
@@ -27393,54 +27550,54 @@ public final class MessageProtos {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBUpdateUserInfoResponse_descriptor,
         new java.lang.String[] { "User", });
-    internal_static_barrage_PBAddUserFriendRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_barrage_PBAddUserFriendRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_barrage_PBAddUserFriendRequest_descriptor,
-        new java.lang.String[] { "Friend", "Memo", "SourceType", "ScanCode", });
-    internal_static_barrage_PBAddUserFriendResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_barrage_PBAddUserFriendResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_barrage_PBAddUserFriendResponse_descriptor,
-        new java.lang.String[] { });
     internal_static_barrage_PBAddUserTagRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_barrage_PBAddUserTagRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBAddUserTagRequest_descriptor,
         new java.lang.String[] { "Tag", });
     internal_static_barrage_PBAddUserTagResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_barrage_PBAddUserTagResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBAddUserTagResponse_descriptor,
         new java.lang.String[] { "Tags", });
     internal_static_barrage_PBDeleteUserTagRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_barrage_PBDeleteUserTagRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBDeleteUserTagRequest_descriptor,
         new java.lang.String[] { "Tag", });
     internal_static_barrage_PBDeleteUserTagResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_barrage_PBDeleteUserTagResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBDeleteUserTagResponse_descriptor,
         new java.lang.String[] { "Tags", });
     internal_static_barrage_PBGetUserTagListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_barrage_PBGetUserTagListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBGetUserTagListRequest_descriptor,
         new java.lang.String[] { });
     internal_static_barrage_PBGetUserTagListResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_barrage_PBGetUserTagListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBGetUserTagListResponse_descriptor,
         new java.lang.String[] { "Tags", });
+    internal_static_barrage_PBAddUserFriendRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_barrage_PBAddUserFriendRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_barrage_PBAddUserFriendRequest_descriptor,
+        new java.lang.String[] { "Friend", "Memo", "SourceType", "ScanCode", });
+    internal_static_barrage_PBAddUserFriendResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_barrage_PBAddUserFriendResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_barrage_PBAddUserFriendResponse_descriptor,
+        new java.lang.String[] { });
     internal_static_barrage_PBGetUserFriendListRequest_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_barrage_PBGetUserFriendListRequest_fieldAccessorTable = new

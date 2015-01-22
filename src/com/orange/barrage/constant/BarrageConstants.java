@@ -1,9 +1,13 @@
 package com.orange.barrage.constant;
 
+import com.mongodb.DBObject;
+
 /**
  * Created by pipi on 14/12/2.
  */
 public class BarrageConstants {
+
+    public static final String F_ID = "_id";
 
     public static final String F_USER_ID = "userId";
     public static final String T_USER = "user";
@@ -35,6 +39,11 @@ public class BarrageConstants {
     public static final String F_AVATAR_BG = "avatarBg";
     public static final String F_GENDER = "gender";
 
+    public static final String F_SNS_USERS = "snsUsers";
+    public static final String F_SINA_NICK = "sina_nick";
+    public static final String F_QQ_NICK = "qq_nick";
+    public static final String F_WEIXIN_NICK = "weixin_nick";
+
     public static final String F_MOBILE = "mobile";
     public static final String F_WEIXIN_ID = "weixinId";
     public static final String F_SINA_ID = "sinaId";
@@ -42,4 +51,16 @@ public class BarrageConstants {
     public static final String F_PASSWORD = "password";
     public static final String F_TAG_LIST = "tags";
     public static final String F_MODIFY_DATE = "mDate";
+
+    public static final int C_SHARE_WEIBO = 1;
+    public static final int C_SHARE_QQ_ZONE = 9;
+    public static final int C_SHARE_QQ = 24;
+    public static final int C_SHARE_WEIXIN_TIMELINE = 22;
+    public static final int C_SHARE_WEIXIN_SESSION = 23;
+
+    // elastic search index name & type
+    public static final String ES_INDEX_NAME_BARRAGE = "barrage";       // like DB name
+    public static final String ES_INDEX_TYPE_USER = "user";             // like table name
+    public static final String ES_INDEX_TYPE_FEED = "feed";
+    public static final String ES_INDEX_TYPE_FEED_ACTION = "feed_action";
 }

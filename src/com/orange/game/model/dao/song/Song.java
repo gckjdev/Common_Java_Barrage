@@ -12,6 +12,7 @@ import com.orange.game.model.manager.utils.SongLyricDownloadManager;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Song extends CommonData implements ESORMable {
@@ -208,6 +209,11 @@ public class Song extends CommonData implements ESORMable {
     @Override
     public String getID() {
         return getStringObjectId();
+    }
+
+    @Override
+    public List<String> fieldsForIndex() {
+        return null;
     }
 
     @Override

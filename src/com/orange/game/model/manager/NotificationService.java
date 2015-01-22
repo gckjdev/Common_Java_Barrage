@@ -31,7 +31,6 @@ import com.relayrides.pushy.apns.util.SimpleApnsPushNotification;
 import com.relayrides.pushy.apns.util.TokenUtil;
 import io.netty.util.internal.ConcurrentSet;
 import org.apache.log4j.Logger;
-import org.elasticsearch.common.util.concurrent.jsr166y.ConcurrentLinkedDeque;
 
 import javax.net.ssl.SSLHandshakeException;
 

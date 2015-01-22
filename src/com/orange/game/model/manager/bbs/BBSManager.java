@@ -21,7 +21,6 @@ import com.orange.game.model.manager.stat.ShareStatManager;
 import com.orange.game.model.service.DBService;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
-import org.eclipse.jetty.util.log.Log;
 
 import java.util.*;
 
@@ -369,7 +368,7 @@ public class BBSManager extends CommonManager {
 
         BBSUserPostManager.getInstance(mode).insertIndex(user.getUserId(), post.getPostId());
         updateBoardInfo(mongoClient, boardId, post, mode);
-        ElasticsearchService.addOrUpdateIndexIntoES(post, mongoClient);
+        ElasticsearchService.addOrUpdateIndex(post, mongoClient);
 
         if (mode == MODE_BBS) {
             BBSBoardPostManager bbsBoardPostManager = BBSBoardPostManager.managerForBoard(boardId);
@@ -405,7 +404,7 @@ public class BBSManager extends CommonManager {
 
         BBSUserPostManager.getInstance(mode).insertIndex(user.getUserId(), post.getPostId());
         updateBoardInfo(mongoClient, boardId, post, mode);
-        ElasticsearchService.addOrUpdateIndexIntoES(post, mongoClient);
+        ElasticsearchService.addOrUpdateIndex(post, mongoClient);
 
         if (mode == MODE_BBS) {
             BBSBoardPostManager bbsBoardPostManager = BBSBoardPostManager.managerForBoard(boardId);
@@ -682,7 +681,7 @@ public class BBSManager extends CommonManager {
             }
             increacePostCountOnBoard(mongoClient, bid, 1, mode);
             BBSUserPostManager.getInstance(mode).insertId(userId, postId, CommonMongoIdListManager.NOT_ALLOW_DUPLICATE, false, false);
-            ElasticsearchService.addOrUpdateIndexIntoES(post, mongoClient);
+            ElasticsearchService.addOrUpdateIndex(post, mongoClient);
         }
     }
 
@@ -723,7 +722,7 @@ public class BBSManager extends CommonManager {
             }
             increacePostCountOnBoard(mongoClient, bid, -1, mode);
             BBSUserPostManager.getInstance(mode).removeId(userId, postId, true);
-            ElasticsearchService.deleteItemFromES(post, mongoClient);
+            ElasticsearchService.deleteIndex(post, mongoClient);
         }
     }
 
@@ -1138,7 +1137,7 @@ public class BBSManager extends CommonManager {
             log.info("<updatePostText> done, update ES index.");
             BBSPost post = new BBSPost(obj);
             post.setMode(mode);
-            ElasticsearchService.addOrUpdateIndexIntoES(post, mongoClient);
+            ElasticsearchService.addOrUpdateIndex(post, mongoClient);
         }
     }
 

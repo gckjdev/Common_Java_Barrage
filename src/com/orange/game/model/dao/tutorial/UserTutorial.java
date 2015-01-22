@@ -12,6 +12,7 @@ import com.orange.network.game.protocol.model.TutorialProtos;
 import org.bson.types.ObjectId;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -41,6 +42,11 @@ public class UserTutorial extends CommonData implements ProtoBufCoding<TutorialP
     }
 
     public String getID() {
+        return null;
+    }
+
+    @Override
+    public List<String> fieldsForIndex() {
         return null;
     }
 

@@ -13,6 +13,8 @@ import com.orange.protocol.message.BarrageProtos;
 import com.orange.protocol.message.UserProtos;
 import org.bson.types.ObjectId;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,31 +35,45 @@ public class Feed extends CommonData  implements ProtoBufCoding<BarrageProtos.PB
     }
 
     public String getESIndexType() {
-        return null;
+        return BarrageConstants.ES_INDEX_TYPE_FEED;
     }
 
-    public String getESIndexName() {
-        return null;
+    @Override
+    public List<String> fieldsForIndex() {
+        List<String> list = new ArrayList<String>();
+
+        list.add(BarrageConstants.F_FEED_ID);
+
+        // TODO more fields
+
+        return list;
     }
 
-    public String getID() {
-        return null;
-    }
 
     public boolean hasFieldForSearch() {
+        if (dbObject == null)
+            return false;
+
+        List<String> fields = fieldsForIndex();
+        for (String field : fields){
+            if (dbObject.containsField(field)){
+                return true;
+            }
+        }
+
         return false;
     }
 
     public boolean canBeIndexed() {
-        return false;
+        return true;
     }
 
     public ObjectId getKey() {
-        return null;
+        return getObjectId();
     }
 
     public Feed getValue() {
-        return null;
+        return this;
     }
 
     public BarrageProtos.PBFeed toProtoBufModel() {

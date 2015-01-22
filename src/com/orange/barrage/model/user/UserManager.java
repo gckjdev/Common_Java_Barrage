@@ -5,10 +5,16 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.orange.barrage.common.CommonModelManager;
 import com.orange.barrage.constant.BarrageConstants;
+import com.orange.common.mongodb.MongoDBClient;
+import com.orange.game.api.service.ElasticsearchService;
 import com.orange.game.constants.DBConstants;
+import com.orange.game.model.common.MongoGetIdListUtils;
+import com.orange.game.model.manager.RelationManager;
 import com.orange.protocol.message.MessageProtos;
 import com.orange.protocol.message.UserProtos;
 import org.bson.types.ObjectId;
+
+import java.util.*;
 
 /**
  * Created by pipi on 14/12/2.
@@ -89,6 +95,9 @@ public class UserManager extends CommonModelManager<User> {
             User user = new User(obj);
             UserProtos.PBUser retPBUser = user.toProtoBufModel();
             builder.setUser(retPBUser);
+
+            // update elastic search user index
+            ElasticsearchService.addOrUpdateIndex(user, mongoDBClient);
         }
 
         return 0;
@@ -106,6 +115,27 @@ public class UserManager extends CommonModelManager<User> {
 
         log.info("create user = "+obj.toString());
         mongoDBClient.insert(BarrageConstants.T_USER, obj);
-        return new User(obj);
+
+        User retUser = new User(obj);
+
+        // index use in Elastic Search
+        ElasticsearchService.addOrUpdateIndex(retUser, mongoDBClient);
+        return retUser;
+    }
+
+    public static List<User> findPublicUserInfoByUserIdList(String userId,
+                                                            List<ObjectId> targetUserIdList,
+                                                            boolean isReturnRelation) {
+
+        BasicDBObject returnFields = User.getPublicReturnFields();
+        MongoGetIdListUtils<User> utils = new MongoGetIdListUtils<User>();
+        return utils.getList(mongoDBClient,
+                BarrageConstants.T_USER,
+                BarrageConstants.F_ID,
+                null,
+                0,
+                targetUserIdList,
+                returnFields,
+                User.class);
     }
 }

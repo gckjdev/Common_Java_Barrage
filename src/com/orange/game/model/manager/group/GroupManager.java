@@ -119,7 +119,7 @@ public class GroupManager extends CommonManager {
             log.info("<createGroup> successfully! name = " + name);
 
             //make ES index
-            ElasticsearchService.addOrUpdateIndexIntoES(group, mongoClient);
+            ElasticsearchService.addOrUpdateIndex(group, mongoClient);
 
             //load member for return
             group.loadAdminsAndGuests(mongoClient);
@@ -321,7 +321,7 @@ public class GroupManager extends CommonManager {
         if (obj != null) {
             log.info("EditGroup done!! update group index in ES");
             group = new Group(obj);
-            ElasticsearchService.addOrUpdateIndexIntoES(group, mongoClient);
+            ElasticsearchService.addOrUpdateIndex(group, mongoClient);
         }
 
         return 0;

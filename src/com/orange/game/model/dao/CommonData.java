@@ -26,7 +26,7 @@ import com.mongodb.DBObject;
 
 public class CommonData {
 
-	DBObject dbObject;
+	protected DBObject dbObject;
 	public static final Logger log = Logger.getLogger(CommonData.class.getName());
 	
 
@@ -406,4 +406,13 @@ public class CommonData {
 
         return id.toString();
     }
+
+    public String getESIndexName() {
+        return BarrageConstants.ES_INDEX_NAME_BARRAGE;
+    }
+
+    public String getID() {
+        return getStringObjectId();
+    }
+
 }

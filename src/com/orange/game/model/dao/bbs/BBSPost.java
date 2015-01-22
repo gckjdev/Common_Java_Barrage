@@ -2,6 +2,7 @@ package com.orange.game.model.dao.bbs;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.orange.common.elasticsearch.ESORMable;
@@ -234,6 +235,11 @@ public class BBSPost extends CommonData implements ESORMable {
     @Override
     public String getID() {
         return getStringObjectId();
+    }
+
+    @Override
+    public List<String> fieldsForIndex() {
+        return null;
     }
 
 

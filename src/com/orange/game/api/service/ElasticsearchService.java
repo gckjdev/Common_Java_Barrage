@@ -1,5 +1,6 @@
 package com.orange.game.api.service;
 
+import com.orange.barrage.common.CommonModelService;
 import com.orange.common.utils.StringUtil;
 
 import com.mongodb.BasicDBObject;
@@ -22,9 +23,9 @@ import org.elasticsearch.search.SearchHit;
 import java.util.*;
 
 
-public class ElasticsearchService {
+public class ElasticsearchService extends CommonModelService {
 
-    public static boolean addOrUpdateIndexIntoES(final ESORMable model, final MongoDBClient mongoClient) {
+    public static boolean addOrUpdateIndex(final ESORMable model, final MongoDBClient mongoClient) {
 
         if (model == null) {
             return false;
@@ -39,19 +40,19 @@ public class ElasticsearchService {
             try {
                 json = mapper.writeValueAsString(dataBean);
             } catch (Exception e) {
-                ServerLog.info(0, "Failed to index into elasticsearch. e = " + e);
+                log.error("<addOrUpdateIndex> catch exception = " + e, e);
                 return false;
             }
-            return ESIndexBuilder.indexByRawAPI(json, model.getESIndexName(), model.getESIndexType(), model.getID());
+            return ESIndexBuilder.createIndex(json, model.getESIndexName(), model.getESIndexType(), model.getID());
         } catch (Exception e) {
-            ServerLog.error(0, e, "<addOrUpdateUserIndexIntoES> exception. e = " + e);
+            log.error("<addOrUpdateIndex> catch exception = " + e, e);
             return false;
         }
     }
 
-    public static boolean deleteItemFromES(ESORMable model, MongoDBClient mongoDBClient) {
+    public static boolean deleteIndex(ESORMable model, MongoDBClient mongoDBClient) {
         if (model != null) {
-            return ESIndexBuilder.deleteByRawAPI(model.getESIndexName(), model.getESIndexType(), model.getID());
+            return ESIndexBuilder.deleteIndex(model.getESIndexName(), model.getESIndexType(), model.getID());
         }
         return false;
     }
@@ -76,7 +77,7 @@ public class ElasticsearchService {
                     T model = clazz.newInstance();
                     model.setDbObject(dbObject);
 
-                    if (model.canBeIndexed() && addOrUpdateIndexIntoES(model, dbClient)) {
+                    if (model.canBeIndexed() && addOrUpdateIndex(model, dbClient)) {
                         successCount++;
                     }
                     doneCount++;
@@ -105,21 +106,31 @@ public class ElasticsearchService {
         }
     }
 
-    public static List<ObjectId> search(String keyString, List<String> candidateFields, String returnFieldName, String filterKey, String filterValue, int offset, int limit, String... indexType) {
+    public static List<ObjectId> search(String keyString,
+                                        List<String> candidateFields,
+                                        String returnFieldName,
+                                        String filterKey,
+                                        String filterValue,
+                                        int offset,
+                                        int limit,
+                                        String... indexType) {
+
         if (StringUtil.isEmpty(keyString) || candidateFields == null || candidateFields.isEmpty()) {
+            log.warn("<search> but key or fields is empty or null");
             return Collections.emptyList();
         }
+
         SearchResponse searchResponse = ESQueryBuilder.searchByQueryString(
                 DBConstants.ES_INDEX_NAME, candidateFields, keyString, filterKey, filterValue, offset, limit, indexType);
 
-        if (searchResponse != null && searchResponse.hits() != null) {
-            long totalHits = searchResponse.hits().totalHits();
-            SearchHit[] hits = searchResponse.hits().hits();
+        if (searchResponse != null && searchResponse.getHits() != null) {
+            long totalHits = searchResponse.getHits().totalHits();
+            SearchHit[] hits = searchResponse.getHits().hits();
             if (hits == null) {
-                ServerLog.info(0, "<search> No result found for " + keyString);
+                log.info("<search> no result found for " + keyString);
                 return Collections.emptyList();
             } else {
-                ServerLog.info(0, "<search> get " + hits.length + " records for " + keyString);
+                log.info("<search> get " + hits.length + " records for " + keyString);
             }
 
             List<ObjectId> results = new ArrayList<ObjectId>();
@@ -127,15 +138,15 @@ public class ElasticsearchService {
                 SearchHit searchHits = hits[i];
                 String key = (String) searchHits.getSource().get(returnFieldName);
                 if (StringUtil.isEmpty(key) || !ObjectId.isValid(key)) {
-                    ServerLog.info(0, "<search> but key is empty or not valid objectId, key= " + key + "fieldName = "+ returnFieldName);
+                    log.warn("<search> but key is empty or not valid objectId, key= " + key + "fieldName = "+ returnFieldName);
                     continue;
                 }
                 results.add(new ObjectId(key));
             }
-            ServerLog.info(0, "<search> final return " + results.size() + " records for " + keyString);
+            log.info("<search> final return " + results.size() + " records for " + keyString);
             return results;
         } else {
-            ServerLog.info(0, "<search> response null or no hits");
+            log.warn("<search> response null or no hits for "+keyString);
         }
 
         return Collections.emptyList();
@@ -149,9 +160,9 @@ public class ElasticsearchService {
         SearchResponse searchResponse = ESQueryBuilder.searchByQueryString(
                 DBConstants.ES_INDEX_NAME, candidateFields, keyString, filterKey, filterValue, offset, limit, indexType);
 
-        if (searchResponse != null && searchResponse.hits() != null) {
-            long totalHits = searchResponse.hits().totalHits();
-            SearchHit[] hits = searchResponse.hits().hits();
+        if (searchResponse != null && searchResponse.getHits() != null) {
+            long totalHits = searchResponse.getHits().totalHits();
+            SearchHit[] hits = searchResponse.getHits().hits();
             if (hits == null) {
                 ServerLog.info(0, "<search> No result found for " + keyString);
                 return Collections.emptyList();

@@ -22,7 +22,6 @@ import com.orange.game.model.manager.bbs.BBSPrivilegeManager;
 import com.orange.game.model.manager.bbs.BoardManager;
 import com.orange.game.model.manager.group.GroupManager;
 import com.orange.game.model.manager.photo.UserPhotoManager;
-import com.orange.game.model.manager.stat.ShareStatManager;
 import com.orange.game.model.manager.user.LevelUtils;
 import com.orange.game.model.service.DBService;
 import com.orange.game.model.service.VipService;
@@ -212,7 +211,7 @@ public class UserManager extends CommonManager {
 //            DBService.getInstance().executeDBRequest(0, new Runnable() {
 //                @Override
 //                public void run() {
-//                    ElasticsearchService.addOrUpdateIndexIntoES(retUser, mongoClient);
+//                    ElasticsearchService.addOrUpdateIndex(retUser, mongoClient);
 //                }
 //            });
 
@@ -257,7 +256,7 @@ public class UserManager extends CommonManager {
         boolean result = mongoClient.insert(DBConstants.T_USER, user);
         if (result) {
             User retUser = new User(user);
-            ElasticsearchService.addOrUpdateIndexIntoES(retUser, mongoClient);
+            ElasticsearchService.addOrUpdateIndex(retUser, mongoClient);
             return retUser;
         } else
             return null;
@@ -388,7 +387,7 @@ public class UserManager extends CommonManager {
         boolean result = mongoClient.insert(DBConstants.T_USER, user);
         if (result) {
             User retUser = new User(user);
-            ElasticsearchService.addOrUpdateIndexIntoES(retUser, mongoClient);
+            ElasticsearchService.addOrUpdateIndex(retUser, mongoClient);
             return retUser;
         } else
             return null;
@@ -1324,7 +1323,7 @@ public class UserManager extends CommonManager {
         boolean result = mongoClient.insert(DBConstants.T_USER, user);
         if (result) {
             User retUser = new User(user);
-            ElasticsearchService.addOrUpdateIndexIntoES(retUser, mongoClient);
+            ElasticsearchService.addOrUpdateIndex(retUser, mongoClient);
             return retUser;
         } else
             return null;
@@ -2353,7 +2352,7 @@ public class UserManager extends CommonManager {
 //                DBService.getInstance().executeDBRequest(0, new Runnable() {
 //                    @Override
 //                    public void run() {
-                        ElasticsearchService.addOrUpdateIndexIntoES(retUser, mongoClient);
+                        ElasticsearchService.addOrUpdateIndex(retUser, mongoClient);
 //                    }
 //                });
 

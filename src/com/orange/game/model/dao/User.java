@@ -1383,6 +1383,11 @@ public class User extends CommonData implements ESORMable, MapUtil.MakeMapable<O
         return getStringObjectId();
     }
 
+    @Override
+    public List<String> fieldsForIndex() {
+        return null;
+    }
+
 
     @Override
     public String getESIndexName() {

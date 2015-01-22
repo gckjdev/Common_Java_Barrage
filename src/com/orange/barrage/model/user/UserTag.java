@@ -9,6 +9,7 @@ import com.orange.network.game.protocol.message.GameMessageProtos;
 import com.orange.protocol.message.UserProtos;
 import org.bson.types.ObjectId;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,6 +34,11 @@ public class UserTag  extends CommonData implements ProtoBufCoding<UserProtos.PB
     }
 
     public String getID() {
+        return null;
+    }
+
+    @Override
+    public List<String> fieldsForIndex() {
         return null;
     }
 

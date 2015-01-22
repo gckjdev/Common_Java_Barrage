@@ -12,6 +12,7 @@ import com.orange.protocol.message.BarrageProtos;
 import com.orange.protocol.message.UserProtos;
 import org.bson.types.ObjectId;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -35,11 +36,10 @@ public class FeedAction extends CommonData implements ProtoBufCoding<BarrageProt
         return null;
     }
 
-    public String getESIndexName() {
-        return null;
-    }
 
-    public String getID() {
+
+    @Override
+    public List<String> fieldsForIndex() {
         return null;
     }
 

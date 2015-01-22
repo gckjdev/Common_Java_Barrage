@@ -3,6 +3,7 @@ package com.orange.barrage.model.user;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.orange.barrage.constant.BarrageConstants;
+import com.orange.common.utils.DateUtil;
 import com.orange.game.model.common.CommonMongoIdComplexListManager;
 import com.orange.protocol.message.UserProtos;
 
@@ -54,7 +55,7 @@ public class FriendRequestManager extends CommonMongoIdComplexListManager<User> 
     public void rejectFriendRequest(String userId, String friendId, String memo) {
         BasicDBObject obj = new BasicDBObject();
         obj.put(BarrageConstants.F_ADD_STATUS, UserProtos.FriendAddStatusType.REQ_REJECTED_VALUE);
-        obj.put(BarrageConstants.F_ADD_DATE, System.currentTimeMillis()/1000);
+        obj.put(BarrageConstants.F_ADD_DATE, DateUtil.getCurrentSeconds());
 
         updateIndexObject(userId, friendId, obj);
         updateIndexObject(friendId, userId, obj);
@@ -63,7 +64,7 @@ public class FriendRequestManager extends CommonMongoIdComplexListManager<User> 
     public void updateFriendRequestReplyMemo(String userId, String friendId, String memo) {
         BasicDBObject obj = new BasicDBObject();
         obj.put(BarrageConstants.F_REPLY_MEMO, memo);
-        obj.put(BarrageConstants.F_ADD_DATE, System.currentTimeMillis()/1000);
+        obj.put(BarrageConstants.F_ADD_DATE, DateUtil.getCurrentSeconds());
 
         updateIndexObject(userId, friendId, obj);
         updateIndexObject(friendId, userId, obj);
@@ -72,7 +73,7 @@ public class FriendRequestManager extends CommonMongoIdComplexListManager<User> 
     public void updateFriendRequestMemo(String userId, String friendId, String memo) {
         BasicDBObject obj = new BasicDBObject();
         obj.put(BarrageConstants.F_MEMO, memo);
-        obj.put(BarrageConstants.F_ADD_DATE, System.currentTimeMillis()/1000);
+        obj.put(BarrageConstants.F_ADD_DATE, DateUtil.getCurrentSeconds());
 
         updateIndexObject(userId, friendId, obj);
         updateIndexObject(friendId, userId, obj);
@@ -81,7 +82,7 @@ public class FriendRequestManager extends CommonMongoIdComplexListManager<User> 
     public void acceptFriendRequest(String userId, String friendId) {
         BasicDBObject obj = new BasicDBObject();
         obj.put(BarrageConstants.F_ADD_STATUS, UserProtos.FriendAddStatusType.REQ_ACCEPTED_VALUE);
-        obj.put(BarrageConstants.F_ADD_DATE, System.currentTimeMillis()/1000);
+        obj.put(BarrageConstants.F_ADD_DATE, DateUtil.getCurrentSeconds());
 
         updateIndexObject(userId, friendId, obj);
         updateIndexObject(friendId, userId, obj);

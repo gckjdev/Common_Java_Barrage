@@ -438,6 +438,11 @@ public class Group extends CommonData implements ProtoBufCoding<GroupProtos.PBGr
     }
 
     @Override
+    public List<String> fieldsForIndex() {
+        return null;
+    }
+
+    @Override
     public String getESIndexName() {
         return DBConstants.ES_INDEX_NAME;
     }

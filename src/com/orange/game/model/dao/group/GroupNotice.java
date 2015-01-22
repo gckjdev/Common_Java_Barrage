@@ -68,7 +68,7 @@ public class GroupNotice extends CommonData implements ProtoBufCoding<GroupProto
     public Date getCreateDate(){
         Date date = getDate(DBConstants.F_CREATE_DATE);
         if (date == null && getObjectId() != null){
-            date = new Date(getObjectId().getTime());
+            date = new Date(getObjectId().getTimestamp());
         }
         return date;
     }
