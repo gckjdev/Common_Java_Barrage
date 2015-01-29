@@ -240,4 +240,7 @@ public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser
         return StringUtil.md5base64encode(password + PASSWORD_KEY);
     }
 
+    public int getAddStatus() {
+        return getInt(BarrageConstants.F_ADD_STATUS);
+    }
 }
