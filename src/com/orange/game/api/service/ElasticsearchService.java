@@ -1,6 +1,7 @@
 package com.orange.game.api.service;
 
 import com.orange.barrage.common.CommonModelService;
+import com.orange.barrage.constant.BarrageConstants;
 import com.orange.common.utils.StringUtil;
 
 import com.mongodb.BasicDBObject;
@@ -121,7 +122,7 @@ public class ElasticsearchService extends CommonModelService {
         }
 
         SearchResponse searchResponse = ESQueryBuilder.searchByQueryString(
-                DBConstants.ES_INDEX_NAME, candidateFields, keyString, filterKey, filterValue, offset, limit, indexType);
+                BarrageConstants.ES_INDEX_NAME_BARRAGE, candidateFields, keyString, filterKey, filterValue, offset, limit, indexType);
 
         if (searchResponse != null && searchResponse.getHits() != null) {
             long totalHits = searchResponse.getHits().totalHits();

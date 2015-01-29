@@ -88,6 +88,10 @@ public class FriendRequestManager extends CommonMongoIdComplexListManager<User> 
         updateIndexObject(friendId, userId, obj);
     }
 
+    public List<User> getRequestList(String userId) {
+        return getList(userId, 0, Integer.MAX_VALUE, User.getPublicReturnFields(), null, 0);
+    }
+
     public DBObject getFriendRequest(String userId, String friendId) {
         return getObjectInfo(userId, friendId);
     }

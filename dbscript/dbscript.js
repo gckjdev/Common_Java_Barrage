@@ -1,4 +1,29 @@
 
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{judges:"4fc3089a26099b2ca8c7a4ab"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{judges:"888888888888888888888888"}});
+
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{judges:"51191487e4b098c397bc56be"}});
+
+
+
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{reporters:"53661e00e4b0b4abf0e80ae1"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{reporters:"542aa870e4b01eb7e75ae5ab"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{reporters:"53bd0a17e4b0b9979e5d576f"}});
+
+
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{reporters:"53661e00e4b0b4abf0e80ae1"}});
+
+
+
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{judges:"522446880364908b37cc137d"}});
+
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{reporters:"502c3e422609804d43083768"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{reporters:"5427e766e4b07f0fae62c90a"}});
+
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$pull:{reporters:"502c3e422609804d43083768"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$pull:{reporters:"50f0f98ae4b07039cd242951"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$pull:{reporters:"50f0f98ae4b07039cd242951"}});
+
 db.setProfilingLevel(1);
 db.system.profile.find( { millis : { $gt : 100 } } );
 
@@ -1124,6 +1149,10 @@ db.contest.insert({
 
             });
 
+
+db.contest.update({"_id" : ObjectId("888888888888888888890007")},{$addToSet:{judges:"522446880364908b37cc137d"}});
+db.contest.update({"_id" : ObjectId("888888888888888888890007")},{$addToSet:{judges:"522446880364908b37cc137d"}});
+db.contest.update({"_id" : ObjectId("888888888888888888890007")},{$addToSet:{judges:"522446880364908b37cc137d"}});
 
 db.contest.update({"_id" : ObjectId("988888888888888820140601")},{$set:{s_date:ISODate("2014-05-31T16:00:00Z")}});
 db.contest.update({"_id" : ObjectId("988888888888888820140129")},{$set:{vote_start_date:ISODate("2014-01-27T16:00:00Z")}});

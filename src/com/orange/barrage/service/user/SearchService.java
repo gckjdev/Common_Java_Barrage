@@ -39,7 +39,7 @@ public class SearchService {
         List<User> userList = UserManager.findPublicUserInfoByUserIdList(userId, userIdList, false);
         if (userList != null) {
             List<UserProtos.PBUser> pbUserList = User.listToPB(userList, null);
-            builder.addAllUser(pbUserList);
+            builder.addAllUsers(pbUserList);
         }
 
         return 0;

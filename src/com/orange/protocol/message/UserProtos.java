@@ -13256,6 +13256,67 @@ public final class UserProtos {
      */
     com.orange.protocol.message.UserProtos.PBUserOrBuilder getFriendsOrBuilder(
         int index);
+
+    /**
+     * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+     *
+     * <pre>
+     * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+     * </pre>
+     */
+    java.util.List<com.orange.protocol.message.UserProtos.PBUser> 
+        getRequestFriendsList();
+    /**
+     * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+     *
+     * <pre>
+     * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUser getRequestFriends(int index);
+    /**
+     * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+     *
+     * <pre>
+     * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+     * </pre>
+     */
+    int getRequestFriendsCount();
+    /**
+     * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+     *
+     * <pre>
+     * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+     * </pre>
+     */
+    java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+        getRequestFriendsOrBuilderList();
+    /**
+     * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+     *
+     * <pre>
+     * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUserOrBuilder getRequestFriendsOrBuilder(
+        int index);
+
+    /**
+     * <code>optional int32 requestNewCount = 3;</code>
+     *
+     * <pre>
+     * 新的好友请求数目
+     * </pre>
+     */
+    boolean hasRequestNewCount();
+    /**
+     * <code>optional int32 requestNewCount = 3;</code>
+     *
+     * <pre>
+     * 新的好友请求数目
+     * </pre>
+     */
+    int getRequestNewCount();
   }
   /**
    * Protobuf type {@code barrage.PBUserFriendList}
@@ -13317,6 +13378,19 @@ public final class UserProtos {
               friends_.add(input.readMessage(com.orange.protocol.message.UserProtos.PBUser.PARSER, extensionRegistry));
               break;
             }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                requestFriends_ = new java.util.ArrayList<com.orange.protocol.message.UserProtos.PBUser>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              requestFriends_.add(input.readMessage(com.orange.protocol.message.UserProtos.PBUser.PARSER, extensionRegistry));
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000001;
+              requestNewCount_ = input.readInt32();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -13327,6 +13401,9 @@ public final class UserProtos {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           friends_ = java.util.Collections.unmodifiableList(friends_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          requestFriends_ = java.util.Collections.unmodifiableList(requestFriends_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -13359,6 +13436,7 @@ public final class UserProtos {
       return PARSER;
     }
 
+    private int bitField0_;
     public static final int FRIENDS_FIELD_NUMBER = 1;
     private java.util.List<com.orange.protocol.message.UserProtos.PBUser> friends_;
     /**
@@ -13414,8 +13492,88 @@ public final class UserProtos {
       return friends_.get(index);
     }
 
+    public static final int REQUESTFRIENDS_FIELD_NUMBER = 2;
+    private java.util.List<com.orange.protocol.message.UserProtos.PBUser> requestFriends_;
+    /**
+     * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+     *
+     * <pre>
+     * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+     * </pre>
+     */
+    public java.util.List<com.orange.protocol.message.UserProtos.PBUser> getRequestFriendsList() {
+      return requestFriends_;
+    }
+    /**
+     * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+     *
+     * <pre>
+     * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+     * </pre>
+     */
+    public java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+        getRequestFriendsOrBuilderList() {
+      return requestFriends_;
+    }
+    /**
+     * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+     *
+     * <pre>
+     * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+     * </pre>
+     */
+    public int getRequestFriendsCount() {
+      return requestFriends_.size();
+    }
+    /**
+     * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+     *
+     * <pre>
+     * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUser getRequestFriends(int index) {
+      return requestFriends_.get(index);
+    }
+    /**
+     * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+     *
+     * <pre>
+     * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserOrBuilder getRequestFriendsOrBuilder(
+        int index) {
+      return requestFriends_.get(index);
+    }
+
+    public static final int REQUESTNEWCOUNT_FIELD_NUMBER = 3;
+    private int requestNewCount_;
+    /**
+     * <code>optional int32 requestNewCount = 3;</code>
+     *
+     * <pre>
+     * 新的好友请求数目
+     * </pre>
+     */
+    public boolean hasRequestNewCount() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 requestNewCount = 3;</code>
+     *
+     * <pre>
+     * 新的好友请求数目
+     * </pre>
+     */
+    public int getRequestNewCount() {
+      return requestNewCount_;
+    }
+
     private void initFields() {
       friends_ = java.util.Collections.emptyList();
+      requestFriends_ = java.util.Collections.emptyList();
+      requestNewCount_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -13425,6 +13583,12 @@ public final class UserProtos {
 
       for (int i = 0; i < getFriendsCount(); i++) {
         if (!getFriends(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getRequestFriendsCount(); i++) {
+        if (!getRequestFriends(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -13439,6 +13603,12 @@ public final class UserProtos {
       for (int i = 0; i < friends_.size(); i++) {
         output.writeMessage(1, friends_.get(i));
       }
+      for (int i = 0; i < requestFriends_.size(); i++) {
+        output.writeMessage(2, requestFriends_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(3, requestNewCount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -13451,6 +13621,14 @@ public final class UserProtos {
       for (int i = 0; i < friends_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, friends_.get(i));
+      }
+      for (int i = 0; i < requestFriends_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, requestFriends_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, requestNewCount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -13562,6 +13740,7 @@ public final class UserProtos {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getFriendsFieldBuilder();
+          getRequestFriendsFieldBuilder();
         }
       }
       private static Builder create() {
@@ -13576,6 +13755,14 @@ public final class UserProtos {
         } else {
           friendsBuilder_.clear();
         }
+        if (requestFriendsBuilder_ == null) {
+          requestFriends_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          requestFriendsBuilder_.clear();
+        }
+        requestNewCount_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -13603,6 +13790,7 @@ public final class UserProtos {
       public com.orange.protocol.message.UserProtos.PBUserFriendList buildPartial() {
         com.orange.protocol.message.UserProtos.PBUserFriendList result = new com.orange.protocol.message.UserProtos.PBUserFriendList(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (friendsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
             friends_ = java.util.Collections.unmodifiableList(friends_);
@@ -13612,6 +13800,20 @@ public final class UserProtos {
         } else {
           result.friends_ = friendsBuilder_.build();
         }
+        if (requestFriendsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            requestFriends_ = java.util.Collections.unmodifiableList(requestFriends_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.requestFriends_ = requestFriends_;
+        } else {
+          result.requestFriends_ = requestFriendsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.requestNewCount_ = requestNewCount_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -13653,6 +13855,35 @@ public final class UserProtos {
             }
           }
         }
+        if (requestFriendsBuilder_ == null) {
+          if (!other.requestFriends_.isEmpty()) {
+            if (requestFriends_.isEmpty()) {
+              requestFriends_ = other.requestFriends_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureRequestFriendsIsMutable();
+              requestFriends_.addAll(other.requestFriends_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.requestFriends_.isEmpty()) {
+            if (requestFriendsBuilder_.isEmpty()) {
+              requestFriendsBuilder_.dispose();
+              requestFriendsBuilder_ = null;
+              requestFriends_ = other.requestFriends_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              requestFriendsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getRequestFriendsFieldBuilder() : null;
+            } else {
+              requestFriendsBuilder_.addAllMessages(other.requestFriends_);
+            }
+          }
+        }
+        if (other.hasRequestNewCount()) {
+          setRequestNewCount(other.getRequestNewCount());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -13660,6 +13891,12 @@ public final class UserProtos {
       public final boolean isInitialized() {
         for (int i = 0; i < getFriendsCount(); i++) {
           if (!getFriends(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getRequestFriendsCount(); i++) {
+          if (!getRequestFriends(i).isInitialized()) {
             
             return false;
           }
@@ -13998,6 +14235,366 @@ public final class UserProtos {
         return friendsBuilder_;
       }
 
+      private java.util.List<com.orange.protocol.message.UserProtos.PBUser> requestFriends_ =
+        java.util.Collections.emptyList();
+      private void ensureRequestFriendsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          requestFriends_ = new java.util.ArrayList<com.orange.protocol.message.UserProtos.PBUser>(requestFriends_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> requestFriendsBuilder_;
+
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public java.util.List<com.orange.protocol.message.UserProtos.PBUser> getRequestFriendsList() {
+        if (requestFriendsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(requestFriends_);
+        } else {
+          return requestFriendsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public int getRequestFriendsCount() {
+        if (requestFriendsBuilder_ == null) {
+          return requestFriends_.size();
+        } else {
+          return requestFriendsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser getRequestFriends(int index) {
+        if (requestFriendsBuilder_ == null) {
+          return requestFriends_.get(index);
+        } else {
+          return requestFriendsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public Builder setRequestFriends(
+          int index, com.orange.protocol.message.UserProtos.PBUser value) {
+        if (requestFriendsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRequestFriendsIsMutable();
+          requestFriends_.set(index, value);
+          onChanged();
+        } else {
+          requestFriendsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public Builder setRequestFriends(
+          int index, com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
+        if (requestFriendsBuilder_ == null) {
+          ensureRequestFriendsIsMutable();
+          requestFriends_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          requestFriendsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public Builder addRequestFriends(com.orange.protocol.message.UserProtos.PBUser value) {
+        if (requestFriendsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRequestFriendsIsMutable();
+          requestFriends_.add(value);
+          onChanged();
+        } else {
+          requestFriendsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public Builder addRequestFriends(
+          int index, com.orange.protocol.message.UserProtos.PBUser value) {
+        if (requestFriendsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRequestFriendsIsMutable();
+          requestFriends_.add(index, value);
+          onChanged();
+        } else {
+          requestFriendsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public Builder addRequestFriends(
+          com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
+        if (requestFriendsBuilder_ == null) {
+          ensureRequestFriendsIsMutable();
+          requestFriends_.add(builderForValue.build());
+          onChanged();
+        } else {
+          requestFriendsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public Builder addRequestFriends(
+          int index, com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
+        if (requestFriendsBuilder_ == null) {
+          ensureRequestFriendsIsMutable();
+          requestFriends_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          requestFriendsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public Builder addAllRequestFriends(
+          java.lang.Iterable<? extends com.orange.protocol.message.UserProtos.PBUser> values) {
+        if (requestFriendsBuilder_ == null) {
+          ensureRequestFriendsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, requestFriends_);
+          onChanged();
+        } else {
+          requestFriendsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public Builder clearRequestFriends() {
+        if (requestFriendsBuilder_ == null) {
+          requestFriends_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          requestFriendsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public Builder removeRequestFriends(int index) {
+        if (requestFriendsBuilder_ == null) {
+          ensureRequestFriendsIsMutable();
+          requestFriends_.remove(index);
+          onChanged();
+        } else {
+          requestFriendsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser.Builder getRequestFriendsBuilder(
+          int index) {
+        return getRequestFriendsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserOrBuilder getRequestFriendsOrBuilder(
+          int index) {
+        if (requestFriendsBuilder_ == null) {
+          return requestFriends_.get(index);  } else {
+          return requestFriendsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public java.util.List<? extends com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+           getRequestFriendsOrBuilderList() {
+        if (requestFriendsBuilder_ != null) {
+          return requestFriendsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(requestFriends_);
+        }
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser.Builder addRequestFriendsBuilder() {
+        return getRequestFriendsFieldBuilder().addBuilder(
+            com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser.Builder addRequestFriendsBuilder(
+          int index) {
+        return getRequestFriendsFieldBuilder().addBuilder(
+            index, com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .barrage.PBUser requestFriends = 2;</code>
+       *
+       * <pre>
+       * 新的好友请求列表（包括自己请求的和别人向自己发起的请求）
+       * </pre>
+       */
+      public java.util.List<com.orange.protocol.message.UserProtos.PBUser.Builder> 
+           getRequestFriendsBuilderList() {
+        return getRequestFriendsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+          getRequestFriendsFieldBuilder() {
+        if (requestFriendsBuilder_ == null) {
+          requestFriendsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder>(
+                  requestFriends_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          requestFriends_ = null;
+        }
+        return requestFriendsBuilder_;
+      }
+
+      private int requestNewCount_ ;
+      /**
+       * <code>optional int32 requestNewCount = 3;</code>
+       *
+       * <pre>
+       * 新的好友请求数目
+       * </pre>
+       */
+      public boolean hasRequestNewCount() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 requestNewCount = 3;</code>
+       *
+       * <pre>
+       * 新的好友请求数目
+       * </pre>
+       */
+      public int getRequestNewCount() {
+        return requestNewCount_;
+      }
+      /**
+       * <code>optional int32 requestNewCount = 3;</code>
+       *
+       * <pre>
+       * 新的好友请求数目
+       * </pre>
+       */
+      public Builder setRequestNewCount(int value) {
+        bitField0_ |= 0x00000004;
+        requestNewCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 requestNewCount = 3;</code>
+       *
+       * <pre>
+       * 新的好友请求数目
+       * </pre>
+       */
+      public Builder clearRequestNewCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        requestNewCount_ = 0;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:barrage.PBUserFriendList)
     }
 
@@ -14075,24 +14672,26 @@ public final class UserProtos {
       "\022\020\n\010isCustom\030\003 \001(\010\022\r\n\005color\030\004 \001(\005\022\036\n\005use",
       "rs\030\n \003(\0132\017.barrage.PBUser\022\017\n\007userIds\030\013 \003" +
       "(\t\"1\n\rPBUserTagList\022 \n\004tags\030\001 \003(\0132\022.barr" +
-      "age.PBUserTag\"4\n\020PBUserFriendList\022 \n\007fri" +
-      "ends\030\001 \003(\0132\017.barrage.PBUser*@\n\023FriendAdd" +
-      "SourceType\022\021\n\rADD_BY_SEARCH\020\001\022\026\n\022ADD_BY_" +
-      "SCAN_QRCODE\020\002*N\n\023FriendAddConfigType\022\022\n\016" +
-      "REQUIRE_ACCEPT\020\000\022\016\n\nACCEPT_ALL\020\001\022\023\n\017DISA" +
-      "LLOW_ADD_ME\020\002*N\n\026FriendRequestDirection\022" +
-      "\030\n\024REQ_DIRECTION_SENDER\020\000\022\032\n\026REQ_DIRECTI" +
-      "ON_RECEIVER\020\001*N\n\023FriendAddStatusType\022\023\n\017",
-      "REQ_WAIT_ACCEPT\020\000\022\020\n\014REQ_ACCEPTED\020\001\022\020\n\014R" +
-      "EQ_REJECTED\020\002*r\n\013PBLoginType\022\020\n\014LOGIN_XI" +
-      "AOJI\020d\022\017\n\013LOGIN_EMAIL\020e\022\020\n\014LOGIN_MOBILE\020" +
-      "f\022\014\n\010LOGIN_QQ\020\006\022\016\n\nLOGIN_SINA\020\001\022\020\n\014LOGIN" +
-      "_WEIXIN\020\027*i\n\016PBRegisterType\022\016\n\nREG_XIAOJ" +
-      "I\020d\022\r\n\tREG_EMAIL\020e\022\016\n\nREG_MOBILE\020f\022\n\n\006RE" +
-      "G_QQ\020\006\022\014\n\010REG_SINA\020\001\022\016\n\nREG_WEIXIN\020\027*E\n\n" +
-      "PBTagColor\022\n\n\006SYSTEM\020\000\022\n\n\006CUSTOM\020\001\022\n\n\006MY" +
-      "SELF\020\002\022\007\n\003HOT\020\003\022\n\n\006RECENT\020\004B)\n\033com.orang" +
-      "e.protocol.messageB\nUserProtos"
+      "age.PBUserTag\"v\n\020PBUserFriendList\022 \n\007fri" +
+      "ends\030\001 \003(\0132\017.barrage.PBUser\022\'\n\016requestFr" +
+      "iends\030\002 \003(\0132\017.barrage.PBUser\022\027\n\017requestN" +
+      "ewCount\030\003 \001(\005*@\n\023FriendAddSourceType\022\021\n\r" +
+      "ADD_BY_SEARCH\020\001\022\026\n\022ADD_BY_SCAN_QRCODE\020\002*" +
+      "N\n\023FriendAddConfigType\022\022\n\016REQUIRE_ACCEPT" +
+      "\020\000\022\016\n\nACCEPT_ALL\020\001\022\023\n\017DISALLOW_ADD_ME\020\002*" +
+      "N\n\026FriendRequestDirection\022\030\n\024REQ_DIRECTI",
+      "ON_SENDER\020\000\022\032\n\026REQ_DIRECTION_RECEIVER\020\001*" +
+      "N\n\023FriendAddStatusType\022\023\n\017REQ_WAIT_ACCEP" +
+      "T\020\000\022\020\n\014REQ_ACCEPTED\020\001\022\020\n\014REQ_REJECTED\020\002*" +
+      "r\n\013PBLoginType\022\020\n\014LOGIN_XIAOJI\020d\022\017\n\013LOGI" +
+      "N_EMAIL\020e\022\020\n\014LOGIN_MOBILE\020f\022\014\n\010LOGIN_QQ\020" +
+      "\006\022\016\n\nLOGIN_SINA\020\001\022\020\n\014LOGIN_WEIXIN\020\027*i\n\016P" +
+      "BRegisterType\022\016\n\nREG_XIAOJI\020d\022\r\n\tREG_EMA" +
+      "IL\020e\022\016\n\nREG_MOBILE\020f\022\n\n\006REG_QQ\020\006\022\014\n\010REG_" +
+      "SINA\020\001\022\016\n\nREG_WEIXIN\020\027*E\n\nPBTagColor\022\n\n\006" +
+      "SYSTEM\020\000\022\n\n\006CUSTOM\020\001\022\n\n\006MYSELF\020\002\022\007\n\003HOT\020",
+      "\003\022\n\n\006RECENT\020\004B)\n\033com.orange.protocol.mes" +
+      "sageB\nUserProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14136,7 +14735,7 @@ public final class UserProtos {
     internal_static_barrage_PBUserFriendList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBUserFriendList_descriptor,
-        new java.lang.String[] { "Friends", });
+        new java.lang.String[] { "Friends", "RequestFriends", "RequestNewCount", });
     com.orange.protocol.message.CommonProtos.getDescriptor();
   }
 
