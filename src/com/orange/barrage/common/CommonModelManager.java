@@ -68,11 +68,13 @@ public abstract class CommonModelManager<T extends CommonData> {
 
         DBObject dbObject = cursor.next();
         if (dbObject == null){
+            cursor.close();
             return null;
         }
 
         T t = newClassInstance(getClazz());
         t.setDbObject(dbObject);
+        cursor.close();
         return t;
     }
 

@@ -16,6 +16,7 @@ public class BarrageConstants {
     public static final String T_FEED = "feed";
     public static final String T_USER_FEED_TIMELINE = "user_feed_timeline";
     public static final String T_USER_TAG = "user_tag";
+    public static final String T_USER_INVITE_CODES = "user_invite_codes";
 
     public static final String F_EMAIL = "email";
     public static final String F_FEED_ID = "feedId";
@@ -63,4 +64,8 @@ public class BarrageConstants {
     public static final String ES_INDEX_TYPE_USER = "user";             // like table name
     public static final String ES_INDEX_TYPE_FEED = "feed";
     public static final String ES_INDEX_TYPE_FEED_ACTION = "feed_action";
+
+    public static final String F_AVAILABLE_CODES = "availableCodes";
+    public static final String F_SENT_CODES = "sentCodes";
+    public static final String F_APPLY_COUNT = "applyCount";
 }

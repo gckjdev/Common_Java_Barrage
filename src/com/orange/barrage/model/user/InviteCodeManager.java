@@ -1,12 +1,18 @@
 package com.orange.barrage.model.user;
 
+import com.mongodb.BasicDBList;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import com.orange.barrage.common.CommonModelManager;
+import com.orange.barrage.constant.BarrageConstants;
 import com.orange.common.redis.RedisCallable;
 import com.orange.common.redis.RedisClient;
 import com.orange.common.utils.RandomUtil;
 import com.orange.common.utils.StringUtil;
 import com.orange.game.model.dao.CommonData;
 import com.orange.protocol.message.ErrorProtos;
+import com.orange.protocol.message.UserProtos;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Pipeline;
 
@@ -197,5 +203,85 @@ public class InviteCodeManager extends CommonModelManager<CommonData> {
     @Override
     public Class<CommonData> getClazz() {
         return null;
+    }
+
+
+    public UserProtos.PBUserInviteCodeList getUserInviteCodeList(String userId) {
+
+        BasicDBObject query = new BasicDBObject(BarrageConstants.F_USER_ID, userId);
+        DBObject obj = mongoDBClient.findOne(BarrageConstants.T_USER_INVITE_CODES, query);
+        UserProtos.PBUserInviteCodeList.Builder builder = UserProtos.PBUserInviteCodeList.newBuilder();
+        if (obj == null){
+            return builder.build();
+        }
+
+        CommonData data = new CommonData(obj);
+        return data.toPB(builder, null);
+    }
+
+    public UserProtos.PBUserInviteCodeList addUserInviteCodes(String userId, Set<String> codes) {
+
+        if (codes == null || codes.size() == 0){
+            return null;
+        }
+
+        BasicDBObject query = new BasicDBObject(BarrageConstants.F_USER_ID, userId);
+
+        BasicDBList pushList = new BasicDBList();
+        for (String code : codes) {
+            if (!StringUtil.isEmpty(code)) {
+                UserProtos.PBInviteCode.Builder pbInviteCodeBuilder = UserProtos.PBInviteCode.newBuilder();
+                pbInviteCodeBuilder.setCode(code);
+                pbInviteCodeBuilder.setStatus(UserProtos.PBInviteCodeStatus.CODE_STATUS_READY_VALUE);
+                DBObject obj = CommonData.pbToDBObject(pbInviteCodeBuilder.build());
+                if (obj != null){
+                    pushList.add(obj);
+                }
+            }
+        }
+
+        if (pushList.size() == 0){
+            return null;
+        }
+
+        int applyCount = pushList.size();
+
+        BasicDBObject push = new BasicDBObject("$pushAll", new BasicDBObject(BarrageConstants.F_AVAILABLE_CODES, pushList));
+        push.put("$inc", new BasicDBObject(BarrageConstants.F_APPLY_COUNT, applyCount));
+
+        log.info("<addUserInviteCodes> query="+query.toString()+", push="+push.toString());
+        DBObject obj = mongoDBClient.findAndModifyUpsert(BarrageConstants.T_USER_INVITE_CODES, query, push);
+        UserProtos.PBUserInviteCodeList.Builder builder = UserProtos.PBUserInviteCodeList.newBuilder();
+        if (obj == null){
+            return builder.build();
+        }
+
+        CommonData data = new CommonData(obj);
+        return data.toPB(builder, null);
+
+    }
+
+    public UserProtos.PBUserInviteCodeList updateUserInviteCodeList(String userId, UserProtos.PBUserInviteCodeList updateList) {
+
+        if (updateList == null){
+            return null;
+        }
+
+        BasicDBObject query = new BasicDBObject(BarrageConstants.F_USER_ID, userId);
+
+        BasicDBObject updateValue = CommonData.pbToDBObject(updateList);
+        updateValue.removeField(BarrageConstants.F_APPLY_COUNT);
+
+        BasicDBObject update = new BasicDBObject("$set", updateValue);
+
+        log.info("<updateUserInviteCodeList> query="+query.toString()+", update="+update.toString());
+        DBObject obj = mongoDBClient.findAndModifyUpsert(BarrageConstants.T_USER_INVITE_CODES, query, update);
+        UserProtos.PBUserInviteCodeList.Builder builder = UserProtos.PBUserInviteCodeList.newBuilder();
+        if (obj == null){
+            return builder.build();
+        }
+
+        CommonData data = new CommonData(obj);
+        return data.toPB(builder, null);
     }
 }
