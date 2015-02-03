@@ -7,6 +7,7 @@ import com.mongodb.util.JSON;
 import com.orange.barrage.common.CommonModelManager;
 import com.orange.barrage.constant.BarrageConstants;
 import com.orange.game.constants.DBConstants;
+import com.orange.game.model.dao.CommonData;
 import com.orange.protocol.message.BarrageProtos;
 import com.orange.protocol.message.ErrorProtos;
 import com.orange.protocol.message.MessageProtos;
@@ -51,6 +52,10 @@ public class FeedManager extends CommonModelManager<Feed> {
 
         // insert into related index tables
 
+        CommonData dataObj = new CommonData(obj);
+        BarrageProtos.PBFeedAction.Builder retFeedActionBuilder = BarrageProtos.PBFeedAction.newBuilder();
+        dataObj.toPB(retFeedActionBuilder, null);
+        rspBuilder.setAction(retFeedActionBuilder.build());
         return 0;
     }
 

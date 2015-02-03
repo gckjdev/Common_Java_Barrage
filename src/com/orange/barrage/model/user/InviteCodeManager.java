@@ -284,4 +284,8 @@ public class InviteCodeManager extends CommonModelManager<CommonData> {
         CommonData data = new CommonData(obj);
         return data.toPB(builder, null);
     }
+
+    public UserProtos.PBUserInviteCodeList updateUserInviteCode(String userId, String code, int status) {
+        return null;
+    }
 }
