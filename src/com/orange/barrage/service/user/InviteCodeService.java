@@ -41,12 +41,6 @@ public class InviteCodeService {
         return 0;
     }
 
-    public int updateInviteCode(String userId, String code, int status, MessageProtos.PBUpdateInviteCodeResponse.Builder builder) {
-        // update to user DB
-        UserProtos.PBUserInviteCodeList userCodes = InviteCodeManager.getInstance().updateUserInviteCode(userId, code, status);
-        builder.setCodeList(userCodes);
-        return 0;    }
-
     public int applyInviteCode(String userId, int count, MessageProtos.PBApplyInviteCodeResponse.Builder builder) {
 
         // apply codes

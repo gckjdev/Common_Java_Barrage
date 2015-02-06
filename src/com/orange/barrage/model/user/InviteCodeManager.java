@@ -270,7 +270,18 @@ public class InviteCodeManager extends CommonModelManager<CommonData> {
         BasicDBObject query = new BasicDBObject(BarrageConstants.F_USER_ID, userId);
 
         BasicDBObject updateValue = CommonData.pbToDBObject(updateList);
+
+        // remove apply count
         updateValue.removeField(BarrageConstants.F_APPLY_COUNT);
+
+        // check empty list
+        if (updateList.getAvailableCodesCount() == 0){
+            updateValue.put(BarrageConstants.F_AVAILABLE_CODES, new BasicDBList());
+        }
+
+        if (updateList.getSentCodesCount() == 0){
+            updateValue.put(BarrageConstants.F_SENT_CODES, new BasicDBList());
+        }
 
         BasicDBObject update = new BasicDBObject("$set", updateValue);
 
@@ -285,7 +296,4 @@ public class InviteCodeManager extends CommonModelManager<CommonData> {
         return data.toPB(builder, null);
     }
 
-    public UserProtos.PBUserInviteCodeList updateUserInviteCode(String userId, String code, int status) {
-        return null;
-    }
 }

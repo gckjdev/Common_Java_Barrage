@@ -1,5 +1,6 @@
 package com.orange.barrage.model.user;
 
+import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.orange.barrage.constant.BarrageConstants;
@@ -61,6 +62,11 @@ public class UserTagManager extends CommonMongoIdComplexListManager<UserTag> {
         String modifyDateField = BarrageConstants.F_MODIFY_DATE;
 
         String tagId = pbUserTag.getTid();
+
+        // fix empty list
+        if (!obj.containsField(BarrageConstants.F_USER_IDS)){
+            obj.put(BarrageConstants.F_USER_IDS, new BasicDBList());
+        }
 
         boolean found = false;
         boolean allowDuplicate = false;

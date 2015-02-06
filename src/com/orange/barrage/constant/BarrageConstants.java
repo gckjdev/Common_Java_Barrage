@@ -24,6 +24,7 @@ public class BarrageConstants {
     public static final String F_ACTION_ID = "actionId";
     public static final String F_FRIEND_ID = "friendId";
     public static final String F_TAG_ID = "tid";
+    public static final String F_USER_IDS = "userIds";
 
     public static final String F_ADD_DATE = "addDate";
     public static final String F_ADD_SOURCE = "addSource";
