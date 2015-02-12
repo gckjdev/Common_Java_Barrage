@@ -195,6 +195,12 @@ public class InviteCodeManager extends CommonModelManager<CommonData> {
 
     }
 
+    public void createAllCandidateCode(){
+        generateAllCandidateCode(true);
+        generateInviteCode(50);
+    }
+
+
     @Override
     public String getTableName() {
         return null;
