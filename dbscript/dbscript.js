@@ -1,12 +1,41 @@
 
-db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{judges:"4fc3089a26099b2ca8c7a4ab"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{judges:"50f4ad58e4b05bb0f07e9a08"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{judges:"5087b337e4b0e39b1782d683"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{judges:"50d5ca23e4b0d73d234e6bbb"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{judges:"522363fae4b030c9cfe85f6a"}});
+
+
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{reporters:"517e7461e4b0a2a6ee6e8d59"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{reporters:"51021f70e4b0a04f9ebc8ed5"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{reporters:"51ef4440e4b0705e61162244"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{reporters:"53f9e20de4b013e9b6b8fc1a"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{reporters:"52bcde6ee4b035f5ca92544b"}});
+
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{reporters:"54733c18e4b0b269e60451f1"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{reporters:"5427e766e4b07f0fae62c90a"}});
+
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{reporters:"518d0fcfe4b0d2e09c021b31"}});
+
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{reporters:"518d0fcfe4b0d2e09c021b31"}});
+
+
+
+51021f70e4b0a04f9ebc8ed5
+51ef4440e4b0705e61162244
+53f9e20de4b013e9b6b8fc1a
+52bcde6ee4b035f5ca92544b
+
+
+
+
+
 db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{judges:"888888888888888888888888"}});
 
 db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{judges:"51191487e4b098c397bc56be"}});
 
 
 
-db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{reporters:"53661e00e4b0b4abf0e80ae1"}});
+db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{reporters:"517e7461e4b0a2a6ee6e8d59"}});
 db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{reporters:"542aa870e4b01eb7e75ae5ab"}});
 db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{reporters:"53bd0a17e4b0b9979e5d576f"}});
 
@@ -23,6 +52,71 @@ db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$addToSet:{rep
 db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$pull:{reporters:"502c3e422609804d43083768"}});
 db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$pull:{reporters:"50f0f98ae4b07039cd242951"}});
 db.contest.update({"_id" : ObjectId("988888888888888820150123")},{$pull:{reporters:"50f0f98ae4b07039cd242951"}});
+
+//插入contest数据，支持评委等信息，新年唱歌比赛
+db.contest.insert({
+            "_id" : ObjectId("988888888888888820150214"),
+            "cate" : 0,
+            "opus_count" : 0,
+            "participant_count" : 0,
+            "language" : 1,
+            "type" : 2,
+            "title" : "羊年快乐",
+            "contest_url" : "http://58.215.184.18:8080/contest/image/988888888888888820150214_contest.jpg",
+            "statement_url" : "http://58.215.184.18:8080/contest/image/988888888888888820150214_rule.jpg",
+            "submit_count" : 1,
+            "s_date" : ISODate("2015-02-13T16:00:00Z"),
+            "e_date" : ISODate("2015-02-24T16:00:00Z"),
+            "vote_start_date" : ISODate("2015-02-13T16:00:00Z"),
+            "vote_end_date" : ISODate("2015-02-25T16:00:00Z"),
+            "contest_ipad_url" : "http://58.215.184.18:8080/contest/image/988888888888888820150214_contest.jpg",
+            "statement_ipad_url" : "http://58.215.184.18:8080/contest/image/988888888888888820150214_rule.jpg",
+            "contestants_only" : false,
+            "contestants": [],
+            "judges" : [],
+            "reporters" : [],
+            "anonymous" : true,
+            "max_flower_per_opus" : 3,
+            "max_flower_per_contest" : 3000,
+            "submit_count" : 1,
+            "flower_rank_weight" : 3,
+            "judge_rank_weight" : 60,
+            "winner_list" : [ ],
+            "award_list" : [  ],
+            "rank_types" : {"1":"名次", "2" : "特别创意奖", "3" : "最具潜力奖"},
+            "status" : 2,
+            "group" : false,
+            "award_rules" : [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+                ],
+            "award_total" : 51500
+
+            });
+
+// 设置为未开始
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$set:{status:1}});
+
+// 设置为开始
+db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$set:{status:1}});
 
 db.setProfilingLevel(1);
 db.system.profile.find( { millis : { $gt : 100 } } );

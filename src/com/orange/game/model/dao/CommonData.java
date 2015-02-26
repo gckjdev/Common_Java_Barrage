@@ -193,10 +193,11 @@ public class CommonData {
             }
         }
 
-        // conver to JSON string
-        String json = JSON.serialize(obj);
-        log.info(getClass().getName()+" json = "+json);
         try {
+            // conver to JSON string
+            String json = JSON.serialize(obj);
+//            log.info(getClass().getName()+" json = "+json);
+
             // from JSON to PB
             JsonFormat.merge(json, builder);
             T pb = (T)builder.build();
