@@ -60,4 +60,9 @@ public class InviteCodeService {
         builder.setCodeList(userCodes);
         return 0;
     }
+
+    public void updateInviteCodeStatus(String code, int status) {
+        InviteCodeManager.getInstance().updateInviteCodeStatus(code, status);
+        return;
+    }
 }

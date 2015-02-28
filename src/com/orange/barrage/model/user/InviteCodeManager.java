@@ -6,11 +6,13 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.orange.barrage.common.CommonModelManager;
 import com.orange.barrage.constant.BarrageConstants;
+import com.orange.barrage.service.user.InviteCodeService;
 import com.orange.common.redis.RedisCallable;
 import com.orange.common.redis.RedisClient;
 import com.orange.common.utils.RandomUtil;
 import com.orange.common.utils.StringUtil;
 import com.orange.game.model.dao.CommonData;
+import com.orange.game.model.service.DBService;
 import com.orange.protocol.message.ErrorProtos;
 import com.orange.protocol.message.UserProtos;
 import redis.clients.jedis.Jedis;
@@ -123,6 +125,9 @@ public class InviteCodeManager extends CommonModelManager<CommonData> {
                 return Boolean.TRUE;
             }
         });
+
+        // update user invite code status
+        InviteCodeService.getInstance().updateInviteCodeStatus(code, UserProtos.PBInviteCodeStatus.CODE_STATUS_USED_VALUE);
 
         return result ? 0 : ErrorProtos.PBError.ERROR_UNKNOWN_VALUE;
     }
@@ -300,6 +305,39 @@ public class InviteCodeManager extends CommonModelManager<CommonData> {
 
         CommonData data = new CommonData(obj);
         return data.toPB(builder, null);
+    }
+
+    public void updateInviteCodeStatus(final String code, final int status) {
+
+        if (StringUtil.isEmpty(code)){
+            return;
+        }
+
+        DBService.getInstance().executeDBRequest(1, new Runnable() {
+            @Override
+            public void run() {
+                {
+                    BasicDBObject query = new BasicDBObject(BarrageConstants.F_AVAILABLE_CODES + "." + BarrageConstants.F_CODE, code);
+
+                    BasicDBObject updateValue = new BasicDBObject(BarrageConstants.F_AVAILABLE_CODES + ".$." + BarrageConstants.F_STATUS, status);
+                    BasicDBObject update = new BasicDBObject("$set", updateValue);
+
+                    log.info("<updateInviteCodeStatus> query=" + query.toString() + ", update=" + update.toString());
+                    mongoDBClient.updateAll(BarrageConstants.T_USER_INVITE_CODES, query, update);
+                }
+
+                {
+                    BasicDBObject query = new BasicDBObject(BarrageConstants.F_SENT_CODES + "." + BarrageConstants.F_CODE, code);
+
+                    BasicDBObject updateValue = new BasicDBObject(BarrageConstants.F_SENT_CODES + ".$." + BarrageConstants.F_STATUS, status);
+                    BasicDBObject update = new BasicDBObject("$set", updateValue);
+
+                    log.info("<updateInviteCodeStatus> query=" + query.toString() + ", update=" + update.toString());
+                    mongoDBClient.updateAll(BarrageConstants.T_USER_INVITE_CODES, query, update);
+                }
+            }
+        });
+
     }
 
 }

@@ -38,8 +38,21 @@ public class RegisterService extends CommonModelService {
         User user = UserManager.getInstance().findUserByEmail(pbUser.getEmail());
         if (user != null){
             // user exist
-            log.warn("<registerByEmail> but user exist, failure, user=" + user.toString());
-            return ErrorProtos.PBError.ERROR_EMAIL_REGISTERED_VALUE;
+            String password = pbUser.getPassword();
+            if (!StringUtil.isEmpty(password) && user.checkPassword(password)) {
+                log.warn("<registerByEmail> user exist & password verified, return directly, user=" + user.toString());
+                rspBuilder.setUser(user.toProtoBufModel());
+                rspBuilder.setIsUserExist(true);
+                return 0;
+            }
+            else {
+                log.warn("<registerByEmail> but user email registered, user=" + user.toString());
+                return ErrorProtos.PBError.ERROR_EMAIL_REGISTERED_VALUE;
+            }
+
+//            // user exist
+//            log.warn("<registerByEmail> but user exist, failure, user=" + user.toString());
+//            return ErrorProtos.PBError.ERROR_EMAIL_REGISTERED_VALUE;
         }
 
         // user not found, create user by email directly
@@ -60,13 +73,20 @@ public class RegisterService extends CommonModelService {
             return ErrorProtos.PBError.ERROR_MOBILE_EMPTY_VALUE;
         }
 
-        User user = UserManager.getInstance().findUserByMobile(pbUser.getEmail());
+        User user = UserManager.getInstance().findUserByMobile(pbUser.getMobile());
+        String password = pbUser.getPassword();
         if (user != null){
             // user exist
-            log.warn("<registerByMobile> but user exist, return directly, user=" + user.toString());
-            rspBuilder.setUser(user.toProtoBufModel());
-            rspBuilder.setIsUserExist(true);
-            return 0;
+            if (!StringUtil.isEmpty(password) && user.checkPassword(password)) {
+                log.warn("<registerByMobile> user exist & password verified, return directly, user=" + user.toString());
+                rspBuilder.setUser(user.toProtoBufModel());
+                rspBuilder.setIsUserExist(true);
+                return 0;
+            }
+            else {
+                log.warn("<registerByMobile> but user mobile registered, user=" + user.toString());
+                return ErrorProtos.PBError.ERROR_MOBILE_EXIST_VALUE;
+            }
         }
 
         // user not found, create user by email directly
