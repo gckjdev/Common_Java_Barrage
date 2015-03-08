@@ -95,4 +95,8 @@ public class FriendRequestManager extends CommonMongoIdComplexListManager<User> 
     public DBObject getFriendRequest(String userId, String friendId) {
         return getObjectInfo(userId, friendId);
     }
+
+    public void deleteFriendRequest(String userId, String friendId) {
+        removeId(userId, friendId, false);
+    }
 }

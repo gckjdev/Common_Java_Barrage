@@ -6,6 +6,8 @@ import com.mongodb.DBObject;
 import com.orange.barrage.common.CommonModelManager;
 import com.orange.barrage.constant.BarrageConstants;
 import com.orange.common.mongodb.MongoDBClient;
+import com.orange.common.utils.DateUtil;
+import com.orange.common.utils.StringUtil;
 import com.orange.game.api.service.ElasticsearchService;
 import com.orange.game.constants.DBConstants;
 import com.orange.game.model.common.MongoGetIdListUtils;
@@ -81,6 +83,11 @@ public class UserManager extends CommonModelManager<User> {
 
         DBObject updateObj = User.pbToDBObject(pbUser);
         updateObj.removeField(BarrageConstants.F_USER_ID);
+
+        // TODO maybe need to be more accurate, compare to data in DB
+        if (pbUser.getSignature() != null || pbUser.getNick() != null || pbUser.getAvatar() != null ){
+            updateObj.put(BarrageConstants.F_STATUS_MODIFY_DATE, DateUtil.getCurrentSeconds());
+        }
 
         BasicDBObject update = new BasicDBObject();
         update.put("$set", updateObj);

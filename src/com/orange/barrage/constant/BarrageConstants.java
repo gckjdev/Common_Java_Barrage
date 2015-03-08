@@ -71,4 +71,5 @@ public class BarrageConstants {
     public static final String F_APPLY_COUNT = "applyCount";
     public static final String F_CODE = "code";
     public static final String F_STATUS = "status";
+    public static final String F_STATUS_MODIFY_DATE = "sDate";
 }

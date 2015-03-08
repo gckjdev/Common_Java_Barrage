@@ -63,4 +63,7 @@ public class FriendManager extends CommonMongoIdComplexListManager<User> {
         return getList(userId, 0, Integer.MAX_VALUE, User.getPublicReturnFields(), null, 0);
     }
 
+    public void deleteUserFriend(String userId, String friendId) {
+        removeId(userId, friendId, false);
+    }
 }

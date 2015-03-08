@@ -50,109 +50,113 @@ public final class ErrorProtos {
      */
     ERROR_INCORRECT_INPUT_DATA(7, 1000008),
     /**
+     * <code>ERROR_RESPONSE_SERVICE_DATA_NULL = 1000009;</code>
+     */
+    ERROR_RESPONSE_SERVICE_DATA_NULL(8, 1000009),
+    /**
      * <code>ERROR_USER_LOGIN_UNKNOWN_TYPE = 2000001;</code>
      *
      * <pre>
      * user
      * </pre>
      */
-    ERROR_USER_LOGIN_UNKNOWN_TYPE(8, 2000001),
+    ERROR_USER_LOGIN_UNKNOWN_TYPE(9, 2000001),
     /**
      * <code>ERROR_USER_LOGIN_INFO_EMPTY = 2000002;</code>
      */
-    ERROR_USER_LOGIN_INFO_EMPTY(9, 2000002),
+    ERROR_USER_LOGIN_INFO_EMPTY(10, 2000002),
     /**
      * <code>ERROR_USER_REGISTER_UNKNOWN_TYPE = 2000003;</code>
      */
-    ERROR_USER_REGISTER_UNKNOWN_TYPE(10, 2000003),
+    ERROR_USER_REGISTER_UNKNOWN_TYPE(11, 2000003),
     /**
      * <code>ERROR_USER_REGISTER_INFO_EMPTY = 2000004;</code>
      */
-    ERROR_USER_REGISTER_INFO_EMPTY(11, 2000004),
+    ERROR_USER_REGISTER_INFO_EMPTY(12, 2000004),
     /**
      * <code>ERROR_USER_REGISTER_INVALID_INVITE_CODE = 2000005;</code>
      */
-    ERROR_USER_REGISTER_INVALID_INVITE_CODE(12, 2000005),
+    ERROR_USER_REGISTER_INVALID_INVITE_CODE(13, 2000005),
     /**
      * <code>ERROR_USER_NOT_FOUND = 2000006;</code>
      */
-    ERROR_USER_NOT_FOUND(13, 2000006),
+    ERROR_USER_NOT_FOUND(14, 2000006),
     /**
      * <code>ERROR_FRIEND_NOT_FOUND = 2000007;</code>
      */
-    ERROR_FRIEND_NOT_FOUND(14, 2000007),
+    ERROR_FRIEND_NOT_FOUND(15, 2000007),
     /**
      * <code>ERROR_FRIEND_NOT_ALLOW_ADD_ME = 2000008;</code>
      */
-    ERROR_FRIEND_NOT_ALLOW_ADD_ME(15, 2000008),
+    ERROR_FRIEND_NOT_ALLOW_ADD_ME(16, 2000008),
     /**
      * <code>ERROR_INVITE_CODE_NOT_EXIST = 2000009;</code>
      */
-    ERROR_INVITE_CODE_NOT_EXIST(16, 2000009),
+    ERROR_INVITE_CODE_NOT_EXIST(17, 2000009),
     /**
      * <code>ERROR_INVITE_CODE_USED = 2000010;</code>
      */
-    ERROR_INVITE_CODE_USED(17, 2000010),
+    ERROR_INVITE_CODE_USED(18, 2000010),
     /**
      * <code>ERROR_EMAIL_EMPTY = 2000011;</code>
      */
-    ERROR_EMAIL_EMPTY(18, 2000011),
+    ERROR_EMAIL_EMPTY(19, 2000011),
     /**
      * <code>ERROR_MOBILE_EMPTY = 2000012;</code>
      */
-    ERROR_MOBILE_EMPTY(19, 2000012),
+    ERROR_MOBILE_EMPTY(20, 2000012),
     /**
      * <code>ERROR_SNSID_EMPTY = 2000013;</code>
      */
-    ERROR_SNSID_EMPTY(20, 2000013),
+    ERROR_SNSID_EMPTY(21, 2000013),
     /**
      * <code>ERROR_EMAIL_REGISTERED = 2000014;</code>
      */
-    ERROR_EMAIL_REGISTERED(21, 2000014),
+    ERROR_EMAIL_REGISTERED(22, 2000014),
     /**
      * <code>ERROR_PASSWORD_INVALID = 2000015;</code>
      */
-    ERROR_PASSWORD_INVALID(22, 2000015),
+    ERROR_PASSWORD_INVALID(23, 2000015),
     /**
      * <code>ERROR_SNS_AUTH_FAIL = 2000016;</code>
      */
-    ERROR_SNS_AUTH_FAIL(23, 2000016),
+    ERROR_SNS_AUTH_FAIL(24, 2000016),
     /**
      * <code>ERROR_SNS_AUTH_CANCEL = 2000017;</code>
      */
-    ERROR_SNS_AUTH_CANCEL(24, 2000017),
+    ERROR_SNS_AUTH_CANCEL(25, 2000017),
     /**
      * <code>ERROR_SNS_AUTH_ERROR_UNKNOWN = 2000018;</code>
      */
-    ERROR_SNS_AUTH_ERROR_UNKNOWN(25, 2000018),
+    ERROR_SNS_AUTH_ERROR_UNKNOWN(26, 2000018),
     /**
      * <code>ERROR_SNS_GET_USER_INFO = 2000019;</code>
      */
-    ERROR_SNS_GET_USER_INFO(26, 2000019),
+    ERROR_SNS_GET_USER_INFO(27, 2000019),
     /**
      * <code>ERROR_INVITE_CODE_NULL = 2000020;</code>
      */
-    ERROR_INVITE_CODE_NULL(27, 2000020),
+    ERROR_INVITE_CODE_NULL(28, 2000020),
     /**
      * <code>ERROR_NO_INVITE_CODE_AVAILABLE = 2000021;</code>
      */
-    ERROR_NO_INVITE_CODE_AVAILABLE(28, 2000021),
+    ERROR_NO_INVITE_CODE_AVAILABLE(29, 2000021),
     /**
      * <code>ERROR_USER_TAG_LIST_NULL = 2000022;</code>
      */
-    ERROR_USER_TAG_LIST_NULL(29, 2000022),
+    ERROR_USER_TAG_LIST_NULL(30, 2000022),
     /**
      * <code>ERROR_USER_TAG_NAME_DUPLICATE = 2000023;</code>
      */
-    ERROR_USER_TAG_NAME_DUPLICATE(30, 2000023),
+    ERROR_USER_TAG_NAME_DUPLICATE(31, 2000023),
     /**
      * <code>ERROR_SNS_NO_CREDENTIAL = 2000024;</code>
      */
-    ERROR_SNS_NO_CREDENTIAL(31, 2000024),
+    ERROR_SNS_NO_CREDENTIAL(32, 2000024),
     /**
      * <code>ERROR_MOBILE_EXIST = 2000025;</code>
      */
-    ERROR_MOBILE_EXIST(32, 2000025),
+    ERROR_MOBILE_EXIST(33, 2000025),
     /**
      * <code>ERROR_FEED_ACTION_INVALID = 3000001;</code>
      *
@@ -160,15 +164,31 @@ public final class ErrorProtos {
      * feed
      * </pre>
      */
-    ERROR_FEED_ACTION_INVALID(33, 3000001),
+    ERROR_FEED_ACTION_INVALID(34, 3000001),
     /**
      * <code>ERROR_CREATE_IMAGE = 3000002;</code>
      */
-    ERROR_CREATE_IMAGE(34, 3000002),
+    ERROR_CREATE_IMAGE(35, 3000002),
     /**
      * <code>ERROR_UPLOAD_IMAGE = 3000003;</code>
      */
-    ERROR_UPLOAD_IMAGE(35, 3000003),
+    ERROR_UPLOAD_IMAGE(36, 3000003),
+    /**
+     * <code>ERROR_FEED_ID_NULL = 3000004;</code>
+     */
+    ERROR_FEED_ID_NULL(37, 3000004),
+    /**
+     * <code>ERROR_FEED_ACTION_ID_NULL = 3000005;</code>
+     */
+    ERROR_FEED_ACTION_ID_NULL(38, 3000005),
+    /**
+     * <code>ERROR_FEED_NOT_FOUND = 3000006;</code>
+     */
+    ERROR_FEED_NOT_FOUND(39, 3000006),
+    /**
+     * <code>ERROR_FEED_ACTION_NOT_FOUND = 3000007;</code>
+     */
+    ERROR_FEED_ACTION_NOT_FOUND(40, 3000007),
     ;
 
     /**
@@ -207,6 +227,10 @@ public final class ErrorProtos {
      * <code>ERROR_INCORRECT_INPUT_DATA = 1000008;</code>
      */
     public static final int ERROR_INCORRECT_INPUT_DATA_VALUE = 1000008;
+    /**
+     * <code>ERROR_RESPONSE_SERVICE_DATA_NULL = 1000009;</code>
+     */
+    public static final int ERROR_RESPONSE_SERVICE_DATA_NULL_VALUE = 1000009;
     /**
      * <code>ERROR_USER_LOGIN_UNKNOWN_TYPE = 2000001;</code>
      *
@@ -327,6 +351,22 @@ public final class ErrorProtos {
      * <code>ERROR_UPLOAD_IMAGE = 3000003;</code>
      */
     public static final int ERROR_UPLOAD_IMAGE_VALUE = 3000003;
+    /**
+     * <code>ERROR_FEED_ID_NULL = 3000004;</code>
+     */
+    public static final int ERROR_FEED_ID_NULL_VALUE = 3000004;
+    /**
+     * <code>ERROR_FEED_ACTION_ID_NULL = 3000005;</code>
+     */
+    public static final int ERROR_FEED_ACTION_ID_NULL_VALUE = 3000005;
+    /**
+     * <code>ERROR_FEED_NOT_FOUND = 3000006;</code>
+     */
+    public static final int ERROR_FEED_NOT_FOUND_VALUE = 3000006;
+    /**
+     * <code>ERROR_FEED_ACTION_NOT_FOUND = 3000007;</code>
+     */
+    public static final int ERROR_FEED_ACTION_NOT_FOUND_VALUE = 3000007;
 
 
     public final int getNumber() { return value; }
@@ -341,6 +381,7 @@ public final class ErrorProtos {
         case 1000006: return ERROR_DATA_RESPONSE_NULL;
         case 1000007: return ERROR_JSON_EXCEPTION;
         case 1000008: return ERROR_INCORRECT_INPUT_DATA;
+        case 1000009: return ERROR_RESPONSE_SERVICE_DATA_NULL;
         case 2000001: return ERROR_USER_LOGIN_UNKNOWN_TYPE;
         case 2000002: return ERROR_USER_LOGIN_INFO_EMPTY;
         case 2000003: return ERROR_USER_REGISTER_UNKNOWN_TYPE;
@@ -369,6 +410,10 @@ public final class ErrorProtos {
         case 3000001: return ERROR_FEED_ACTION_INVALID;
         case 3000002: return ERROR_CREATE_IMAGE;
         case 3000003: return ERROR_UPLOAD_IMAGE;
+        case 3000004: return ERROR_FEED_ID_NULL;
+        case 3000005: return ERROR_FEED_ACTION_ID_NULL;
+        case 3000006: return ERROR_FEED_NOT_FOUND;
+        case 3000007: return ERROR_FEED_ACTION_NOT_FOUND;
         default: return null;
       }
     }
@@ -429,16 +474,17 @@ public final class ErrorProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Error.proto\022\007barrage*\375\010\n\007PBError\022\032\n\024ER" +
+      "\n\013Error.proto\022\007barrage*\243\n\n\007PBError\022\032\n\024ER" +
       "ROR_READ_POST_DATA\020\301\204=\022\033\n\025ERROR_PARSE_PO" +
       "ST_DATA\020\302\204=\022\037\n\031ERROR_NO_SERVICE_FOR_TYPE" +
       "\020\303\204=\022#\n\035ERROR_SERVICE_CATCH_EXCEPTION\020\304\204" +
       "=\022\023\n\rERROR_UNKNOWN\020\305\204=\022\036\n\030ERROR_DATA_RES" +
       "PONSE_NULL\020\306\204=\022\032\n\024ERROR_JSON_EXCEPTION\020\307" +
-      "\204=\022 \n\032ERROR_INCORRECT_INPUT_DATA\020\310\204=\022#\n\035" +
+      "\204=\022 \n\032ERROR_INCORRECT_INPUT_DATA\020\310\204=\022&\n " +
+      "ERROR_RESPONSE_SERVICE_DATA_NULL\020\311\204=\022#\n\035" +
       "ERROR_USER_LOGIN_UNKNOWN_TYPE\020\201\211z\022!\n\033ERR" +
-      "OR_USER_LOGIN_INFO_EMPTY\020\202\211z\022&\n ERROR_US" +
-      "ER_REGISTER_UNKNOWN_TYPE\020\203\211z\022$\n\036ERROR_US",
+      "OR_USER_LOGIN_INFO_EMPTY\020\202\211z\022&\n ERROR_US",
+      "ER_REGISTER_UNKNOWN_TYPE\020\203\211z\022$\n\036ERROR_US" +
       "ER_REGISTER_INFO_EMPTY\020\204\211z\022-\n\'ERROR_USER" +
       "_REGISTER_INVALID_INVITE_CODE\020\205\211z\022\032\n\024ERR" +
       "OR_USER_NOT_FOUND\020\206\211z\022\034\n\026ERROR_FRIEND_NO" +
@@ -447,8 +493,8 @@ public final class ErrorProtos {
       "\211\211z\022\034\n\026ERROR_INVITE_CODE_USED\020\212\211z\022\027\n\021ERR" +
       "OR_EMAIL_EMPTY\020\213\211z\022\030\n\022ERROR_MOBILE_EMPTY" +
       "\020\214\211z\022\027\n\021ERROR_SNSID_EMPTY\020\215\211z\022\034\n\026ERROR_E" +
-      "MAIL_REGISTERED\020\216\211z\022\034\n\026ERROR_PASSWORD_IN" +
-      "VALID\020\217\211z\022\031\n\023ERROR_SNS_AUTH_FAIL\020\220\211z\022\033\n\025",
+      "MAIL_REGISTERED\020\216\211z\022\034\n\026ERROR_PASSWORD_IN",
+      "VALID\020\217\211z\022\031\n\023ERROR_SNS_AUTH_FAIL\020\220\211z\022\033\n\025" +
       "ERROR_SNS_AUTH_CANCEL\020\221\211z\022\"\n\034ERROR_SNS_A" +
       "UTH_ERROR_UNKNOWN\020\222\211z\022\035\n\027ERROR_SNS_GET_U" +
       "SER_INFO\020\223\211z\022\034\n\026ERROR_INVITE_CODE_NULL\020\224" +
@@ -457,9 +503,12 @@ public final class ErrorProtos {
       "R_USER_TAG_NAME_DUPLICATE\020\227\211z\022\035\n\027ERROR_S" +
       "NS_NO_CREDENTIAL\020\230\211z\022\030\n\022ERROR_MOBILE_EXI" +
       "ST\020\231\211z\022 \n\031ERROR_FEED_ACTION_INVALID\020\301\215\267\001" +
-      "\022\031\n\022ERROR_CREATE_IMAGE\020\302\215\267\001\022\031\n\022ERROR_UPL" +
-      "OAD_IMAGE\020\303\215\267\001B*\n\033com.orange.protocol.me",
-      "ssageB\013ErrorProtos"
+      "\022\031\n\022ERROR_CREATE_IMAGE\020\302\215\267\001\022\031\n\022ERROR_UPL",
+      "OAD_IMAGE\020\303\215\267\001\022\031\n\022ERROR_FEED_ID_NULL\020\304\215\267" +
+      "\001\022 \n\031ERROR_FEED_ACTION_ID_NULL\020\305\215\267\001\022\033\n\024E" +
+      "RROR_FEED_NOT_FOUND\020\306\215\267\001\022\"\n\033ERROR_FEED_A" +
+      "CTION_NOT_FOUND\020\307\215\267\001B*\n\033com.orange.proto" +
+      "col.messageB\013ErrorProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

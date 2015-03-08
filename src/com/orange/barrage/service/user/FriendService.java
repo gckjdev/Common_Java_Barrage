@@ -80,4 +80,14 @@ public class FriendService  extends CommonModelService {
         FriendManager.getInstance().addUserFriend(userId, friendId, requestInfo);
         return 0;
     }
+
+    public int deleteFriend(String userId, String friendId, int addStatus) {
+
+        if (addStatus != UserProtos.FriendAddStatusType.REQ_STATUS_NONE_VALUE){
+            FriendRequestManager.getInstance().deleteFriendRequest(userId, friendId);
+        }
+
+        FriendManager.getInstance().deleteUserFriend(userId, friendId);
+        return 0;
+    }
 }

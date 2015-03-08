@@ -1,13 +1,16 @@
 package com.orange.barrage.service.feed;
 
 import com.googlecode.protobuf.format.JsonFormat;
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
 import com.orange.barrage.common.CommonModelService;
 import com.orange.barrage.constant.BarrageConstants;
 import com.orange.barrage.model.feed.Feed;
 import com.orange.barrage.model.feed.UserTimelineFeedManager;
+import com.orange.common.utils.StringUtil;
 import com.orange.protocol.message.BarrageProtos;
+import com.orange.protocol.message.ErrorProtos;
 import com.orange.protocol.message.MessageProtos;
 import com.orange.protocol.message.UserProtos;
 import org.bson.types.ObjectId;
@@ -61,6 +64,43 @@ public class FeedService extends CommonModelService {
         // TODO insert into user create list
 
         rspBuilder.setFeedId(feedId.toString());
+        return 0;
+    }
+
+    public int deleteFeedAction(String feedId, String actionId, MessageProtos.PBDeleteFeedActionResponse.Builder rspBuilder) {
+
+        if (StringUtil.isEmpty(feedId)){
+            return ErrorProtos.PBError.ERROR_FEED_ID_NULL_VALUE;
+        }
+
+        if (StringUtil.isEmpty(actionId)){
+            return ErrorProtos.PBError.ERROR_FEED_ACTION_ID_NULL_VALUE;
+        }
+
+        BasicDBObject query = new BasicDBObject();
+        query.put("_id", new ObjectId(feedId));
+
+        BasicDBObject pullValue = new BasicDBObject();
+        pullValue.put(BarrageConstants.F_ACTIONS+"."+BarrageConstants.F_ACTION_ID, actionId);
+
+        BasicDBObject pull = new BasicDBObject("$pull", pullValue);
+
+        log.info("<deleteFeedAction> query="+query.toString()+", pull="+pull.toString());
+        mongoDBClient.updateAll(BarrageConstants.T_FEED, query, pull);
+
+        return 0;
+    }
+
+    public int deleteFeed(String feedId, MessageProtos.PBDeleteFeedResponse.Builder rspBuilder) {
+        if (StringUtil.isEmpty(feedId)){
+            return ErrorProtos.PBError.ERROR_FEED_ID_NULL_VALUE;
+        }
+
+        BasicDBObject query = new BasicDBObject();
+        query.put("_id", new ObjectId(feedId));
+
+        log.info("<deleteFeed> query="+query.toString());
+        mongoDBClient.remove(BarrageConstants.T_FEED, query);
         return 0;
     }
 }

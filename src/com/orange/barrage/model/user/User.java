@@ -200,6 +200,7 @@ public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser
         obj.put(BarrageConstants.F_SIGNATURE, 1);
         obj.put(BarrageConstants.F_AVATAR_BG, 1);
         obj.put(BarrageConstants.F_GENDER, 1);
+        obj.put(BarrageConstants.F_STATUS_MODIFY_DATE, 1);
         return obj;
     }
 
@@ -210,6 +211,7 @@ public class User extends CommonData implements ProtoBufCoding<UserProtos.PBUser
         obj.put(BarrageConstants.F_AVATAR, 1);
         obj.put(BarrageConstants.F_SIGNATURE, 1);
         obj.put(BarrageConstants.F_GENDER, 1);
+        obj.put(BarrageConstants.F_STATUS_MODIFY_DATE, 1);
         return obj;
     }
 
