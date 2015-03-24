@@ -15,8 +15,14 @@ public class BarrageConstants {
     public static final String T_FRIEND_REQUEST = "friend_request";
     public static final String T_FEED = "feed";
     public static final String T_USER_FEED_TIMELINE = "user_feed_timeline";
+    public static final String T_MY_NEW_FEED = "my_new_feed";
+    public static final String T_MY_RELATED_FEED = "my_related_feed";
+    public static final String T_MY_FEED = "my_feed";
+
     public static final String T_USER_TAG = "user_tag";
     public static final String T_USER_INVITE_CODES = "user_invite_codes";
+
+    public static final String F_FEEDBACK_ID = "reqId";
 
     public static final String F_EMAIL = "email";
     public static final String F_FEED_ID = "feedId";
@@ -72,4 +78,8 @@ public class BarrageConstants {
     public static final String F_CODE = "code";
     public static final String F_STATUS = "status";
     public static final String F_STATUS_MODIFY_DATE = "sDate";
+
+    public static final String T_FEEDBACK = "feedback";
+    public static final String F_CREATE_DATE = "createDate";
+    public static final String F_COUNT = "count";
 }

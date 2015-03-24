@@ -540,6 +540,42 @@ public abstract class CommonMongoIdComplexListManager<T> extends CommonMongoIdLi
         DBService.getInstance().getMongoDBClient().updateAll(idListTableName, query, update);
     }
 
+    protected void updateIndexObject(String key, String objectKeyValue, BasicDBObject objectData, BasicDBObject incData) {
+
+        Object keyObjectId = getId(key, useObjectIdForKey);
+        Object objectKeyObjectId = getId(objectKeyValue, useObjectIdForListKey);
+        if (keyObjectId == null){
+            log.warn("<updateIndexObject> but key is null");
+            return;
+        }
+        log.info("<updateIndexObject> objectId = "+keyObjectId.toString() +", objectKeyObjectId="+objectKeyObjectId.toString());
+
+        BasicDBObject query = new BasicDBObject();
+        query.put(keyFieldName, keyObjectId);
+        query.put(listFieldName+"."+idListKeyFieldName, objectKeyObjectId);
+
+        BasicDBObject updateValue = new BasicDBObject();
+        for (String objectKey : objectData.keySet()){
+            updateValue.put(listFieldName+".$."+objectKey, objectData.get(objectKey));
+        }
+
+        BasicDBObject incValue = new BasicDBObject();
+        for (String incObjKey : incData.keySet()){
+            incValue.put(listFieldName+".$."+incObjKey, incData.get(incObjKey));
+        }
+
+        BasicDBObject update = new BasicDBObject();
+        if (updateValue.size() > 0) {
+            update.put("$set", updateValue);
+        }
+        if (incValue.size() > 0){
+            update.put("$inc", incValue);
+        }
+
+        log.info("<updateIndexObject> query="+query.toString()+", update="+update.toString());
+        DBService.getInstance().getMongoDBClient().updateAll(idListTableName, query, update);
+    }
+
     protected DBObject getObjectInfo(String key, String id) {
 
         Object keyObjectId = getId(key, useObjectIdForKey);

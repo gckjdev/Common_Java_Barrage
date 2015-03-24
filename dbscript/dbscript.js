@@ -1,4 +1,67 @@
 
+
+//插入contest数据，支持评委等信息，新年唱歌比赛
+db.contest.insert({
+            "_id" : ObjectId("988888888888888820150320"),
+            "cate" : 0,
+            "opus_count" : 0,
+            "participant_count" : 0,
+            "language" : 1,
+            "type" : 2,
+            "title" : "图说流行语",
+            "contest_url" : "http://58.215.184.18:8080/contest/image/988888888888888820150320_contest.jpg",
+            "statement_url" : "http://58.215.184.18:8080/contest/image/988888888888888820150320_rule.jpg",
+            "submit_count" : 1,
+            "s_date" : ISODate("2015-03-19T16:00:00Z"),
+            "e_date" : ISODate("2015-03-30T16:00:00Z"),
+            "vote_start_date" : ISODate("2015-03-19T16:00:00Z"),
+            "vote_end_date" : ISODate("2015-03-31T16:00:00Z"),
+            "contest_ipad_url" : "http://58.215.184.18:8080/contest/image/988888888888888820150320_contest.jpg",
+            "statement_ipad_url" : "http://58.215.184.18:8080/contest/image/988888888888888820150320_rule.jpg",
+            "contestants_only" : false,
+            "contestants": [],
+            "judges" : [],
+            "reporters" : [],
+            "anonymous" : true,
+            "max_flower_per_opus" : 3,
+            "max_flower_per_contest" : 3000,
+            "submit_count" : 1,
+            "flower_rank_weight" : 3,
+            "judge_rank_weight" : 60,
+            "winner_list" : [ ],
+            "award_list" : [  ],
+            "rank_types" : {"1":"名次", "2" : "特别创意奖", "3" : "最具潜力奖"},
+            "status" : 2,
+            "group" : false,
+            "award_rules" : [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+                ],
+            "award_total" : 51500
+
+            });
+
+
+
+
 db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{judges:"50f4ad58e4b05bb0f07e9a08"}});
 db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{judges:"5087b337e4b0e39b1782d683"}});
 db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{judges:"50d5ca23e4b0d73d234e6bbb"}});

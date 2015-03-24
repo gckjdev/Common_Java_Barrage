@@ -52,6 +52,7 @@ public abstract class CommonMongoIdListManager<T extends CommonData> {
     String readDateField = DBConstants.F_READ_DATE;                    // 最近一次阅读日期
     String mongoIdFieldName = "_id";
 
+
     public CommonMongoIdListManager(String idListTableName, String idTableName, Class<T> returnDataObjectClass) {
         this.idListTableName = idListTableName;
         this.idTableName = idTableName;
@@ -66,6 +67,10 @@ public abstract class CommonMongoIdListManager<T extends CommonData> {
 
     public String getKeyFieldName() {
         return keyFieldName;
+    }
+
+    public String getListFiledName(){
+        return listFieldName;
     }
 
     private void createDBIndexIfNotExist(String idListTableName, String keyFieldName) {

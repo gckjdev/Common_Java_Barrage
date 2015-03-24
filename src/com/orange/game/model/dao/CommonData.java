@@ -223,8 +223,14 @@ public class CommonData {
     }
 
     public static <T extends GeneratedMessage, D extends CommonData> List<T> listToPB(List<D> list, Set<String> removeFields){
+
+
         List<T> pbList = new ArrayList<T>();
         for (D dataObj : list){
+            if (dataObj.getPBClass() == null){
+                log.error("exception!!!!!!!!! ================ getPBClass() method not implemented ====================");
+            }
+
             GeneratedMessage.Builder builder = (GeneratedMessage.Builder)invokeClassMethod(dataObj.getPBClass(), "newBuilder");
             T pbObject = dataObj.toPB(builder, removeFields);
             pbList.add(pbObject);
@@ -393,6 +399,7 @@ public class CommonData {
         return null;
     }
 
+    // to be overried
     public Class getPBClass(){
         return null;
     }
