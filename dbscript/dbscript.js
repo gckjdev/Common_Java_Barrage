@@ -82,6 +82,9 @@ db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{rep
 db.contest.update({"_id" : ObjectId("988888888888888820150214")},{$addToSet:{reporters:"518d0fcfe4b0d2e09c021b31"}});
 
 
+db.contest.update({"_id" : ObjectId("988888888888888820150320")},{$addToSet:{judges:"4fc3089a26099b2ca8c7a4ab"}});
+
+
 
 51021f70e4b0a04f9ebc8ed5
 51ef4440e4b0705e61162244

@@ -263,22 +263,34 @@ public class FeedService extends CommonModelService {
     }
 
     // TODO
-    public int readUserNewFeed(String userId, String feedId, MessageProtos.PBGetMyNewFeedListResponse.Builder rspBuilder) {
-
+    public int readUserNewFeed(String userId, String feedId) {
         MyNewFeedManager.getInstance().clearMyFeedCount(userId, feedId);
-
         return 0;
     }
 
-    public BarrageProtos.PBFeed getFeedById(String feedId) {
+    public int getFeedById(String feedId, MessageProtos.PBGetFeedByIdResponse.Builder rspBuilder) {
         BasicDBObject query = new BasicDBObject("_id", new ObjectId(feedId));
         DBObject obj = mongoDBClient.findOne(BarrageConstants.T_FEED, query);
         if (obj == null){
-            return null;
+            return ErrorProtos.PBError.ERROR_FEED_NOT_FOUND_VALUE;
         }
 
         Feed feed = new Feed(obj);
-        return feed.toProtoBufModel();
+        BarrageProtos.PBFeed pbFeed = feed.toProtoBufModel();
+
+        rspBuilder.setFeed(pbFeed);
+        return 0;
     }
 
+    public int getUserFeed(String userId, int offset, int limit, MessageProtos.PBGetUserFeedResponse.Builder rspBuilder) {
+
+        List<Feed> list = MyFeedIndexManager.getInstance().getUserFeedList(userId, offset, limit);
+        List<BarrageProtos.PBFeed> pbFeedList = Feed.listToPB(list, null);
+
+        if (pbFeedList != null) {
+            rspBuilder.addAllFeeds(pbFeedList);
+        }
+
+        return 0;
+    }
 }

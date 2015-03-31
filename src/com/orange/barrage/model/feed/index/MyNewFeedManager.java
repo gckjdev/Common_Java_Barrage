@@ -112,7 +112,7 @@ public class MyNewFeedManager extends CommonMongoIdComplexListManager<Feed> {
 
         List<MyNewFeed> zeroCountList = new ArrayList<MyNewFeed>();
         for (MyNewFeed myNewFeed : feedObjList){
-            if (myNewFeed.getCount() < 0){
+            if (myNewFeed.getCount() <= 0){
                 zeroCountList.add(myNewFeed);
             }
         }

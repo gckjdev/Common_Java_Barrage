@@ -44,4 +44,7 @@ public class MyFeedIndexManager extends CommonMongoIdListManager<Feed> {
         removeId(userId, feedId, false);
     }
 
+    public List<Feed> getUserFeedList(String userId, int offset, int limit) {
+        return getList(userId, offset, limit, null, null, 0);
+    }
 }
