@@ -11,6 +11,7 @@ import com.orange.common.redis.RedisCallable;
 import com.orange.common.redis.RedisClient;
 import com.orange.common.utils.RandomUtil;
 import com.orange.common.utils.StringUtil;
+import com.orange.game.constants.DBConstants;
 import com.orange.game.model.dao.CommonData;
 import com.orange.game.model.service.DBService;
 import com.orange.protocol.message.ErrorProtos;
@@ -263,6 +264,18 @@ public class InviteCodeManager extends CommonModelManager<CommonData> {
         log.info("<addUserInviteCodes> query="+query.toString()+", push="+push.toString());
         DBObject obj = mongoDBClient.findAndModifyUpsert(BarrageConstants.T_USER_INVITE_CODES, query, push);
         UserProtos.PBUserInviteCodeList.Builder builder = UserProtos.PBUserInviteCodeList.newBuilder();
+        if (obj == null){
+            return builder.build();
+        }
+
+        // remove all status which is used
+        query = new BasicDBObject(BarrageConstants.F_USER_ID, userId);
+        BasicDBObject update = new BasicDBObject();
+        DBObject pullValue = new BasicDBObject();
+        pullValue.put(BarrageConstants.F_STATUS, UserProtos.PBInviteCodeStatus.CODE_STATUS_USED_VALUE);
+        update.put("$pull", new BasicDBObject(BarrageConstants.F_AVAILABLE_CODES, pullValue));
+        log.info("<addUserInviteCodes> remove used codes, query="+query.toString()+", update="+update.toString());
+        obj = mongoDBClient.findAndModify(BarrageConstants.T_USER_INVITE_CODES, query, update);
         if (obj == null){
             return builder.build();
         }

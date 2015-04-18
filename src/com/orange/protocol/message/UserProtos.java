@@ -949,6 +949,411 @@ public final class UserProtos {
     // @@protoc_insertion_point(enum_scope:barrage.PBInviteCodeStatus)
   }
 
+  /**
+   * Protobuf enum {@code barrage.PBChatSource}
+   */
+  public enum PBChatSource
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>FROM_WECHAT = 1;</code>
+     *
+     * <pre>
+     * 微信公众号
+     * </pre>
+     */
+    FROM_WECHAT(0, 1),
+    /**
+     * <code>FROM_APP = 2;</code>
+     *
+     * <pre>
+     * APP客户端
+     * </pre>
+     */
+    FROM_APP(1, 2),
+    /**
+     * <code>FROM_WEB = 3;</code>
+     *
+     * <pre>
+     * Web网站
+     * </pre>
+     */
+    FROM_WEB(2, 3),
+    /**
+     * <code>FROM_MOBILE_WEB = 4;</code>
+     *
+     * <pre>
+     * 手机网站
+     * </pre>
+     */
+    FROM_MOBILE_WEB(3, 4),
+    /**
+     * <code>FROM_AGENT = 5;</code>
+     *
+     * <pre>
+     * 客服人工
+     * </pre>
+     */
+    FROM_AGENT(4, 5),
+    /**
+     * <code>FROM_AGENT_AUTO = 6;</code>
+     *
+     * <pre>
+     * 客服自动
+     * </pre>
+     */
+    FROM_AGENT_AUTO(5, 6),
+    /**
+     * <code>FROM_SYSTEM = 7;</code>
+     *
+     * <pre>
+     * 系统群发
+     * </pre>
+     */
+    FROM_SYSTEM(6, 7),
+    ;
+
+    /**
+     * <code>FROM_WECHAT = 1;</code>
+     *
+     * <pre>
+     * 微信公众号
+     * </pre>
+     */
+    public static final int FROM_WECHAT_VALUE = 1;
+    /**
+     * <code>FROM_APP = 2;</code>
+     *
+     * <pre>
+     * APP客户端
+     * </pre>
+     */
+    public static final int FROM_APP_VALUE = 2;
+    /**
+     * <code>FROM_WEB = 3;</code>
+     *
+     * <pre>
+     * Web网站
+     * </pre>
+     */
+    public static final int FROM_WEB_VALUE = 3;
+    /**
+     * <code>FROM_MOBILE_WEB = 4;</code>
+     *
+     * <pre>
+     * 手机网站
+     * </pre>
+     */
+    public static final int FROM_MOBILE_WEB_VALUE = 4;
+    /**
+     * <code>FROM_AGENT = 5;</code>
+     *
+     * <pre>
+     * 客服人工
+     * </pre>
+     */
+    public static final int FROM_AGENT_VALUE = 5;
+    /**
+     * <code>FROM_AGENT_AUTO = 6;</code>
+     *
+     * <pre>
+     * 客服自动
+     * </pre>
+     */
+    public static final int FROM_AGENT_AUTO_VALUE = 6;
+    /**
+     * <code>FROM_SYSTEM = 7;</code>
+     *
+     * <pre>
+     * 系统群发
+     * </pre>
+     */
+    public static final int FROM_SYSTEM_VALUE = 7;
+
+
+    public final int getNumber() { return value; }
+
+    public static PBChatSource valueOf(int value) {
+      switch (value) {
+        case 1: return FROM_WECHAT;
+        case 2: return FROM_APP;
+        case 3: return FROM_WEB;
+        case 4: return FROM_MOBILE_WEB;
+        case 5: return FROM_AGENT;
+        case 6: return FROM_AGENT_AUTO;
+        case 7: return FROM_SYSTEM;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PBChatSource>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<PBChatSource>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PBChatSource>() {
+            public PBChatSource findValueByNumber(int number) {
+              return PBChatSource.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.getDescriptor().getEnumTypes().get(8);
+    }
+
+    private static final PBChatSource[] VALUES = values();
+
+    public static PBChatSource valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private PBChatSource(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:barrage.PBChatSource)
+  }
+
+  /**
+   * Protobuf enum {@code barrage.PBChatType}
+   */
+  public enum PBChatType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>NORMAL_CHAT = 0;</code>
+     */
+    NORMAL_CHAT(0, 0),
+    ;
+
+    /**
+     * <code>NORMAL_CHAT = 0;</code>
+     */
+    public static final int NORMAL_CHAT_VALUE = 0;
+
+
+    public final int getNumber() { return value; }
+
+    public static PBChatType valueOf(int value) {
+      switch (value) {
+        case 0: return NORMAL_CHAT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PBChatType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<PBChatType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PBChatType>() {
+            public PBChatType findValueByNumber(int number) {
+              return PBChatType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.getDescriptor().getEnumTypes().get(9);
+    }
+
+    private static final PBChatType[] VALUES = values();
+
+    public static PBChatType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private PBChatType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:barrage.PBChatType)
+  }
+
+  /**
+   * Protobuf enum {@code barrage.PBChatStatus}
+   */
+  public enum PBChatStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>MESSAGE_SENDING = 0;</code>
+     *
+     * <pre>
+     * 发送中
+     * </pre>
+     */
+    MESSAGE_SENDING(0, 0),
+    /**
+     * <code>MESSAGE_SENT = 1;</code>
+     *
+     * <pre>
+     * 已发送
+     * </pre>
+     */
+    MESSAGE_SENT(1, 1),
+    /**
+     * <code>MESSAGE_FAILURE = 2;</code>
+     *
+     * <pre>
+     * 发送失败
+     * </pre>
+     */
+    MESSAGE_FAILURE(2, 2),
+    /**
+     * <code>MESSAGE_DELETED = 3;</code>
+     *
+     * <pre>
+     * 已删除
+     * </pre>
+     */
+    MESSAGE_DELETED(3, 3),
+    /**
+     * <code>MESSAGE_CANCEL = 4;</code>
+     *
+     * <pre>
+     * 取消发送
+     * </pre>
+     */
+    MESSAGE_CANCEL(4, 4),
+    ;
+
+    /**
+     * <code>MESSAGE_SENDING = 0;</code>
+     *
+     * <pre>
+     * 发送中
+     * </pre>
+     */
+    public static final int MESSAGE_SENDING_VALUE = 0;
+    /**
+     * <code>MESSAGE_SENT = 1;</code>
+     *
+     * <pre>
+     * 已发送
+     * </pre>
+     */
+    public static final int MESSAGE_SENT_VALUE = 1;
+    /**
+     * <code>MESSAGE_FAILURE = 2;</code>
+     *
+     * <pre>
+     * 发送失败
+     * </pre>
+     */
+    public static final int MESSAGE_FAILURE_VALUE = 2;
+    /**
+     * <code>MESSAGE_DELETED = 3;</code>
+     *
+     * <pre>
+     * 已删除
+     * </pre>
+     */
+    public static final int MESSAGE_DELETED_VALUE = 3;
+    /**
+     * <code>MESSAGE_CANCEL = 4;</code>
+     *
+     * <pre>
+     * 取消发送
+     * </pre>
+     */
+    public static final int MESSAGE_CANCEL_VALUE = 4;
+
+
+    public final int getNumber() { return value; }
+
+    public static PBChatStatus valueOf(int value) {
+      switch (value) {
+        case 0: return MESSAGE_SENDING;
+        case 1: return MESSAGE_SENT;
+        case 2: return MESSAGE_FAILURE;
+        case 3: return MESSAGE_DELETED;
+        case 4: return MESSAGE_CANCEL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PBChatStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<PBChatStatus>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PBChatStatus>() {
+            public PBChatStatus findValueByNumber(int number) {
+              return PBChatStatus.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.getDescriptor().getEnumTypes().get(10);
+    }
+
+    private static final PBChatStatus[] VALUES = values();
+
+    public static PBChatStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private PBChatStatus(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:barrage.PBChatStatus)
+  }
+
   public interface PBSNSUserOrBuilder extends
       // @@protoc_insertion_point(interface_extends:barrage.PBSNSUser)
       com.google.protobuf.MessageOrBuilder {
@@ -20163,6 +20568,3196 @@ public final class UserProtos {
     // @@protoc_insertion_point(class_scope:barrage.PBUserGroupList)
   }
 
+  public interface PBChatOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:barrage.PBChat)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string chatId = 1;</code>
+     *
+     * <pre>
+     * 消息ID
+     * </pre>
+     */
+    boolean hasChatId();
+    /**
+     * <code>required string chatId = 1;</code>
+     *
+     * <pre>
+     * 消息ID
+     * </pre>
+     */
+    java.lang.String getChatId();
+    /**
+     * <code>required string chatId = 1;</code>
+     *
+     * <pre>
+     * 消息ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getChatIdBytes();
+
+    /**
+     * <code>optional string sessionId = 2;</code>
+     *
+     * <pre>
+     * 会话ID，多个消息可以属于同一次会话
+     * </pre>
+     */
+    boolean hasSessionId();
+    /**
+     * <code>optional string sessionId = 2;</code>
+     *
+     * <pre>
+     * 会话ID，多个消息可以属于同一次会话
+     * </pre>
+     */
+    java.lang.String getSessionId();
+    /**
+     * <code>optional string sessionId = 2;</code>
+     *
+     * <pre>
+     * 会话ID，多个消息可以属于同一次会话
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getSessionIdBytes();
+
+    /**
+     * <code>optional .barrage.PBUser fromUser = 3;</code>
+     *
+     * <pre>
+     * 发送方用户信息
+     * </pre>
+     */
+    boolean hasFromUser();
+    /**
+     * <code>optional .barrage.PBUser fromUser = 3;</code>
+     *
+     * <pre>
+     * 发送方用户信息
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUser getFromUser();
+    /**
+     * <code>optional .barrage.PBUser fromUser = 3;</code>
+     *
+     * <pre>
+     * 发送方用户信息
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUserOrBuilder getFromUserOrBuilder();
+
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     *
+     * <pre>
+     * 发送方用户ID
+     * </pre>
+     */
+    boolean hasFromUserId();
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     *
+     * <pre>
+     * 发送方用户ID
+     * </pre>
+     */
+    java.lang.String getFromUserId();
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     *
+     * <pre>
+     * 发送方用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getFromUserIdBytes();
+
+    /**
+     * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+     *
+     * <pre>
+     * 发送方设备信息
+     * </pre>
+     */
+    boolean hasFromDevice();
+    /**
+     * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+     *
+     * <pre>
+     * 发送方设备信息
+     * </pre>
+     */
+    com.orange.protocol.message.CommonProtos.PBDevice getFromDevice();
+    /**
+     * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+     *
+     * <pre>
+     * 发送方设备信息
+     * </pre>
+     */
+    com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getFromDeviceOrBuilder();
+
+    /**
+     * <code>optional .barrage.PBUser toUser = 6;</code>
+     *
+     * <pre>
+     * 接受方用户信息
+     * </pre>
+     */
+    boolean hasToUser();
+    /**
+     * <code>optional .barrage.PBUser toUser = 6;</code>
+     *
+     * <pre>
+     * 接受方用户信息
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUser getToUser();
+    /**
+     * <code>optional .barrage.PBUser toUser = 6;</code>
+     *
+     * <pre>
+     * 接受方用户信息
+     * </pre>
+     */
+    com.orange.protocol.message.UserProtos.PBUserOrBuilder getToUserOrBuilder();
+
+    /**
+     * <code>optional string toUserId = 7;</code>
+     *
+     * <pre>
+     * 接受方用户ID
+     * </pre>
+     */
+    boolean hasToUserId();
+    /**
+     * <code>optional string toUserId = 7;</code>
+     *
+     * <pre>
+     * 接受方用户ID
+     * </pre>
+     */
+    java.lang.String getToUserId();
+    /**
+     * <code>optional string toUserId = 7;</code>
+     *
+     * <pre>
+     * 接受方用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getToUserIdBytes();
+
+    /**
+     * <code>optional string text = 10;</code>
+     *
+     * <pre>
+     * 消息文本
+     * </pre>
+     */
+    boolean hasText();
+    /**
+     * <code>optional string text = 10;</code>
+     *
+     * <pre>
+     * 消息文本
+     * </pre>
+     */
+    java.lang.String getText();
+    /**
+     * <code>optional string text = 10;</code>
+     *
+     * <pre>
+     * 消息文本
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getTextBytes();
+
+    /**
+     * <code>optional string image = 11;</code>
+     *
+     * <pre>
+     * 消息图片
+     * </pre>
+     */
+    boolean hasImage();
+    /**
+     * <code>optional string image = 11;</code>
+     *
+     * <pre>
+     * 消息图片
+     * </pre>
+     */
+    java.lang.String getImage();
+    /**
+     * <code>optional string image = 11;</code>
+     *
+     * <pre>
+     * 消息图片
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getImageBytes();
+
+    /**
+     * <code>optional string thumb = 12;</code>
+     *
+     * <pre>
+     * 消息图片缩略图
+     * </pre>
+     */
+    boolean hasThumb();
+    /**
+     * <code>optional string thumb = 12;</code>
+     *
+     * <pre>
+     * 消息图片缩略图
+     * </pre>
+     */
+    java.lang.String getThumb();
+    /**
+     * <code>optional string thumb = 12;</code>
+     *
+     * <pre>
+     * 消息图片缩略图
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getThumbBytes();
+
+    /**
+     * <code>optional string voice = 13;</code>
+     *
+     * <pre>
+     * 语音
+     * </pre>
+     */
+    boolean hasVoice();
+    /**
+     * <code>optional string voice = 13;</code>
+     *
+     * <pre>
+     * 语音
+     * </pre>
+     */
+    java.lang.String getVoice();
+    /**
+     * <code>optional string voice = 13;</code>
+     *
+     * <pre>
+     * 语音
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getVoiceBytes();
+
+    /**
+     * <code>optional int32 createDate = 20;</code>
+     *
+     * <pre>
+     * 创建日期
+     * </pre>
+     */
+    boolean hasCreateDate();
+    /**
+     * <code>optional int32 createDate = 20;</code>
+     *
+     * <pre>
+     * 创建日期
+     * </pre>
+     */
+    int getCreateDate();
+
+    /**
+     * <code>optional int32 status = 21;</code>
+     *
+     * <pre>
+     * 状态，参考PBChatStatus
+     * </pre>
+     */
+    boolean hasStatus();
+    /**
+     * <code>optional int32 status = 21;</code>
+     *
+     * <pre>
+     * 状态，参考PBChatStatus
+     * </pre>
+     */
+    int getStatus();
+
+    /**
+     * <code>optional int32 type = 22;</code>
+     *
+     * <pre>
+     * 类型，参考PBChatType
+     * </pre>
+     */
+    boolean hasType();
+    /**
+     * <code>optional int32 type = 22;</code>
+     *
+     * <pre>
+     * 类型，参考PBChatType
+     * </pre>
+     */
+    int getType();
+
+    /**
+     * <code>optional int32 source = 23;</code>
+     *
+     * <pre>
+     * 来源，参考PBChatSource
+     * </pre>
+     */
+    boolean hasSource();
+    /**
+     * <code>optional int32 source = 23;</code>
+     *
+     * <pre>
+     * 来源，参考PBChatSource
+     * </pre>
+     */
+    int getSource();
+  }
+  /**
+   * Protobuf type {@code barrage.PBChat}
+   */
+  public static final class PBChat extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:barrage.PBChat)
+      PBChatOrBuilder {
+    // Use PBChat.newBuilder() to construct.
+    private PBChat(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private PBChat(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final PBChat defaultInstance;
+    public static PBChat getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public PBChat getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PBChat(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              chatId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              sessionId_ = bs;
+              break;
+            }
+            case 26: {
+              com.orange.protocol.message.UserProtos.PBUser.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = fromUser_.toBuilder();
+              }
+              fromUser_ = input.readMessage(com.orange.protocol.message.UserProtos.PBUser.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fromUser_);
+                fromUser_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              fromUserId_ = bs;
+              break;
+            }
+            case 42: {
+              com.orange.protocol.message.CommonProtos.PBDevice.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = fromDevice_.toBuilder();
+              }
+              fromDevice_ = input.readMessage(com.orange.protocol.message.CommonProtos.PBDevice.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fromDevice_);
+                fromDevice_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+            case 50: {
+              com.orange.protocol.message.UserProtos.PBUser.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                subBuilder = toUser_.toBuilder();
+              }
+              toUser_ = input.readMessage(com.orange.protocol.message.UserProtos.PBUser.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(toUser_);
+                toUser_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000020;
+              break;
+            }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              toUserId_ = bs;
+              break;
+            }
+            case 82: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000080;
+              text_ = bs;
+              break;
+            }
+            case 90: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000100;
+              image_ = bs;
+              break;
+            }
+            case 98: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000200;
+              thumb_ = bs;
+              break;
+            }
+            case 106: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000400;
+              voice_ = bs;
+              break;
+            }
+            case 160: {
+              bitField0_ |= 0x00000800;
+              createDate_ = input.readInt32();
+              break;
+            }
+            case 168: {
+              bitField0_ |= 0x00001000;
+              status_ = input.readInt32();
+              break;
+            }
+            case 176: {
+              bitField0_ |= 0x00002000;
+              type_ = input.readInt32();
+              break;
+            }
+            case 184: {
+              bitField0_ |= 0x00004000;
+              source_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.internal_static_barrage_PBChat_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.orange.protocol.message.UserProtos.internal_static_barrage_PBChat_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.orange.protocol.message.UserProtos.PBChat.class, com.orange.protocol.message.UserProtos.PBChat.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<PBChat> PARSER =
+        new com.google.protobuf.AbstractParser<PBChat>() {
+      public PBChat parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PBChat(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PBChat> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int CHATID_FIELD_NUMBER = 1;
+    private java.lang.Object chatId_;
+    /**
+     * <code>required string chatId = 1;</code>
+     *
+     * <pre>
+     * 消息ID
+     * </pre>
+     */
+    public boolean hasChatId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string chatId = 1;</code>
+     *
+     * <pre>
+     * 消息ID
+     * </pre>
+     */
+    public java.lang.String getChatId() {
+      java.lang.Object ref = chatId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          chatId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string chatId = 1;</code>
+     *
+     * <pre>
+     * 消息ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getChatIdBytes() {
+      java.lang.Object ref = chatId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        chatId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SESSIONID_FIELD_NUMBER = 2;
+    private java.lang.Object sessionId_;
+    /**
+     * <code>optional string sessionId = 2;</code>
+     *
+     * <pre>
+     * 会话ID，多个消息可以属于同一次会话
+     * </pre>
+     */
+    public boolean hasSessionId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string sessionId = 2;</code>
+     *
+     * <pre>
+     * 会话ID，多个消息可以属于同一次会话
+     * </pre>
+     */
+    public java.lang.String getSessionId() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          sessionId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string sessionId = 2;</code>
+     *
+     * <pre>
+     * 会话ID，多个消息可以属于同一次会话
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getSessionIdBytes() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FROMUSER_FIELD_NUMBER = 3;
+    private com.orange.protocol.message.UserProtos.PBUser fromUser_;
+    /**
+     * <code>optional .barrage.PBUser fromUser = 3;</code>
+     *
+     * <pre>
+     * 发送方用户信息
+     * </pre>
+     */
+    public boolean hasFromUser() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .barrage.PBUser fromUser = 3;</code>
+     *
+     * <pre>
+     * 发送方用户信息
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUser getFromUser() {
+      return fromUser_;
+    }
+    /**
+     * <code>optional .barrage.PBUser fromUser = 3;</code>
+     *
+     * <pre>
+     * 发送方用户信息
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserOrBuilder getFromUserOrBuilder() {
+      return fromUser_;
+    }
+
+    public static final int FROMUSERID_FIELD_NUMBER = 4;
+    private java.lang.Object fromUserId_;
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     *
+     * <pre>
+     * 发送方用户ID
+     * </pre>
+     */
+    public boolean hasFromUserId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     *
+     * <pre>
+     * 发送方用户ID
+     * </pre>
+     */
+    public java.lang.String getFromUserId() {
+      java.lang.Object ref = fromUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          fromUserId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string fromUserId = 4;</code>
+     *
+     * <pre>
+     * 发送方用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getFromUserIdBytes() {
+      java.lang.Object ref = fromUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fromUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FROMDEVICE_FIELD_NUMBER = 5;
+    private com.orange.protocol.message.CommonProtos.PBDevice fromDevice_;
+    /**
+     * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+     *
+     * <pre>
+     * 发送方设备信息
+     * </pre>
+     */
+    public boolean hasFromDevice() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+     *
+     * <pre>
+     * 发送方设备信息
+     * </pre>
+     */
+    public com.orange.protocol.message.CommonProtos.PBDevice getFromDevice() {
+      return fromDevice_;
+    }
+    /**
+     * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+     *
+     * <pre>
+     * 发送方设备信息
+     * </pre>
+     */
+    public com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getFromDeviceOrBuilder() {
+      return fromDevice_;
+    }
+
+    public static final int TOUSER_FIELD_NUMBER = 6;
+    private com.orange.protocol.message.UserProtos.PBUser toUser_;
+    /**
+     * <code>optional .barrage.PBUser toUser = 6;</code>
+     *
+     * <pre>
+     * 接受方用户信息
+     * </pre>
+     */
+    public boolean hasToUser() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional .barrage.PBUser toUser = 6;</code>
+     *
+     * <pre>
+     * 接受方用户信息
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUser getToUser() {
+      return toUser_;
+    }
+    /**
+     * <code>optional .barrage.PBUser toUser = 6;</code>
+     *
+     * <pre>
+     * 接受方用户信息
+     * </pre>
+     */
+    public com.orange.protocol.message.UserProtos.PBUserOrBuilder getToUserOrBuilder() {
+      return toUser_;
+    }
+
+    public static final int TOUSERID_FIELD_NUMBER = 7;
+    private java.lang.Object toUserId_;
+    /**
+     * <code>optional string toUserId = 7;</code>
+     *
+     * <pre>
+     * 接受方用户ID
+     * </pre>
+     */
+    public boolean hasToUserId() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional string toUserId = 7;</code>
+     *
+     * <pre>
+     * 接受方用户ID
+     * </pre>
+     */
+    public java.lang.String getToUserId() {
+      java.lang.Object ref = toUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          toUserId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string toUserId = 7;</code>
+     *
+     * <pre>
+     * 接受方用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getToUserIdBytes() {
+      java.lang.Object ref = toUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        toUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEXT_FIELD_NUMBER = 10;
+    private java.lang.Object text_;
+    /**
+     * <code>optional string text = 10;</code>
+     *
+     * <pre>
+     * 消息文本
+     * </pre>
+     */
+    public boolean hasText() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional string text = 10;</code>
+     *
+     * <pre>
+     * 消息文本
+     * </pre>
+     */
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          text_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string text = 10;</code>
+     *
+     * <pre>
+     * 消息文本
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IMAGE_FIELD_NUMBER = 11;
+    private java.lang.Object image_;
+    /**
+     * <code>optional string image = 11;</code>
+     *
+     * <pre>
+     * 消息图片
+     * </pre>
+     */
+    public boolean hasImage() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional string image = 11;</code>
+     *
+     * <pre>
+     * 消息图片
+     * </pre>
+     */
+    public java.lang.String getImage() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          image_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string image = 11;</code>
+     *
+     * <pre>
+     * 消息图片
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getImageBytes() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        image_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int THUMB_FIELD_NUMBER = 12;
+    private java.lang.Object thumb_;
+    /**
+     * <code>optional string thumb = 12;</code>
+     *
+     * <pre>
+     * 消息图片缩略图
+     * </pre>
+     */
+    public boolean hasThumb() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>optional string thumb = 12;</code>
+     *
+     * <pre>
+     * 消息图片缩略图
+     * </pre>
+     */
+    public java.lang.String getThumb() {
+      java.lang.Object ref = thumb_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          thumb_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string thumb = 12;</code>
+     *
+     * <pre>
+     * 消息图片缩略图
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getThumbBytes() {
+      java.lang.Object ref = thumb_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        thumb_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VOICE_FIELD_NUMBER = 13;
+    private java.lang.Object voice_;
+    /**
+     * <code>optional string voice = 13;</code>
+     *
+     * <pre>
+     * 语音
+     * </pre>
+     */
+    public boolean hasVoice() {
+      return ((bitField0_ & 0x00000400) == 0x00000400);
+    }
+    /**
+     * <code>optional string voice = 13;</code>
+     *
+     * <pre>
+     * 语音
+     * </pre>
+     */
+    public java.lang.String getVoice() {
+      java.lang.Object ref = voice_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          voice_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string voice = 13;</code>
+     *
+     * <pre>
+     * 语音
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getVoiceBytes() {
+      java.lang.Object ref = voice_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        voice_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATEDATE_FIELD_NUMBER = 20;
+    private int createDate_;
+    /**
+     * <code>optional int32 createDate = 20;</code>
+     *
+     * <pre>
+     * 创建日期
+     * </pre>
+     */
+    public boolean hasCreateDate() {
+      return ((bitField0_ & 0x00000800) == 0x00000800);
+    }
+    /**
+     * <code>optional int32 createDate = 20;</code>
+     *
+     * <pre>
+     * 创建日期
+     * </pre>
+     */
+    public int getCreateDate() {
+      return createDate_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 21;
+    private int status_;
+    /**
+     * <code>optional int32 status = 21;</code>
+     *
+     * <pre>
+     * 状态，参考PBChatStatus
+     * </pre>
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional int32 status = 21;</code>
+     *
+     * <pre>
+     * 状态，参考PBChatStatus
+     * </pre>
+     */
+    public int getStatus() {
+      return status_;
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 22;
+    private int type_;
+    /**
+     * <code>optional int32 type = 22;</code>
+     *
+     * <pre>
+     * 类型，参考PBChatType
+     * </pre>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00002000) == 0x00002000);
+    }
+    /**
+     * <code>optional int32 type = 22;</code>
+     *
+     * <pre>
+     * 类型，参考PBChatType
+     * </pre>
+     */
+    public int getType() {
+      return type_;
+    }
+
+    public static final int SOURCE_FIELD_NUMBER = 23;
+    private int source_;
+    /**
+     * <code>optional int32 source = 23;</code>
+     *
+     * <pre>
+     * 来源，参考PBChatSource
+     * </pre>
+     */
+    public boolean hasSource() {
+      return ((bitField0_ & 0x00004000) == 0x00004000);
+    }
+    /**
+     * <code>optional int32 source = 23;</code>
+     *
+     * <pre>
+     * 来源，参考PBChatSource
+     * </pre>
+     */
+    public int getSource() {
+      return source_;
+    }
+
+    private void initFields() {
+      chatId_ = "";
+      sessionId_ = "";
+      fromUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+      fromUserId_ = "";
+      fromDevice_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
+      toUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+      toUserId_ = "";
+      text_ = "";
+      image_ = "";
+      thumb_ = "";
+      voice_ = "";
+      createDate_ = 0;
+      status_ = 0;
+      type_ = 0;
+      source_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasChatId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasFromUser()) {
+        if (!getFromUser().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasFromDevice()) {
+        if (!getFromDevice().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasToUser()) {
+        if (!getToUser().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getChatIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getSessionIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, fromUser_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getFromUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(5, fromDevice_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeMessage(6, toUser_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getToUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeBytes(10, getTextBytes());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeBytes(11, getImageBytes());
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeBytes(12, getThumbBytes());
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        output.writeBytes(13, getVoiceBytes());
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        output.writeInt32(20, createDate_);
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeInt32(21, status_);
+      }
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        output.writeInt32(22, type_);
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        output.writeInt32(23, source_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getChatIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getSessionIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, fromUser_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getFromUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, fromDevice_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, toUser_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getToUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(10, getTextBytes());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(11, getImageBytes());
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, getThumbBytes());
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(13, getVoiceBytes());
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(20, createDate_);
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(21, status_);
+      }
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(22, type_);
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(23, source_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.orange.protocol.message.UserProtos.PBChat parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.UserProtos.PBChat parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBChat parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.orange.protocol.message.UserProtos.PBChat parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBChat parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.UserProtos.PBChat parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBChat parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.orange.protocol.message.UserProtos.PBChat parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.orange.protocol.message.UserProtos.PBChat parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.orange.protocol.message.UserProtos.PBChat parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.orange.protocol.message.UserProtos.PBChat prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code barrage.PBChat}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:barrage.PBChat)
+        com.orange.protocol.message.UserProtos.PBChatOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.orange.protocol.message.UserProtos.internal_static_barrage_PBChat_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.orange.protocol.message.UserProtos.internal_static_barrage_PBChat_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.orange.protocol.message.UserProtos.PBChat.class, com.orange.protocol.message.UserProtos.PBChat.Builder.class);
+      }
+
+      // Construct using com.orange.protocol.message.UserProtos.PBChat.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getFromUserFieldBuilder();
+          getFromDeviceFieldBuilder();
+          getToUserFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        chatId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        sessionId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (fromUserBuilder_ == null) {
+          fromUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+        } else {
+          fromUserBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fromUserId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (fromDeviceBuilder_ == null) {
+          fromDevice_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
+        } else {
+          fromDeviceBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        if (toUserBuilder_ == null) {
+          toUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+        } else {
+          toUserBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        toUserId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        text_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
+        image_ = "";
+        bitField0_ = (bitField0_ & ~0x00000100);
+        thumb_ = "";
+        bitField0_ = (bitField0_ & ~0x00000200);
+        voice_ = "";
+        bitField0_ = (bitField0_ & ~0x00000400);
+        createDate_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000800);
+        status_ = 0;
+        bitField0_ = (bitField0_ & ~0x00001000);
+        type_ = 0;
+        bitField0_ = (bitField0_ & ~0x00002000);
+        source_ = 0;
+        bitField0_ = (bitField0_ & ~0x00004000);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.orange.protocol.message.UserProtos.internal_static_barrage_PBChat_descriptor;
+      }
+
+      public com.orange.protocol.message.UserProtos.PBChat getDefaultInstanceForType() {
+        return com.orange.protocol.message.UserProtos.PBChat.getDefaultInstance();
+      }
+
+      public com.orange.protocol.message.UserProtos.PBChat build() {
+        com.orange.protocol.message.UserProtos.PBChat result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.orange.protocol.message.UserProtos.PBChat buildPartial() {
+        com.orange.protocol.message.UserProtos.PBChat result = new com.orange.protocol.message.UserProtos.PBChat(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.chatId_ = chatId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.sessionId_ = sessionId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (fromUserBuilder_ == null) {
+          result.fromUser_ = fromUser_;
+        } else {
+          result.fromUser_ = fromUserBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.fromUserId_ = fromUserId_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (fromDeviceBuilder_ == null) {
+          result.fromDevice_ = fromDevice_;
+        } else {
+          result.fromDevice_ = fromDeviceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        if (toUserBuilder_ == null) {
+          result.toUser_ = toUser_;
+        } else {
+          result.toUser_ = toUserBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.toUserId_ = toUserId_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.text_ = text_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.image_ = image_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.thumb_ = thumb_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.voice_ = voice_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.createDate_ = createDate_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.status_ = status_;
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00002000;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.source_ = source_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.orange.protocol.message.UserProtos.PBChat) {
+          return mergeFrom((com.orange.protocol.message.UserProtos.PBChat)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.orange.protocol.message.UserProtos.PBChat other) {
+        if (other == com.orange.protocol.message.UserProtos.PBChat.getDefaultInstance()) return this;
+        if (other.hasChatId()) {
+          bitField0_ |= 0x00000001;
+          chatId_ = other.chatId_;
+          onChanged();
+        }
+        if (other.hasSessionId()) {
+          bitField0_ |= 0x00000002;
+          sessionId_ = other.sessionId_;
+          onChanged();
+        }
+        if (other.hasFromUser()) {
+          mergeFromUser(other.getFromUser());
+        }
+        if (other.hasFromUserId()) {
+          bitField0_ |= 0x00000008;
+          fromUserId_ = other.fromUserId_;
+          onChanged();
+        }
+        if (other.hasFromDevice()) {
+          mergeFromDevice(other.getFromDevice());
+        }
+        if (other.hasToUser()) {
+          mergeToUser(other.getToUser());
+        }
+        if (other.hasToUserId()) {
+          bitField0_ |= 0x00000040;
+          toUserId_ = other.toUserId_;
+          onChanged();
+        }
+        if (other.hasText()) {
+          bitField0_ |= 0x00000080;
+          text_ = other.text_;
+          onChanged();
+        }
+        if (other.hasImage()) {
+          bitField0_ |= 0x00000100;
+          image_ = other.image_;
+          onChanged();
+        }
+        if (other.hasThumb()) {
+          bitField0_ |= 0x00000200;
+          thumb_ = other.thumb_;
+          onChanged();
+        }
+        if (other.hasVoice()) {
+          bitField0_ |= 0x00000400;
+          voice_ = other.voice_;
+          onChanged();
+        }
+        if (other.hasCreateDate()) {
+          setCreateDate(other.getCreateDate());
+        }
+        if (other.hasStatus()) {
+          setStatus(other.getStatus());
+        }
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasSource()) {
+          setSource(other.getSource());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasChatId()) {
+          
+          return false;
+        }
+        if (hasFromUser()) {
+          if (!getFromUser().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasFromDevice()) {
+          if (!getFromDevice().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasToUser()) {
+          if (!getToUser().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.orange.protocol.message.UserProtos.PBChat parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.orange.protocol.message.UserProtos.PBChat) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object chatId_ = "";
+      /**
+       * <code>required string chatId = 1;</code>
+       *
+       * <pre>
+       * 消息ID
+       * </pre>
+       */
+      public boolean hasChatId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string chatId = 1;</code>
+       *
+       * <pre>
+       * 消息ID
+       * </pre>
+       */
+      public java.lang.String getChatId() {
+        java.lang.Object ref = chatId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            chatId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string chatId = 1;</code>
+       *
+       * <pre>
+       * 消息ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getChatIdBytes() {
+        java.lang.Object ref = chatId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          chatId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string chatId = 1;</code>
+       *
+       * <pre>
+       * 消息ID
+       * </pre>
+       */
+      public Builder setChatId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        chatId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string chatId = 1;</code>
+       *
+       * <pre>
+       * 消息ID
+       * </pre>
+       */
+      public Builder clearChatId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        chatId_ = getDefaultInstance().getChatId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string chatId = 1;</code>
+       *
+       * <pre>
+       * 消息ID
+       * </pre>
+       */
+      public Builder setChatIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        chatId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sessionId_ = "";
+      /**
+       * <code>optional string sessionId = 2;</code>
+       *
+       * <pre>
+       * 会话ID，多个消息可以属于同一次会话
+       * </pre>
+       */
+      public boolean hasSessionId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string sessionId = 2;</code>
+       *
+       * <pre>
+       * 会话ID，多个消息可以属于同一次会话
+       * </pre>
+       */
+      public java.lang.String getSessionId() {
+        java.lang.Object ref = sessionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            sessionId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string sessionId = 2;</code>
+       *
+       * <pre>
+       * 会话ID，多个消息可以属于同一次会话
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getSessionIdBytes() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sessionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string sessionId = 2;</code>
+       *
+       * <pre>
+       * 会话ID，多个消息可以属于同一次会话
+       * </pre>
+       */
+      public Builder setSessionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string sessionId = 2;</code>
+       *
+       * <pre>
+       * 会话ID，多个消息可以属于同一次会话
+       * </pre>
+       */
+      public Builder clearSessionId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sessionId_ = getDefaultInstance().getSessionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string sessionId = 2;</code>
+       *
+       * <pre>
+       * 会话ID，多个消息可以属于同一次会话
+       * </pre>
+       */
+      public Builder setSessionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.orange.protocol.message.UserProtos.PBUser fromUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> fromUserBuilder_;
+      /**
+       * <code>optional .barrage.PBUser fromUser = 3;</code>
+       *
+       * <pre>
+       * 发送方用户信息
+       * </pre>
+       */
+      public boolean hasFromUser() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .barrage.PBUser fromUser = 3;</code>
+       *
+       * <pre>
+       * 发送方用户信息
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser getFromUser() {
+        if (fromUserBuilder_ == null) {
+          return fromUser_;
+        } else {
+          return fromUserBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .barrage.PBUser fromUser = 3;</code>
+       *
+       * <pre>
+       * 发送方用户信息
+       * </pre>
+       */
+      public Builder setFromUser(com.orange.protocol.message.UserProtos.PBUser value) {
+        if (fromUserBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fromUser_ = value;
+          onChanged();
+        } else {
+          fromUserBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser fromUser = 3;</code>
+       *
+       * <pre>
+       * 发送方用户信息
+       * </pre>
+       */
+      public Builder setFromUser(
+          com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
+        if (fromUserBuilder_ == null) {
+          fromUser_ = builderForValue.build();
+          onChanged();
+        } else {
+          fromUserBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser fromUser = 3;</code>
+       *
+       * <pre>
+       * 发送方用户信息
+       * </pre>
+       */
+      public Builder mergeFromUser(com.orange.protocol.message.UserProtos.PBUser value) {
+        if (fromUserBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              fromUser_ != com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance()) {
+            fromUser_ =
+              com.orange.protocol.message.UserProtos.PBUser.newBuilder(fromUser_).mergeFrom(value).buildPartial();
+          } else {
+            fromUser_ = value;
+          }
+          onChanged();
+        } else {
+          fromUserBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser fromUser = 3;</code>
+       *
+       * <pre>
+       * 发送方用户信息
+       * </pre>
+       */
+      public Builder clearFromUser() {
+        if (fromUserBuilder_ == null) {
+          fromUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+          onChanged();
+        } else {
+          fromUserBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser fromUser = 3;</code>
+       *
+       * <pre>
+       * 发送方用户信息
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser.Builder getFromUserBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getFromUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .barrage.PBUser fromUser = 3;</code>
+       *
+       * <pre>
+       * 发送方用户信息
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserOrBuilder getFromUserOrBuilder() {
+        if (fromUserBuilder_ != null) {
+          return fromUserBuilder_.getMessageOrBuilder();
+        } else {
+          return fromUser_;
+        }
+      }
+      /**
+       * <code>optional .barrage.PBUser fromUser = 3;</code>
+       *
+       * <pre>
+       * 发送方用户信息
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+          getFromUserFieldBuilder() {
+        if (fromUserBuilder_ == null) {
+          fromUserBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder>(
+                  getFromUser(),
+                  getParentForChildren(),
+                  isClean());
+          fromUser_ = null;
+        }
+        return fromUserBuilder_;
+      }
+
+      private java.lang.Object fromUserId_ = "";
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       *
+       * <pre>
+       * 发送方用户ID
+       * </pre>
+       */
+      public boolean hasFromUserId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       *
+       * <pre>
+       * 发送方用户ID
+       * </pre>
+       */
+      public java.lang.String getFromUserId() {
+        java.lang.Object ref = fromUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            fromUserId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       *
+       * <pre>
+       * 发送方用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getFromUserIdBytes() {
+        java.lang.Object ref = fromUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fromUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       *
+       * <pre>
+       * 发送方用户ID
+       * </pre>
+       */
+      public Builder setFromUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        fromUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       *
+       * <pre>
+       * 发送方用户ID
+       * </pre>
+       */
+      public Builder clearFromUserId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        fromUserId_ = getDefaultInstance().getFromUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string fromUserId = 4;</code>
+       *
+       * <pre>
+       * 发送方用户ID
+       * </pre>
+       */
+      public Builder setFromUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        fromUserId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.orange.protocol.message.CommonProtos.PBDevice fromDevice_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder> fromDeviceBuilder_;
+      /**
+       * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+       *
+       * <pre>
+       * 发送方设备信息
+       * </pre>
+       */
+      public boolean hasFromDevice() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+       *
+       * <pre>
+       * 发送方设备信息
+       * </pre>
+       */
+      public com.orange.protocol.message.CommonProtos.PBDevice getFromDevice() {
+        if (fromDeviceBuilder_ == null) {
+          return fromDevice_;
+        } else {
+          return fromDeviceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+       *
+       * <pre>
+       * 发送方设备信息
+       * </pre>
+       */
+      public Builder setFromDevice(com.orange.protocol.message.CommonProtos.PBDevice value) {
+        if (fromDeviceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fromDevice_ = value;
+          onChanged();
+        } else {
+          fromDeviceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+       *
+       * <pre>
+       * 发送方设备信息
+       * </pre>
+       */
+      public Builder setFromDevice(
+          com.orange.protocol.message.CommonProtos.PBDevice.Builder builderForValue) {
+        if (fromDeviceBuilder_ == null) {
+          fromDevice_ = builderForValue.build();
+          onChanged();
+        } else {
+          fromDeviceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+       *
+       * <pre>
+       * 发送方设备信息
+       * </pre>
+       */
+      public Builder mergeFromDevice(com.orange.protocol.message.CommonProtos.PBDevice value) {
+        if (fromDeviceBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              fromDevice_ != com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance()) {
+            fromDevice_ =
+              com.orange.protocol.message.CommonProtos.PBDevice.newBuilder(fromDevice_).mergeFrom(value).buildPartial();
+          } else {
+            fromDevice_ = value;
+          }
+          onChanged();
+        } else {
+          fromDeviceBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+       *
+       * <pre>
+       * 发送方设备信息
+       * </pre>
+       */
+      public Builder clearFromDevice() {
+        if (fromDeviceBuilder_ == null) {
+          fromDevice_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
+          onChanged();
+        } else {
+          fromDeviceBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+       *
+       * <pre>
+       * 发送方设备信息
+       * </pre>
+       */
+      public com.orange.protocol.message.CommonProtos.PBDevice.Builder getFromDeviceBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getFromDeviceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+       *
+       * <pre>
+       * 发送方设备信息
+       * </pre>
+       */
+      public com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder getFromDeviceOrBuilder() {
+        if (fromDeviceBuilder_ != null) {
+          return fromDeviceBuilder_.getMessageOrBuilder();
+        } else {
+          return fromDevice_;
+        }
+      }
+      /**
+       * <code>optional .barrage.PBDevice fromDevice = 5;</code>
+       *
+       * <pre>
+       * 发送方设备信息
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder> 
+          getFromDeviceFieldBuilder() {
+        if (fromDeviceBuilder_ == null) {
+          fromDeviceBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.orange.protocol.message.CommonProtos.PBDevice, com.orange.protocol.message.CommonProtos.PBDevice.Builder, com.orange.protocol.message.CommonProtos.PBDeviceOrBuilder>(
+                  getFromDevice(),
+                  getParentForChildren(),
+                  isClean());
+          fromDevice_ = null;
+        }
+        return fromDeviceBuilder_;
+      }
+
+      private com.orange.protocol.message.UserProtos.PBUser toUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> toUserBuilder_;
+      /**
+       * <code>optional .barrage.PBUser toUser = 6;</code>
+       *
+       * <pre>
+       * 接受方用户信息
+       * </pre>
+       */
+      public boolean hasToUser() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional .barrage.PBUser toUser = 6;</code>
+       *
+       * <pre>
+       * 接受方用户信息
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser getToUser() {
+        if (toUserBuilder_ == null) {
+          return toUser_;
+        } else {
+          return toUserBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .barrage.PBUser toUser = 6;</code>
+       *
+       * <pre>
+       * 接受方用户信息
+       * </pre>
+       */
+      public Builder setToUser(com.orange.protocol.message.UserProtos.PBUser value) {
+        if (toUserBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          toUser_ = value;
+          onChanged();
+        } else {
+          toUserBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser toUser = 6;</code>
+       *
+       * <pre>
+       * 接受方用户信息
+       * </pre>
+       */
+      public Builder setToUser(
+          com.orange.protocol.message.UserProtos.PBUser.Builder builderForValue) {
+        if (toUserBuilder_ == null) {
+          toUser_ = builderForValue.build();
+          onChanged();
+        } else {
+          toUserBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser toUser = 6;</code>
+       *
+       * <pre>
+       * 接受方用户信息
+       * </pre>
+       */
+      public Builder mergeToUser(com.orange.protocol.message.UserProtos.PBUser value) {
+        if (toUserBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+              toUser_ != com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance()) {
+            toUser_ =
+              com.orange.protocol.message.UserProtos.PBUser.newBuilder(toUser_).mergeFrom(value).buildPartial();
+          } else {
+            toUser_ = value;
+          }
+          onChanged();
+        } else {
+          toUserBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser toUser = 6;</code>
+       *
+       * <pre>
+       * 接受方用户信息
+       * </pre>
+       */
+      public Builder clearToUser() {
+        if (toUserBuilder_ == null) {
+          toUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
+          onChanged();
+        } else {
+          toUserBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+      /**
+       * <code>optional .barrage.PBUser toUser = 6;</code>
+       *
+       * <pre>
+       * 接受方用户信息
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUser.Builder getToUserBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getToUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .barrage.PBUser toUser = 6;</code>
+       *
+       * <pre>
+       * 接受方用户信息
+       * </pre>
+       */
+      public com.orange.protocol.message.UserProtos.PBUserOrBuilder getToUserOrBuilder() {
+        if (toUserBuilder_ != null) {
+          return toUserBuilder_.getMessageOrBuilder();
+        } else {
+          return toUser_;
+        }
+      }
+      /**
+       * <code>optional .barrage.PBUser toUser = 6;</code>
+       *
+       * <pre>
+       * 接受方用户信息
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder> 
+          getToUserFieldBuilder() {
+        if (toUserBuilder_ == null) {
+          toUserBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.orange.protocol.message.UserProtos.PBUser, com.orange.protocol.message.UserProtos.PBUser.Builder, com.orange.protocol.message.UserProtos.PBUserOrBuilder>(
+                  getToUser(),
+                  getParentForChildren(),
+                  isClean());
+          toUser_ = null;
+        }
+        return toUserBuilder_;
+      }
+
+      private java.lang.Object toUserId_ = "";
+      /**
+       * <code>optional string toUserId = 7;</code>
+       *
+       * <pre>
+       * 接受方用户ID
+       * </pre>
+       */
+      public boolean hasToUserId() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional string toUserId = 7;</code>
+       *
+       * <pre>
+       * 接受方用户ID
+       * </pre>
+       */
+      public java.lang.String getToUserId() {
+        java.lang.Object ref = toUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            toUserId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string toUserId = 7;</code>
+       *
+       * <pre>
+       * 接受方用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getToUserIdBytes() {
+        java.lang.Object ref = toUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          toUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string toUserId = 7;</code>
+       *
+       * <pre>
+       * 接受方用户ID
+       * </pre>
+       */
+      public Builder setToUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        toUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string toUserId = 7;</code>
+       *
+       * <pre>
+       * 接受方用户ID
+       * </pre>
+       */
+      public Builder clearToUserId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        toUserId_ = getDefaultInstance().getToUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string toUserId = 7;</code>
+       *
+       * <pre>
+       * 接受方用户ID
+       * </pre>
+       */
+      public Builder setToUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        toUserId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object text_ = "";
+      /**
+       * <code>optional string text = 10;</code>
+       *
+       * <pre>
+       * 消息文本
+       * </pre>
+       */
+      public boolean hasText() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional string text = 10;</code>
+       *
+       * <pre>
+       * 消息文本
+       * </pre>
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            text_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string text = 10;</code>
+       *
+       * <pre>
+       * 消息文本
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string text = 10;</code>
+       *
+       * <pre>
+       * 消息文本
+       * </pre>
+       */
+      public Builder setText(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        text_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string text = 10;</code>
+       *
+       * <pre>
+       * 消息文本
+       * </pre>
+       */
+      public Builder clearText() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        text_ = getDefaultInstance().getText();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string text = 10;</code>
+       *
+       * <pre>
+       * 消息文本
+       * </pre>
+       */
+      public Builder setTextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        text_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object image_ = "";
+      /**
+       * <code>optional string image = 11;</code>
+       *
+       * <pre>
+       * 消息图片
+       * </pre>
+       */
+      public boolean hasImage() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional string image = 11;</code>
+       *
+       * <pre>
+       * 消息图片
+       * </pre>
+       */
+      public java.lang.String getImage() {
+        java.lang.Object ref = image_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            image_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string image = 11;</code>
+       *
+       * <pre>
+       * 消息图片
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getImageBytes() {
+        java.lang.Object ref = image_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          image_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string image = 11;</code>
+       *
+       * <pre>
+       * 消息图片
+       * </pre>
+       */
+      public Builder setImage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
+        image_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string image = 11;</code>
+       *
+       * <pre>
+       * 消息图片
+       * </pre>
+       */
+      public Builder clearImage() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        image_ = getDefaultInstance().getImage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string image = 11;</code>
+       *
+       * <pre>
+       * 消息图片
+       * </pre>
+       */
+      public Builder setImageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
+        image_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object thumb_ = "";
+      /**
+       * <code>optional string thumb = 12;</code>
+       *
+       * <pre>
+       * 消息图片缩略图
+       * </pre>
+       */
+      public boolean hasThumb() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional string thumb = 12;</code>
+       *
+       * <pre>
+       * 消息图片缩略图
+       * </pre>
+       */
+      public java.lang.String getThumb() {
+        java.lang.Object ref = thumb_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            thumb_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string thumb = 12;</code>
+       *
+       * <pre>
+       * 消息图片缩略图
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getThumbBytes() {
+        java.lang.Object ref = thumb_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          thumb_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string thumb = 12;</code>
+       *
+       * <pre>
+       * 消息图片缩略图
+       * </pre>
+       */
+      public Builder setThumb(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        thumb_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string thumb = 12;</code>
+       *
+       * <pre>
+       * 消息图片缩略图
+       * </pre>
+       */
+      public Builder clearThumb() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        thumb_ = getDefaultInstance().getThumb();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string thumb = 12;</code>
+       *
+       * <pre>
+       * 消息图片缩略图
+       * </pre>
+       */
+      public Builder setThumbBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        thumb_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object voice_ = "";
+      /**
+       * <code>optional string voice = 13;</code>
+       *
+       * <pre>
+       * 语音
+       * </pre>
+       */
+      public boolean hasVoice() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional string voice = 13;</code>
+       *
+       * <pre>
+       * 语音
+       * </pre>
+       */
+      public java.lang.String getVoice() {
+        java.lang.Object ref = voice_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            voice_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string voice = 13;</code>
+       *
+       * <pre>
+       * 语音
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getVoiceBytes() {
+        java.lang.Object ref = voice_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          voice_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string voice = 13;</code>
+       *
+       * <pre>
+       * 语音
+       * </pre>
+       */
+      public Builder setVoice(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        voice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string voice = 13;</code>
+       *
+       * <pre>
+       * 语音
+       * </pre>
+       */
+      public Builder clearVoice() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        voice_ = getDefaultInstance().getVoice();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string voice = 13;</code>
+       *
+       * <pre>
+       * 语音
+       * </pre>
+       */
+      public Builder setVoiceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        voice_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int createDate_ ;
+      /**
+       * <code>optional int32 createDate = 20;</code>
+       *
+       * <pre>
+       * 创建日期
+       * </pre>
+       */
+      public boolean hasCreateDate() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional int32 createDate = 20;</code>
+       *
+       * <pre>
+       * 创建日期
+       * </pre>
+       */
+      public int getCreateDate() {
+        return createDate_;
+      }
+      /**
+       * <code>optional int32 createDate = 20;</code>
+       *
+       * <pre>
+       * 创建日期
+       * </pre>
+       */
+      public Builder setCreateDate(int value) {
+        bitField0_ |= 0x00000800;
+        createDate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 createDate = 20;</code>
+       *
+       * <pre>
+       * 创建日期
+       * </pre>
+       */
+      public Builder clearCreateDate() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        createDate_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int status_ ;
+      /**
+       * <code>optional int32 status = 21;</code>
+       *
+       * <pre>
+       * 状态，参考PBChatStatus
+       * </pre>
+       */
+      public boolean hasStatus() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional int32 status = 21;</code>
+       *
+       * <pre>
+       * 状态，参考PBChatStatus
+       * </pre>
+       */
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>optional int32 status = 21;</code>
+       *
+       * <pre>
+       * 状态，参考PBChatStatus
+       * </pre>
+       */
+      public Builder setStatus(int value) {
+        bitField0_ |= 0x00001000;
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 status = 21;</code>
+       *
+       * <pre>
+       * 状态，参考PBChatStatus
+       * </pre>
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int type_ ;
+      /**
+       * <code>optional int32 type = 22;</code>
+       *
+       * <pre>
+       * 类型，参考PBChatType
+       * </pre>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00002000) == 0x00002000);
+      }
+      /**
+       * <code>optional int32 type = 22;</code>
+       *
+       * <pre>
+       * 类型，参考PBChatType
+       * </pre>
+       */
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>optional int32 type = 22;</code>
+       *
+       * <pre>
+       * 类型，参考PBChatType
+       * </pre>
+       */
+      public Builder setType(int value) {
+        bitField0_ |= 0x00002000;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 type = 22;</code>
+       *
+       * <pre>
+       * 类型，参考PBChatType
+       * </pre>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int source_ ;
+      /**
+       * <code>optional int32 source = 23;</code>
+       *
+       * <pre>
+       * 来源，参考PBChatSource
+       * </pre>
+       */
+      public boolean hasSource() {
+        return ((bitField0_ & 0x00004000) == 0x00004000);
+      }
+      /**
+       * <code>optional int32 source = 23;</code>
+       *
+       * <pre>
+       * 来源，参考PBChatSource
+       * </pre>
+       */
+      public int getSource() {
+        return source_;
+      }
+      /**
+       * <code>optional int32 source = 23;</code>
+       *
+       * <pre>
+       * 来源，参考PBChatSource
+       * </pre>
+       */
+      public Builder setSource(int value) {
+        bitField0_ |= 0x00004000;
+        source_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 source = 23;</code>
+       *
+       * <pre>
+       * 来源，参考PBChatSource
+       * </pre>
+       */
+      public Builder clearSource() {
+        bitField0_ = (bitField0_ & ~0x00004000);
+        source_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:barrage.PBChat)
+    }
+
+    static {
+      defaultInstance = new PBChat(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:barrage.PBChat)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_barrage_PBSNSUser_descriptor;
   private static
@@ -20208,6 +23803,11 @@ public final class UserProtos {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_barrage_PBUserGroupList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_barrage_PBChat_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_barrage_PBChat_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -20264,27 +23864,43 @@ public final class UserProtos {
       "pId\030\013 \002(\t\022\021\n\toccurence\030\001 \001(\005\022\021\n\trejectio" +
       "n\030\002 \001(\005\022\031\n\021lastOccurenceDate\030\003 \001(\005\022\031\n\021la" +
       "stRejectionDate\030\004 \001(\005\"7\n\017PBUserGroupList" +
-      "\022$\n\006groups\030\001 \003(\0132\024.barrage.PBUserGroup*@" +
-      "\n\023FriendAddSourceType\022\021\n\rADD_BY_SEARCH\020\001" +
-      "\022\026\n\022ADD_BY_SCAN_QRCODE\020\002*N\n\023FriendAddCon",
-      "figType\022\022\n\016REQUIRE_ACCEPT\020\000\022\016\n\nACCEPT_AL" +
-      "L\020\001\022\023\n\017DISALLOW_ADD_ME\020\007*f\n\026FriendReques" +
-      "tDirection\022\030\n\024REQ_DIRECTION_SENDER\020\000\022\032\n\026" +
-      "REQ_DIRECTION_RECEIVER\020\001\022\026\n\022REQ_DIRECTIO" +
-      "N_NONE\020\002*c\n\023FriendAddStatusType\022\023\n\017REQ_W" +
-      "AIT_ACCEPT\020\000\022\020\n\014REQ_ACCEPTED\020\001\022\020\n\014REQ_RE" +
-      "JECTED\020\002\022\023\n\017REQ_STATUS_NONE\020\007*r\n\013PBLogin" +
-      "Type\022\020\n\014LOGIN_XIAOJI\020d\022\017\n\013LOGIN_EMAIL\020e\022" +
-      "\020\n\014LOGIN_MOBILE\020f\022\014\n\010LOGIN_QQ\020\006\022\016\n\nLOGIN" +
-      "_SINA\020\001\022\020\n\014LOGIN_WEIXIN\020\027*i\n\016PBRegisterT",
-      "ype\022\016\n\nREG_XIAOJI\020d\022\r\n\tREG_EMAIL\020e\022\016\n\nRE" +
-      "G_MOBILE\020f\022\n\n\006REG_QQ\020\006\022\014\n\010REG_SINA\020\001\022\016\n\n" +
-      "REG_WEIXIN\020\027*E\n\nPBTagColor\022\n\n\006SYSTEM\020\000\022\n" +
-      "\n\006CUSTOM\020\001\022\n\n\006MYSELF\020\002\022\007\n\003HOT\020\003\022\n\n\006RECEN" +
-      "T\020\004*p\n\022PBInviteCodeStatus\022\025\n\021CODE_STATUS" +
-      "_READY\020\000\022\024\n\020CODE_STATUS_SENT\020\001\022\024\n\020CODE_S" +
-      "TATUS_USED\020\002\022\027\n\023CODE_STATUS_INVALID\020\003B)\n" +
-      "\033com.orange.protocol.messageB\nUserProtos"
+      "\022$\n\006groups\030\001 \003(\0132\024.barrage.PBUserGroup\"\271" +
+      "\002\n\006PBChat\022\016\n\006chatId\030\001 \002(\t\022\021\n\tsessionId\030\002" +
+      " \001(\t\022!\n\010fromUser\030\003 \001(\0132\017.barrage.PBUser\022",
+      "\022\n\nfromUserId\030\004 \001(\t\022%\n\nfromDevice\030\005 \001(\0132" +
+      "\021.barrage.PBDevice\022\037\n\006toUser\030\006 \001(\0132\017.bar" +
+      "rage.PBUser\022\020\n\010toUserId\030\007 \001(\t\022\014\n\004text\030\n " +
+      "\001(\t\022\r\n\005image\030\013 \001(\t\022\r\n\005thumb\030\014 \001(\t\022\r\n\005voi" +
+      "ce\030\r \001(\t\022\022\n\ncreateDate\030\024 \001(\005\022\016\n\006status\030\025" +
+      " \001(\005\022\014\n\004type\030\026 \001(\005\022\016\n\006source\030\027 \001(\005*@\n\023Fr" +
+      "iendAddSourceType\022\021\n\rADD_BY_SEARCH\020\001\022\026\n\022" +
+      "ADD_BY_SCAN_QRCODE\020\002*N\n\023FriendAddConfigT" +
+      "ype\022\022\n\016REQUIRE_ACCEPT\020\000\022\016\n\nACCEPT_ALL\020\001\022" +
+      "\023\n\017DISALLOW_ADD_ME\020\007*f\n\026FriendRequestDir",
+      "ection\022\030\n\024REQ_DIRECTION_SENDER\020\000\022\032\n\026REQ_" +
+      "DIRECTION_RECEIVER\020\001\022\026\n\022REQ_DIRECTION_NO" +
+      "NE\020\002*c\n\023FriendAddStatusType\022\023\n\017REQ_WAIT_" +
+      "ACCEPT\020\000\022\020\n\014REQ_ACCEPTED\020\001\022\020\n\014REQ_REJECT" +
+      "ED\020\002\022\023\n\017REQ_STATUS_NONE\020\007*r\n\013PBLoginType" +
+      "\022\020\n\014LOGIN_XIAOJI\020d\022\017\n\013LOGIN_EMAIL\020e\022\020\n\014L" +
+      "OGIN_MOBILE\020f\022\014\n\010LOGIN_QQ\020\006\022\016\n\nLOGIN_SIN" +
+      "A\020\001\022\020\n\014LOGIN_WEIXIN\020\027*i\n\016PBRegisterType\022" +
+      "\016\n\nREG_XIAOJI\020d\022\r\n\tREG_EMAIL\020e\022\016\n\nREG_MO" +
+      "BILE\020f\022\n\n\006REG_QQ\020\006\022\014\n\010REG_SINA\020\001\022\016\n\nREG_",
+      "WEIXIN\020\027*E\n\nPBTagColor\022\n\n\006SYSTEM\020\000\022\n\n\006CU" +
+      "STOM\020\001\022\n\n\006MYSELF\020\002\022\007\n\003HOT\020\003\022\n\n\006RECENT\020\004*" +
+      "p\n\022PBInviteCodeStatus\022\025\n\021CODE_STATUS_REA" +
+      "DY\020\000\022\024\n\020CODE_STATUS_SENT\020\001\022\024\n\020CODE_STATU" +
+      "S_USED\020\002\022\027\n\023CODE_STATUS_INVALID\020\003*\206\001\n\014PB" +
+      "ChatSource\022\017\n\013FROM_WECHAT\020\001\022\014\n\010FROM_APP\020" +
+      "\002\022\014\n\010FROM_WEB\020\003\022\023\n\017FROM_MOBILE_WEB\020\004\022\016\n\n" +
+      "FROM_AGENT\020\005\022\023\n\017FROM_AGENT_AUTO\020\006\022\017\n\013FRO" +
+      "M_SYSTEM\020\007*\035\n\nPBChatType\022\017\n\013NORMAL_CHAT\020" +
+      "\000*s\n\014PBChatStatus\022\023\n\017MESSAGE_SENDING\020\000\022\020",
+      "\n\014MESSAGE_SENT\020\001\022\023\n\017MESSAGE_FAILURE\020\002\022\023\n" +
+      "\017MESSAGE_DELETED\020\003\022\022\n\016MESSAGE_CANCEL\020\004B)" +
+      "\n\033com.orange.protocol.messageB\nUserProto" +
+      "s"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -20353,6 +23969,12 @@ public final class UserProtos {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBUserGroupList_descriptor,
         new java.lang.String[] { "Groups", });
+    internal_static_barrage_PBChat_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_barrage_PBChat_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_barrage_PBChat_descriptor,
+        new java.lang.String[] { "ChatId", "SessionId", "FromUser", "FromUserId", "FromDevice", "ToUser", "ToUserId", "Text", "Image", "Thumb", "Voice", "CreateDate", "Status", "Type", "Source", });
     com.orange.protocol.message.CommonProtos.getDescriptor();
   }
 

@@ -82,4 +82,9 @@ public class BarrageConstants {
     public static final String T_FEEDBACK = "feedback";
     public static final String F_CREATE_DATE = "createDate";
     public static final String F_COUNT = "count";
+
+    public static final String T_USER_CHAT = "user_chat";
+    public static final String T_CHAT = "chat";
+    public static final String F_CHAT_ID = "chatId";
+    public static final String F_TO_USER_ID = "toUserId";
 }
