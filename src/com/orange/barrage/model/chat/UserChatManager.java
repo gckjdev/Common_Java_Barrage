@@ -21,14 +21,14 @@ public class UserChatManager extends CommonCassandraIdListManager<Chat> {
         super(BarrageConstants.T_USER_CHAT, BarrageConstants.T_CHAT, Chat.class);
     }
 
-    public void insertUserChat(String userId, String chatId, String optionData){
+    public void insertUserChat(String userId, String chatId, int source){
         if (StringUtil.isEmpty(userId) || StringUtil.isEmpty(chatId)){
             log.info("<insertUserChat> but userId or chatId is EMPTY/NULL");
             return;
         }
 
         String key = userId;
-        insertIndex(key, chatId, optionData);
+        insertIndex(key, chatId, String.valueOf(source));
     }
 
     public void deleteUserChat(String userId, String chatId){

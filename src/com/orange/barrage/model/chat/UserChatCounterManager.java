@@ -22,21 +22,28 @@ public class UserChatCounterManager {
 
     RedisClient redisClient = RedisClient.getInstance(REDIS_SERVER, REDIS_PORT, REDIS_PASSWORD);
 
+    private static final String USER_CHAT_REDIS_KEY = "user_chat_counter";
+    private static final String AGENT_CHAT_REDIS_KEY = "agent_chat_counter";
+
     private UserChatCounterManager() {
     }
 
     public int incUserChatCounter(String userId){
+        redisClient.hinc(USER_CHAT_REDIS_KEY, userId, 1);
         return 0;
     }
 
-    public int incAgentChatCounter(String userId){
+    public int incAgentChatCounter(String agentId){
+        redisClient.hinc(AGENT_CHAT_REDIS_KEY, agentId, 1);
         return 0;
     }
 
     public void clearUserChatCounter(String userId){
+        redisClient.hset(USER_CHAT_REDIS_KEY, userId, "0");
     }
 
-    public void clearAgentChatCounter(String userId){
+    public void clearAgentChatCounter(String agentId){
+        redisClient.hset(AGENT_CHAT_REDIS_KEY, agentId, "0");
     }
 
 }

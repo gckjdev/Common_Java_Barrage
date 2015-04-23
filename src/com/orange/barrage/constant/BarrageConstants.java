@@ -87,4 +87,15 @@ public class BarrageConstants {
     public static final String T_CHAT = "chat";
     public static final String F_CHAT_ID = "chatId";
     public static final String F_TO_USER_ID = "toUserId";
+    public static final String F_TO_USER = "toUser";
+
+    public static final String T_AGENT = "agent";
+
+    public static final int C_AGENT_OFFLINE = 0;
+    public static final int C_AGENT_ONLINE = 1;
+
+    public static final String F_AGENT_ID = "agentId";
+    public static final String F_AGENT_STATUS = "agentStatus";
+    public static final String F_IS_AGENT = "isAgent";
+    public static final String F_AGENT_ACCOUNT = "agentAccount";
 }

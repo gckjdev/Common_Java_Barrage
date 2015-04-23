@@ -1,5 +1,6 @@
 package com.orange.barrage.model.chat;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.orange.barrage.constant.BarrageConstants;
 import com.orange.barrage.model.feed.Feed;
@@ -80,5 +81,23 @@ public class Chat extends CommonData implements ProtoBufCoding<UserProtos.PBChat
 
     public String getToUserId() {
         return getString(BarrageConstants.F_TO_USER_ID);
+    }
+
+    public void setToUserId(String agentId) {
+        put(BarrageConstants.F_TO_USER_ID, agentId);
+
+    }
+
+    public void setToUser(Agent agent) {
+
+        BasicDBObject obj = new BasicDBObject();
+        obj.putAll(agent.getDbObject());
+        obj.remove("_id");
+
+        put(BarrageConstants.F_TO_USER, obj);
+    }
+
+    public Object getToUser() {
+        return dbObject.get(BarrageConstants.F_TO_USER);
     }
 }

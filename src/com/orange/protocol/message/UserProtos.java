@@ -1138,22 +1138,64 @@ public final class UserProtos {
   public enum PBChatType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>NORMAL_CHAT = 0;</code>
+     * <code>TEXT_CHAT = 0;</code>
+     *
+     * <pre>
+     *文本消息
+     * </pre>
      */
-    NORMAL_CHAT(0, 0),
+    TEXT_CHAT(0, 0),
+    /**
+     * <code>PICTURE_CHAT = 1;</code>
+     *
+     * <pre>
+     *图片消息
+     * </pre>
+     */
+    PICTURE_CHAT(1, 1),
+    /**
+     * <code>VOICE_CHAT = 2;</code>
+     *
+     * <pre>
+     *语音消息
+     * </pre>
+     */
+    VOICE_CHAT(2, 2),
     ;
 
     /**
-     * <code>NORMAL_CHAT = 0;</code>
+     * <code>TEXT_CHAT = 0;</code>
+     *
+     * <pre>
+     *文本消息
+     * </pre>
      */
-    public static final int NORMAL_CHAT_VALUE = 0;
+    public static final int TEXT_CHAT_VALUE = 0;
+    /**
+     * <code>PICTURE_CHAT = 1;</code>
+     *
+     * <pre>
+     *图片消息
+     * </pre>
+     */
+    public static final int PICTURE_CHAT_VALUE = 1;
+    /**
+     * <code>VOICE_CHAT = 2;</code>
+     *
+     * <pre>
+     *语音消息
+     * </pre>
+     */
+    public static final int VOICE_CHAT_VALUE = 2;
 
 
     public final int getNumber() { return value; }
 
     public static PBChatType valueOf(int value) {
       switch (value) {
-        case 0: return NORMAL_CHAT;
+        case 0: return TEXT_CHAT;
+        case 1: return PICTURE_CHAT;
+        case 2: return VOICE_CHAT;
         default: return null;
       }
     }
@@ -1352,6 +1394,88 @@ public final class UserProtos {
     }
 
     // @@protoc_insertion_point(enum_scope:barrage.PBChatStatus)
+  }
+
+  /**
+   * Protobuf enum {@code barrage.PBAgentStatus}
+   */
+  public enum PBAgentStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>AGENT_OFFLINE = 0;</code>
+     */
+    AGENT_OFFLINE(0, 0),
+    /**
+     * <code>AGENT_ONLINE = 1;</code>
+     */
+    AGENT_ONLINE(1, 1),
+    ;
+
+    /**
+     * <code>AGENT_OFFLINE = 0;</code>
+     */
+    public static final int AGENT_OFFLINE_VALUE = 0;
+    /**
+     * <code>AGENT_ONLINE = 1;</code>
+     */
+    public static final int AGENT_ONLINE_VALUE = 1;
+
+
+    public final int getNumber() { return value; }
+
+    public static PBAgentStatus valueOf(int value) {
+      switch (value) {
+        case 0: return AGENT_OFFLINE;
+        case 1: return AGENT_ONLINE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PBAgentStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<PBAgentStatus>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PBAgentStatus>() {
+            public PBAgentStatus findValueByNumber(int number) {
+              return PBAgentStatus.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.orange.protocol.message.UserProtos.getDescriptor().getEnumTypes().get(11);
+    }
+
+    private static final PBAgentStatus[] VALUES = values();
+
+    public static PBAgentStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private PBAgentStatus(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:barrage.PBAgentStatus)
   }
 
   public interface PBSNSUserOrBuilder extends
@@ -4075,6 +4199,46 @@ public final class UserProtos {
      * </pre>
      */
     int getBSpeed();
+
+    /**
+     * <code>optional bool isAgent = 210;</code>
+     */
+    boolean hasIsAgent();
+    /**
+     * <code>optional bool isAgent = 210;</code>
+     */
+    boolean getIsAgent();
+
+    /**
+     * <code>optional string agentAccount = 211;</code>
+     */
+    boolean hasAgentAccount();
+    /**
+     * <code>optional string agentAccount = 211;</code>
+     */
+    java.lang.String getAgentAccount();
+    /**
+     * <code>optional string agentAccount = 211;</code>
+     */
+    com.google.protobuf.ByteString
+        getAgentAccountBytes();
+
+    /**
+     * <code>optional int32 agentStatus = 212;</code>
+     *
+     * <pre>
+     * 参考PBAgentStatus
+     * </pre>
+     */
+    boolean hasAgentStatus();
+    /**
+     * <code>optional int32 agentStatus = 212;</code>
+     *
+     * <pre>
+     * 参考PBAgentStatus
+     * </pre>
+     */
+    int getAgentStatus();
   }
   /**
    * Protobuf type {@code barrage.PBUser}
@@ -4391,6 +4555,22 @@ public final class UserProtos {
             case 1608: {
               bitField1_ |= 0x00000200;
               bSpeed_ = input.readInt32();
+              break;
+            }
+            case 1680: {
+              bitField1_ |= 0x00000400;
+              isAgent_ = input.readBool();
+              break;
+            }
+            case 1690: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField1_ |= 0x00000800;
+              agentAccount_ = bs;
+              break;
+            }
+            case 1696: {
+              bitField1_ |= 0x00001000;
+              agentStatus_ = input.readInt32();
               break;
             }
           }
@@ -6222,6 +6402,86 @@ public final class UserProtos {
       return bSpeed_;
     }
 
+    public static final int ISAGENT_FIELD_NUMBER = 210;
+    private boolean isAgent_;
+    /**
+     * <code>optional bool isAgent = 210;</code>
+     */
+    public boolean hasIsAgent() {
+      return ((bitField1_ & 0x00000400) == 0x00000400);
+    }
+    /**
+     * <code>optional bool isAgent = 210;</code>
+     */
+    public boolean getIsAgent() {
+      return isAgent_;
+    }
+
+    public static final int AGENTACCOUNT_FIELD_NUMBER = 211;
+    private java.lang.Object agentAccount_;
+    /**
+     * <code>optional string agentAccount = 211;</code>
+     */
+    public boolean hasAgentAccount() {
+      return ((bitField1_ & 0x00000800) == 0x00000800);
+    }
+    /**
+     * <code>optional string agentAccount = 211;</code>
+     */
+    public java.lang.String getAgentAccount() {
+      java.lang.Object ref = agentAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          agentAccount_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string agentAccount = 211;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAgentAccountBytes() {
+      java.lang.Object ref = agentAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        agentAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AGENTSTATUS_FIELD_NUMBER = 212;
+    private int agentStatus_;
+    /**
+     * <code>optional int32 agentStatus = 212;</code>
+     *
+     * <pre>
+     * 参考PBAgentStatus
+     * </pre>
+     */
+    public boolean hasAgentStatus() {
+      return ((bitField1_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional int32 agentStatus = 212;</code>
+     *
+     * <pre>
+     * 参考PBAgentStatus
+     * </pre>
+     */
+    public int getAgentStatus() {
+      return agentStatus_;
+    }
+
     private void initFields() {
       userId_ = "";
       nick_ = "";
@@ -6268,6 +6528,9 @@ public final class UserProtos {
       addStatus_ = 7;
       bStyle_ = 0;
       bSpeed_ = 0;
+      isAgent_ = false;
+      agentAccount_ = "";
+      agentStatus_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -6444,6 +6707,15 @@ public final class UserProtos {
       }
       if (((bitField1_ & 0x00000200) == 0x00000200)) {
         output.writeInt32(201, bSpeed_);
+      }
+      if (((bitField1_ & 0x00000400) == 0x00000400)) {
+        output.writeBool(210, isAgent_);
+      }
+      if (((bitField1_ & 0x00000800) == 0x00000800)) {
+        output.writeBytes(211, getAgentAccountBytes());
+      }
+      if (((bitField1_ & 0x00001000) == 0x00001000)) {
+        output.writeInt32(212, agentStatus_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -6633,6 +6905,18 @@ public final class UserProtos {
       if (((bitField1_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(201, bSpeed_);
+      }
+      if (((bitField1_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(210, isAgent_);
+      }
+      if (((bitField1_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(211, getAgentAccountBytes());
+      }
+      if (((bitField1_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(212, agentStatus_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -6861,6 +7145,12 @@ public final class UserProtos {
         bitField1_ = (bitField1_ & ~0x00000800);
         bSpeed_ = 0;
         bitField1_ = (bitField1_ & ~0x00001000);
+        isAgent_ = false;
+        bitField1_ = (bitField1_ & ~0x00002000);
+        agentAccount_ = "";
+        bitField1_ = (bitField1_ & ~0x00004000);
+        agentStatus_ = 0;
+        bitField1_ = (bitField1_ & ~0x00008000);
         return this;
       }
 
@@ -7090,6 +7380,18 @@ public final class UserProtos {
           to_bitField1_ |= 0x00000200;
         }
         result.bSpeed_ = bSpeed_;
+        if (((from_bitField1_ & 0x00002000) == 0x00002000)) {
+          to_bitField1_ |= 0x00000400;
+        }
+        result.isAgent_ = isAgent_;
+        if (((from_bitField1_ & 0x00004000) == 0x00004000)) {
+          to_bitField1_ |= 0x00000800;
+        }
+        result.agentAccount_ = agentAccount_;
+        if (((from_bitField1_ & 0x00008000) == 0x00008000)) {
+          to_bitField1_ |= 0x00001000;
+        }
+        result.agentStatus_ = agentStatus_;
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -7354,6 +7656,17 @@ public final class UserProtos {
         }
         if (other.hasBSpeed()) {
           setBSpeed(other.getBSpeed());
+        }
+        if (other.hasIsAgent()) {
+          setIsAgent(other.getIsAgent());
+        }
+        if (other.hasAgentAccount()) {
+          bitField1_ |= 0x00004000;
+          agentAccount_ = other.agentAccount_;
+          onChanged();
+        }
+        if (other.hasAgentStatus()) {
+          setAgentStatus(other.getAgentStatus());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -11487,6 +11800,162 @@ public final class UserProtos {
       public Builder clearBSpeed() {
         bitField1_ = (bitField1_ & ~0x00001000);
         bSpeed_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isAgent_ ;
+      /**
+       * <code>optional bool isAgent = 210;</code>
+       */
+      public boolean hasIsAgent() {
+        return ((bitField1_ & 0x00002000) == 0x00002000);
+      }
+      /**
+       * <code>optional bool isAgent = 210;</code>
+       */
+      public boolean getIsAgent() {
+        return isAgent_;
+      }
+      /**
+       * <code>optional bool isAgent = 210;</code>
+       */
+      public Builder setIsAgent(boolean value) {
+        bitField1_ |= 0x00002000;
+        isAgent_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool isAgent = 210;</code>
+       */
+      public Builder clearIsAgent() {
+        bitField1_ = (bitField1_ & ~0x00002000);
+        isAgent_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object agentAccount_ = "";
+      /**
+       * <code>optional string agentAccount = 211;</code>
+       */
+      public boolean hasAgentAccount() {
+        return ((bitField1_ & 0x00004000) == 0x00004000);
+      }
+      /**
+       * <code>optional string agentAccount = 211;</code>
+       */
+      public java.lang.String getAgentAccount() {
+        java.lang.Object ref = agentAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            agentAccount_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string agentAccount = 211;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAgentAccountBytes() {
+        java.lang.Object ref = agentAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          agentAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string agentAccount = 211;</code>
+       */
+      public Builder setAgentAccount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00004000;
+        agentAccount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string agentAccount = 211;</code>
+       */
+      public Builder clearAgentAccount() {
+        bitField1_ = (bitField1_ & ~0x00004000);
+        agentAccount_ = getDefaultInstance().getAgentAccount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string agentAccount = 211;</code>
+       */
+      public Builder setAgentAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00004000;
+        agentAccount_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int agentStatus_ ;
+      /**
+       * <code>optional int32 agentStatus = 212;</code>
+       *
+       * <pre>
+       * 参考PBAgentStatus
+       * </pre>
+       */
+      public boolean hasAgentStatus() {
+        return ((bitField1_ & 0x00008000) == 0x00008000);
+      }
+      /**
+       * <code>optional int32 agentStatus = 212;</code>
+       *
+       * <pre>
+       * 参考PBAgentStatus
+       * </pre>
+       */
+      public int getAgentStatus() {
+        return agentStatus_;
+      }
+      /**
+       * <code>optional int32 agentStatus = 212;</code>
+       *
+       * <pre>
+       * 参考PBAgentStatus
+       * </pre>
+       */
+      public Builder setAgentStatus(int value) {
+        bitField1_ |= 0x00008000;
+        agentStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 agentStatus = 212;</code>
+       *
+       * <pre>
+       * 参考PBAgentStatus
+       * </pre>
+       */
+      public Builder clearAgentStatus() {
+        bitField1_ = (bitField1_ & ~0x00008000);
+        agentStatus_ = 0;
         onChanged();
         return this;
       }
@@ -20752,6 +21221,23 @@ public final class UserProtos {
         getToUserIdBytes();
 
     /**
+     * <code>optional bool fromAgent = 8;</code>
+     *
+     * <pre>
+     * 是否来自客服
+     * </pre>
+     */
+    boolean hasFromAgent();
+    /**
+     * <code>optional bool fromAgent = 8;</code>
+     *
+     * <pre>
+     * 是否来自客服
+     * </pre>
+     */
+    boolean getFromAgent();
+
+    /**
      * <code>optional string text = 10;</code>
      *
      * <pre>
@@ -21038,47 +21524,52 @@ public final class UserProtos {
               toUserId_ = bs;
               break;
             }
+            case 64: {
+              bitField0_ |= 0x00000080;
+              fromAgent_ = input.readBool();
+              break;
+            }
             case 82: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               text_ = bs;
               break;
             }
             case 90: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               image_ = bs;
               break;
             }
             case 98: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               thumb_ = bs;
               break;
             }
             case 106: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               voice_ = bs;
               break;
             }
             case 160: {
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               createDate_ = input.readInt32();
               break;
             }
             case 168: {
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               status_ = input.readInt32();
               break;
             }
             case 176: {
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               type_ = input.readInt32();
               break;
             }
             case 184: {
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00008000;
               source_ = input.readInt32();
               break;
             }
@@ -21437,6 +21928,29 @@ public final class UserProtos {
       }
     }
 
+    public static final int FROMAGENT_FIELD_NUMBER = 8;
+    private boolean fromAgent_;
+    /**
+     * <code>optional bool fromAgent = 8;</code>
+     *
+     * <pre>
+     * 是否来自客服
+     * </pre>
+     */
+    public boolean hasFromAgent() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional bool fromAgent = 8;</code>
+     *
+     * <pre>
+     * 是否来自客服
+     * </pre>
+     */
+    public boolean getFromAgent() {
+      return fromAgent_;
+    }
+
     public static final int TEXT_FIELD_NUMBER = 10;
     private java.lang.Object text_;
     /**
@@ -21447,7 +21961,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasText() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>optional string text = 10;</code>
@@ -21501,7 +22015,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasImage() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>optional string image = 11;</code>
@@ -21555,7 +22069,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasThumb() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>optional string thumb = 12;</code>
@@ -21609,7 +22123,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasVoice() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <code>optional string voice = 13;</code>
@@ -21663,7 +22177,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasCreateDate() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <code>optional int32 createDate = 20;</code>
@@ -21686,7 +22200,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
      * <code>optional int32 status = 21;</code>
@@ -21709,7 +22223,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
      * <code>optional int32 type = 22;</code>
@@ -21732,7 +22246,7 @@ public final class UserProtos {
      * </pre>
      */
     public boolean hasSource() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
+      return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     /**
      * <code>optional int32 source = 23;</code>
@@ -21753,6 +22267,7 @@ public final class UserProtos {
       fromDevice_ = com.orange.protocol.message.CommonProtos.PBDevice.getDefaultInstance();
       toUser_ = com.orange.protocol.message.UserProtos.PBUser.getDefaultInstance();
       toUserId_ = "";
+      fromAgent_ = false;
       text_ = "";
       image_ = "";
       thumb_ = "";
@@ -21819,27 +22334,30 @@ public final class UserProtos {
         output.writeBytes(7, getToUserIdBytes());
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeBytes(10, getTextBytes());
+        output.writeBool(8, fromAgent_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeBytes(11, getImageBytes());
+        output.writeBytes(10, getTextBytes());
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeBytes(12, getThumbBytes());
+        output.writeBytes(11, getImageBytes());
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeBytes(13, getVoiceBytes());
+        output.writeBytes(12, getThumbBytes());
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeInt32(20, createDate_);
+        output.writeBytes(13, getVoiceBytes());
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        output.writeInt32(21, status_);
+        output.writeInt32(20, createDate_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        output.writeInt32(22, type_);
+        output.writeInt32(21, status_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        output.writeInt32(22, type_);
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         output.writeInt32(23, source_);
       }
       getUnknownFields().writeTo(output);
@@ -21881,33 +22399,37 @@ public final class UserProtos {
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(10, getTextBytes());
+          .computeBoolSize(8, fromAgent_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(11, getImageBytes());
+          .computeBytesSize(10, getTextBytes());
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(12, getThumbBytes());
+          .computeBytesSize(11, getImageBytes());
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(13, getVoiceBytes());
+          .computeBytesSize(12, getThumbBytes());
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(20, createDate_);
+          .computeBytesSize(13, getVoiceBytes());
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(21, status_);
+          .computeInt32Size(20, createDate_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(22, type_);
+          .computeInt32Size(21, status_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(22, type_);
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(23, source_);
       }
@@ -22057,22 +22579,24 @@ public final class UserProtos {
         bitField0_ = (bitField0_ & ~0x00000020);
         toUserId_ = "";
         bitField0_ = (bitField0_ & ~0x00000040);
-        text_ = "";
+        fromAgent_ = false;
         bitField0_ = (bitField0_ & ~0x00000080);
-        image_ = "";
+        text_ = "";
         bitField0_ = (bitField0_ & ~0x00000100);
-        thumb_ = "";
+        image_ = "";
         bitField0_ = (bitField0_ & ~0x00000200);
-        voice_ = "";
+        thumb_ = "";
         bitField0_ = (bitField0_ & ~0x00000400);
-        createDate_ = 0;
+        voice_ = "";
         bitField0_ = (bitField0_ & ~0x00000800);
-        status_ = 0;
+        createDate_ = 0;
         bitField0_ = (bitField0_ & ~0x00001000);
-        type_ = 0;
+        status_ = 0;
         bitField0_ = (bitField0_ & ~0x00002000);
-        source_ = 0;
+        type_ = 0;
         bitField0_ = (bitField0_ & ~0x00004000);
+        source_ = 0;
+        bitField0_ = (bitField0_ & ~0x00008000);
         return this;
       }
 
@@ -22144,33 +22668,37 @@ public final class UserProtos {
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.text_ = text_;
+        result.fromAgent_ = fromAgent_;
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.image_ = image_;
+        result.text_ = text_;
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.thumb_ = thumb_;
+        result.image_ = image_;
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.voice_ = voice_;
+        result.thumb_ = thumb_;
         if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000800;
         }
-        result.createDate_ = createDate_;
+        result.voice_ = voice_;
         if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00001000;
         }
-        result.status_ = status_;
+        result.createDate_ = createDate_;
         if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00002000;
         }
-        result.type_ = type_;
+        result.status_ = status_;
         if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
           to_bitField0_ |= 0x00004000;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00008000;
         }
         result.source_ = source_;
         result.bitField0_ = to_bitField0_;
@@ -22218,23 +22746,26 @@ public final class UserProtos {
           toUserId_ = other.toUserId_;
           onChanged();
         }
+        if (other.hasFromAgent()) {
+          setFromAgent(other.getFromAgent());
+        }
         if (other.hasText()) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           text_ = other.text_;
           onChanged();
         }
         if (other.hasImage()) {
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
           image_ = other.image_;
           onChanged();
         }
         if (other.hasThumb()) {
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
           thumb_ = other.thumb_;
           onChanged();
         }
         if (other.hasVoice()) {
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
           voice_ = other.voice_;
           onChanged();
         }
@@ -23155,6 +23686,54 @@ public final class UserProtos {
         return this;
       }
 
+      private boolean fromAgent_ ;
+      /**
+       * <code>optional bool fromAgent = 8;</code>
+       *
+       * <pre>
+       * 是否来自客服
+       * </pre>
+       */
+      public boolean hasFromAgent() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional bool fromAgent = 8;</code>
+       *
+       * <pre>
+       * 是否来自客服
+       * </pre>
+       */
+      public boolean getFromAgent() {
+        return fromAgent_;
+      }
+      /**
+       * <code>optional bool fromAgent = 8;</code>
+       *
+       * <pre>
+       * 是否来自客服
+       * </pre>
+       */
+      public Builder setFromAgent(boolean value) {
+        bitField0_ |= 0x00000080;
+        fromAgent_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool fromAgent = 8;</code>
+       *
+       * <pre>
+       * 是否来自客服
+       * </pre>
+       */
+      public Builder clearFromAgent() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        fromAgent_ = false;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object text_ = "";
       /**
        * <code>optional string text = 10;</code>
@@ -23164,7 +23743,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasText() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>optional string text = 10;</code>
@@ -23219,7 +23798,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  bitField0_ |= 0x00000100;
         text_ = value;
         onChanged();
         return this;
@@ -23232,7 +23811,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearText() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         text_ = getDefaultInstance().getText();
         onChanged();
         return this;
@@ -23249,7 +23828,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  bitField0_ |= 0x00000100;
         text_ = value;
         onChanged();
         return this;
@@ -23264,7 +23843,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasImage() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>optional string image = 11;</code>
@@ -23319,7 +23898,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  bitField0_ |= 0x00000200;
         image_ = value;
         onChanged();
         return this;
@@ -23332,7 +23911,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearImage() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         image_ = getDefaultInstance().getImage();
         onChanged();
         return this;
@@ -23349,7 +23928,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  bitField0_ |= 0x00000200;
         image_ = value;
         onChanged();
         return this;
@@ -23364,7 +23943,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasThumb() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <code>optional string thumb = 12;</code>
@@ -23419,7 +23998,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
+  bitField0_ |= 0x00000400;
         thumb_ = value;
         onChanged();
         return this;
@@ -23432,7 +24011,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearThumb() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         thumb_ = getDefaultInstance().getThumb();
         onChanged();
         return this;
@@ -23449,7 +24028,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
+  bitField0_ |= 0x00000400;
         thumb_ = value;
         onChanged();
         return this;
@@ -23464,7 +24043,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasVoice() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <code>optional string voice = 13;</code>
@@ -23519,7 +24098,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000800;
         voice_ = value;
         onChanged();
         return this;
@@ -23532,7 +24111,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearVoice() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         voice_ = getDefaultInstance().getVoice();
         onChanged();
         return this;
@@ -23549,7 +24128,7 @@ public final class UserProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000800;
         voice_ = value;
         onChanged();
         return this;
@@ -23564,7 +24143,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasCreateDate() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional int32 createDate = 20;</code>
@@ -23584,7 +24163,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setCreateDate(int value) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         createDate_ = value;
         onChanged();
         return this;
@@ -23597,7 +24176,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearCreateDate() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         createDate_ = 0;
         onChanged();
         return this;
@@ -23612,7 +24191,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasStatus() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <code>optional int32 status = 21;</code>
@@ -23632,7 +24211,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setStatus(int value) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         status_ = value;
         onChanged();
         return this;
@@ -23645,7 +24224,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearStatus() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         status_ = 0;
         onChanged();
         return this;
@@ -23660,7 +24239,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasType() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
        * <code>optional int32 type = 22;</code>
@@ -23680,7 +24259,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setType(int value) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         type_ = value;
         onChanged();
         return this;
@@ -23693,7 +24272,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         type_ = 0;
         onChanged();
         return this;
@@ -23708,7 +24287,7 @@ public final class UserProtos {
        * </pre>
        */
       public boolean hasSource() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
        * <code>optional int32 source = 23;</code>
@@ -23728,7 +24307,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder setSource(int value) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         source_ = value;
         onChanged();
         return this;
@@ -23741,7 +24320,7 @@ public final class UserProtos {
        * </pre>
        */
       public Builder clearSource() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         source_ = 0;
         onChanged();
         return this;
@@ -23822,7 +24401,7 @@ public final class UserProtos {
       "\014\n\004nick\030\003 \001(\t\022\023\n\013accessToken\030\004 \001(\t\022\031\n\021ac" +
       "cessTokenSecret\030\005 \001(\t\022\024\n\014refreshToken\030\006 " +
       "\001(\t\022\023\n\013expiredTime\030\007 \001(\005\022\020\n\010qqOpenId\030\010 \001" +
-      "(\t\022\022\n\ncredential\030\024 \001(\t\"\221\007\n\006PBUser\022\016\n\006use" +
+      "(\t\022\022\n\ncredential\030\024 \001(\t\"\320\007\n\006PBUser\022\016\n\006use" +
       "rId\030\001 \002(\t\022\014\n\004nick\030\002 \001(\t\022\016\n\006avatar\030\003 \001(\t\022" +
       "\025\n\006gender\030\004 \001(\010:\005false\022$\n\010snsUsers\030\005 \003(\013" +
       "2\022.barrage.PBSNSUser\022\024\n\014xiaojiNumber\030\006 \001" +
@@ -23845,62 +24424,66 @@ public final class UserProtos {
       "\004memo\030e \001(\t\022\021\n\taddSource\030f \001(\005\022\017\n\007addDat" +
       "e\030g \001(\005\022\016\n\006addDir\030h \001(\005\022\021\n\treplyMemo\030i \001" +
       "(\t\022\024\n\taddStatus\030j \001(\005:\0017\022\017\n\006bStyle\030\310\001 \001(" +
-      "\005\022\017\n\006bSpeed\030\311\001 \001(\005\"x\n\tPBUserTag\022\014\n\004name\030" +
-      "\001 \001(\t\022\013\n\003tid\030\002 \002(\t\022\020\n\010isCustom\030\003 \001(\010\022\r\n\005",
-      "color\030\004 \001(\005\022\036\n\005users\030\n \003(\0132\017.barrage.PBU" +
-      "ser\022\017\n\007userIds\030\013 \003(\t\"1\n\rPBUserTagList\022 \n" +
-      "\004tags\030\001 \003(\0132\022.barrage.PBUserTag\"v\n\020PBUse" +
-      "rFriendList\022 \n\007friends\030\001 \003(\0132\017.barrage.P" +
-      "BUser\022\'\n\016requestFriends\030\002 \003(\0132\017.barrage." +
-      "PBUser\022\027\n\017requestNewCount\030\003 \001(\005\"y\n\014PBInv" +
-      "iteCode\022\014\n\004code\030\001 \002(\t\022\016\n\006status\030\002 \001(\005\022\016\n" +
-      "\006sendTo\030\003 \001(\t\022\020\n\010sendType\030\004 \001(\005\022\023\n\013owner" +
-      "UserId\030\005 \001(\t\022\024\n\014usedByUserId\030\006 \001(\t\"\223\001\n\024P" +
-      "BUserInviteCodeList\022\016\n\006userId\030\001 \001(\t\022-\n\016a",
-      "vailableCodes\030\002 \003(\0132\025.barrage.PBInviteCo" +
-      "de\022(\n\tsentCodes\030\003 \003(\0132\025.barrage.PBInvite" +
-      "Code\022\022\n\napplyCount\030\004 \001(\005\"\232\001\n\013PBUserGroup" +
-      "\022\036\n\005users\030\n \003(\0132\017.barrage.PBUser\022\017\n\007grou" +
-      "pId\030\013 \002(\t\022\021\n\toccurence\030\001 \001(\005\022\021\n\trejectio" +
-      "n\030\002 \001(\005\022\031\n\021lastOccurenceDate\030\003 \001(\005\022\031\n\021la" +
-      "stRejectionDate\030\004 \001(\005\"7\n\017PBUserGroupList" +
-      "\022$\n\006groups\030\001 \003(\0132\024.barrage.PBUserGroup\"\271" +
-      "\002\n\006PBChat\022\016\n\006chatId\030\001 \002(\t\022\021\n\tsessionId\030\002" +
-      " \001(\t\022!\n\010fromUser\030\003 \001(\0132\017.barrage.PBUser\022",
-      "\022\n\nfromUserId\030\004 \001(\t\022%\n\nfromDevice\030\005 \001(\0132" +
-      "\021.barrage.PBDevice\022\037\n\006toUser\030\006 \001(\0132\017.bar" +
-      "rage.PBUser\022\020\n\010toUserId\030\007 \001(\t\022\014\n\004text\030\n " +
-      "\001(\t\022\r\n\005image\030\013 \001(\t\022\r\n\005thumb\030\014 \001(\t\022\r\n\005voi" +
-      "ce\030\r \001(\t\022\022\n\ncreateDate\030\024 \001(\005\022\016\n\006status\030\025" +
-      " \001(\005\022\014\n\004type\030\026 \001(\005\022\016\n\006source\030\027 \001(\005*@\n\023Fr" +
-      "iendAddSourceType\022\021\n\rADD_BY_SEARCH\020\001\022\026\n\022" +
-      "ADD_BY_SCAN_QRCODE\020\002*N\n\023FriendAddConfigT" +
-      "ype\022\022\n\016REQUIRE_ACCEPT\020\000\022\016\n\nACCEPT_ALL\020\001\022" +
-      "\023\n\017DISALLOW_ADD_ME\020\007*f\n\026FriendRequestDir",
-      "ection\022\030\n\024REQ_DIRECTION_SENDER\020\000\022\032\n\026REQ_" +
-      "DIRECTION_RECEIVER\020\001\022\026\n\022REQ_DIRECTION_NO" +
-      "NE\020\002*c\n\023FriendAddStatusType\022\023\n\017REQ_WAIT_" +
-      "ACCEPT\020\000\022\020\n\014REQ_ACCEPTED\020\001\022\020\n\014REQ_REJECT" +
-      "ED\020\002\022\023\n\017REQ_STATUS_NONE\020\007*r\n\013PBLoginType" +
-      "\022\020\n\014LOGIN_XIAOJI\020d\022\017\n\013LOGIN_EMAIL\020e\022\020\n\014L" +
-      "OGIN_MOBILE\020f\022\014\n\010LOGIN_QQ\020\006\022\016\n\nLOGIN_SIN" +
-      "A\020\001\022\020\n\014LOGIN_WEIXIN\020\027*i\n\016PBRegisterType\022" +
-      "\016\n\nREG_XIAOJI\020d\022\r\n\tREG_EMAIL\020e\022\016\n\nREG_MO" +
-      "BILE\020f\022\n\n\006REG_QQ\020\006\022\014\n\010REG_SINA\020\001\022\016\n\nREG_",
-      "WEIXIN\020\027*E\n\nPBTagColor\022\n\n\006SYSTEM\020\000\022\n\n\006CU" +
-      "STOM\020\001\022\n\n\006MYSELF\020\002\022\007\n\003HOT\020\003\022\n\n\006RECENT\020\004*" +
-      "p\n\022PBInviteCodeStatus\022\025\n\021CODE_STATUS_REA" +
-      "DY\020\000\022\024\n\020CODE_STATUS_SENT\020\001\022\024\n\020CODE_STATU" +
-      "S_USED\020\002\022\027\n\023CODE_STATUS_INVALID\020\003*\206\001\n\014PB" +
-      "ChatSource\022\017\n\013FROM_WECHAT\020\001\022\014\n\010FROM_APP\020" +
-      "\002\022\014\n\010FROM_WEB\020\003\022\023\n\017FROM_MOBILE_WEB\020\004\022\016\n\n" +
-      "FROM_AGENT\020\005\022\023\n\017FROM_AGENT_AUTO\020\006\022\017\n\013FRO" +
-      "M_SYSTEM\020\007*\035\n\nPBChatType\022\017\n\013NORMAL_CHAT\020" +
-      "\000*s\n\014PBChatStatus\022\023\n\017MESSAGE_SENDING\020\000\022\020",
-      "\n\014MESSAGE_SENT\020\001\022\023\n\017MESSAGE_FAILURE\020\002\022\023\n" +
-      "\017MESSAGE_DELETED\020\003\022\022\n\016MESSAGE_CANCEL\020\004B)" +
-      "\n\033com.orange.protocol.messageB\nUserProto" +
-      "s"
+      "\005\022\017\n\006bSpeed\030\311\001 \001(\005\022\020\n\007isAgent\030\322\001 \001(\010\022\025\n\014" +
+      "agentAccount\030\323\001 \001(\t\022\024\n\013agentStatus\030\324\001 \001(",
+      "\005\"x\n\tPBUserTag\022\014\n\004name\030\001 \001(\t\022\013\n\003tid\030\002 \002(" +
+      "\t\022\020\n\010isCustom\030\003 \001(\010\022\r\n\005color\030\004 \001(\005\022\036\n\005us" +
+      "ers\030\n \003(\0132\017.barrage.PBUser\022\017\n\007userIds\030\013 " +
+      "\003(\t\"1\n\rPBUserTagList\022 \n\004tags\030\001 \003(\0132\022.bar" +
+      "rage.PBUserTag\"v\n\020PBUserFriendList\022 \n\007fr" +
+      "iends\030\001 \003(\0132\017.barrage.PBUser\022\'\n\016requestF" +
+      "riends\030\002 \003(\0132\017.barrage.PBUser\022\027\n\017request" +
+      "NewCount\030\003 \001(\005\"y\n\014PBInviteCode\022\014\n\004code\030\001" +
+      " \002(\t\022\016\n\006status\030\002 \001(\005\022\016\n\006sendTo\030\003 \001(\t\022\020\n\010" +
+      "sendType\030\004 \001(\005\022\023\n\013ownerUserId\030\005 \001(\t\022\024\n\014u",
+      "sedByUserId\030\006 \001(\t\"\223\001\n\024PBUserInviteCodeLi" +
+      "st\022\016\n\006userId\030\001 \001(\t\022-\n\016availableCodes\030\002 \003" +
+      "(\0132\025.barrage.PBInviteCode\022(\n\tsentCodes\030\003" +
+      " \003(\0132\025.barrage.PBInviteCode\022\022\n\napplyCoun" +
+      "t\030\004 \001(\005\"\232\001\n\013PBUserGroup\022\036\n\005users\030\n \003(\0132\017" +
+      ".barrage.PBUser\022\017\n\007groupId\030\013 \002(\t\022\021\n\toccu" +
+      "rence\030\001 \001(\005\022\021\n\trejection\030\002 \001(\005\022\031\n\021lastOc" +
+      "curenceDate\030\003 \001(\005\022\031\n\021lastRejectionDate\030\004" +
+      " \001(\005\"7\n\017PBUserGroupList\022$\n\006groups\030\001 \003(\0132" +
+      "\024.barrage.PBUserGroup\"\314\002\n\006PBChat\022\016\n\006chat",
+      "Id\030\001 \002(\t\022\021\n\tsessionId\030\002 \001(\t\022!\n\010fromUser\030" +
+      "\003 \001(\0132\017.barrage.PBUser\022\022\n\nfromUserId\030\004 \001" +
+      "(\t\022%\n\nfromDevice\030\005 \001(\0132\021.barrage.PBDevic" +
+      "e\022\037\n\006toUser\030\006 \001(\0132\017.barrage.PBUser\022\020\n\010to" +
+      "UserId\030\007 \001(\t\022\021\n\tfromAgent\030\010 \001(\010\022\014\n\004text\030" +
+      "\n \001(\t\022\r\n\005image\030\013 \001(\t\022\r\n\005thumb\030\014 \001(\t\022\r\n\005v" +
+      "oice\030\r \001(\t\022\022\n\ncreateDate\030\024 \001(\005\022\016\n\006status" +
+      "\030\025 \001(\005\022\014\n\004type\030\026 \001(\005\022\016\n\006source\030\027 \001(\005*@\n\023" +
+      "FriendAddSourceType\022\021\n\rADD_BY_SEARCH\020\001\022\026" +
+      "\n\022ADD_BY_SCAN_QRCODE\020\002*N\n\023FriendAddConfi",
+      "gType\022\022\n\016REQUIRE_ACCEPT\020\000\022\016\n\nACCEPT_ALL\020" +
+      "\001\022\023\n\017DISALLOW_ADD_ME\020\007*f\n\026FriendRequestD" +
+      "irection\022\030\n\024REQ_DIRECTION_SENDER\020\000\022\032\n\026RE" +
+      "Q_DIRECTION_RECEIVER\020\001\022\026\n\022REQ_DIRECTION_" +
+      "NONE\020\002*c\n\023FriendAddStatusType\022\023\n\017REQ_WAI" +
+      "T_ACCEPT\020\000\022\020\n\014REQ_ACCEPTED\020\001\022\020\n\014REQ_REJE" +
+      "CTED\020\002\022\023\n\017REQ_STATUS_NONE\020\007*r\n\013PBLoginTy" +
+      "pe\022\020\n\014LOGIN_XIAOJI\020d\022\017\n\013LOGIN_EMAIL\020e\022\020\n" +
+      "\014LOGIN_MOBILE\020f\022\014\n\010LOGIN_QQ\020\006\022\016\n\nLOGIN_S" +
+      "INA\020\001\022\020\n\014LOGIN_WEIXIN\020\027*i\n\016PBRegisterTyp",
+      "e\022\016\n\nREG_XIAOJI\020d\022\r\n\tREG_EMAIL\020e\022\016\n\nREG_" +
+      "MOBILE\020f\022\n\n\006REG_QQ\020\006\022\014\n\010REG_SINA\020\001\022\016\n\nRE" +
+      "G_WEIXIN\020\027*E\n\nPBTagColor\022\n\n\006SYSTEM\020\000\022\n\n\006" +
+      "CUSTOM\020\001\022\n\n\006MYSELF\020\002\022\007\n\003HOT\020\003\022\n\n\006RECENT\020" +
+      "\004*p\n\022PBInviteCodeStatus\022\025\n\021CODE_STATUS_R" +
+      "EADY\020\000\022\024\n\020CODE_STATUS_SENT\020\001\022\024\n\020CODE_STA" +
+      "TUS_USED\020\002\022\027\n\023CODE_STATUS_INVALID\020\003*\206\001\n\014" +
+      "PBChatSource\022\017\n\013FROM_WECHAT\020\001\022\014\n\010FROM_AP" +
+      "P\020\002\022\014\n\010FROM_WEB\020\003\022\023\n\017FROM_MOBILE_WEB\020\004\022\016" +
+      "\n\nFROM_AGENT\020\005\022\023\n\017FROM_AGENT_AUTO\020\006\022\017\n\013F",
+      "ROM_SYSTEM\020\007*=\n\nPBChatType\022\r\n\tTEXT_CHAT\020" +
+      "\000\022\020\n\014PICTURE_CHAT\020\001\022\016\n\nVOICE_CHAT\020\002*s\n\014P" +
+      "BChatStatus\022\023\n\017MESSAGE_SENDING\020\000\022\020\n\014MESS" +
+      "AGE_SENT\020\001\022\023\n\017MESSAGE_FAILURE\020\002\022\023\n\017MESSA" +
+      "GE_DELETED\020\003\022\022\n\016MESSAGE_CANCEL\020\004*4\n\rPBAg" +
+      "entStatus\022\021\n\rAGENT_OFFLINE\020\000\022\020\n\014AGENT_ON" +
+      "LINE\020\001B)\n\033com.orange.protocol.messageB\nU" +
+      "serProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -23926,7 +24509,7 @@ public final class UserProtos {
     internal_static_barrage_PBUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBUser_descriptor,
-        new java.lang.String[] { "UserId", "Nick", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "QqOpenId", "SinaId", "WeixinId", "Birthday", "Zodiac", "BloodGroup", "RegDate", "RegFrom", "VisitDate", "SDate", "AvatarBg", "Signature", "Avatars", "BAvatars", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", "AddConfig", "Tags", "Memo", "AddSource", "AddDate", "AddDir", "ReplyMemo", "AddStatus", "BStyle", "BSpeed", });
+        new java.lang.String[] { "UserId", "Nick", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "QqOpenId", "SinaId", "WeixinId", "Birthday", "Zodiac", "BloodGroup", "RegDate", "RegFrom", "VisitDate", "SDate", "AvatarBg", "Signature", "Avatars", "BAvatars", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", "AddConfig", "Tags", "Memo", "AddSource", "AddDate", "AddDir", "ReplyMemo", "AddStatus", "BStyle", "BSpeed", "IsAgent", "AgentAccount", "AgentStatus", });
     internal_static_barrage_PBUserTag_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_barrage_PBUserTag_fieldAccessorTable = new
@@ -23974,7 +24557,7 @@ public final class UserProtos {
     internal_static_barrage_PBChat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBChat_descriptor,
-        new java.lang.String[] { "ChatId", "SessionId", "FromUser", "FromUserId", "FromDevice", "ToUser", "ToUserId", "Text", "Image", "Thumb", "Voice", "CreateDate", "Status", "Type", "Source", });
+        new java.lang.String[] { "ChatId", "SessionId", "FromUser", "FromUserId", "FromDevice", "ToUser", "ToUserId", "FromAgent", "Text", "Image", "Thumb", "Voice", "CreateDate", "Status", "Type", "Source", });
     com.orange.protocol.message.CommonProtos.getDescriptor();
   }
 
