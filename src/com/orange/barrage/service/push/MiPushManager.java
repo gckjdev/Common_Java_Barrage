@@ -1,9 +1,7 @@
 package com.orange.barrage.service.push;
 
-import com.xiaomi.xmpush.server.Constants;
-import com.xiaomi.xmpush.server.Message;
-import com.xiaomi.xmpush.server.Sender;
-import com.xiaomi.xmpush.server.TargetedMessage;
+import com.xiaomi.xmpush.server.*;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +10,8 @@ import java.util.List;
  * Created by pipi on 15/4/17.
  */
 public class MiPushManager {
+
+    protected static Logger log = Logger.getLogger(MiPushManager.class.getName());
 
     boolean isTest = true;
     String appSecret = "";
@@ -60,7 +60,38 @@ public class MiPushManager {
         return messages;
     }
 
-    private void sendMessage() throws Exception {
+    public void sendMessage(String alias, String description, int badge) throws Exception {
+
+        prepare();
+
+        Sender sender = new Sender(appSecret);
+
+        Message message = new Message.IOSBuilder()
+                .description(description)
+                .soundURL("default")    // 消息铃声
+                .badge(1)               // 数字角标
+                .category("action")     // 快速回复类别
+//                .extra("key", "value")  // 自定义键值对
+                .build();
+
+
+//        String messagePayload= "This is a message";
+//        String title = "notification title";
+//        String description = "notification description";
+//        Message message = new Message.Builder()
+//                .title(title)
+//                .description(description).payload(messagePayload)
+//                .restrictedPackageName(MY_PACKAGE_NAME)
+//                .notifyType(1)     // 使用默认提示音提示
+//                .build();
+        Result result = sender.sendToAlias(message, alias, 0);
+        log.info("send message to "+alias+" result="+result.toString());
+
+//                send(message, regId, 0); //根据regID，发送消息到指定设备上，不重试。
+    }
+
+
+    public void sendMessage() throws Exception {
 
         prepare();
 

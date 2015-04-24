@@ -1,6 +1,7 @@
 package com.orange.barrage.service.chat;
 
 import com.orange.barrage.model.chat.*;
+import com.orange.barrage.service.push.PushService;
 import com.orange.common.utils.DateUtil;
 import com.orange.common.utils.StringUtil;
 import com.orange.game.model.dao.CommonData;
@@ -67,12 +68,23 @@ public class ChatService {
             // increase user counter
             int counter = UserChatCounterManager.getInstance().incUserChatCounter(userId);
 
-            // TODO notify user
+            // notify user
+            notifyUser(pbChat.getToUser(), pbChat, counter);
             //        OnlineAgentManager.getInstance().notifyAgentNewMessage(agent, counter);
         }
 
         rspBuilder.setChat(chat.toProtoBufModel());
         return 0;
+    }
+
+    private void notifyUser(UserProtos.PBUser toUser, UserProtos.PBChat pbChat, int counter) {
+
+        int deviceType = toUser.getDeviceType();
+        String userId = toUser.getUserId();
+        String text = pbChat.getText();
+
+        PushService.getInstance().sendMessage(deviceType, userId, text, counter);
+
     }
 
     private void testAgentReply(Chat chat, Agent agent) {

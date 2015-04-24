@@ -70,6 +70,10 @@ public class Chat extends CommonData implements ProtoBufCoding<UserProtos.PBChat
         return toPB(builder, null);
     }
 
+    public Class getPBClass(){
+        return UserProtos.PBChat.class;
+    }
+
     @Override
     public void addIntoResponse(GameMessageProtos.DataQueryResponse.Builder builder) {
 

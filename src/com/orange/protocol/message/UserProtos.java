@@ -963,53 +963,61 @@ public final class UserProtos {
      */
     FROM_WECHAT(0, 1),
     /**
-     * <code>FROM_APP = 2;</code>
+     * <code>FROM_APP_IOS = 2;</code>
      *
      * <pre>
-     * APP客户端
+     * iOS APP客户端
      * </pre>
      */
-    FROM_APP(1, 2),
+    FROM_APP_IOS(1, 2),
     /**
-     * <code>FROM_WEB = 3;</code>
+     * <code>FROM_APP_ANDROID = 3;</code>
+     *
+     * <pre>
+     * ANDROID APP客户端
+     * </pre>
+     */
+    FROM_APP_ANDROID(2, 3),
+    /**
+     * <code>FROM_WEB = 5;</code>
      *
      * <pre>
      * Web网站
      * </pre>
      */
-    FROM_WEB(2, 3),
+    FROM_WEB(3, 5),
     /**
-     * <code>FROM_MOBILE_WEB = 4;</code>
+     * <code>FROM_MOBILE_WEB = 6;</code>
      *
      * <pre>
      * 手机网站
      * </pre>
      */
-    FROM_MOBILE_WEB(3, 4),
+    FROM_MOBILE_WEB(4, 6),
     /**
-     * <code>FROM_AGENT = 5;</code>
+     * <code>FROM_AGENT = 7;</code>
      *
      * <pre>
      * 客服人工
      * </pre>
      */
-    FROM_AGENT(4, 5),
+    FROM_AGENT(5, 7),
     /**
-     * <code>FROM_AGENT_AUTO = 6;</code>
+     * <code>FROM_AGENT_AUTO = 8;</code>
      *
      * <pre>
      * 客服自动
      * </pre>
      */
-    FROM_AGENT_AUTO(5, 6),
+    FROM_AGENT_AUTO(6, 8),
     /**
-     * <code>FROM_SYSTEM = 7;</code>
+     * <code>FROM_SYSTEM = 9;</code>
      *
      * <pre>
      * 系统群发
      * </pre>
      */
-    FROM_SYSTEM(6, 7),
+    FROM_SYSTEM(7, 9),
     ;
 
     /**
@@ -1021,53 +1029,61 @@ public final class UserProtos {
      */
     public static final int FROM_WECHAT_VALUE = 1;
     /**
-     * <code>FROM_APP = 2;</code>
+     * <code>FROM_APP_IOS = 2;</code>
      *
      * <pre>
-     * APP客户端
+     * iOS APP客户端
      * </pre>
      */
-    public static final int FROM_APP_VALUE = 2;
+    public static final int FROM_APP_IOS_VALUE = 2;
     /**
-     * <code>FROM_WEB = 3;</code>
+     * <code>FROM_APP_ANDROID = 3;</code>
+     *
+     * <pre>
+     * ANDROID APP客户端
+     * </pre>
+     */
+    public static final int FROM_APP_ANDROID_VALUE = 3;
+    /**
+     * <code>FROM_WEB = 5;</code>
      *
      * <pre>
      * Web网站
      * </pre>
      */
-    public static final int FROM_WEB_VALUE = 3;
+    public static final int FROM_WEB_VALUE = 5;
     /**
-     * <code>FROM_MOBILE_WEB = 4;</code>
+     * <code>FROM_MOBILE_WEB = 6;</code>
      *
      * <pre>
      * 手机网站
      * </pre>
      */
-    public static final int FROM_MOBILE_WEB_VALUE = 4;
+    public static final int FROM_MOBILE_WEB_VALUE = 6;
     /**
-     * <code>FROM_AGENT = 5;</code>
+     * <code>FROM_AGENT = 7;</code>
      *
      * <pre>
      * 客服人工
      * </pre>
      */
-    public static final int FROM_AGENT_VALUE = 5;
+    public static final int FROM_AGENT_VALUE = 7;
     /**
-     * <code>FROM_AGENT_AUTO = 6;</code>
+     * <code>FROM_AGENT_AUTO = 8;</code>
      *
      * <pre>
      * 客服自动
      * </pre>
      */
-    public static final int FROM_AGENT_AUTO_VALUE = 6;
+    public static final int FROM_AGENT_AUTO_VALUE = 8;
     /**
-     * <code>FROM_SYSTEM = 7;</code>
+     * <code>FROM_SYSTEM = 9;</code>
      *
      * <pre>
      * 系统群发
      * </pre>
      */
-    public static final int FROM_SYSTEM_VALUE = 7;
+    public static final int FROM_SYSTEM_VALUE = 9;
 
 
     public final int getNumber() { return value; }
@@ -1075,12 +1091,13 @@ public final class UserProtos {
     public static PBChatSource valueOf(int value) {
       switch (value) {
         case 1: return FROM_WECHAT;
-        case 2: return FROM_APP;
-        case 3: return FROM_WEB;
-        case 4: return FROM_MOBILE_WEB;
-        case 5: return FROM_AGENT;
-        case 6: return FROM_AGENT_AUTO;
-        case 7: return FROM_SYSTEM;
+        case 2: return FROM_APP_IOS;
+        case 3: return FROM_APP_ANDROID;
+        case 5: return FROM_WEB;
+        case 6: return FROM_MOBILE_WEB;
+        case 7: return FROM_AGENT;
+        case 8: return FROM_AGENT_AUTO;
+        case 9: return FROM_SYSTEM;
         default: return null;
       }
     }
@@ -4239,6 +4256,49 @@ public final class UserProtos {
      * </pre>
      */
     int getAgentStatus();
+
+    /**
+     * <code>optional int32 deviceType = 213;</code>
+     *
+     * <pre>
+     * 设备类型，参见PBDeviceType
+     * </pre>
+     */
+    boolean hasDeviceType();
+    /**
+     * <code>optional int32 deviceType = 213;</code>
+     *
+     * <pre>
+     * 设备类型，参见PBDeviceType
+     * </pre>
+     */
+    int getDeviceType();
+
+    /**
+     * <code>optional string pushRegId = 214;</code>
+     *
+     * <pre>
+     * 推送注册ID
+     * </pre>
+     */
+    boolean hasPushRegId();
+    /**
+     * <code>optional string pushRegId = 214;</code>
+     *
+     * <pre>
+     * 推送注册ID
+     * </pre>
+     */
+    java.lang.String getPushRegId();
+    /**
+     * <code>optional string pushRegId = 214;</code>
+     *
+     * <pre>
+     * 推送注册ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getPushRegIdBytes();
   }
   /**
    * Protobuf type {@code barrage.PBUser}
@@ -4571,6 +4631,17 @@ public final class UserProtos {
             case 1696: {
               bitField1_ |= 0x00001000;
               agentStatus_ = input.readInt32();
+              break;
+            }
+            case 1704: {
+              bitField1_ |= 0x00002000;
+              deviceType_ = input.readInt32();
+              break;
+            }
+            case 1714: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField1_ |= 0x00004000;
+              pushRegId_ = bs;
               break;
             }
           }
@@ -6482,6 +6553,83 @@ public final class UserProtos {
       return agentStatus_;
     }
 
+    public static final int DEVICETYPE_FIELD_NUMBER = 213;
+    private int deviceType_;
+    /**
+     * <code>optional int32 deviceType = 213;</code>
+     *
+     * <pre>
+     * 设备类型，参见PBDeviceType
+     * </pre>
+     */
+    public boolean hasDeviceType() {
+      return ((bitField1_ & 0x00002000) == 0x00002000);
+    }
+    /**
+     * <code>optional int32 deviceType = 213;</code>
+     *
+     * <pre>
+     * 设备类型，参见PBDeviceType
+     * </pre>
+     */
+    public int getDeviceType() {
+      return deviceType_;
+    }
+
+    public static final int PUSHREGID_FIELD_NUMBER = 214;
+    private java.lang.Object pushRegId_;
+    /**
+     * <code>optional string pushRegId = 214;</code>
+     *
+     * <pre>
+     * 推送注册ID
+     * </pre>
+     */
+    public boolean hasPushRegId() {
+      return ((bitField1_ & 0x00004000) == 0x00004000);
+    }
+    /**
+     * <code>optional string pushRegId = 214;</code>
+     *
+     * <pre>
+     * 推送注册ID
+     * </pre>
+     */
+    public java.lang.String getPushRegId() {
+      java.lang.Object ref = pushRegId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          pushRegId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string pushRegId = 214;</code>
+     *
+     * <pre>
+     * 推送注册ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getPushRegIdBytes() {
+      java.lang.Object ref = pushRegId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pushRegId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       userId_ = "";
       nick_ = "";
@@ -6531,6 +6679,8 @@ public final class UserProtos {
       isAgent_ = false;
       agentAccount_ = "";
       agentStatus_ = 0;
+      deviceType_ = 0;
+      pushRegId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -6716,6 +6866,12 @@ public final class UserProtos {
       }
       if (((bitField1_ & 0x00001000) == 0x00001000)) {
         output.writeInt32(212, agentStatus_);
+      }
+      if (((bitField1_ & 0x00002000) == 0x00002000)) {
+        output.writeInt32(213, deviceType_);
+      }
+      if (((bitField1_ & 0x00004000) == 0x00004000)) {
+        output.writeBytes(214, getPushRegIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -6917,6 +7073,14 @@ public final class UserProtos {
       if (((bitField1_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(212, agentStatus_);
+      }
+      if (((bitField1_ & 0x00002000) == 0x00002000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(213, deviceType_);
+      }
+      if (((bitField1_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(214, getPushRegIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7151,6 +7315,10 @@ public final class UserProtos {
         bitField1_ = (bitField1_ & ~0x00004000);
         agentStatus_ = 0;
         bitField1_ = (bitField1_ & ~0x00008000);
+        deviceType_ = 0;
+        bitField1_ = (bitField1_ & ~0x00010000);
+        pushRegId_ = "";
+        bitField1_ = (bitField1_ & ~0x00020000);
         return this;
       }
 
@@ -7392,6 +7560,14 @@ public final class UserProtos {
           to_bitField1_ |= 0x00001000;
         }
         result.agentStatus_ = agentStatus_;
+        if (((from_bitField1_ & 0x00010000) == 0x00010000)) {
+          to_bitField1_ |= 0x00002000;
+        }
+        result.deviceType_ = deviceType_;
+        if (((from_bitField1_ & 0x00020000) == 0x00020000)) {
+          to_bitField1_ |= 0x00004000;
+        }
+        result.pushRegId_ = pushRegId_;
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -7667,6 +7843,14 @@ public final class UserProtos {
         }
         if (other.hasAgentStatus()) {
           setAgentStatus(other.getAgentStatus());
+        }
+        if (other.hasDeviceType()) {
+          setDeviceType(other.getDeviceType());
+        }
+        if (other.hasPushRegId()) {
+          bitField1_ |= 0x00020000;
+          pushRegId_ = other.pushRegId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -11956,6 +12140,154 @@ public final class UserProtos {
       public Builder clearAgentStatus() {
         bitField1_ = (bitField1_ & ~0x00008000);
         agentStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int deviceType_ ;
+      /**
+       * <code>optional int32 deviceType = 213;</code>
+       *
+       * <pre>
+       * 设备类型，参见PBDeviceType
+       * </pre>
+       */
+      public boolean hasDeviceType() {
+        return ((bitField1_ & 0x00010000) == 0x00010000);
+      }
+      /**
+       * <code>optional int32 deviceType = 213;</code>
+       *
+       * <pre>
+       * 设备类型，参见PBDeviceType
+       * </pre>
+       */
+      public int getDeviceType() {
+        return deviceType_;
+      }
+      /**
+       * <code>optional int32 deviceType = 213;</code>
+       *
+       * <pre>
+       * 设备类型，参见PBDeviceType
+       * </pre>
+       */
+      public Builder setDeviceType(int value) {
+        bitField1_ |= 0x00010000;
+        deviceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 deviceType = 213;</code>
+       *
+       * <pre>
+       * 设备类型，参见PBDeviceType
+       * </pre>
+       */
+      public Builder clearDeviceType() {
+        bitField1_ = (bitField1_ & ~0x00010000);
+        deviceType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pushRegId_ = "";
+      /**
+       * <code>optional string pushRegId = 214;</code>
+       *
+       * <pre>
+       * 推送注册ID
+       * </pre>
+       */
+      public boolean hasPushRegId() {
+        return ((bitField1_ & 0x00020000) == 0x00020000);
+      }
+      /**
+       * <code>optional string pushRegId = 214;</code>
+       *
+       * <pre>
+       * 推送注册ID
+       * </pre>
+       */
+      public java.lang.String getPushRegId() {
+        java.lang.Object ref = pushRegId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            pushRegId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string pushRegId = 214;</code>
+       *
+       * <pre>
+       * 推送注册ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getPushRegIdBytes() {
+        java.lang.Object ref = pushRegId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pushRegId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string pushRegId = 214;</code>
+       *
+       * <pre>
+       * 推送注册ID
+       * </pre>
+       */
+      public Builder setPushRegId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00020000;
+        pushRegId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string pushRegId = 214;</code>
+       *
+       * <pre>
+       * 推送注册ID
+       * </pre>
+       */
+      public Builder clearPushRegId() {
+        bitField1_ = (bitField1_ & ~0x00020000);
+        pushRegId_ = getDefaultInstance().getPushRegId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string pushRegId = 214;</code>
+       *
+       * <pre>
+       * 推送注册ID
+       * </pre>
+       */
+      public Builder setPushRegIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00020000;
+        pushRegId_ = value;
         onChanged();
         return this;
       }
@@ -24401,7 +24733,7 @@ public final class UserProtos {
       "\014\n\004nick\030\003 \001(\t\022\023\n\013accessToken\030\004 \001(\t\022\031\n\021ac" +
       "cessTokenSecret\030\005 \001(\t\022\024\n\014refreshToken\030\006 " +
       "\001(\t\022\023\n\013expiredTime\030\007 \001(\005\022\020\n\010qqOpenId\030\010 \001" +
-      "(\t\022\022\n\ncredential\030\024 \001(\t\"\320\007\n\006PBUser\022\016\n\006use" +
+      "(\t\022\022\n\ncredential\030\024 \001(\t\"\371\007\n\006PBUser\022\016\n\006use" +
       "rId\030\001 \002(\t\022\014\n\004nick\030\002 \001(\t\022\016\n\006avatar\030\003 \001(\t\022" +
       "\025\n\006gender\030\004 \001(\010:\005false\022$\n\010snsUsers\030\005 \003(\013" +
       "2\022.barrage.PBSNSUser\022\024\n\014xiaojiNumber\030\006 \001" +
@@ -24426,64 +24758,65 @@ public final class UserProtos {
       "(\t\022\024\n\taddStatus\030j \001(\005:\0017\022\017\n\006bStyle\030\310\001 \001(" +
       "\005\022\017\n\006bSpeed\030\311\001 \001(\005\022\020\n\007isAgent\030\322\001 \001(\010\022\025\n\014" +
       "agentAccount\030\323\001 \001(\t\022\024\n\013agentStatus\030\324\001 \001(",
-      "\005\"x\n\tPBUserTag\022\014\n\004name\030\001 \001(\t\022\013\n\003tid\030\002 \002(" +
-      "\t\022\020\n\010isCustom\030\003 \001(\010\022\r\n\005color\030\004 \001(\005\022\036\n\005us" +
-      "ers\030\n \003(\0132\017.barrage.PBUser\022\017\n\007userIds\030\013 " +
-      "\003(\t\"1\n\rPBUserTagList\022 \n\004tags\030\001 \003(\0132\022.bar" +
-      "rage.PBUserTag\"v\n\020PBUserFriendList\022 \n\007fr" +
-      "iends\030\001 \003(\0132\017.barrage.PBUser\022\'\n\016requestF" +
-      "riends\030\002 \003(\0132\017.barrage.PBUser\022\027\n\017request" +
-      "NewCount\030\003 \001(\005\"y\n\014PBInviteCode\022\014\n\004code\030\001" +
-      " \002(\t\022\016\n\006status\030\002 \001(\005\022\016\n\006sendTo\030\003 \001(\t\022\020\n\010" +
-      "sendType\030\004 \001(\005\022\023\n\013ownerUserId\030\005 \001(\t\022\024\n\014u",
-      "sedByUserId\030\006 \001(\t\"\223\001\n\024PBUserInviteCodeLi" +
-      "st\022\016\n\006userId\030\001 \001(\t\022-\n\016availableCodes\030\002 \003" +
-      "(\0132\025.barrage.PBInviteCode\022(\n\tsentCodes\030\003" +
-      " \003(\0132\025.barrage.PBInviteCode\022\022\n\napplyCoun" +
-      "t\030\004 \001(\005\"\232\001\n\013PBUserGroup\022\036\n\005users\030\n \003(\0132\017" +
-      ".barrage.PBUser\022\017\n\007groupId\030\013 \002(\t\022\021\n\toccu" +
-      "rence\030\001 \001(\005\022\021\n\trejection\030\002 \001(\005\022\031\n\021lastOc" +
-      "curenceDate\030\003 \001(\005\022\031\n\021lastRejectionDate\030\004" +
-      " \001(\005\"7\n\017PBUserGroupList\022$\n\006groups\030\001 \003(\0132" +
-      "\024.barrage.PBUserGroup\"\314\002\n\006PBChat\022\016\n\006chat",
-      "Id\030\001 \002(\t\022\021\n\tsessionId\030\002 \001(\t\022!\n\010fromUser\030" +
-      "\003 \001(\0132\017.barrage.PBUser\022\022\n\nfromUserId\030\004 \001" +
-      "(\t\022%\n\nfromDevice\030\005 \001(\0132\021.barrage.PBDevic" +
-      "e\022\037\n\006toUser\030\006 \001(\0132\017.barrage.PBUser\022\020\n\010to" +
-      "UserId\030\007 \001(\t\022\021\n\tfromAgent\030\010 \001(\010\022\014\n\004text\030" +
-      "\n \001(\t\022\r\n\005image\030\013 \001(\t\022\r\n\005thumb\030\014 \001(\t\022\r\n\005v" +
-      "oice\030\r \001(\t\022\022\n\ncreateDate\030\024 \001(\005\022\016\n\006status" +
-      "\030\025 \001(\005\022\014\n\004type\030\026 \001(\005\022\016\n\006source\030\027 \001(\005*@\n\023" +
-      "FriendAddSourceType\022\021\n\rADD_BY_SEARCH\020\001\022\026" +
-      "\n\022ADD_BY_SCAN_QRCODE\020\002*N\n\023FriendAddConfi",
-      "gType\022\022\n\016REQUIRE_ACCEPT\020\000\022\016\n\nACCEPT_ALL\020" +
-      "\001\022\023\n\017DISALLOW_ADD_ME\020\007*f\n\026FriendRequestD" +
-      "irection\022\030\n\024REQ_DIRECTION_SENDER\020\000\022\032\n\026RE" +
-      "Q_DIRECTION_RECEIVER\020\001\022\026\n\022REQ_DIRECTION_" +
-      "NONE\020\002*c\n\023FriendAddStatusType\022\023\n\017REQ_WAI" +
-      "T_ACCEPT\020\000\022\020\n\014REQ_ACCEPTED\020\001\022\020\n\014REQ_REJE" +
-      "CTED\020\002\022\023\n\017REQ_STATUS_NONE\020\007*r\n\013PBLoginTy" +
-      "pe\022\020\n\014LOGIN_XIAOJI\020d\022\017\n\013LOGIN_EMAIL\020e\022\020\n" +
-      "\014LOGIN_MOBILE\020f\022\014\n\010LOGIN_QQ\020\006\022\016\n\nLOGIN_S" +
-      "INA\020\001\022\020\n\014LOGIN_WEIXIN\020\027*i\n\016PBRegisterTyp",
-      "e\022\016\n\nREG_XIAOJI\020d\022\r\n\tREG_EMAIL\020e\022\016\n\nREG_" +
-      "MOBILE\020f\022\n\n\006REG_QQ\020\006\022\014\n\010REG_SINA\020\001\022\016\n\nRE" +
-      "G_WEIXIN\020\027*E\n\nPBTagColor\022\n\n\006SYSTEM\020\000\022\n\n\006" +
-      "CUSTOM\020\001\022\n\n\006MYSELF\020\002\022\007\n\003HOT\020\003\022\n\n\006RECENT\020" +
-      "\004*p\n\022PBInviteCodeStatus\022\025\n\021CODE_STATUS_R" +
-      "EADY\020\000\022\024\n\020CODE_STATUS_SENT\020\001\022\024\n\020CODE_STA" +
-      "TUS_USED\020\002\022\027\n\023CODE_STATUS_INVALID\020\003*\206\001\n\014" +
-      "PBChatSource\022\017\n\013FROM_WECHAT\020\001\022\014\n\010FROM_AP" +
-      "P\020\002\022\014\n\010FROM_WEB\020\003\022\023\n\017FROM_MOBILE_WEB\020\004\022\016" +
-      "\n\nFROM_AGENT\020\005\022\023\n\017FROM_AGENT_AUTO\020\006\022\017\n\013F",
-      "ROM_SYSTEM\020\007*=\n\nPBChatType\022\r\n\tTEXT_CHAT\020" +
-      "\000\022\020\n\014PICTURE_CHAT\020\001\022\016\n\nVOICE_CHAT\020\002*s\n\014P" +
-      "BChatStatus\022\023\n\017MESSAGE_SENDING\020\000\022\020\n\014MESS" +
-      "AGE_SENT\020\001\022\023\n\017MESSAGE_FAILURE\020\002\022\023\n\017MESSA" +
-      "GE_DELETED\020\003\022\022\n\016MESSAGE_CANCEL\020\004*4\n\rPBAg" +
-      "entStatus\022\021\n\rAGENT_OFFLINE\020\000\022\020\n\014AGENT_ON" +
-      "LINE\020\001B)\n\033com.orange.protocol.messageB\nU" +
-      "serProtos"
+      "\005\022\023\n\ndeviceType\030\325\001 \001(\005\022\022\n\tpushRegId\030\326\001 \001" +
+      "(\t\"x\n\tPBUserTag\022\014\n\004name\030\001 \001(\t\022\013\n\003tid\030\002 \002" +
+      "(\t\022\020\n\010isCustom\030\003 \001(\010\022\r\n\005color\030\004 \001(\005\022\036\n\005u" +
+      "sers\030\n \003(\0132\017.barrage.PBUser\022\017\n\007userIds\030\013" +
+      " \003(\t\"1\n\rPBUserTagList\022 \n\004tags\030\001 \003(\0132\022.ba" +
+      "rrage.PBUserTag\"v\n\020PBUserFriendList\022 \n\007f" +
+      "riends\030\001 \003(\0132\017.barrage.PBUser\022\'\n\016request" +
+      "Friends\030\002 \003(\0132\017.barrage.PBUser\022\027\n\017reques" +
+      "tNewCount\030\003 \001(\005\"y\n\014PBInviteCode\022\014\n\004code\030" +
+      "\001 \002(\t\022\016\n\006status\030\002 \001(\005\022\016\n\006sendTo\030\003 \001(\t\022\020\n",
+      "\010sendType\030\004 \001(\005\022\023\n\013ownerUserId\030\005 \001(\t\022\024\n\014" +
+      "usedByUserId\030\006 \001(\t\"\223\001\n\024PBUserInviteCodeL" +
+      "ist\022\016\n\006userId\030\001 \001(\t\022-\n\016availableCodes\030\002 " +
+      "\003(\0132\025.barrage.PBInviteCode\022(\n\tsentCodes\030" +
+      "\003 \003(\0132\025.barrage.PBInviteCode\022\022\n\napplyCou" +
+      "nt\030\004 \001(\005\"\232\001\n\013PBUserGroup\022\036\n\005users\030\n \003(\0132" +
+      "\017.barrage.PBUser\022\017\n\007groupId\030\013 \002(\t\022\021\n\tocc" +
+      "urence\030\001 \001(\005\022\021\n\trejection\030\002 \001(\005\022\031\n\021lastO" +
+      "ccurenceDate\030\003 \001(\005\022\031\n\021lastRejectionDate\030" +
+      "\004 \001(\005\"7\n\017PBUserGroupList\022$\n\006groups\030\001 \003(\013",
+      "2\024.barrage.PBUserGroup\"\314\002\n\006PBChat\022\016\n\006cha" +
+      "tId\030\001 \002(\t\022\021\n\tsessionId\030\002 \001(\t\022!\n\010fromUser" +
+      "\030\003 \001(\0132\017.barrage.PBUser\022\022\n\nfromUserId\030\004 " +
+      "\001(\t\022%\n\nfromDevice\030\005 \001(\0132\021.barrage.PBDevi" +
+      "ce\022\037\n\006toUser\030\006 \001(\0132\017.barrage.PBUser\022\020\n\010t" +
+      "oUserId\030\007 \001(\t\022\021\n\tfromAgent\030\010 \001(\010\022\014\n\004text" +
+      "\030\n \001(\t\022\r\n\005image\030\013 \001(\t\022\r\n\005thumb\030\014 \001(\t\022\r\n\005" +
+      "voice\030\r \001(\t\022\022\n\ncreateDate\030\024 \001(\005\022\016\n\006statu" +
+      "s\030\025 \001(\005\022\014\n\004type\030\026 \001(\005\022\016\n\006source\030\027 \001(\005*@\n" +
+      "\023FriendAddSourceType\022\021\n\rADD_BY_SEARCH\020\001\022",
+      "\026\n\022ADD_BY_SCAN_QRCODE\020\002*N\n\023FriendAddConf" +
+      "igType\022\022\n\016REQUIRE_ACCEPT\020\000\022\016\n\nACCEPT_ALL" +
+      "\020\001\022\023\n\017DISALLOW_ADD_ME\020\007*f\n\026FriendRequest" +
+      "Direction\022\030\n\024REQ_DIRECTION_SENDER\020\000\022\032\n\026R" +
+      "EQ_DIRECTION_RECEIVER\020\001\022\026\n\022REQ_DIRECTION" +
+      "_NONE\020\002*c\n\023FriendAddStatusType\022\023\n\017REQ_WA" +
+      "IT_ACCEPT\020\000\022\020\n\014REQ_ACCEPTED\020\001\022\020\n\014REQ_REJ" +
+      "ECTED\020\002\022\023\n\017REQ_STATUS_NONE\020\007*r\n\013PBLoginT" +
+      "ype\022\020\n\014LOGIN_XIAOJI\020d\022\017\n\013LOGIN_EMAIL\020e\022\020" +
+      "\n\014LOGIN_MOBILE\020f\022\014\n\010LOGIN_QQ\020\006\022\016\n\nLOGIN_",
+      "SINA\020\001\022\020\n\014LOGIN_WEIXIN\020\027*i\n\016PBRegisterTy" +
+      "pe\022\016\n\nREG_XIAOJI\020d\022\r\n\tREG_EMAIL\020e\022\016\n\nREG" +
+      "_MOBILE\020f\022\n\n\006REG_QQ\020\006\022\014\n\010REG_SINA\020\001\022\016\n\nR" +
+      "EG_WEIXIN\020\027*E\n\nPBTagColor\022\n\n\006SYSTEM\020\000\022\n\n" +
+      "\006CUSTOM\020\001\022\n\n\006MYSELF\020\002\022\007\n\003HOT\020\003\022\n\n\006RECENT" +
+      "\020\004*p\n\022PBInviteCodeStatus\022\025\n\021CODE_STATUS_" +
+      "READY\020\000\022\024\n\020CODE_STATUS_SENT\020\001\022\024\n\020CODE_ST" +
+      "ATUS_USED\020\002\022\027\n\023CODE_STATUS_INVALID\020\003*\240\001\n" +
+      "\014PBChatSource\022\017\n\013FROM_WECHAT\020\001\022\020\n\014FROM_A" +
+      "PP_IOS\020\002\022\024\n\020FROM_APP_ANDROID\020\003\022\014\n\010FROM_W",
+      "EB\020\005\022\023\n\017FROM_MOBILE_WEB\020\006\022\016\n\nFROM_AGENT\020" +
+      "\007\022\023\n\017FROM_AGENT_AUTO\020\010\022\017\n\013FROM_SYSTEM\020\t*" +
+      "=\n\nPBChatType\022\r\n\tTEXT_CHAT\020\000\022\020\n\014PICTURE_" +
+      "CHAT\020\001\022\016\n\nVOICE_CHAT\020\002*s\n\014PBChatStatus\022\023" +
+      "\n\017MESSAGE_SENDING\020\000\022\020\n\014MESSAGE_SENT\020\001\022\023\n" +
+      "\017MESSAGE_FAILURE\020\002\022\023\n\017MESSAGE_DELETED\020\003\022" +
+      "\022\n\016MESSAGE_CANCEL\020\004*4\n\rPBAgentStatus\022\021\n\r" +
+      "AGENT_OFFLINE\020\000\022\020\n\014AGENT_ONLINE\020\001B)\n\033com" +
+      ".orange.protocol.messageB\nUserProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -24509,7 +24842,7 @@ public final class UserProtos {
     internal_static_barrage_PBUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBUser_descriptor,
-        new java.lang.String[] { "UserId", "Nick", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "QqOpenId", "SinaId", "WeixinId", "Birthday", "Zodiac", "BloodGroup", "RegDate", "RegFrom", "VisitDate", "SDate", "AvatarBg", "Signature", "Avatars", "BAvatars", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", "AddConfig", "Tags", "Memo", "AddSource", "AddDate", "AddDir", "ReplyMemo", "AddStatus", "BStyle", "BSpeed", "IsAgent", "AgentAccount", "AgentStatus", });
+        new java.lang.String[] { "UserId", "Nick", "Avatar", "Gender", "SnsUsers", "XiaojiNumber", "Email", "Password", "Mobile", "QqOpenId", "SinaId", "WeixinId", "Birthday", "Zodiac", "BloodGroup", "RegDate", "RegFrom", "VisitDate", "SDate", "AvatarBg", "Signature", "Avatars", "BAvatars", "Location", "CountryCode", "Language", "Longitude", "Latitude", "Level", "Experience", "CurrentDevice", "Devices", "EmailVerifyStatus", "EmailVerifyCode", "MobileVerifyStatus", "AddConfig", "Tags", "Memo", "AddSource", "AddDate", "AddDir", "ReplyMemo", "AddStatus", "BStyle", "BSpeed", "IsAgent", "AgentAccount", "AgentStatus", "DeviceType", "PushRegId", });
     internal_static_barrage_PBUserTag_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_barrage_PBUserTag_fieldAccessorTable = new

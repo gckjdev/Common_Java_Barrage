@@ -33449,6 +33449,23 @@ public final class MessageProtos {
      * </pre>
      */
     int getLimit();
+
+    /**
+     * <code>optional bool forward = 3;</code>
+     *
+     * <pre>
+     * 往chatOffsetId之前获取还是往chatOffsetId之后获取数据
+     * </pre>
+     */
+    boolean hasForward();
+    /**
+     * <code>optional bool forward = 3;</code>
+     *
+     * <pre>
+     * 往chatOffsetId之前获取还是往chatOffsetId之后获取数据
+     * </pre>
+     */
+    boolean getForward();
   }
   /**
    * Protobuf type {@code barrage.PBGetChatListRequest}
@@ -33511,6 +33528,11 @@ public final class MessageProtos {
             case 16: {
               bitField0_ |= 0x00000002;
               limit_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              forward_ = input.readBool();
               break;
             }
           }
@@ -33630,9 +33652,33 @@ public final class MessageProtos {
       return limit_;
     }
 
+    public static final int FORWARD_FIELD_NUMBER = 3;
+    private boolean forward_;
+    /**
+     * <code>optional bool forward = 3;</code>
+     *
+     * <pre>
+     * 往chatOffsetId之前获取还是往chatOffsetId之后获取数据
+     * </pre>
+     */
+    public boolean hasForward() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional bool forward = 3;</code>
+     *
+     * <pre>
+     * 往chatOffsetId之前获取还是往chatOffsetId之后获取数据
+     * </pre>
+     */
+    public boolean getForward() {
+      return forward_;
+    }
+
     private void initFields() {
       chatOffsetId_ = "";
       limit_ = 0;
+      forward_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -33653,6 +33699,9 @@ public final class MessageProtos {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, limit_);
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBool(3, forward_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -33669,6 +33718,10 @@ public final class MessageProtos {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, limit_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, forward_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -33791,6 +33844,8 @@ public final class MessageProtos {
         bitField0_ = (bitField0_ & ~0x00000001);
         limit_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
+        forward_ = false;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -33827,6 +33882,10 @@ public final class MessageProtos {
           to_bitField0_ |= 0x00000002;
         }
         result.limit_ = limit_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.forward_ = forward_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -33850,6 +33909,9 @@ public final class MessageProtos {
         }
         if (other.hasLimit()) {
           setLimit(other.getLimit());
+        }
+        if (other.hasForward()) {
+          setForward(other.getForward());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -34022,6 +34084,54 @@ public final class MessageProtos {
       public Builder clearLimit() {
         bitField0_ = (bitField0_ & ~0x00000002);
         limit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean forward_ ;
+      /**
+       * <code>optional bool forward = 3;</code>
+       *
+       * <pre>
+       * 往chatOffsetId之前获取还是往chatOffsetId之后获取数据
+       * </pre>
+       */
+      public boolean hasForward() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional bool forward = 3;</code>
+       *
+       * <pre>
+       * 往chatOffsetId之前获取还是往chatOffsetId之后获取数据
+       * </pre>
+       */
+      public boolean getForward() {
+        return forward_;
+      }
+      /**
+       * <code>optional bool forward = 3;</code>
+       *
+       * <pre>
+       * 往chatOffsetId之前获取还是往chatOffsetId之后获取数据
+       * </pre>
+       */
+      public Builder setForward(boolean value) {
+        bitField0_ |= 0x00000004;
+        forward_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool forward = 3;</code>
+       *
+       * <pre>
+       * 往chatOffsetId之前获取还是往chatOffsetId之后获取数据
+       * </pre>
+       */
+      public Builder clearForward() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        forward_ = false;
         onChanged();
         return this;
       }
@@ -49280,139 +49390,140 @@ public final class MessageProtos {
       "UserEmailResponse\"2\n\021PBSendChatRequest\022\035" +
       "\n\004chat\030\001 \002(\0132\017.barrage.PBChat\"3\n\022PBSendC" +
       "hatResponse\022\035\n\004chat\030\001 \001(\0132\017.barrage.PBCh" +
-      "at\";\n\024PBGetChatListRequest\022\024\n\014chatOffset",
-      "Id\030\001 \001(\t\022\r\n\005limit\030\002 \001(\005\"6\n\025PBGetChatList" +
-      "Response\022\035\n\004chat\030\001 \003(\0132\017.barrage.PBChat\"" +
-      "\360\017\n\rPBDataRequest\022\014\n\004type\030\001 \002(\005\022\021\n\treque" +
-      "stId\030\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\016\n\006userId\030\004 " +
-      "\001(\t\022!\n\006device\030\036 \001(\0132\021.barrage.PBDevice\022\023" +
-      "\n\013countryCode\030\037 \001(\t\022\024\n\014languageCode\030  \001(" +
-      "\t\022\022\n\nclientDate\030! \001(\005\0225\n\020loginUserReques" +
-      "t\030( \001(\0132\033.barrage.PBLoginUserRequest\022;\n\023" +
-      "registerUserRequest\030) \001(\0132\036.barrage.PBRe" +
-      "gisterUserRequest\0227\n\021searchUserRequest\030*",
-      " \001(\0132\034.barrage.PBSearchUserRequest\022?\n\025up" +
-      "dateUserInfoRequest\030+ \001(\0132 .barrage.PBUp" +
-      "dateUserInfoRequest\022=\n\024addUserFriendRequ" +
-      "est\030, \001(\0132\037.barrage.PBAddUserFriendReque" +
-      "st\022E\n\030getUserFriendListRequest\030- \001(\0132#.b" +
-      "arrage.PBGetUserFriendListRequest\022C\n\027ver" +
-      "ifyInviteCodeRequest\030. \001(\0132\".barrage.PBV" +
-      "erifyInviteCodeRequest\022E\n\030processUserFri" +
-      "endRequest\030/ \001(\0132#.barrage.PBProcessUser" +
-      "FriendRequest\022C\n\027getNewInviteCodeRequest",
-      "\0300 \001(\0132\".barrage.PBGetNewInviteCodeReque" +
-      "st\0227\n\021addUserTagRequest\0301 \001(\0132\034.barrage." +
-      "PBAddUserTagRequest\022=\n\024deleteUserTagRequ" +
-      "est\0302 \001(\0132\037.barrage.PBDeleteUserTagReque" +
-      "st\022?\n\025getUserTagListRequest\0303 \001(\0132 .barr" +
-      "age.PBGetUserTagListRequest\022M\n\034getUserIn" +
-      "viteCodeListRequest\0304 \001(\0132\'.barrage.PBGe" +
-      "tUserInviteCodeListRequest\022A\n\026applyInvit" +
-      "eCodeRequest\0305 \001(\0132!.barrage.PBApplyInvi" +
-      "teCodeRequest\022C\n\027updateInviteCodeRequest",
-      "\0306 \001(\0132\".barrage.PBUpdateInviteCodeReque" +
-      "st\022;\n\023deleteFriendRequest\0307 \001(\0132\036.barrag" +
-      "e.PBDeleteFriendRequest\022C\n\027sendUserFeedb" +
-      "ackRequest\0308 \001(\0132\".barrage.PBSendUserFee" +
-      "dbackRequest\022C\n\027getMyNewFeedListRequest\030" +
-      "9 \001(\0132\".barrage.PBGetMyNewFeedListReques" +
-      "t\0227\n\021createFeedRequest\030< \001(\0132\034.barrage.P" +
-      "BCreateFeedRequest\0225\n\020replyFeedRequest\030=" +
-      " \001(\0132\033.barrage.PBReplyFeedRequest\022I\n\032get" +
-      "UserTimelineFeedRequest\030> \001(\0132%.barrage.",
-      "PBGetUserTimelineFeedRequest\022C\n\027deleteFe" +
-      "edActionRequest\030? \001(\0132\".barrage.PBDelete" +
-      "FeedActionRequest\0227\n\021deleteFeedRequest\030@" +
-      " \001(\0132\034.barrage.PBDeleteFeedRequest\0229\n\022ge" +
-      "tFeedByIdRequest\030A \001(\0132\035.barrage.PBGetFe" +
-      "edByIdRequest\022=\n\024readMyNewFeedRequest\030B " +
-      "\001(\0132\037.barrage.PBReadMyNewFeedRequest\0229\n\022" +
-      "getUserFeedRequest\030C \001(\0132\035.barrage.PBGet" +
-      "UserFeedRequest\0223\n\017sendChatRequest\030F \001(\013" +
-      "2\032.barrage.PBSendChatRequest\0229\n\022getChatL",
-      "istRequest\030G \001(\0132\035.barrage.PBGetChatList" +
-      "Request\022A\n\026verifyUserEmailRequest\030Z \001(\0132" +
-      "!.barrage.PBVerifyUserEmailRequest\"\346\017\n\016P" +
-      "BDataResponse\022\025\n\nresultCode\030\001 \002(\005:\0010\022\021\n\t" +
-      "requestId\030\002 \001(\005\022\017\n\007version\030\003 \001(\005\022\022\n\ntota" +
-      "lCount\030\004 \001(\005\022\022\n\nstringData\030\005 \001(\t\0227\n\021logi" +
-      "nUserResponse\030( \001(\0132\034.barrage.PBLoginUse" +
-      "rResponse\022=\n\024registerUserResponse\030) \001(\0132" +
-      "\037.barrage.PBRegisterUserResponse\0229\n\022sear" +
-      "chUserResponse\030* \001(\0132\035.barrage.PBSearchU",
-      "serResponse\022A\n\026updateUserInfoResponse\030+ " +
-      "\001(\0132!.barrage.PBUpdateUserInfoResponse\022?" +
-      "\n\025addUserFriendResponse\030, \001(\0132 .barrage." +
-      "PBAddUserFriendResponse\022G\n\031getUserFriend" +
-      "ListResponse\030- \001(\0132$.barrage.PBGetUserFr" +
-      "iendListResponse\022E\n\030verifyInviteCodeResp" +
-      "onse\030. \001(\0132#.barrage.PBVerifyInviteCodeR" +
-      "esponse\022G\n\031processUserFriendResponse\030/ \001" +
-      "(\0132$.barrage.PBProcessUserFriendResponse" +
-      "\022E\n\030getNewInviteCodeResponse\0300 \001(\0132#.bar",
-      "rage.PBGetNewInviteCodeResponse\0229\n\022addUs" +
-      "erTagResponse\0301 \001(\0132\035.barrage.PBAddUserT" +
-      "agResponse\022?\n\025deleteUserTagResponse\0302 \001(" +
-      "\0132 .barrage.PBDeleteUserTagResponse\022A\n\026g" +
-      "etUserTagListResponse\0303 \001(\0132!.barrage.PB" +
-      "GetUserTagListResponse\022O\n\035getUserInviteC" +
-      "odeListResponse\0304 \001(\0132(.barrage.PBGetUse" +
-      "rInviteCodeListResponse\022C\n\027applyInviteCo" +
-      "deResponse\0305 \001(\0132\".barrage.PBApplyInvite" +
-      "CodeResponse\022E\n\030updateInviteCodeResponse",
-      "\0306 \001(\0132#.barrage.PBUpdateInviteCodeRespo" +
-      "nse\022=\n\024deleteFriendResponse\0307 \001(\0132\037.barr" +
-      "age.PBDeleteFriendResponse\022E\n\030sendUserFe" +
-      "edbackResponse\0308 \001(\0132#.barrage.PBSendUse" +
-      "rFeedbackResponse\022E\n\030getMyNewFeedListRes" +
-      "ponse\0309 \001(\0132#.barrage.PBGetMyNewFeedList" +
-      "Response\0229\n\022createFeedResponse\030< \001(\0132\035.b" +
-      "arrage.PBCreateFeedResponse\0227\n\021replyFeed" +
-      "Response\030= \001(\0132\034.barrage.PBReplyFeedResp" +
-      "onse\022K\n\033getUserTimelineFeedResponse\030> \001(",
-      "\0132&.barrage.PBGetUserTimelineFeedRespons" +
-      "e\022E\n\030deleteFeedActionResponse\030? \001(\0132#.ba" +
-      "rrage.PBDeleteFeedActionResponse\0229\n\022dele" +
-      "teFeedResponse\030@ \001(\0132\035.barrage.PBDeleteF" +
-      "eedResponse\022;\n\023getFeedByIdResponse\030A \001(\013" +
-      "2\036.barrage.PBGetFeedByIdResponse\022;\n\021myNe" +
-      "wFeedResponse\030B \001(\0132 .barrage.PBReadMyNe" +
-      "wFeedResponse\022;\n\023getUserFeedResponse\030C \001" +
-      "(\0132\036.barrage.PBGetUserFeedResponse\0225\n\020se" +
-      "ndChatResponse\030F \001(\0132\033.barrage.PBSendCha",
-      "tResponse\022;\n\023getChatListResponse\030G \001(\0132\036" +
-      ".barrage.PBGetChatListResponse\022C\n\027verify" +
-      "UserEmailResponse\030Z \001(\0132\".barrage.PBVeri" +
-      "fyUserEmailResponse*Q\n\031PBProcessFriendRe" +
-      "sultType\022\021\n\rACCEPT_FRIEND\020\000\022\021\n\rREJECT_FR" +
-      "IEND\020\001\022\016\n\nREPLY_MEMO\020\002*\213\007\n\rPBMessageType" +
-      "\022\026\n\022MESSAGE_LOGIN_USER\020\001\022\031\n\025MESSAGE_REGI" +
-      "STER_USER\020\002\022\027\n\023MESSAGE_SEARCH_USER\020\003\022\034\n\030" +
-      "MESSAGE_UPDATE_USER_INFO\020\004\022\033\n\027MESSAGE_AD" +
-      "D_USER_FRIEND\020\005\022 \n\034MESSAGE_GET_USER_FRIE",
-      "ND_LIST\020\006\022\037\n\033MESSAGE_PROCESS_USER_FRIEND" +
-      "\020\007\022\036\n\032MESSAGE_VERIFY_INVITE_CODE\020\010\022\037\n\033ME" +
-      "SSAGE_GET_NEW_INVITE_CODE\020\t\022\030\n\024MESSAGE_A" +
-      "DD_USER_TAG\020\n\022\033\n\027MESSAGE_DELETE_USER_TAG" +
-      "\020\013\022\035\n\031MESSAGE_GET_USER_TAG_LIST\020\014\022%\n!MES" +
-      "SAGE_GET_USER_INVITE_CODE_LIST\020\r\022\035\n\031MESS" +
-      "AGE_APPLY_INVITE_CODE\020\016\022\036\n\032MESSAGE_UPDAT" +
-      "E_INVITE_CODE\020\017\022\027\n\023MESSAGE_CREATE_FEED\020\036" +
-      "\022\026\n\022MESSAGE_REPLY_FEED\020\037\022\"\n\036MESSAGE_GET_" +
-      "USER_TIMELINE_FEED\020 \022\036\n\032MESSAGE_DELETE_F",
-      "EED_ACTION\020!\022\027\n\023MESSAGE_DELETE_FEED\020\"\022\031\n" +
-      "\025MESSAGE_DELETE_FRIEND\020#\022\036\n\032MESSAGE_SEND" +
-      "_USER_FEEDBACK\020$\022 \n\034MESSAGE_GET_MY_NEW_F" +
-      "EED_LIST\020%\022\032\n\026MESSAGE_GET_FEED_BY_ID\020&\022\034" +
-      "\n\030MESSAGE_READ_MY_NEW_FEED\020\'\022\031\n\025MESSAGE_" +
-      "GET_USER_FEED\020(\022\035\n\031MESSAGE_VERIFY_USER_E" +
-      "MAIL\020)\022\025\n\021MESSAGE_SEND_CHAT\0202\022\031\n\025MESSAGE" +
-      "_GET_CHAT_LIST\0203\022\"\n\036MESSAGE_GET_QINIU_UP" +
-      "LOAD_TOKEN\020d*[\n\027PBGetUserFriendListType\022" +
-      "\024\n\020TYPE_FRIEND_LIST\020\000\022\034\n\030TYPE_REQUEST_FR",
-      "IEND_LIST\020\001\022\014\n\010TYPE_ALL\020\nB,\n\033com.orange." +
-      "protocol.messageB\rMessageProtos"
+      "at\"L\n\024PBGetChatListRequest\022\024\n\014chatOffset",
+      "Id\030\001 \001(\t\022\r\n\005limit\030\002 \001(\005\022\017\n\007forward\030\003 \001(\010" +
+      "\"6\n\025PBGetChatListResponse\022\035\n\004chat\030\001 \003(\0132" +
+      "\017.barrage.PBChat\"\360\017\n\rPBDataRequest\022\014\n\004ty" +
+      "pe\030\001 \002(\005\022\021\n\trequestId\030\002 \001(\005\022\017\n\007version\030\003" +
+      " \001(\005\022\016\n\006userId\030\004 \001(\t\022!\n\006device\030\036 \001(\0132\021.b" +
+      "arrage.PBDevice\022\023\n\013countryCode\030\037 \001(\t\022\024\n\014" +
+      "languageCode\030  \001(\t\022\022\n\nclientDate\030! \001(\005\0225" +
+      "\n\020loginUserRequest\030( \001(\0132\033.barrage.PBLog" +
+      "inUserRequest\022;\n\023registerUserRequest\030) \001" +
+      "(\0132\036.barrage.PBRegisterUserRequest\0227\n\021se",
+      "archUserRequest\030* \001(\0132\034.barrage.PBSearch" +
+      "UserRequest\022?\n\025updateUserInfoRequest\030+ \001" +
+      "(\0132 .barrage.PBUpdateUserInfoRequest\022=\n\024" +
+      "addUserFriendRequest\030, \001(\0132\037.barrage.PBA" +
+      "ddUserFriendRequest\022E\n\030getUserFriendList" +
+      "Request\030- \001(\0132#.barrage.PBGetUserFriendL" +
+      "istRequest\022C\n\027verifyInviteCodeRequest\030. " +
+      "\001(\0132\".barrage.PBVerifyInviteCodeRequest\022" +
+      "E\n\030processUserFriendRequest\030/ \001(\0132#.barr" +
+      "age.PBProcessUserFriendRequest\022C\n\027getNew",
+      "InviteCodeRequest\0300 \001(\0132\".barrage.PBGetN" +
+      "ewInviteCodeRequest\0227\n\021addUserTagRequest" +
+      "\0301 \001(\0132\034.barrage.PBAddUserTagRequest\022=\n\024" +
+      "deleteUserTagRequest\0302 \001(\0132\037.barrage.PBD" +
+      "eleteUserTagRequest\022?\n\025getUserTagListReq" +
+      "uest\0303 \001(\0132 .barrage.PBGetUserTagListReq" +
+      "uest\022M\n\034getUserInviteCodeListRequest\0304 \001" +
+      "(\0132\'.barrage.PBGetUserInviteCodeListRequ" +
+      "est\022A\n\026applyInviteCodeRequest\0305 \001(\0132!.ba" +
+      "rrage.PBApplyInviteCodeRequest\022C\n\027update",
+      "InviteCodeRequest\0306 \001(\0132\".barrage.PBUpda" +
+      "teInviteCodeRequest\022;\n\023deleteFriendReque" +
+      "st\0307 \001(\0132\036.barrage.PBDeleteFriendRequest" +
+      "\022C\n\027sendUserFeedbackRequest\0308 \001(\0132\".barr" +
+      "age.PBSendUserFeedbackRequest\022C\n\027getMyNe" +
+      "wFeedListRequest\0309 \001(\0132\".barrage.PBGetMy" +
+      "NewFeedListRequest\0227\n\021createFeedRequest\030" +
+      "< \001(\0132\034.barrage.PBCreateFeedRequest\0225\n\020r" +
+      "eplyFeedRequest\030= \001(\0132\033.barrage.PBReplyF" +
+      "eedRequest\022I\n\032getUserTimelineFeedRequest",
+      "\030> \001(\0132%.barrage.PBGetUserTimelineFeedRe" +
+      "quest\022C\n\027deleteFeedActionRequest\030? \001(\0132\"" +
+      ".barrage.PBDeleteFeedActionRequest\0227\n\021de" +
+      "leteFeedRequest\030@ \001(\0132\034.barrage.PBDelete" +
+      "FeedRequest\0229\n\022getFeedByIdRequest\030A \001(\0132" +
+      "\035.barrage.PBGetFeedByIdRequest\022=\n\024readMy" +
+      "NewFeedRequest\030B \001(\0132\037.barrage.PBReadMyN" +
+      "ewFeedRequest\0229\n\022getUserFeedRequest\030C \001(" +
+      "\0132\035.barrage.PBGetUserFeedRequest\0223\n\017send" +
+      "ChatRequest\030F \001(\0132\032.barrage.PBSendChatRe",
+      "quest\0229\n\022getChatListRequest\030G \001(\0132\035.barr" +
+      "age.PBGetChatListRequest\022A\n\026verifyUserEm" +
+      "ailRequest\030Z \001(\0132!.barrage.PBVerifyUserE" +
+      "mailRequest\"\346\017\n\016PBDataResponse\022\025\n\nresult" +
+      "Code\030\001 \002(\005:\0010\022\021\n\trequestId\030\002 \001(\005\022\017\n\007vers" +
+      "ion\030\003 \001(\005\022\022\n\ntotalCount\030\004 \001(\005\022\022\n\nstringD" +
+      "ata\030\005 \001(\t\0227\n\021loginUserResponse\030( \001(\0132\034.b" +
+      "arrage.PBLoginUserResponse\022=\n\024registerUs" +
+      "erResponse\030) \001(\0132\037.barrage.PBRegisterUse" +
+      "rResponse\0229\n\022searchUserResponse\030* \001(\0132\035.",
+      "barrage.PBSearchUserResponse\022A\n\026updateUs" +
+      "erInfoResponse\030+ \001(\0132!.barrage.PBUpdateU" +
+      "serInfoResponse\022?\n\025addUserFriendResponse" +
+      "\030, \001(\0132 .barrage.PBAddUserFriendResponse" +
+      "\022G\n\031getUserFriendListResponse\030- \001(\0132$.ba" +
+      "rrage.PBGetUserFriendListResponse\022E\n\030ver" +
+      "ifyInviteCodeResponse\030. \001(\0132#.barrage.PB" +
+      "VerifyInviteCodeResponse\022G\n\031processUserF" +
+      "riendResponse\030/ \001(\0132$.barrage.PBProcessU" +
+      "serFriendResponse\022E\n\030getNewInviteCodeRes",
+      "ponse\0300 \001(\0132#.barrage.PBGetNewInviteCode" +
+      "Response\0229\n\022addUserTagResponse\0301 \001(\0132\035.b" +
+      "arrage.PBAddUserTagResponse\022?\n\025deleteUse" +
+      "rTagResponse\0302 \001(\0132 .barrage.PBDeleteUse" +
+      "rTagResponse\022A\n\026getUserTagListResponse\0303" +
+      " \001(\0132!.barrage.PBGetUserTagListResponse\022" +
+      "O\n\035getUserInviteCodeListResponse\0304 \001(\0132(" +
+      ".barrage.PBGetUserInviteCodeListResponse" +
+      "\022C\n\027applyInviteCodeResponse\0305 \001(\0132\".barr" +
+      "age.PBApplyInviteCodeResponse\022E\n\030updateI",
+      "nviteCodeResponse\0306 \001(\0132#.barrage.PBUpda" +
+      "teInviteCodeResponse\022=\n\024deleteFriendResp" +
+      "onse\0307 \001(\0132\037.barrage.PBDeleteFriendRespo" +
+      "nse\022E\n\030sendUserFeedbackResponse\0308 \001(\0132#." +
+      "barrage.PBSendUserFeedbackResponse\022E\n\030ge" +
+      "tMyNewFeedListResponse\0309 \001(\0132#.barrage.P" +
+      "BGetMyNewFeedListResponse\0229\n\022createFeedR" +
+      "esponse\030< \001(\0132\035.barrage.PBCreateFeedResp" +
+      "onse\0227\n\021replyFeedResponse\030= \001(\0132\034.barrag" +
+      "e.PBReplyFeedResponse\022K\n\033getUserTimeline",
+      "FeedResponse\030> \001(\0132&.barrage.PBGetUserTi" +
+      "melineFeedResponse\022E\n\030deleteFeedActionRe" +
+      "sponse\030? \001(\0132#.barrage.PBDeleteFeedActio" +
+      "nResponse\0229\n\022deleteFeedResponse\030@ \001(\0132\035." +
+      "barrage.PBDeleteFeedResponse\022;\n\023getFeedB" +
+      "yIdResponse\030A \001(\0132\036.barrage.PBGetFeedByI" +
+      "dResponse\022;\n\021myNewFeedResponse\030B \001(\0132 .b" +
+      "arrage.PBReadMyNewFeedResponse\022;\n\023getUse" +
+      "rFeedResponse\030C \001(\0132\036.barrage.PBGetUserF" +
+      "eedResponse\0225\n\020sendChatResponse\030F \001(\0132\033.",
+      "barrage.PBSendChatResponse\022;\n\023getChatLis" +
+      "tResponse\030G \001(\0132\036.barrage.PBGetChatListR" +
+      "esponse\022C\n\027verifyUserEmailResponse\030Z \001(\013" +
+      "2\".barrage.PBVerifyUserEmailResponse*Q\n\031" +
+      "PBProcessFriendResultType\022\021\n\rACCEPT_FRIE" +
+      "ND\020\000\022\021\n\rREJECT_FRIEND\020\001\022\016\n\nREPLY_MEMO\020\002*" +
+      "\213\007\n\rPBMessageType\022\026\n\022MESSAGE_LOGIN_USER\020" +
+      "\001\022\031\n\025MESSAGE_REGISTER_USER\020\002\022\027\n\023MESSAGE_" +
+      "SEARCH_USER\020\003\022\034\n\030MESSAGE_UPDATE_USER_INF" +
+      "O\020\004\022\033\n\027MESSAGE_ADD_USER_FRIEND\020\005\022 \n\034MESS",
+      "AGE_GET_USER_FRIEND_LIST\020\006\022\037\n\033MESSAGE_PR" +
+      "OCESS_USER_FRIEND\020\007\022\036\n\032MESSAGE_VERIFY_IN" +
+      "VITE_CODE\020\010\022\037\n\033MESSAGE_GET_NEW_INVITE_CO" +
+      "DE\020\t\022\030\n\024MESSAGE_ADD_USER_TAG\020\n\022\033\n\027MESSAG" +
+      "E_DELETE_USER_TAG\020\013\022\035\n\031MESSAGE_GET_USER_" +
+      "TAG_LIST\020\014\022%\n!MESSAGE_GET_USER_INVITE_CO" +
+      "DE_LIST\020\r\022\035\n\031MESSAGE_APPLY_INVITE_CODE\020\016" +
+      "\022\036\n\032MESSAGE_UPDATE_INVITE_CODE\020\017\022\027\n\023MESS" +
+      "AGE_CREATE_FEED\020\036\022\026\n\022MESSAGE_REPLY_FEED\020" +
+      "\037\022\"\n\036MESSAGE_GET_USER_TIMELINE_FEED\020 \022\036\n",
+      "\032MESSAGE_DELETE_FEED_ACTION\020!\022\027\n\023MESSAGE" +
+      "_DELETE_FEED\020\"\022\031\n\025MESSAGE_DELETE_FRIEND\020" +
+      "#\022\036\n\032MESSAGE_SEND_USER_FEEDBACK\020$\022 \n\034MES" +
+      "SAGE_GET_MY_NEW_FEED_LIST\020%\022\032\n\026MESSAGE_G" +
+      "ET_FEED_BY_ID\020&\022\034\n\030MESSAGE_READ_MY_NEW_F" +
+      "EED\020\'\022\031\n\025MESSAGE_GET_USER_FEED\020(\022\035\n\031MESS" +
+      "AGE_VERIFY_USER_EMAIL\020)\022\025\n\021MESSAGE_SEND_" +
+      "CHAT\0202\022\031\n\025MESSAGE_GET_CHAT_LIST\0203\022\"\n\036MES" +
+      "SAGE_GET_QINIU_UPLOAD_TOKEN\020d*[\n\027PBGetUs" +
+      "erFriendListType\022\024\n\020TYPE_FRIEND_LIST\020\000\022\034",
+      "\n\030TYPE_REQUEST_FRIEND_LIST\020\001\022\014\n\010TYPE_ALL" +
+      "\020\nB,\n\033com.orange.protocol.messageB\rMessa" +
+      "geProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -49770,7 +49881,7 @@ public final class MessageProtos {
     internal_static_barrage_PBGetChatListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_barrage_PBGetChatListRequest_descriptor,
-        new java.lang.String[] { "ChatOffsetId", "Limit", });
+        new java.lang.String[] { "ChatOffsetId", "Limit", "Forward", });
     internal_static_barrage_PBGetChatListResponse_descriptor =
       getDescriptor().getMessageTypes().get(57);
     internal_static_barrage_PBGetChatListResponse_fieldAccessorTable = new
