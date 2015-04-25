@@ -35,7 +35,18 @@ AND key_validation_class=UTF8Type
 AND default_validation_class = UTF8Type;
 
 
+CREATE COLUMN FAMILY user_chat
+WITH comparator = UTF8Type
+AND key_validation_class=UTF8Type
+AND default_validation_class = UTF8Type;
+
+ASSUME user_chat KEYS AS ascii;
+ASSUME user_chat COMPARATOR AS ascii;
+ASSUME user_chat VALIDATOR AS ascii;
+
+
 DROP COLUMN FAMILY user_feed_timeline;
+DROP COLUMN FAMILY user_chat;
 DROP KEYSPACE barrage;
 
 ASSUME user_feed_timeline KEYS AS ascii;
